@@ -1,0 +1,70 @@
+[2.9s] ✔ LS «array vacio» → tema-1 sano :: drills=15 katex=779 ocultas=44/44
+[2.9s] ✔   Comprobar responde con LS «array vacio» :: ✗ Aún no es correcto
+[5.6s] ✔ LS «numero 5» → tema-1 sano :: drills=15 katex=779 ocultas=44/44
+[5.6s] ✔   Comprobar responde con LS «numero 5» :: ✗ Aún no es correcto
+[8.2s] ✔ LS «string JSON 5» → tema-1 sano :: drills=15 katex=779 ocultas=44/44
+[8.2s] ✔   Comprobar responde con LS «string JSON 5» :: ✗ Aún no es correcto
+[10.8s] ✔ LS «truncado a media palabra» → tema-1 sano :: drills=15 katex=779 ocultas=44/44
+[10.8s] ✔   Comprobar responde con LS «truncado a media palabra» :: ✗ Aún no es correcto
+[13.5s] ✔ LS «array truncado» → tema-1 sano :: drills=15 katex=779 ocultas=44/44
+[13.5s] ✔   Comprobar responde con LS «array truncado» :: ✗ Aún no es correcto
+[16.1s] ✔ LS «proto pollution» → tema-1 sano :: drills=15 katex=779 ocultas=44/44
+[16.1s] ✔   Comprobar responde con LS «proto pollution» :: ✗ Aún no es correcto
+[18.8s] ✔ LS «valores no-string» → tema-1 sano :: drills=15 katex=779 ocultas=44/44
+[18.8s] ✔   Comprobar responde con LS «valores no-string» :: ✗ Aún no es correcto
+[21.4s] ✔ LS «BOM + objeto» → tema-1 sano :: drills=15 katex=779 ocultas=44/44
+[21.4s] ✔   Comprobar responde con LS «BOM + objeto» :: ✗ Aún no es correcto
+[24.0s] ✔ LS «solo espacios» → tema-1 sano :: drills=15 katex=779 ocultas=44/44
+[24.0s] ✔   Comprobar responde con LS «solo espacios» :: ✗ Aún no es correcto
+[26.7s] ✔ LS «string que parece objeto» → tema-1 sano :: drills=15 katex=779 ocultas=44/44
+[26.7s] ✔   Comprobar responde con LS «string que parece objeto» :: ✗ Aún no es correcto
+[29.3s] ✔ LS «gigante 200k» → tema-1 sano :: drills=15 katex=779 ocultas=44/44
+[29.3s] ✔   Comprobar responde con LS «gigante 200k» :: ✗ Aún no es correcto
+[31.9s] ✔ LS «null byte al final» → tema-1 sano :: drills=15 katex=779 ocultas=44/44
+[31.9s] ✔   Comprobar responde con LS «null byte al final» :: ✗ Aún no es correcto
+[34.6s] ✔ LS «true/false anidados» → tema-1 sano :: drills=15 katex=779 ocultas=44/44
+[34.6s] ✔   Comprobar responde con LS «true/false anidados» :: ✗ Aún no es correcto
+[37.2s] ✔ LS «NaN literal» → tema-1 sano :: drills=15 katex=779 ocultas=44/44
+[37.2s] ✔   Comprobar responde con LS «NaN literal» :: ✗ Aún no es correcto
+[39.7s] ✔ progreso válido se aplica; valores no-string se ignoran :: {"n1":true,"n2":"drill reveal","n3":false}
+[41.5s] ✘ cross-page: resolver T1-N1 actualiza índice 1/15 :: {"label":"1 / 15 · 7%","width":"7%"}
+[43.8s] ✔ SS «hex 0x10» → examen sano :: timer=01:59:59 drills=12 bloq=0/38
+[46.0s] ✔ SS «1e-3» → examen sano :: timer=00:00:00 drills=12 bloq=38/38
+[46.0s] ✔   «1e-3» a 0s todo bloqueado :: 38/38
+[48.3s] ✔ SS «solo espacios» → examen sano :: timer=01:59:59 drills=12 bloq=0/38
+[50.6s] ✔ SS «boolean true» → examen sano :: timer=01:59:59 drills=12 bloq=0/38
+[52.8s] ✔ SS «string JSON 123» → examen sano :: timer=01:59:58 drills=12 bloq=0/38
+[55.1s] ✔ SS «objeto deadline» → examen sano :: timer=01:59:59 drills=12 bloq=0/38
+[57.4s] ✔ SS «menos cero» → examen sano :: timer=01:59:59 drills=12 bloq=0/38
+[59.6s] ✔ SS «mas 5000» → examen sano :: timer=00:00:00 drills=12 bloq=38/38
+[59.6s] ✔   «mas 5000» a 0s todo bloqueado :: 38/38
+[61.9s] ✔ SS «coma decimal» → examen sano :: timer=00:00:00 drills=12 bloq=38/38
+[61.9s] ✔   «coma decimal» a 0s todo bloqueado :: 38/38
+[64.2s] ✘ SS «gigante 1e21» → examen sano :: timer=277777777280012:41:36 drills=12 bloq=0/38
+[66.4s] ✔ SS «con saltos de linea» → examen sano :: timer=00:00:00 drills=12 bloq=38/38
+[66.4s] ✔   «con saltos de linea» a 0s todo bloqueado :: 38/38
+[68.7s] ✔ SS «doble deadline» → examen sano :: timer=00:00:00 drills=12 bloq=38/38
+[68.7s] ✔   «doble deadline» a 0s todo bloqueado :: 38/38
+[74.0s] ✔ F5 con <2 s restantes: no regala tiempo :: antes=00:00:02 trasF5=00:00:01
+[74.0s] ✔ llega a 0: bloqueo total + auto-corrección :: {"timer":"00:00:00","bloq":38,"total":38,"nota":"0","btnOff":true}
+[75.2s] ✔ F5 en 00:00:00: estado bloqueado persiste (sin reinicio) :: {"timer":"00:00:00","bloq":38,"total":38,"nota":"0","deadline":"1791954291085"}
+[79.6s] ✔ carrera responder+expirar+F5: sin crash, bloqueado :: {"timer":"00:00:00","drills":12,"nota":"0"}
+[81.8s] ✔ X1-8 multi+2 vectores: exacto → correcto :: {"campos":2,"celdas":6,"fb":"✓ Correcto. Revisa la solución detallada","ok":true}
+[81.8s] ✔ X1-8 con 1 celda alterada → rechazado :: {"ok":false,"fb":"✗ Aún no es correcto. Campo 'f"}
+[81.8s] ✔ X1-8 multi incompleto (solo f1) → rechazado :: {"ok":false}
+[84.2s] ✔ T2-E4 multi bool+matriz 3×3 fracciones → correcto :: {"celdas":9,"ok":true,"fb":"✓ Correcto. Revisa la solución detallada"}
+[86.6s] ✔ X1-12 matriz 4×4 exacta → correcto :: {"celdas":16,"ok":true,"fb":"✓ Correcto. Revisa la solución"}
+[88.8s] ✔ 320px index.html: sin overflow :: scrollW=322/322 desborde=[]
+[90.9s] ✘ 320px temas/tema-1.html: sin overflow :: scrollW=320/320 desborde=["math r=345","semantics r=345","mrow r=345","mi r=336","mo r=345","math r=328","semantics r=328","mrow r=328"]
+[93.0s] ✘ 320px examenes/examen-1.html: sin overflow :: scrollW=320/320 desborde=["math r=475","semantics r=475","mrow r=475","mo r=323","mn r=337","mo r=342","mn r=447","mo r=470"]
+[95.2s] ✔ 320px matriz X1-12 con scroll horizontal :: {"found":true,"overflowX":"auto","scrollable":true,"docOverflow":false}
+[97.0s] ✔ 320px nav toggle abre menú :: {"open":true,"expandido":"true","ancho":320}
+[98.9s] ✔ landscape 740×360 index.html: sin overflow :: scrollW=740/740 heroH=539 timer=null
+[100.8s] ✔ landscape 740×360 temas/tema-1.html: sin overflow :: scrollW=740/740 heroH=234 timer=null
+[102.8s] ✔ landscape 740×360 examenes/examen-1.html: sin overflow :: scrollW=740/740 heroH=273 timer=true
+[104.7s] ✔ landscape 812×375 index.html: sin overflow :: scrollW=812/812 heroH=555 timer=null
+[106.6s] ✔ landscape 812×375 temas/tema-1.html: sin overflow :: scrollW=812/812 heroH=240 timer=null
+[108.5s] ✔ landscape 812×375 examenes/examen-1.html: sin overflow :: scrollW=812/812 heroH=282 timer=true
+[117.8s] ✘ landscape 740×360: reveal completo tras scroll :: {"total":15,"sinRevelar":2}
+
+Resumen hostil-r3: 68 comprobaciones, 5 fallos

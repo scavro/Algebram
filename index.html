@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fundamentos Algebraicos para la IA · Archivo del Curso</title>
+  <meta name="description" content="Curso interactivo de Fundamentos Algebraicos para la IA (UNED): teoría, mapas mentales, ejercicios autocorregidos y exámenes de grado." />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/fonts.css" />
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+</head>
+<body data-page="index">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="progress-bar" aria-hidden="true"><div class="progress-bar__fill"></div></div>
+
+  <!-- ============ HÉROE ============ -->
+  <header class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="hero__cloud" aria-hidden="true">
+      <div class="hero__formula">\( e^{i\pi} + 1 = 0 \)</div>
+      <div class="hero__formula">\( A\mathbf{v} = \lambda \mathbf{v} \)</div>
+      <div class="hero__formula">\( A = U\Sigma V^{\top} \)</div>
+      <div class="hero__formula">\( \langle \mathbf{u}, \mathbf{v} \rangle = 0 \)</div>
+      <div class="hero__formula">\( \det(A) \neq 0 \)</div>
+      <div class="hero__formula">\( \| A\mathbf{x} \| \le \|A\|\,\|\mathbf{x}\| \)</div>
+    </div>
+    <nav class="nav nav--night" style="position:absolute;top:0;left:0;right:0;background:transparent;border:0">
+      <div class="wrap nav__inner">
+        <a class="nav__brand" href="index.html">
+          <span class="nav__brand-mark">Archivo</span>
+          <span>Álgebra · IA</span>
+        </a>
+        <button class="nav__toggle" aria-expanded="false" aria-label="Abrir menú">Menú</button>
+        <ul class="nav__links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="temas/tema-1.html">Temas</a></li>
+          <li><a href="examenes/examen-1.html">Exámenes</a></li>
+          <li><a href="planificacion.html">Planificación</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="hero__content">
+      <p class="kicker">UNED · Grado en Ingeniería en Inteligencia Artificial · 2026–2027</p>
+      <h1 class="hero__title">Fundamentos <em>Algebraicos</em> para la IA</h1>
+      <p class="hero__lede">
+        De los escalares a la descomposición SVD: teoría explicada como en clase,
+        ejercicios que se corrigen solos y exámenes de grado, con cada ecuación
+        verificada de forma independiente.
+      </p>
+      <div class="hero__meta">
+        <div class="hero__stat"><b>5</b><span>Temas</span></div>
+        <div class="hero__stat"><b data-count="curso">122</b><span>Ejercicios</span></div>
+        <div class="hero__stat"><b>3</b><span>Exámenes</span></div>
+        <div class="hero__stat"><b>100%</b><span>Verificado con SymPy</span></div>
+      </div>
+    </div>
+    <a class="hero__scroll" href="#programa">Descender</a>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ============ INTRO ============ -->
+    <section class="wrap section" id="programa">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">El curso</div>
+        <div>
+          <h2>Un recorrido completo por el álgebra que sostiene la inteligencia artificial</h2>
+          <p>Basado en los apuntes de Juan Perán Mazón (UNED, 2026) y en el calendario oficial del curso.</p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="prose reveal">
+          <p>
+            Este archivo reorganiza el temario del cuatrimestre en cinco piezas
+            encadenadas: los <strong>escalares</strong> con los que se mide y se numera;
+            los <strong>tensores, matrices y vectores</strong> con los que se representan
+            los datos; las <strong>aplicaciones lineales</strong> que transforman esos
+            datos; la <strong>triangulación</strong> que resuelve sistemas y ajusta
+            modelos; y la <strong>diagonalización</strong> —con la SVD— que extrae la
+            estructura escondida.
+          </p>
+          <p>
+            Cada tema se estudia igual que en una clase de grado: definiciones,
+            demostraciones, ejemplos resueltos, un resumen para el repaso, un mapa
+            mental para ver el bosque y ejercicios en tres niveles que se corrigen
+            al instante.
+          </p>
+        </div>
+        <div class="prose reveal">
+          <div class="plaque plaque--ia">
+            <span class="plaque__label">Por qué importa en IA</span>
+            <p>
+              Regresión lineal y mínimos cuadrados, PCA y reducción de dimensionalidad,
+              word embeddings, normalización de datos, estabilidad numérica de los
+              optimizadores: todo eso es álgebra lineal y numérica. Aquí se estudia la
+              maquinaria, no solo su nombre.
+            </p>
+          </div>
+          <div class="plaque">
+            <span class="plaque__label">Cómo funciona</span>
+            <p>
+              Escribe tu respuesta en el ejercicio y pulsa <em>Comprobar</em>: si es
+              correcta se abre la solución paso a paso; si no, el sistema te orienta
+              sin darte la respuesta. Tu progreso queda guardado en el navegador.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TEMAS ============ -->
+    <section class="wrap section section--tint" id="temas">
+      <p class="kicker reveal">Programa</p>
+      <h2 class="reveal">Los cinco temas</h2>
+      <div class="theme-grid" style="margin-top:2.25rem">
+        <a class="theme-card reveal" href="temas/tema-1.html">
+          <div class="theme-card__num">01</div>
+          <h3>Escalares</h3>
+          <p>Conjuntos, funciones y familias; de \(\mathbb{N}\) a \(\mathbb{C}\); bases de numeración, cifras significativas, exponencial y raíces.</p>
+          <div class="theme-card__foot">
+            <div class="theme-card__bar"><i data-theme-progress="tema-1"></i></div>
+            <span class="meta" data-theme-progress-label="tema-1">0 / 15</span>
+          </div>
+        </a>
+        <a class="theme-card reveal" href="temas/tema-2.html">
+          <div class="theme-card__num">02</div>
+          <h3>Tensores, matrices y vectores</h3>
+          <p>Espacios \(K^{I}\), bases y combinaciones; tensores y ejes; bloques, producto, inversa, distancias, Gram–Schmidt y proyecciones.</p>
+          <div class="theme-card__foot">
+            <div class="theme-card__bar"><i data-theme-progress="tema-2"></i></div>
+            <span class="meta" data-theme-progress-label="tema-2">0 / 15</span>
+          </div>
+        </a>
+        <a class="theme-card reveal" href="temas/tema-3.html">
+          <div class="theme-card__num">03</div>
+          <h3>Aplicaciones lineales</h3>
+          <p>Matrices como aplicaciones; determinante y volumen; los cuatro subespacios; autovalores, autovectores y formas cuadráticas.</p>
+          <div class="theme-card__foot">
+            <div class="theme-card__bar"><i data-theme-progress="tema-3"></i></div>
+            <span class="meta" data-theme-progress-label="tema-3">0 / 15</span>
+          </div>
+        </a>
+        <a class="theme-card reveal" href="temas/tema-4.html">
+          <div class="theme-card__num">04</div>
+          <h3>Procesos de triangulación</h3>
+          <p>Sistemas lineales, eliminación de Gauss, Rouché–Frobenius, factorizaciones PLU y QR, mínimos cuadrados y Schur.</p>
+          <div class="theme-card__foot">
+            <div class="theme-card__bar"><i data-theme-progress="tema-4"></i></div>
+            <span class="meta" data-theme-progress-label="tema-4">0 / 20</span>
+          </div>
+        </a>
+        <a class="theme-card reveal" href="temas/tema-5.html">
+          <div class="theme-card__num">05</div>
+          <h3>Procesos de diagonalización</h3>
+          <p>Similitud y congruencia; LDU, \(LDL^{\top}\) y Cholesky; teorema espectral, inercia, definitud, Jordan, SVD y pseudoinversa.</p>
+          <div class="theme-card__foot">
+            <div class="theme-card__bar"><i data-theme-progress="tema-5"></i></div>
+            <span class="meta" data-theme-progress-label="tema-5">0 / 21</span>
+          </div>
+        </a>
+        <a class="theme-card theme-card--night reveal" href="planificacion.html">
+          <div class="theme-card__num">→</div>
+          <h3>Planificación del curso</h3>
+          <p>Calendario real del cuatrimestre, fórmula de calificación, PEC de diciembre, práctica de enero y método de estudio semanal.</p>
+          <div class="theme-card__foot">
+            <span class="meta">Octubre 2026 → Enero 2027</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ EXÁMENES ============ -->
+    <section class="section section--night" id="examenes">
+      <div class="wrap">
+        <p class="kicker reveal">Autoevaluación</p>
+        <h2 class="reveal" style="color:var(--cream);max-width:22ch">Exámenes de grado, cada dos temas</h2>
+        <p class="prose reveal" style="margin-bottom:2.25rem">
+          Misma mecánica que los ejercicios: respuesta escrita, corrección al instante
+          y solución detallada al terminar. Con temporizador de 120 minutos y nota sobre 10.
+        </p>
+        <div class="theme-grid">
+          <a class="theme-card theme-card--night reveal" href="examenes/examen-1.html">
+            <div class="theme-card__num">I</div>
+            <h3>Examen 1 · Temas I–II</h3>
+            <p>Escalares, tensores, matrices y vectores. 12 preguntas tipo examen.</p>
+            <div class="theme-card__foot"><span class="meta">120 minutos sugeridos</span></div>
+          </a>
+          <a class="theme-card theme-card--night reveal" href="examenes/examen-2.html">
+            <div class="theme-card__num">II</div>
+            <h3>Examen 2 · Temas III–IV</h3>
+            <p>Aplicaciones lineales, determinantes, autovalores, Gauss, PLU/QR y mínimos cuadrados.</p>
+            <div class="theme-card__foot"><span class="meta">120 minutos sugeridos</span></div>
+          </a>
+          <a class="theme-card theme-card--night reveal" href="examenes/examen-3.html">
+            <div class="theme-card__num">III</div>
+            <h3>Examen 3 · Tema V + global</h3>
+            <p>Diagonalización, Cholesky, Jordan, SVD y preguntas de repaso de todo el curso.</p>
+            <div class="theme-card__foot"><span class="meta">120 minutos sugeridos</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MÉTODO ============ -->
+    <section class="wrap section" id="metodo">
+      <p class="kicker reveal">Método</p>
+      <h2 class="reveal">Cómo estudiar con este archivo</h2>
+      <div class="two-col" style="margin-top:1.75rem">
+        <div class="plaque reveal">
+          <span class="plaque__label">01 · Lee y reproduce</span>
+          <p>Lee la teoría del tema y repite a mano los ejemplos. No sigas hasta poder
+          explicar cada hipótesis de los resultados.</p>
+        </div>
+        <div class="plaque reveal">
+          <span class="plaque__label">02 · Practica sin mirar</span>
+          <p>Resuelve los ejercicios de nivel normal y medio sin abrir la solución.
+          Marca los que te cuesten: son tu lista de repaso.</p>
+        </div>
+        <div class="plaque reveal">
+          <span class="plaque__label">03 · Repasa con fichas</span>
+          <p>Usa el resumen y el mapa mental del tema para repasar en sesiones cortas
+          (el material del curso pide 6–8 horas semanales).</p>
+        </div>
+        <div class="plaque reveal">
+          <span class="plaque__label">04 · Ensaya el examen</span>
+          <p>Cada dos temas, haz el examen completo con temporizador. Después, revisa
+          cada error y repite ese ejercicio en otra sesión.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div>
+        <h4>Archivo</h4>
+        <ul>
+          <li><a href="index.html">Índice del curso</a></li>
+          <li><a href="planificacion.html">Planificación y evaluación</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Temas</h4>
+        <ul>
+          <li><a href="temas/tema-1.html">I · Escalares</a></li>
+          <li><a href="temas/tema-2.html">II · Tensores y matrices</a></li>
+          <li><a href="temas/tema-3.html">III · Aplicaciones lineales</a></li>
+          <li><a href="temas/tema-4.html">IV · Triangulación</a></li>
+          <li><a href="temas/tema-5.html">V · Diagonalización</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Evaluación</h4>
+        <ul>
+          <li><a href="examenes/examen-1.html">Examen 1 · I–II</a></li>
+          <li><a href="examenes/examen-2.html">Examen 2 · III–IV</a></li>
+          <li><a href="examenes/examen-3.html">Examen 3 · V + global</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fuentes</h4>
+        <ul>
+          <li>J. Perán Mazón, <em>Fundamentos algebraicos para la IA</em>, UNED, oct. 2026</li>
+          <li>Álgebra para Ingenieros (2.ª ed.)</li>
+          <li>Calendario y calificaciones oficiales del aula virtual</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer__colophon">
+      <span>Material de estudio personal · uso no comercial</span>
+      <span>Cada resultado verificado con SymPy</span>
+    </div>
+  </footer>
+
+  <script defer src="assets/vendor/katex/katex.min.js"></script>
+  <script defer src="assets/vendor/katex/auto-render.min.js"></script>
+  <script defer src="assets/js/grader.js"></script>
+  <script defer src="assets/data/tema-1.js"></script>
+  <script defer src="assets/data/tema-2.js"></script>
+  <script defer src="assets/data/tema-3.js"></script>
+  <script defer src="assets/data/tema-4.js"></script>
+  <script defer src="assets/data/tema-5.js"></script>
+  <!-- Los exámenes se cargan también aquí para que el recuento de ejercicios
+       del curso (data-count="curso") incluya sus 36 preguntas. -->
+  <script defer src="assets/data/examen-1.js"></script>
+  <script defer src="assets/data/examen-2.js"></script>
+  <script defer src="assets/data/examen-3.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</body>
+</html>

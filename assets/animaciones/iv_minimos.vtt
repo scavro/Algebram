@@ -1,0 +1,10 @@
+WEBVTT
+
+00:00.000 --> 00:04.000
+Mínimos cuadrados: la recta minimiza la suma de errores al cuadrado.
+
+00:04.000 --> 00:09.000
+Se ajusta la recta a los datos observados.
+
+00:09.000 --> 00:13.300
+Los residuos son las distancias verticales de cada punto a la recta.

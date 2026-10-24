@@ -1,0 +1,15 @@
+--- alias sen/tg (afirmación del equipo: CORREGIDO) ---
+[OK ] A1 sen(x) vs sin(x): grader=ACEPTA (debía aceptar)
+[OK ] A2 tg(x) vs tan(x): grader=ACEPTA (debía aceptar)
+[OK ] A3 sen(0.5) vs sin(0.5): grader=ACEPTA (debía aceptar)
+[OK ] A4 tg(pi/4) vs 1: grader=ACEPTA (debía aceptar)
+[OK ] A5 sen(pi/6) vs 1/2: grader=ACEPTA (debía aceptar)
+[OK ] A6 arcsen? sin(x) control: grader=ACEPTA (debía aceptar)
+--- funciones sin paréntesis (parte NO afirmada de N5) ---
+[FALLO] B1 'sen x' vs sin(x): grader=RECHAZA (debía aceptar)
+[FALLO] B2 'senx' vs sin(x): grader=RECHAZA (debía aceptar)
+[FALLO] B3 'sinx' vs sin(x): grader=RECHAZA (debía aceptar)
+[FALLO] B4 'sin x' vs sin(x): grader=RECHAZA (debía aceptar)
+[FALLO] B5 'cosx' vs cos(x): grader=RECHAZA (debía aceptar)
+
+Resumen N5: 5 desajustes frente al criterio matemático

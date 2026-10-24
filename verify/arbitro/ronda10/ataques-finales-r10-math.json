@@ -1,0 +1,581 @@
+{
+ "N": 200,
+ "casos": {
+  "K1 'log(-4*x)' vs 'log(4*x)+i*pi' — FALSA (depende de arg x)": {
+   "grupo": "G1_RAMA",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 13
+  },
+  "K2 'log(-4*x)' vs 'log(4*x)-i*pi' — FALSA": {
+   "grupo": "G1_RAMA",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 7
+  },
+  "K3 'log(-2*x)' vs 'log(2)+log(x)+i*pi' — FALSA": {
+   "grupo": "G1_RAMA",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 8
+  },
+  "K4 'log(2i*x)' vs 'log(2)+log(x)+i*pi/2' — FALSA (c complejo)": {
+   "grupo": "G1_RAMA",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 14
+  },
+  "K5 'log(-x)' vs 'log(x)+i*pi' — FALSA": {
+   "grupo": "G1_RAMA",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 6
+  },
+  "K6 'log(-4*x)' vs 'log(4*x)' — FALSA (cambio de signo)": {
+   "grupo": "G1_RAMA",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 5
+  },
+  "K7 'sqrt(-4*x)' vs '2*sqrt(x)' — FALSA (rama)": {
+   "grupo": "G1_RAMA",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 7
+  },
+  "K8 'sqrt(-4*x)' vs '2*i*sqrt(x)' — FALSA (signo ±i según arg)": {
+   "grupo": "G1_RAMA",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 8
+  },
+  "K9 'sqrt(-9*x)' vs '3*sqrt(x)' — FALSA": {
+   "grupo": "G1_RAMA",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 6
+  },
+  "K10 'log(-4*x)' vs 'log(4)+log(x)' — FALSA": {
+   "grupo": "G1_RAMA",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 6
+  },
+  "K11 'sqrt(-4*x)' vs '2*sqrt(-x)' — VERDADERA (−4x = 4(−x), 4>0)": {
+   "grupo": "G1_RAMA",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 9
+  },
+  "K12 'sqrt(-9*x)' vs '3*sqrt(-x)' — VERDADERA": {
+   "grupo": "G1_RAMA",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 8
+  },
+  "K13 'log(2*x)+log(3)' vs 'log(6*x)' — VERDADERA (6>0)": {
+   "grupo": "G1_RAMA",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 8
+  },
+  "K14 'log(2*(3*x))' vs 'log(6*x)' — VERDADERA (compuesta anidada)": {
+   "grupo": "G1_RAMA",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 8
+  },
+  "K15 'log(4*x)/2' vs 'log(2*sqrt(x))' — VERDADERA": {
+   "grupo": "G1_RAMA",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 10
+  },
+  "K16 'log(4*x)' vs 'log(4)+log(x)' — control (c>0, regla reclamada)": {
+   "grupo": "G1_RAMA",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 6
+  },
+  "W1 '(x^2)^3' vs 'x^6' — VERDADERA (enteros)": {
+   "grupo": "G2_POW",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 4
+  },
+  "W2 '(x^3)^2' vs 'x^6' — VERDADERA (enteros)": {
+   "grupo": "G2_POW",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 3
+  },
+  "W3 '(x^2)^(1/2)' vs 'x' — FALSA (rama)": {
+   "grupo": "G2_POW",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 6
+  },
+  "W4 '(x^4)^(1/2)' vs 'x^2' — FALSA (rama: x=i → 1 vs −1)": {
+   "grupo": "G2_POW",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 10
+  },
+  "W5 '(x^2)^(1/3)' vs 'x^(2/3)' — FALSA (rama)": {
+   "grupo": "G2_POW",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 16
+  },
+  "W6 '(x^(1/2))^4' vs 'x^2' — VERDADERA (|a|≤1, b entero)": {
+   "grupo": "G2_POW",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 6
+  },
+  "W7 '(x^(1/3))^3' vs 'x' — VERDADERA": {
+   "grupo": "G2_POW",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 4
+  },
+  "W8 '(x^(2/3))^(3/2)' vs 'x' — VERDADERA (b no entero; sin wrap de arg)": {
+   "grupo": "G2_POW",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 5
+  },
+  "W9 'x^4096' vs 'x^4095*x' — VERDADERA (borde k=4096)": {
+   "grupo": "G2_POW",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 3
+  },
+  "W10 'x^(-4096)' vs '1/x^4096' — VERDADERA (borde)": {
+   "grupo": "G2_POW",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 7
+  },
+  "W11 'x^(-4096)' vs 'x^(-4095)' — FALSA (borde, anti-grind)": {
+   "grupo": "G2_POW",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 36
+  },
+  "W12 'x^4096' vs 'x^4095' — FALSA (borde)": {
+   "grupo": "G2_POW",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 37
+  },
+  "W13 '5+x^(-4096)' vs '5' — FALSA (borde, anti-grind N16r)": {
+   "grupo": "G2_POW",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 13
+  },
+  "W14 'x^(-4097)' vs 'x^(-4096)' — FALSA (fuera de rango, anti-grind)": {
+   "grupo": "G2_POW",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 11
+  },
+  "W15 '5+x^(-4097)' vs '5' — FALSA (fuera de rango)": {
+   "grupo": "G2_POW",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 3
+  },
+  "W16 'x^4097' vs 'x^4098' — FALSA (fuera de rango)": {
+   "grupo": "G2_POW",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 3
+  },
+  "W17 'x^4097' vs 'x^4096*x' — VERDADERA (fuera de rango)": {
+   "grupo": "G2_POW",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 2
+  },
+  "W18 'x^(-4097)' vs '1/x^4097' — VERDADERA (fuera de rango)": {
+   "grupo": "G2_POW",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 3
+  },
+  "U1 'tan(x)*cos(x)' vs 'sin(x)' — VERDADERA (meromorfa)": {
+   "grupo": "G3_TAN",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 4
+  },
+  "U2 'sin(x)/cos(x)' vs 'tan(x)+2*pi*i' — FALSA": {
+   "grupo": "G3_TAN",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 7
+  },
+  "U3 'sin(x)/cos(y)' vs 'tan(x)' — FALSA": {
+   "grupo": "G3_TAN",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 3
+  },
+  "U4 'tan(x)' vs 'sin(x)*cos(x)' — FALSA": {
+   "grupo": "G3_TAN",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 4
+  },
+  "U5 'tan(pi/4)' vs 1 — VERDADERA (constante)": {
+   "grupo": "G3_TAN",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 3
+  },
+  "U6 '5+tan(x)-sin(x)/cos(x)' vs 5 — VERDADERA (tan≡sin/cos)": {
+   "grupo": "G3_TAN",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 7
+  },
+  "U7 '5+tan(x)-sin(x)/cos(x)' vs 6 — FALSA": {
+   "grupo": "G3_TAN",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 6
+  },
+  "U8 'tan(x)+tan(-x)' vs 0 — VERDADERA (tan impar)": {
+   "grupo": "G3_TAN",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 4
+  },
+  "U9 '5+tan(x)-tan(x)' vs 5 — VERDADERA": {
+   "grupo": "G3_TAN",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 5
+  },
+  "C1 're(x)+i*im(x)' vs 'x' — VERDADERA (z=Re z + i Im z)": {
+   "grupo": "G4_CX",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 8
+  },
+  "C2 'conj(re(x))' vs 're(x)' — VERDADERA (Re z ∈ R)": {
+   "grupo": "G4_CX",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 6
+  },
+  "C3 'abs(x)^2' vs 're(x)^2+im(x)^2' — VERDADERA": {
+   "grupo": "G4_CX",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 14
+  },
+  "C4 're(x*y)' vs 're(x)*re(y)-im(x)*im(y)' — VERDADERA": {
+   "grupo": "G4_CX",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 16
+  },
+  "C5 'conj(x*y)' vs 'conj(x)*conj(y)' — control (HIST-V3)": {
+   "grupo": "G4_CX",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 5
+  },
+  "C6 'abs(x+y)' vs 'abs(x)+abs(y)' — FALSA (desigualdad triangular)": {
+   "grupo": "G4_CX",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 3
+  },
+  "C7 'im(x*y)' vs 're(x)*im(y)+im(x)*re(y)' — VERDADERA": {
+   "grupo": "G4_CX",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 18
+  },
+  "C8 'conj(x)^2' vs 'conj(x^2)' — VERDADERA (residual T9 del corpus)": {
+   "grupo": "G4_CX",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 5
+  },
+  "M1 suma 3999 monomios vs reordenada — VERDADERA": {
+   "grupo": "G5_DOS",
+   "acepta": 50,
+   "n": 50,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 461
+  },
+  "M2 suma 4001 monomios vs reordenada — VERDADERA": {
+   "grupo": "G5_DOS",
+   "acepta": 50,
+   "n": 50,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 438
+  },
+  "M3 '(a+b+c+d+e)^15' vs '^14*(a+b+c+d+e)' — VERDADERA (3876 monomios ≤4000)": {
+   "grupo": "G5_DOS",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 6
+  },
+  "M4 '(a+b+c+d+e)^16' vs '^15*(a+b+c+d+e)' — VERDADERA (4845 monomios >4000)": {
+   "grupo": "G5_DOS",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 4
+  },
+  "M5 '(a+b+c+d+e)^16' vs '^15*(a+b+c+d+e)+1' — FALSA": {
+   "grupo": "G5_DOS",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 9
+  },
+  "M6 '(a+b+c+d+e)^4096' vs '^4095*(a+b+c+d+e)' — DoS VERDADERA": {
+   "grupo": "G5_DOS",
+   "acepta": 50,
+   "n": 50,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 0
+  },
+  "M7 '(a+b+c+d+e)^4096' vs '^4096+1' — DoS FALSA": {
+   "grupo": "G5_DOS",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 3
+  },
+  "M8 '(a+b+c+d+e)^4096' vs 0 — DoS FALSA": {
+   "grupo": "G5_DOS",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 10
+  },
+  "M9 '(a+b+c+d+e)^4096' idénticas — fast-path": {
+   "grupo": "G5_DOS",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 0
+  },
+  "M10 '((x+y+z)^64+x)^64' vs '^63*((x+y+z)^64+x)' — DoS anidada VERDADERA": {
+   "grupo": "G5_DOS",
+   "acepta": 50,
+   "n": 50,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 1
+  },
+  "M11 '(a+b+c+d+e)^15' vs '^15+1' — FALSA (ventana relativa)": {
+   "grupo": "G5_DOS",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 87577
+  },
+  "M12 '(a+b+c+d+e)^16' vs '^16+1000' — FALSA (ventana relativa)": {
+   "grupo": "G5_DOS",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 4
+  },
+  "M13 'x^100' vs 'x^100+1' — control FALSA (vía estructural, seguro)": {
+   "grupo": "G5_DOS",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false,
+   "ms": 4
+  }
+ }
+}

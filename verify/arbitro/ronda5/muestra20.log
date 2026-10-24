@@ -1,0 +1,46 @@
+[OK ] T1-N2 78 = 2220_3
+[OK ] T1-M2 |z| = 2
+[OK ] T1-M2 arg(z) = 5π/6
+[OK ] T1-M5 √((-i)²) = i = -z (contrasejemplo a √(z²)=z)
+[OK ] T1-M5 caracterización √(z²) (5000 puntos aleatorios)
+[OK ] T1-E1 1011.101_2 = 93/8
+[OK ] T2-N4 ‖u‖ = 7
+[OK ] T2-N4 d(u,v) = 3√2
+[OK ] T2-E2 proy_V(w) = (1,0,1)
+[OK ] T2-E2 perp = (1,1,-1)
+[OK ] T3-N1 det = 10
+[OK ] T3-N3 det(AB) = -6
+[OK ] T3-N3 det(A⁻¹) = -1/2
+[OK ] T4-N3 x = 4-s-t
+[OK ] T4-M2 Q
+[OK ] T4-M2 R
+[OK ] T4-M2 QR = A
+[OK ] T4-E2 rng(A) = 1
+[OK ] T4-E2 rng([[A,b]]) = 2
+[OK ] T5-E3 A† = [[3/10,-1/10],[1/10,3/10]]
+[OK ] T5-E3 A† = A^T(AA^T)^-1 (variante corregida)
+[OK ] T5-E3 Penrose 1: AA†A=A
+[OK ] T5-E3 Penrose 2: A†AA†=A†
+[OK ] T5-E3 Penrose 3: (AA†)^*=AA†
+[OK ] T5-E3 Penrose 4: (A†A)^*=A†A
+[OK ] T5-E3 (AA^T)^-1 A ≠ A† (falsedad R1 C3 cerrada)
+[OK ] T5-M1 λ = {3,4} con λ1<λ2
+[OK ] T5-M1 P (1ª componente 1)
+[OK ] T5-M1 D
+[OK ] T5-M1 PDP^-1 = A
+[OK ] T5-N5 A† = diag(1/2,1/4)
+[OK ] T5-E4 autovalores {3,1,-3}
+[OK ] T5-E4 pos = 2
+[OK ] T5-E4 neg = 1
+[OK ] X1-1 101 = 1211_4
+[OK ] X1-7 (3+4i)/(2-i) = 2/5+11/5 i
+[OK ] X2-12 Q
+[OK ] X2-12 R
+[OK ] X3-10 det(A²) = 256
+[OK ] X3-10 tr(A⁻¹) = 1/4
+[OK ] X3-12 A† = [[1/10,1/5],[1/10,1/5]]
+[OK ] X3-12 x = A†b = (6/5,6/5)
+[OK ] X3-12 Penrose 1: AA†A=A
+[OK ] X3-12 ecuaciones normales A*A x = A*b
+
+MUESTRA R5: 44 OK, 0 FALLOS 

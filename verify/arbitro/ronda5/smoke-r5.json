@@ -1,0 +1,249 @@
+{
+ "index.html": {
+  "errs": [],
+  "drills": 0,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 10,
+  "nav": true,
+  "navLabel": null,
+  "navLinks": 4,
+  "progressBars": 5,
+  "progressLabels": [
+   {
+    "theme": "tema-1",
+    "text": "0 / 15 · 0%"
+   },
+   {
+    "theme": "tema-2",
+    "text": "0 / 15 · 0%"
+   },
+   {
+    "theme": "tema-3",
+    "text": "0 / 15 · 0%"
+   },
+   {
+    "theme": "tema-4",
+    "text": "0 / 15 · 0%"
+   },
+   {
+    "theme": "tema-5",
+    "text": "0 / 15 · 0%"
+   }
+  ],
+  "readingBar": true,
+  "timer": null,
+  "videos": [],
+  "mediaError": 0
+ },
+ "planificacion.html": {
+  "errs": [],
+  "drills": 0,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 12,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": null,
+  "videos": [],
+  "mediaError": 0
+ },
+ "temas/tema-1.html": {
+  "errs": [],
+  "drills": 15,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 779,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": null,
+  "videos": [],
+  "mediaError": 0
+ },
+ "temas/tema-2.html": {
+  "errs": [
+   "error: track:ii_transformacion.vtt",
+   "error: track:ii_gram_schmidt.vtt"
+  ],
+  "drills": 15,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 702,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": null,
+  "videos": [
+   {
+    "src": "ii_transformacion.mp4",
+    "tracks": [
+     {
+      "kind": "captions",
+      "src": "../assets/animaciones/ii_transformacion.vtt"
+     }
+    ]
+   },
+   {
+    "src": "ii_gram_schmidt.mp4",
+    "tracks": [
+     {
+      "kind": "captions",
+      "src": "../assets/animaciones/ii_gram_schmidt.vtt"
+     }
+    ]
+   }
+  ],
+  "mediaError": 0
+ },
+ "temas/tema-3.html": {
+  "errs": [],
+  "drills": 15,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 818,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": null,
+  "videos": [],
+  "mediaError": 0
+ },
+ "temas/tema-4.html": {
+  "errs": [
+   "error: track:iv_gauss.vtt",
+   "error: track:iv_minimos.vtt"
+  ],
+  "drills": 15,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 623,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": null,
+  "videos": [
+   {
+    "src": "iv_gauss.mp4",
+    "tracks": [
+     {
+      "kind": "captions",
+      "src": "../assets/animaciones/iv_gauss.vtt"
+     }
+    ]
+   },
+   {
+    "src": "iv_minimos.mp4",
+    "tracks": [
+     {
+      "kind": "captions",
+      "src": "../assets/animaciones/iv_minimos.vtt"
+     }
+    ]
+   }
+  ],
+  "mediaError": 0
+ },
+ "temas/tema-5.html": {
+  "errs": [
+   "error: track:v_espectral.vtt",
+   "error: track:v_svd.vtt"
+  ],
+  "drills": 15,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 768,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": null,
+  "videos": [
+   {
+    "src": "v_espectral.mp4",
+    "tracks": [
+     {
+      "kind": "captions",
+      "src": "../assets/animaciones/v_espectral.vtt"
+     }
+    ]
+   },
+   {
+    "src": "v_svd.mp4",
+    "tracks": [
+     {
+      "kind": "captions",
+      "src": "../assets/animaciones/v_svd.vtt"
+     }
+    ]
+   }
+  ],
+  "mediaError": 0
+ },
+ "examenes/examen-1.html": {
+  "errs": [],
+  "drills": 12,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 152,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": "01:59:57",
+  "videos": [],
+  "mediaError": 0
+ },
+ "examenes/examen-2.html": {
+  "errs": [],
+  "drills": 12,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 239,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": "01:59:57",
+  "videos": [],
+  "mediaError": 0
+ },
+ "examenes/examen-3.html": {
+  "errs": [],
+  "drills": 12,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 252,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": "01:59:58",
+  "videos": [],
+  "mediaError": 0
+ }
+}

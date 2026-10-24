@@ -1,0 +1,10 @@
+WEBVTT
+
+00:00.000 --> 00:04.000
+Teorema espectral: las direcciones propias solo se escalan.
+
+00:04.000 --> 00:08.500
+v1 y v2 son direcciones propias; u no lo es.
+
+00:08.500 --> 00:11.200
+Bajo la transformación, v1 y v2 conservan su dirección.

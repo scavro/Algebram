@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planificación y evaluación · Fundamentos Algebraicos para la IA</title>
+  <meta name="description" content="Calendario del cuatrimestre, fórmula de calificación, PEC, práctica y método de estudio semanal." />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/fonts.css" />
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+</head>
+<body data-page="planificacion">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="progress-bar" aria-hidden="true"><div class="progress-bar__fill"></div></div>
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="wrap nav__inner">
+      <a class="nav__brand" href="index.html"><span class="nav__brand-mark">Archivo</span><span>Álgebra · IA</span></a>
+      <button class="nav__toggle" aria-expanded="false" aria-label="Abrir menú">Menú</button>
+      <ul class="nav__links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="temas/tema-1.html">Temas</a></li>
+        <li><a href="examenes/examen-1.html">Exámenes</a></li>
+        <li><a href="planificacion.html">Planificación</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <header class="theme-head">
+    <div class="theme-head__bg" aria-hidden="true"></div>
+    <div class="theme-head__ghost ghost-num" aria-hidden="true">📅</div>
+    <div class="theme-head__inner">
+      <p class="kicker">Curso 2026–2027 · Cuatrimestre de otoño</p>
+      <h1>Planificación y evaluación</h1>
+      <div class="theme-head__row">
+        <span class="chip chip--gold">Octubre 2026 → Enero 2027</span>
+        <span class="chip">6–8 h semanales</span>
+        <span class="chip">PEC · Práctica · Examen</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrap toc" aria-label="Sumario">
+    <a href="#calendario"><span class="meta">Fechas</span><strong>Calendario</strong></a>
+    <a href="#evaluacion"><span class="meta">Notas</span><strong>Evaluación</strong></a>
+    <a href="#semana"><span class="meta">Método</span><strong>Semana tipo</strong></a>
+    <a href="#plan"><span class="meta">Programa</span><strong>Plan semanal</strong></a>
+    <a href="#consejos"><span class="meta">Guía</span><strong>Consejos</strong></a>
+  </nav>
+
+  <main id="contenido">
+
+    <section class="wrap section theory-section" id="calendario">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 1</div>
+        <div>
+          <h2>Calendario del cuatrimestre</h2>
+          <p>Fechas tomadas del calendario oficial del aula virtual. Confirma siempre las horas de entrega allí.</p>
+        </div>
+      </div>
+      <div class="table-wrap reveal">
+        <table>
+          <thead>
+            <tr><th>Bloque</th><th>Fechas</th><th>Contenido</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Arranque</td><td>1–4 octubre</td><td>Organización, material y repaso previo</td></tr>
+            <tr><td>Tema I</td><td>5–11 octubre</td><td>Escalares</td></tr>
+            <tr><td>Tema II</td><td>12 octubre – 1 noviembre</td><td>Tensores, matrices y vectores</td></tr>
+            <tr><td>Tema III</td><td>2–22 noviembre</td><td>Aplicaciones lineales y multilineales</td></tr>
+            <tr><td>Tema IV</td><td>23 noviembre – 6 diciembre</td><td>Procesos de triangulación</td></tr>
+            <tr><td>PEC</td><td>11–14 diciembre</td><td>Prueba de evaluación continua (días señalados)</td></tr>
+            <tr><td>Tema V</td><td>7–20 diciembre · 11–17 enero</td><td>Procesos de diagonalización</td></tr>
+            <tr><td>Práctica</td><td>12 enero</td><td>Entrega de la práctica (ordinaria)</td></tr>
+            <tr><td>Repaso</td><td>18–24 enero</td><td>Repaso global y preparación del examen</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="plaque plaque--warn reveal">
+        <span class="plaque__label">Advertencia</span>
+        <p>
+          Las marcas del calendario no incluyen horas de apertura ni formato de entrega.
+          Confirma el enunciado de la práctica y el alcance de la PEC en el aula virtual:
+          este curso es material de estudio propio, no una comunicación oficial.
+        </p>
+      </div>
+    </section>
+
+    <section class="wrap section section--tint" id="evaluacion">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 2</div>
+        <div>
+          <h2>Cómo se calcula la nota final</h2>
+          <p>Fórmula del archivo de calificaciones entregado a los alumnos.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Se definen:</p>
+        <ul>
+          <li>\(N_p\): nota de la prueba presencial (examen).</li>
+          <li>\(N_{pec}\): nota de la PEC (diciembre).</li>
+          <li>\(N_{pra}\): nota de la práctica (enero en la ordinaria; septiembre en la extraordinaria).</li>
+          <li>\(N_f\): nota final.</li>
+        </ul>
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Regla de calificación</span>
+          <p>Las pruebas no realizadas se califican con <strong>cero</strong> puntos. Después:</p>
+          <p>\[ \text{Si } N_{pra} &lt; 2{,}5 \;\Rightarrow\; \text{suspenso}. \]</p>
+          <p>\[ \text{Si } N_{pra} \ge 2{,}5 \text{ y } N_p &lt; 4 \;\Rightarrow\; N_f = N_p. \]</p>
+          <p>\[ \text{Si } N_{pra} \ge 2{,}5 \text{ y } N_p \ge 4 \;\Rightarrow\; N_f = \min\{\, N_p + 0{,}1\,N_{pec} + 0{,}1\,N_{pra},\; 10 \,\}. \]</p>
+        </div>
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">Lectura práctica</span>
+          <p>
+            La práctica es condición necesaria: sin un \(2{,}5\) no hay aprobado.
+            La PEC y la práctica solo <em>bonifican</em> cuando el examen llega a \(4\),
+            y el tope de la bonificación es pequeño: con \(N_p = 5\) y \(N_{pec}=N_{pra}=8\)
+            se obtiene \(N_f = 5 + 0{,}8 + 0{,}8 = 6{,}6\). Prepara el examen para
+            aprobar con margen, no para vivir de la bonificación.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" id="semana">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 3</div>
+        <div>
+          <h2>La semana tipo (6–8 horas)</h2>
+          <p>Reparto propuesto para compaginar el curso con el resto de asignaturas.</p>
+        </div>
+      </div>
+      <div class="table-wrap reveal">
+        <table>
+          <thead>
+            <tr><th>Sesión</th><th>Tiempo</th><th>Trabajo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>90 min</td><td>Leer la teoría nueva del tema y reproducir un ejemplo</td></tr>
+            <tr><td>2</td><td>90 min</td><td>Terminar teoría; explicar en voz alta cada resultado y sus hipótesis</td></tr>
+            <tr><td>3</td><td>90 min</td><td>Ejercicios de nivel normal y medio <em>sin</em> mirar la solución</td></tr>
+            <tr><td>4</td><td>90 min</td><td>60 min de ejercicios y corrección + 30 min de repaso de errores</td></tr>
+            <tr><td>5</td><td>60 min</td><td>Ejercicios de nivel examen y mapa mental / resumen</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="prose reveal">
+        <p>
+          Con <strong>6 horas</strong>, recorta lectura repetida y ejercicios adicionales; conserva
+          siempre la corrección. Con <strong>8 horas</strong>, añade una hora al punto que peor lleves.
+          En semanas de PEC o entrega, esas actividades mandan.
+        </p>
+      </div>
+    </section>
+
+    <!-- PLAN:BEGIN (generado por scripts/build_planificacion.py — no editar a mano) -->
+    <section class="wrap section" id="plan">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 4</div>
+        <div>
+          <h2>Plan de trabajo, semana a semana</h2>
+          <p>Los 122 ejercicios del archivo repartidos en las 16 semanas del cuatrimestre. Cada identificador enlaza a su ficha.</p>
+        </div>
+      </div>
+      <div class="plaque plaque--ia reveal">
+        <span class="plaque__label">Cómo se lee</span>
+        <p>El identificador <strong>T5-N4</strong> significa Tema 5, nivel normal; <strong>X2-7</strong> es la pregunta 7 del examen 2. El color del identificador indica el nivel: verde <em>normal</em>, ámbar <em>medio</em>, rojo <em>examen</em>. Los apartados «repaso en frío» repiten ejercicios ya resueltos: sirven para rehacerlos sin mirar la solución, y son opcionales si vas con retraso.</p>
+      </div>
+      <div class="weeks">
+    <article class="week reveal" id="semana-1">
+      <header class="week__head">
+        <span class="week__num">Semana 01</span>
+        <h3 class="week__title">Escalares</h3>
+        <span class="week__meta">5–11 de octubre · Tema I</span>
+        <span class="week__count chip chip--ink">8 ejercicios nuevos</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">Semana de arranque y la más comprimida del calendario. Prioriza los seis ejercicios de nivel normal; si el tiempo aprieta, deja T1-M1 y T1-M2 para el repaso de las semanas 2 y 3. La base numérica y el redondeo se asientan aquí o no se sostienen después.</p>
+        <ul class="exlist">
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-1.html#T1-N1">T1-N1</a>
+          <span class="exlist__text">Binario a decimal</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-1.html#T1-N2">T1-N2</a>
+          <span class="exlist__text">El número 78 en base 3</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-1.html#T1-N3">T1-N3</a>
+          <span class="exlist__text">Función entre conjuntos: inyectiva, sobreyectiva, biyectiva</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-1.html#T1-N4">T1-N4</a>
+          <span class="exlist__text">Fracción irreducible de una fracción decimal periódica</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-1.html#T1-N5">T1-N5</a>
+          <span class="exlist__text">Redondeo a 3 cifras significativas</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-1.html#T1-N6">T1-N6</a>
+          <span class="exlist__text">Producto de números complejos</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-1.html#T1-M1">T1-M1</a>
+          <span class="exlist__text">Cociente de números complejos</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-1.html#T1-M2">T1-M2</a>
+          <span class="exlist__text">Módulo y argumento principal de un complejo</span>
+        </li>
+        </ul>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Al terminar: convertir una representación a decimal, redondear a cifras significativas y operar con un complejo. Debes entender qué son el módulo y el argumento.</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-2">
+      <header class="week__head">
+        <span class="week__num">Semana 02</span>
+        <h3 class="week__title">Espacios vectoriales y tensores</h3>
+        <span class="week__meta">12–18 de octubre · Tema II</span>
+        <span class="week__count chip chip--ink">7 ejercicios nuevos</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">Arranca el Tema II y recoge el resto de escalares. El bloque de tensores del texto de IA no lo sustituyen los ejercicios de ingeniería: reconstruye además un ejemplo de tensor e identifica sus ejes y sus entradas.</p>
+        <ul class="exlist">
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-1.html#T1-M3">T1-M3</a>
+          <span class="exlist__text">Potencia de un número complejo</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-1.html#T1-M4">T1-M4</a>
+          <span class="exlist__text">Raíces cúbicas de 8</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-1.html#T1-M5">T1-M5</a>
+          <span class="exlist__text">La rama principal: \(\sqrt{z^{2}} \neq z\) en general</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-1.html#T1-E1">T1-E1</a>
+          <span class="exlist__text">Número binario con parte decimal</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-2.html#T2-N1">T2-N1</a>
+          <span class="exlist__text">Combinación lineal de vectores</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-2.html#T2-M1">T2-M1</a>
+          <span class="exlist__text">Producto de matrices por bloques</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-2.html#T2-M5">T2-M5</a>
+          <span class="exlist__text">Coordenadas de un vector en una base ordenada</span>
+        </li>
+        </ul>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Al terminar: explicar la diferencia entre base y dimensión, e identificar el formato de un tensor.</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-3">
+      <header class="week__head">
+        <span class="week__num">Semana 03</span>
+        <h3 class="week__title">Operaciones matriciales e inversa</h3>
+        <span class="week__meta">19–25 de octubre · Tema II</span>
+        <span class="week__count chip chip--ink">8 ejercicios nuevos</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">Producto matricial y por bloques, contracción de índices, matriz inversa y cambio de base. El producto por bloques (T2-M1) reaparece en el examen 1 (X1-4): hazlo entonces con la notación de bloques delante.</p>
+        <ul class="exlist">
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-1.html#T1-E2">T1-E2</a>
+          <span class="exlist__text">Módulo, argumento y cubo de un complejo</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-1.html#T1-E3">T1-E3</a>
+          <span class="exlist__text">Raíces cuartas de 16</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-1.html#T1-E4">T1-E4</a>
+          <span class="exlist__text">Fórmula de Euler: simplificación de una expresión</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-2.html#T2-N2">T2-N2</a>
+          <span class="exlist__text">Producto de matrices</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-2.html#T2-N3">T2-N3</a>
+          <span class="exlist__text">Producto \(A^{\top}B\) y su traza</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-2.html#T2-N6">T2-N6</a>
+          <span class="exlist__text">Inversa de una matriz de 2×2</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-2.html#T2-M2">T2-M2</a>
+          <span class="exlist__text">Inversa de una matriz de 3×3</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-2.html#T2-E1">T2-E1</a>
+          <span class="exlist__text">Inversa de una matriz de 3×3</span>
+        </li>
+        </ul>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Al terminar: decidir si dos matrices pueden multiplicarse, verificar una inversa multiplicando y transformar coordenadas entre bases.</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-4">
+      <header class="week__head">
+        <span class="week__num">Semana 04</span>
+        <h3 class="week__title">Geometría y ortogonalidad</h3>
+        <span class="week__meta">26 de octubre – 1 de noviembre · Tema II</span>
+        <span class="week__count chip chip--ink">7 ejercicios nuevos</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">Cierra el Tema II con norma, distancia, ángulo, ortogonalidad, Gram–Schmidt, complemento ortogonal, proyección y matrices ortogonales. Es el bloque más denso del tema: si vas corto de tiempo, deja T2-E3 y T2-E4 para el repaso de la semana 9.</p>
+        <ul class="exlist">
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-2.html#T2-N4">T2-N4</a>
+          <span class="exlist__text">Módulo y distancia euclídea</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-2.html#T2-N5">T2-N5</a>
+          <span class="exlist__text">¿La matriz es ortogonal? (verdadero o falso)</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-2.html#T2-M3">T2-M3</a>
+          <span class="exlist__text">Primer paso del procedimiento de Gram–Schmidt</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-2.html#T2-M4">T2-M4</a>
+          <span class="exlist__text">Proyección ortogonal sobre un subespacio</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-2.html#T2-E2">T2-E2</a>
+          <span class="exlist__text">Proyección ortogonal y componente ortogonal</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-2.html#T2-E3">T2-E3</a>
+          <span class="exlist__text">Identificar la matriz ortogonal</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-2.html#T2-E4">T2-E4</a>
+          <span class="exlist__text">Ortogonalidad de \(Q\) y cálculo de \(Q^{-1}\)</span>
+        </li>
+        </ul>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Al terminar: construir una base ortonormal pequeña y proyectar un vector, explicando la interpretación geométrica.</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-5">
+      <header class="week__head">
+        <span class="week__num">Semana 05</span>
+        <h3 class="week__title">Aplicaciones lineales y determinantes</h3>
+        <span class="week__meta">2–8 de noviembre · Tema III</span>
+        <span class="week__count chip chip--ink">4 ejercicios nuevos</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">Arranca el Tema III: interpretación de matrices y tensores como aplicaciones lineales, y determinantes con su interpretación geométrica. En paralelo, simulacro del examen 1.</p>
+        <ul class="exlist">
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-3.html#T3-N1">T3-N1</a>
+          <span class="exlist__text">Determinante de una matriz de 2×2</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-3.html#T3-N2">T3-N2</a>
+          <span class="exlist__text">Determinante por desarrollo en la primera fila</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-3.html#T3-N3">T3-N3</a>
+          <span class="exlist__text">Determinante de un producto y de una inversa</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-3.html#T3-N4">T3-N4</a>
+          <span class="exlist__text">Rango por determinantes</span>
+        </li>
+        </ul>
+      <div class="simul">
+        <div class="simul__head">
+          <span class="simul__label">Simulacro 1</span>
+          <span class="simul__meta">Temas I–II · 120 min · 12 preguntas</span>
+        </div>
+        <ul class="exlist exlist--compact">
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="examenes/examen-1.html#X1-1">X1-1</a>
+          <span class="exlist__text">Escribir un número en base 4</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="examenes/examen-1.html#X1-2">X1-2</a>
+          <span class="exlist__text">Fracción irreducible de una fracción decimal</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="examenes/examen-1.html#X1-3">X1-3</a>
+          <span class="exlist__text">Cardinalidad de conjuntos finitos (V/F)</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="examenes/examen-1.html#X1-4">X1-4</a>
+          <span class="exlist__text">Producto de matrices por bloques</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="examenes/examen-1.html#X1-5">X1-5</a>
+          <span class="exlist__text">Redondeo a 2 cifras significativas</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="examenes/examen-1.html#X1-6">X1-6</a>
+          <span class="exlist__text">Coseno entre dos vectores de \(\mathbb{R}^{3}\)</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="examenes/examen-1.html#X1-7">X1-7</a>
+          <span class="exlist__text">Cociente de números complejos</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="examenes/examen-1.html#X1-8">X1-8</a>
+          <span class="exlist__text">Procedimiento de Gram–Schmidt</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="examenes/examen-1.html#X1-9">X1-9</a>
+          <span class="exlist__text">Ecuación cuadrática en \(\mathbb{C}\)</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="examenes/examen-1.html#X1-10">X1-10</a>
+          <span class="exlist__text">Proyección de un vector sobre un subespacio</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="examenes/examen-1.html#X1-11">X1-11</a>
+          <span class="exlist__text">Identificar la familia ortogonal</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="examenes/examen-1.html#X1-12">X1-12</a>
+          <span class="exlist__text">Matriz por bloques y su inversa</span>
+        </li>
+        </ul>
+      </div>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Al terminar: comprobar linealidad, calcular un determinante y relacionarlo con la invertibilidad y el cambio de área o volumen.</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-6">
+      <header class="week__head">
+        <span class="week__num">Semana 06</span>
+        <h3 class="week__title">Núcleo, imagen y autovalores</h3>
+        <span class="week__meta">9–15 de noviembre · Tema III</span>
+        <span class="week__count chip chip--ink">4 ejercicios nuevos</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">Subespacios asociados a una matriz, núcleo e imagen, polinomio característico, autovalores y autovectores. Los ejercicios de autovalores adelantan parte del Tema V sin necesidad: no es preciso esperar a enero para entrenarlos.</p>
+        <ul class="exlist">
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-3.html#T3-N5">T3-N5</a>
+          <span class="exlist__text">Autovalores de una matriz triangular</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-3.html#T3-M1">T3-M1</a>
+          <span class="exlist__text">Vector del núcleo con tercera componente normalizada</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-3.html#T3-M2">T3-M2</a>
+          <span class="exlist__text">Dimensiones de los cuatro subespacios fundamentales</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-3.html#T3-M3">T3-M3</a>
+          <span class="exlist__text">Multiplicidad algebraica y geométrica de un autovalor</span>
+        </li>
+        <li class="exlist__sep"><span>Repaso en frío</span></li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-2.html#T2-E1">T2-E1</a>
+          <span class="exlist__text">Inversa de una matriz de 3×3</span>
+        </li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-2.html#T2-E4">T2-E4</a>
+          <span class="exlist__text">Ortogonalidad de \(Q\) y cálculo de \(Q^{-1}\)</span>
+        </li>
+        </ul>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Al terminar: encontrar bases de núcleo e imagen en un ejemplo pequeño y comprobar un autovector mediante la igualdad \(Av = \lambda v\).</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-7">
+      <header class="week__head">
+        <span class="week__num">Semana 07</span>
+        <h3 class="week__title">Formas bilineales y cuadráticas</h3>
+        <span class="week__meta">16–22 de noviembre · Tema III</span>
+        <span class="week__count chip chip--ink">7 ejercicios nuevos</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">Formas bilineales y sesquilineales en el contexto del texto, forma cuadrática, matriz asociada y producto escalar. Cierra el Tema III con el repaso acumulado de los temas I a III. La clasificación detallada de la forma cuadrática se deja para el Tema V.</p>
+        <ul class="exlist">
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-3.html#T3-N6">T3-N6</a>
+          <span class="exlist__text">Evaluar una forma cuadrática en un punto</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-3.html#T3-M4">T3-M4</a>
+          <span class="exlist__text">Autovalores de una matriz simétrica: ¿reales? (V/F)</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-3.html#T3-M5">T3-M5</a>
+          <span class="exlist__text">Matriz simétrica de una forma cuadrática</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-3.html#T3-E1">T3-E1</a>
+          <span class="exlist__text">Determinante de una matriz de 4×4 por bloques</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-3.html#T3-E2">T3-E2</a>
+          <span class="exlist__text">Mayor autovalor y un autovector asociado</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-3.html#T3-E3">T3-E3</a>
+          <span class="exlist__text">Dimensiones de los subespacios fundamentales (4×3)</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-3.html#T3-E4">T3-E4</a>
+          <span class="exlist__text">Afirmación siempre cierta sobre \(A\) y \(B\)</span>
+        </li>
+        <li class="exlist__sep"><span>Repaso en frío</span></li>
+        <li class="exlist__item" data-level="normal" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-3.html#T3-N5">T3-N5</a>
+          <span class="exlist__text">Autovalores de una matriz triangular</span>
+        </li>
+        <li class="exlist__item" data-level="medio" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-3.html#T3-M3">T3-M3</a>
+          <span class="exlist__text">Multiplicidad algebraica y geométrica de un autovalor</span>
+        </li>
+        </ul>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Al terminar: pasar de una expresión a su matriz y distinguir linealidad, bilinealidad y forma cuadrática.</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-8">
+      <header class="week__head">
+        <span class="week__num">Semana 08</span>
+        <h3 class="week__title">Sistemas, Gauss y factorización PLU</h3>
+        <span class="week__meta">23–29 de noviembre · Tema IV</span>
+        <span class="week__count chip chip--ink">7 ejercicios nuevos</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">Matrices triangulares, sistemas en forma matricial y compatibilidad; eliminación de Gauss, pivotes, permutaciones y factorización PLU. Los ejercicios de LU se complementan con un ejemplo PLU de A para practicar las permutaciones.</p>
+        <ul class="exlist">
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-4.html#T4-N1">T4-N1</a>
+          <span class="exlist__text">Sistema por eliminación de Gauss</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-4.html#T4-N2">T4-N2</a>
+          <span class="exlist__text">Clasificar el sistema con Rouché–Frobenius</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-4.html#T4-N3">T4-N3</a>
+          <span class="exlist__text">Sistema compatible indeterminado en parámetros</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-4.html#T4-N4">T4-N4</a>
+          <span class="exlist__text">Proyección ortogonal de un vector sobre otro</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-4.html#T4-N5">T4-N5</a>
+          <span class="exlist__text">¿Sistema compatible? (verdadero o falso)</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-4.html#T4-E1">T4-E1</a>
+          <span class="exlist__text">Sistema de ecuaciones de 3×3</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-4.html#T4-E2">T4-E2</a>
+          <span class="exlist__text">Rangos por Rouché–Frobenius</span>
+        </li>
+        </ul>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Al terminar: resolver y clasificar un sistema, y reconstruir la matriz desde los factores siguiendo la convención de A.</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-9">
+      <header class="week__head">
+        <span class="week__num">Semana 09</span>
+        <h3 class="week__title">QR, mínimos cuadrados y Schur</h3>
+        <span class="week__meta">30 de noviembre – 6 de diciembre · Tema IV</span>
+        <span class="week__count chip chip--ink">10 ejercicios nuevos</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">QR y su relación con Gram–Schmidt, sistemas y aproximación por mínimos cuadrados, y factorización triangular de Schur con sus hipótesis. Los ajustes por mínimos cuadrados (T4-M3, T4-M4) comparten planteamiento: hazlos seguidos para no repetir el mismo montaje.</p>
+        <ul class="exlist">
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-4.html#T4-N6">T4-N6</a>
+          <span class="exlist__text">Matriz \(A^{\top}A\) de las ecuaciones normales</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-4.html#T4-N7">T4-N7</a>
+          <span class="exlist__text">Inversa de una matriz triangular superior por recurrencia</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-4.html#T4-M1">T4-M1</a>
+          <span class="exlist__text">Menores principales conducentes y factorización \(LU\)</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-4.html#T4-M2">T4-M2</a>
+          <span class="exlist__text">Factorización QR reducida</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-4.html#T4-M3">T4-M3</a>
+          <span class="exlist__text">Ajuste por mínimos cuadrados de una recta</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-4.html#T4-M4">T4-M4</a>
+          <span class="exlist__text">Predicción del modelo de ajuste lineal</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-4.html#T4-M5">T4-M5</a>
+          <span class="exlist__text">Autovalores en la factorización triangular de Schur</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-4.html#T4-M6">T4-M6</a>
+          <span class="exlist__text">QR de rango deficiente y base de \((\operatorname{col}C)^{\perp}\)</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-4.html#T4-E5">T4-E5</a>
+          <span class="exlist__text">Solución de mínima norma euclídea con QR</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-4.html#T4-E6">T4-E6</a>
+          <span class="exlist__text">Factorización triangular de Schur compleja</span>
+        </li>
+        <li class="exlist__sep"><span>Repaso en frío</span></li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-2.html#T2-E3">T2-E3</a>
+          <span class="exlist__text">Identificar la matriz ortogonal</span>
+        </li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-2.html#T2-E4">T2-E4</a>
+          <span class="exlist__text">Ortogonalidad de \(Q\) y cálculo de \(Q^{-1}\)</span>
+        </li>
+        </ul>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Al terminar: verificar A = QR y explicar qué se minimiza cuando un sistema no tiene solución exacta.</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-10">
+      <header class="week__head">
+        <span class="week__num">Semana 10</span>
+        <h3 class="week__title">Inicio del Tema V y PEC</h3>
+        <span class="week__meta">7–13 de diciembre · Tema V</span>
+        <span class="week__count chip chip--ink">8 ejercicios nuevos</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">Diferenciar equivalencia, congruencia y similitud, y factorización LDU conectada con LU. Reparto orientativo de 7 h: 2 h de Tema V, 4 h de preparación y realización de la PEC y 1 h de corrección. Reduce ejercicios adicionales para dar prioridad a la PEC.</p>
+        <ul class="exlist">
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-4.html#T4-M7">T4-M7</a>
+          <span class="exlist__text">Ajuste de un plano por mínimos cuadrados</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-4.html#T4-E3">T4-E3</a>
+          <span class="exlist__text">Factorización \(C = PLU\) con permutación</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-4.html#T4-E4">T4-E4</a>
+          <span class="exlist__text">Mínimos cuadrados: pendiente, ordenada y predicción</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-5.html#T5-N1">T5-N1</a>
+          <span class="exlist__text">Autovalores de una matriz de 2×2</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-5.html#T5-N2">T5-N2</a>
+          <span class="exlist__text">¿Diagonalizable por similitud? (verdadero o falso)</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-5.html#T5-M1">T5-M1</a>
+          <span class="exlist__text">Diagonalización por similitud</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-5.html#T5-M2">T5-M2</a>
+          <span class="exlist__text">Factorización \(LDL^{\top}\)</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-5.html#T5-M7">T5-M7</a>
+          <span class="exlist__text">\(LDL^{\top}\) con pivote nulo</span>
+        </li>
+        </ul>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Hito: PEC señalada del 11 al 14 de diciembre. Objetivo personal: completarla antes del último día, si su modalidad lo permite.</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-11">
+      <header class="week__head">
+        <span class="week__num">Semana 11</span>
+        <h3 class="week__title">Teorema espectral y clasificación</h3>
+        <span class="week__meta">14–20 de diciembre · Tema V</span>
+        <span class="week__count chip chip--ink">8 ejercicios nuevos</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">Diagonalización ortogonal y teorema espectral; ley de inercia de Sylvester y matrices definidas y semidefinidas. Con la PEC detrás es una semana de carga: conserva siempre la corrección aunque bajes ejercicios.</p>
+        <ul class="exlist">
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-5.html#T5-N3">T5-N3</a>
+          <span class="exlist__text">Factorización de Cholesky</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-5.html#T5-N4">T5-N4</a>
+          <span class="exlist__text">Clasificación de una forma cuadrática</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-5.html#T5-N7">T5-N7</a>
+          <span class="exlist__text">Menores principales líderes: criterio de Sylvester</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-5.html#T5-N8">T5-N8</a>
+          <span class="exlist__text">Forma cuadrática semidefinida positiva</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-5.html#T5-M5">T5-M5</a>
+          <span class="exlist__text">Teorema espectral: diagonalización ortogonal</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-5.html#T5-M6">T5-M6</a>
+          <span class="exlist__text">Raíz cuadrada simétrica definida positiva</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-5.html#T5-E1">T5-E1</a>
+          <span class="exlist__text">Diagonalización ortogonal de una matriz de 3×3</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-5.html#T5-E2">T5-E2</a>
+          <span class="exlist__text">Cholesky de una matriz de 3×3</span>
+        </li>
+        </ul>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Al terminar: diagonalizar un ejemplo simétrico y clasificar una forma cuadrática justificando el criterio utilizado.</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-12">
+      <header class="week__head">
+        <span class="week__num">Semana 12</span>
+        <h3 class="week__title">Consolidación flexible</h3>
+        <span class="week__meta">21–27 de diciembre · Repaso</span>
+        <span class="week__count chip chip--ink">sin contenido nuevo</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">El calendario no asigna tema nuevo: el tiempo es de consolidación. Rehaz en frío los ejercicios de examen que fallaste y aprovecha el simulacro para medir por dónde vas.</p>
+        <ul class="exlist">
+        <li class="exlist__sep"><span>Repaso en frío</span></li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-3.html#T3-E1">T3-E1</a>
+          <span class="exlist__text">Determinante de una matriz de 4×4 por bloques</span>
+        </li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-3.html#T3-E2">T3-E2</a>
+          <span class="exlist__text">Mayor autovalor y un autovector asociado</span>
+        </li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-3.html#T3-E3">T3-E3</a>
+          <span class="exlist__text">Dimensiones de los subespacios fundamentales (4×3)</span>
+        </li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-3.html#T3-E4">T3-E4</a>
+          <span class="exlist__text">Afirmación siempre cierta sobre \(A\) y \(B\)</span>
+        </li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-4.html#T4-E1">T4-E1</a>
+          <span class="exlist__text">Sistema de ecuaciones de 3×3</span>
+        </li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-4.html#T4-E2">T4-E2</a>
+          <span class="exlist__text">Rangos por Rouché–Frobenius</span>
+        </li>
+        </ul>
+      <div class="simul">
+        <div class="simul__head">
+          <span class="simul__label">Simulacro 2</span>
+          <span class="simul__meta">Temas III–IV · 120 min · 12 preguntas</span>
+        </div>
+        <ul class="exlist exlist--compact">
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="examenes/examen-2.html#X2-1">X2-1</a>
+          <span class="exlist__text">Determinante de un producto escalado</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="examenes/examen-2.html#X2-2">X2-2</a>
+          <span class="exlist__text">Volumen y determinante</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="examenes/examen-2.html#X2-3">X2-3</a>
+          <span class="exlist__text">Rango y teorema de la dimensión</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="examenes/examen-2.html#X2-4">X2-4</a>
+          <span class="exlist__text">Sistema por eliminación de Gauss</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="examenes/examen-2.html#X2-5">X2-5</a>
+          <span class="exlist__text">¿Diagonalizable? (verdadero o falso)</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="examenes/examen-2.html#X2-6">X2-6</a>
+          <span class="exlist__text">Factorización PLU con permutación</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="examenes/examen-2.html#X2-7">X2-7</a>
+          <span class="exlist__text">Mínimos cuadrados de una recta</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="examenes/examen-2.html#X2-8">X2-8</a>
+          <span class="exlist__text">Autovalores de una matriz por bloques</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="examenes/examen-2.html#X2-9">X2-9</a>
+          <span class="exlist__text">Forma cuadrática y su matriz</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="examenes/examen-2.html#X2-10">X2-10</a>
+          <span class="exlist__text">Sistema por inspectores</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="examenes/examen-2.html#X2-11">X2-11</a>
+          <span class="exlist__text">Descomposición espectral \(A = Q\Lambda Q^{\top}\)</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="examenes/examen-2.html#X2-12">X2-12</a>
+          <span class="exlist__text">QR y ortonormalización</span>
+        </li>
+        </ul>
+      </div>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Resultado: una lista breve de dudas concretas y de partes pendientes. No abras otro manual completo.</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-13">
+      <header class="week__head">
+        <span class="week__num">Semana 13</span>
+        <h3 class="week__title">Borrador de la práctica</h3>
+        <span class="week__meta">28 de diciembre – 3 de enero · Práctica</span>
+        <span class="week__count chip chip--ink">sin contenido nuevo</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">Prioridad al primer apartado del enunciado, si existe. Si aún no está disponible, consolida el procedimiento con dos ejercicios acumulados sin mirar la solución.</p>
+        <ul class="exlist">
+        <li class="exlist__sep"><span>Repaso en frío</span></li>
+        <li class="exlist__item" data-level="normal" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-5.html#T5-N1">T5-N1</a>
+          <span class="exlist__text">Autovalores de una matriz de 2×2</span>
+        </li>
+        <li class="exlist__item" data-level="normal" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-5.html#T5-N2">T5-N2</a>
+          <span class="exlist__text">¿Diagonalizable por similitud? (verdadero o falso)</span>
+        </li>
+        <li class="exlist__item" data-level="medio" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-5.html#T5-M1">T5-M1</a>
+          <span class="exlist__text">Diagonalización por similitud</span>
+        </li>
+        <li class="exlist__item" data-level="medio" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-4.html#T4-M1">T4-M1</a>
+          <span class="exlist__text">Menores principales conducentes y factorización \(LU\)</span>
+        </li>
+        <li class="exlist__item" data-level="medio" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-4.html#T4-M7">T4-M7</a>
+          <span class="exlist__text">Ajuste de un plano por mínimos cuadrados</span>
+        </li>
+        </ul>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Resultado: borrador ejecutable o revisable según el formato exigido. No presupongas que hay que entregar un archivo .py: eso debe decirlo el enunciado.</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-14">
+      <header class="week__head">
+        <span class="week__num">Semana 14</span>
+        <h3 class="week__title">Revisión final de la práctica</h3>
+        <span class="week__meta">4–10 de enero · Práctica</span>
+        <span class="week__count chip chip--ink">sin contenido nuevo</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">Unas 4–5 h para revisar la práctica y 2–3 h de repaso matemático: requisitos de entrega, cálculos, explicaciones y archivos. Ejecuta de nuevo el trabajo desde el principio si incluye código.</p>
+        <ul class="exlist">
+        <li class="exlist__sep"><span>Repaso en frío</span></li>
+        <li class="exlist__item" data-level="normal" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-5.html#T5-N3">T5-N3</a>
+          <span class="exlist__text">Factorización de Cholesky</span>
+        </li>
+        <li class="exlist__item" data-level="normal" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-5.html#T5-N4">T5-N4</a>
+          <span class="exlist__text">Clasificación de una forma cuadrática</span>
+        </li>
+        <li class="exlist__item" data-level="normal" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-5.html#T5-N7">T5-N7</a>
+          <span class="exlist__text">Menores principales líderes: criterio de Sylvester</span>
+        </li>
+        <li class="exlist__item" data-level="medio" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-5.html#T5-M5">T5-M5</a>
+          <span class="exlist__text">Teorema espectral: diagonalización ortogonal</span>
+        </li>
+        <li class="exlist__item" data-level="medio" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-5.html#T5-M6">T5-M6</a>
+          <span class="exlist__text">Raíz cuadrada simétrica definida positiva</span>
+        </li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-5.html#T5-E1">T5-E1</a>
+          <span class="exlist__text">Diagonalización ortogonal de una matriz de 3×3</span>
+        </li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-5.html#T5-E2">T5-E2</a>
+          <span class="exlist__text">Cholesky de una matriz de 3×3</span>
+        </li>
+        </ul>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Resultado: entrega preparada con margen para el día señalado, sin esperar al 12 para descubrir problemas. Repasa autovalores, multiplicidades y bases: hacen falta la semana siguiente.</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-15">
+      <header class="week__head">
+        <span class="week__num">Semana 15</span>
+        <h3 class="week__title">Similitud, Jordan y SVD</h3>
+        <span class="week__meta">11–17 de enero · Tema V</span>
+        <span class="week__count chip chip--ink">8 ejercicios nuevos</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">Condiciones de diagonalización por similitud, multiplicidades y forma de Jordan; descomposición en valores singulares, con sus dimensiones; pseudoinversa y su relación con los sistemas y los mínimos cuadrados. Es la semana más exigente: usa el margen de hasta 8 h y llega con la práctica ya preparada. Si el cálculo completo resulta largo, comprueba primero dimensiones y productos y después reproduce el procedimiento por partes.</p>
+        <ul class="exlist">
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-5.html#T5-N5">T5-N5</a>
+          <span class="exlist__text">Pseudoinversa de Moore–Penrose de una diagonal</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="temas/tema-5.html#T5-N6">T5-N6</a>
+          <span class="exlist__text">Norma espectral (norma 2)</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-5.html#T5-M3">T5-M3</a>
+          <span class="exlist__text">Valores singulares de una matriz simétrica</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="temas/tema-5.html#T5-M4">T5-M4</a>
+          <span class="exlist__text">Pseudoinversa de una matriz de rango 1</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-5.html#T5-E3">T5-E3</a>
+          <span class="exlist__text">Pseudoinversa de Moore–Penrose</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-5.html#T5-E4">T5-E4</a>
+          <span class="exlist__text">Inercia de una forma cuadrática</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-5.html#T5-E5">T5-E5</a>
+          <span class="exlist__text">Forma canónica de Jordan y dimensión del autoespacio</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="temas/tema-5.html#T5-E6">T5-E6</a>
+          <span class="exlist__text">SVD y pseudoinversa de una matriz rectangular</span>
+        </li>
+        </ul>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Hito: práctica señalada el 12 de enero. Reserva tiempo para entregarla y comprobar la recepción, conforme a las instrucciones del aula.</p>
+      </div>
+    </article>
+    <article class="week reveal" id="semana-16">
+      <header class="week__head">
+        <span class="week__num">Semana 16</span>
+        <h3 class="week__title">Repaso global</h3>
+        <span class="week__meta">18–24 de enero · Todos los temas</span>
+        <span class="week__count chip chip--ink">sin contenido nuevo</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">Sesión de diagnóstico sin apuntes con preguntas de los cinco temas, corrección y reparación de los dos puntos más débiles, segunda sesión mixta de problemas y una hora de teoría, hipótesis, notación y errores frecuentes. Las sesiones de 90 min son una propuesta de entrenamiento: no indican la duración oficial del examen.</p>
+        <ul class="exlist">
+        <li class="exlist__sep"><span>Repaso en frío</span></li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-5.html#T5-E5">T5-E5</a>
+          <span class="exlist__text">Forma canónica de Jordan y dimensión del autoespacio</span>
+        </li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-5.html#T5-E6">T5-E6</a>
+          <span class="exlist__text">SVD y pseudoinversa de una matriz rectangular</span>
+        </li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-1.html#T1-E4">T1-E4</a>
+          <span class="exlist__text">Fórmula de Euler: simplificación de una expresión</span>
+        </li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-2.html#T2-E1">T2-E1</a>
+          <span class="exlist__text">Inversa de una matriz de 3×3</span>
+        </li>
+        <li class="exlist__item" data-level="examen" data-repaso="1">
+          <a class="exlist__id" href="temas/tema-4.html#T4-E6">T4-E6</a>
+          <span class="exlist__text">Factorización triangular de Schur compleja</span>
+        </li>
+        </ul>
+      <div class="simul">
+        <div class="simul__head">
+          <span class="simul__label">Simulacro 3</span>
+          <span class="simul__meta">Tema V y repaso global · 120 min · 12 preguntas</span>
+        </div>
+        <ul class="exlist exlist--compact">
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="examenes/examen-3.html#X3-1">X3-1</a>
+          <span class="exlist__text">Factorización de Cholesky</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="examenes/examen-3.html#X3-2">X3-2</a>
+          <span class="exlist__text">Cociente de números complejos</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="examenes/examen-3.html#X3-3">X3-3</a>
+          <span class="exlist__text">Propiedades de los determinantes (V/F)</span>
+        </li>
+        <li class="exlist__item" data-level="normal">
+          <a class="exlist__id" href="examenes/examen-3.html#X3-4">X3-4</a>
+          <span class="exlist__text">Determinante de \(2A\)</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="examenes/examen-3.html#X3-5">X3-5</a>
+          <span class="exlist__text">Factorización \(LDL^{\top}\)</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="examenes/examen-3.html#X3-6">X3-6</a>
+          <span class="exlist__text">Mínimos cuadrados de una recta</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="examenes/examen-3.html#X3-7">X3-7</a>
+          <span class="exlist__text">Forma canónica de Jordan</span>
+        </li>
+        <li class="exlist__item" data-level="medio">
+          <a class="exlist__id" href="examenes/examen-3.html#X3-8">X3-8</a>
+          <span class="exlist__text">Sistema dependiente de un parámetro</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="examenes/examen-3.html#X3-9">X3-9</a>
+          <span class="exlist__text">Diagonalización ortogonal de una matriz simétrica</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="examenes/examen-3.html#X3-10">X3-10</a>
+          <span class="exlist__text">Autovalores de una matriz de 4×4</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="examenes/examen-3.html#X3-11">X3-11</a>
+          <span class="exlist__text">Inercia de una forma cuadrática</span>
+        </li>
+        <li class="exlist__item" data-level="examen">
+          <a class="exlist__id" href="examenes/examen-3.html#X3-12">X3-12</a>
+          <span class="exlist__text">Sistema por mínimos cuadrados</span>
+        </li>
+        </ul>
+      </div>
+      <p class="week__hito"><span class="week__hito-label">Objetivo</span>Resultado: una hoja de conceptos y condiciones de uso, y una lista corta de errores ya corregidos.</p>
+      </div>
+    </article>
+    <article class="week week--mantenimiento reveal" id="semana-17">
+      <header class="week__head">
+        <span class="week__num">Después</span>
+        <h3 class="week__title">Mantenimiento</h3>
+        <span class="week__meta">Desde el 25 de enero hasta tu examen</span>
+        <span class="week__count chip chip--ink">rutina</span>
+      </header>
+      <div class="week__body">
+        <p class="week__note">El calendario no proporciona la fecha de la prueba presencial. Mantén 6–8 h semanales con dos sesiones de problemas mezclados, corrección y repaso dirigido. Cuando conozcas el formato, la duración y los materiales permitidos, adapta las sesiones a esas condiciones: no se inventa una semana de examen.</p>
+      </div>
+    </article>
+      </div>
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 5</div>
+        <div>
+          <h2>Recuento del archivo</h2>
+          <p>Lo que cubre el plan, contrastado con los ficheros de datos.</p>
+        </div>
+      </div>
+      <div class="table-wrap reveal">
+        <table>
+          <thead>
+            <tr><th>Bloque</th><th>Ejercicios</th><th>Fichero</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Tema I</td><td>15</td><td><a href="temas/tema-1.html">temas/tema-1.html</a></td></tr>
+            <tr><td>Tema II</td><td>15</td><td><a href="temas/tema-2.html">temas/tema-2.html</a></td></tr>
+            <tr><td>Tema III</td><td>15</td><td><a href="temas/tema-3.html">temas/tema-3.html</a></td></tr>
+            <tr><td>Tema IV</td><td>20</td><td><a href="temas/tema-4.html">temas/tema-4.html</a></td></tr>
+            <tr><td>Tema V</td><td>21</td><td><a href="temas/tema-5.html">temas/tema-5.html</a></td></tr>
+            <tr><td>Examen 1</td><td>12</td><td><a href="examenes/examen-1.html">examenes/examen-1.html</a></td></tr>
+            <tr><td>Examen 2</td><td>12</td><td><a href="examenes/examen-2.html">examenes/examen-2.html</a></td></tr>
+            <tr><td>Examen 3</td><td>12</td><td><a href="examenes/examen-3.html">examenes/examen-3.html</a></td></tr>
+            <tr><td><strong>Total</strong></td><td><strong>122</strong></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <!-- PLAN:END -->
+
+    <section class="wrap section section--tint" id="consejos">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 6</div>
+        <div>
+          <h2>Consejos para el examen</h2>
+          <p>Lo que distingue un examen aprobado de uno suspendido en una asignatura de matemáticas.</p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="plaque reveal">
+          <span class="plaque__label">Justifica</span>
+          <p>Una respuesta correcta sin razonamiento no demuestra nada. En los ejercicios
+          de nivel examen, escribe la hipótesis que usas antes de calcular.</p>
+        </div>
+        <div class="plaque reveal">
+          <span class="plaque__label">Ordena</span>
+          <p>Determinantes, rango, autovalores y factorizaciones tienen procedimientos
+          fijos: tenlos memorizados como una receta y practícalos a velocidad.</p>
+        </div>
+        <div class="plaque reveal">
+          <span class="plaque__label">Comprueba</span>
+          <p>Reserva 5 minutos para contrastar dimensiones, signos y unidades. El 80%
+          de los errores de cálculo se ven al releer con calma.</p>
+        </div>
+        <div class="plaque reveal">
+          <span class="plaque__label">Ensaya</span>
+          <p>Los tres exámenes de este archivo están pensados para hacerlos con
+          temporizador, en condiciones reales, antes de la convocatoria.</p>
+        </div>
+      </div>
+      <div class="pager">
+        <a class="prev" href="index.html"><span class="meta">Volver</span><strong>Índice del curso</strong></a>
+        <a class="next" href="temas/tema-1.html"><span class="meta">Empezar</span><strong>Tema I · Escalares</strong></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div>
+        <h4>Archivo</h4>
+        <ul>
+          <li><a href="index.html">Índice del curso</a></li>
+          <li><a href="planificacion.html">Planificación y evaluación</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Evaluación</h4>
+        <ul>
+          <li><a href="examenes/examen-1.html">Examen 1 · Temas I–II</a></li>
+          <li><a href="examenes/examen-2.html">Examen 2 · Temas III–IV</a></li>
+          <li><a href="examenes/examen-3.html">Examen 3 · Tema V + global</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fuentes</h4>
+        <ul>
+          <li>Calendario y <em>Calificaciones</em> del aula virtual 2026–2027</li>
+          <li>J. Perán Mazón, <em>Fundamentos algebraicos para la IA</em>, UNED, 2026</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer__colophon">
+      <span>Material de estudio personal · uso no comercial</span>
+      <span>Verificado con SymPy</span>
+    </div>
+  </footer>
+
+  <script defer src="assets/vendor/katex/katex.min.js"></script>
+  <script defer src="assets/vendor/katex/auto-render.min.js"></script>
+  <script defer src="assets/js/grader.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</body>
+</html>

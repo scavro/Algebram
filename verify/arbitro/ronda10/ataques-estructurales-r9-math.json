@@ -1,0 +1,573 @@
+{
+ "N": 200,
+ "casos": {
+  "U1 '(x-x)/(x-x)' vs 5 — identidad universal 0/0": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U2 '0/(x-x)' vs 5": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U3 '1/(x-x)-1/(x-x)' vs 5": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U4 '5+0*(x-x)/(x-x)' vs 5 (J10 histórico R2)": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U5 '(x-y)/(x-y)' vs 5 (control: NO universal, x-y≠0 como polinomio)": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U6 '((x+1)*(x-x))/((x+2)*(x-x))' vs 5": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U7 '0*x/(x-x)' vs 5": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U8 '(x-x)^2/(x-x)' vs 5": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U9 '(x-x)*log(x)/(x-x)' vs 5": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U10 '(exp(x)-exp(x))/(x-x)' vs 5": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U11 '(x-x)/(x-x)' vs log(x*y) (cualquier esperado)": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U12 '(x-x)/(x-x)' vs 4-s-t (T4-N3 real)": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U13 '(x-x)/(x-x)' en TODAS las celdas de T5-N5 (matriz)": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U14 exprset T4-M5 con '(x-x)/(x-x);(x-x)/(x-x)'": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U15 multi T1-M2 campos '(x-x)/(x-x)' (control: tipo number no evalúa vars)": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U16 '0/(x-x)' vs 0": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U17 '(x+y-x-y)/(x-x)' vs 1": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U18 '(x-x)/(x-x+x-x)' vs 7": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U19 vector 2×1 con '(x-x)/(x-x)'": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "U20 '1*(x-x)/(x-x)' vs pi": {
+   "grupo": "S_UNIV",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "F1 '5+log(x+5)+log(y+5)-log((x+5)(y+5))+x^(3/2)-x^(3/2)' vs 5": {
+   "grupo": "S_FALLBACK",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "F2 idem +x^z-x^z (exponente simbólico)": {
+   "grupo": "S_FALLBACK",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "F3 idem 0*x^(3/2)": {
+   "grupo": "S_FALLBACK",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "F4 idem +x^(0.3)-x^(0.3)": {
+   "grupo": "S_FALLBACK",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "F5 exploit N9r+forzado sobre T4-N3 real": {
+   "grupo": "S_FALLBACK",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "F6 exploit N9r+forzado sobre T4-M5 exprset": {
+   "grupo": "S_FALLBACK",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "F7 exploit sqrt desplazado+forzado vs 5": {
+   "grupo": "S_FALLBACK",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "F8 log(exp) escalado+forzado vs 5 (N9 residual R7)": {
+   "grupo": "S_FALLBACK",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "F9 '5+log(exp(x))-x+x^y-x^y' vs 5 (control: clase log(exp) cierra también vía fallback)": {
+   "grupo": "S_FALLBACK",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "F10 'x-y+x^(1/3)-x^(1/3)' vs 0 (control: x-y≢0)": {
+   "grupo": "S_FALLBACK",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "A1 'log(x+y)' vs 'log(y+x)' — MISMA expresión, orden de suma en átomo": {
+   "grupo": "S_ATOM",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "A2 'log(2*x)' vs 'log(x*2)' — MISMA expresión, orden de producto en átomo": {
+   "grupo": "S_ATOM",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "A3 'sin(x+y)' vs 'sin(y+x)'": {
+   "grupo": "S_ATOM",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "A4 'log(x/2)' vs 'log(x*0.5)'": {
+   "grupo": "S_ATOM",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "A5 'exp(x+y)' vs 'exp(y+x)'": {
+   "grupo": "S_ATOM",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "A6 'sqrt(4*x)' vs '2*sqrt(x)' — identidad VERDADERA (4>0)": {
+   "grupo": "S_ATOM",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "A7 'log(4*x)' vs 'log(4)+log(x)' — identidad VERDADERA (4>0)": {
+   "grupo": "S_ATOM",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "A8 'exp(log(x))' vs x — identidad VERDADERA en C\\{0} (caso HIST-V1)": {
+   "grupo": "S_ATOM",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "A9 'conj(x*y)' vs 'conj(x)*conj(y)' — VERDADERA (HIST-V3)": {
+   "grupo": "S_ATOM",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "A10 'cos(x)^2+sin(x)^2' vs 1 — VERDADERA (HIST-V8)": {
+   "grupo": "S_ATOM",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "A11 'cosh(x)^2-sinh(x)^2' vs 1 — VERDADERA (HIST-V9)": {
+   "grupo": "S_ATOM",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "A12 'log(sqrt(x))' vs 'log(x)/2' — VERDADERA": {
+   "grupo": "S_ATOM",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "A13 'sqrt(x)^2' vs x — control (rewrite la cierra)": {
+   "grupo": "S_ATOM",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "A14 '(sqrt(x))^4' vs 'x^2' — VERDADERA": {
+   "grupo": "S_ATOM",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "P1 'x^(3/2)' vs 'x*sqrt(x)' — VERDADERA": {
+   "grupo": "S_FRAC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "P2 'x^(2/3)' vs '(x^(1/3))^2' — VERDADERA": {
+   "grupo": "S_FRAC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "P3 'x^(-1/2)' vs '1/sqrt(x)' — VERDADERA": {
+   "grupo": "S_FRAC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "P4 '(x^2)^(1/2)' vs x — FALSA (rama)": {
+   "grupo": "S_FRAC",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "P5 '(x*y)^(1/2)' vs 'sqrt(x)*sqrt(y)' — FALSA": {
+   "grupo": "S_FRAC",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "P6 'x^(4/2)' vs 'x^2' — VERDADERA": {
+   "grupo": "S_FRAC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "P7 'x^(2*y/y)' vs 'x^2' — VERDADERA": {
+   "grupo": "S_FRAC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "P8 'x^2.0' vs 'x^2' — VERDADERA": {
+   "grupo": "S_FRAC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "P9 'x^2' vs 'x^2.0000000000000004' — tolerancia numérica": {
+   "grupo": "S_FRAC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M1 '5!' vs 120 — VERDADERA": {
+   "grupo": "S_MISC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M2 'x!' vs 'fact(x)' — control: 'fact(x)' NO es factorial escribible (parsea f·a·c·t(x))": {
+   "grupo": "S_MISC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": true,
+   "falsoNegativo": false
+  },
+  "M3 '2.5!' vs 6 — FALSA (factorial de no entero = NaN)": {
+   "grupo": "S_MISC",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M4 'min(x,y)' vs 'min(y,x)' — VERDADERA": {
+   "grupo": "S_MISC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M5 'max(x,y,z)' vs 'max(z,y,x)' — VERDADERA": {
+   "grupo": "S_MISC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M6 'min(x,2)' vs 2 — FALSA": {
+   "grupo": "S_MISC",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M7 'x*j' vs 'x*i' — alias j=i": {
+   "grupo": "S_MISC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M8 'x*I' vs 'x*i' — alias": {
+   "grupo": "S_MISC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M9 'i^2' vs -1 — VERDADERA": {
+   "grupo": "S_MISC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M10 'i' vs 1 — FALSA": {
+   "grupo": "S_MISC",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M11 'x*e' vs 'x*exp(1)' — e=exp(1)": {
+   "grupo": "S_MISC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M12 '1e-9*x' vs 0 — tolerancia estructural polyIsZero 1e-8": {
+   "grupo": "S_MISC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M13 '5e-9*x' vs 0 — tolerancia estructural": {
+   "grupo": "S_MISC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M14 '0.1+0.2' vs 0.3 — ruido float": {
+   "grupo": "S_MISC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M15 'inf-inf' vs 0 — inf es variable": {
+   "grupo": "S_MISC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M16 'min(2,3)' vs 2 — coma decimal se come la coma de argumentos": {
+   "grupo": "S_MISC",
+   "acepta": 200,
+   "n": 200,
+   "esperaAcepta": true,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M17 'min(2,3)' vs 2.3 — FP del parser de coma decimal": {
+   "grupo": "S_MISC",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M18 'max(1,2)' vs 1.2 — FP del parser de coma decimal": {
+   "grupo": "S_MISC",
+   "acepta": 0,
+   "n": 200,
+   "esperaAcepta": false,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  }
+ }
+}

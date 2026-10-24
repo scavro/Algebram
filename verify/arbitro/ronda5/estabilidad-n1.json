@@ -1,0 +1,327 @@
+{
+ "H_FIJO :: A1 'x-y' vs 0": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: A2 'x^2-y^2' vs 0": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: A4 '4-2*t' vs 4-s-t (T4-N3)": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: A5 '4-s-t+(s-t)' vs 4-s-t": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: A6 '1/(x-x)' vs 5": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: A8 '1/(x-y)' vs 2/(x-y)": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: A9 'y^2' vs x^2": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: A10 celda matriz 'x-y' vs 0": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: O1 polinomio anulador 8-ptos vs 5": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: O2 polinomio anulador 8-ptos vs 0": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: O3 alias wrap-around 9 vars vs 4-s-t": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: O4 celda matriz + anulador vs 0": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: O5 exprset T4-M5 'i+anulador'": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: O3b wrap 20 vars 'v0-v8' vs 0": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: J8 'x*inf' vs x": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: J9 '1/(x-x)+5' vs 5": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: J10 '5+0*(x-x)/(x-x)' vs 5": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_FIJO :: P30 anulador a ciegas prod(x-k) vs 0": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_REGION :: E1 '5+log(exp(x))-x' vs 5": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_REGION :: E1b '5+3*(log(exp(x))-x)' vs 5": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_REGION :: E3 T4-N3 '4-s-t+log(exp(s))-s'": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_REGION :: E4 celda matriz 'log(exp(x))-x' vs 0": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_REGION :: E5 exprset T4-M5 'i+log(exp(x))-x'": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_REGION :: E6 'log(exp(x))' vs x": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_REGION :: E8 'log(exp(x))-x' vs 0 (anulador puro)": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_BRANCH :: L1 'log(exp(4-s-t))' vs 4-s-t (T4-N3)": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_BRANCH :: L2 'sqrt(x^2)' vs x": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_BRANCH :: L3 'log(x^2)' vs 2*log(x)": {
+  "acepta": 0,
+  "n": 200,
+  "veredicto": "OK (0/200 acepta)"
+ },
+ "H_BRANCH :: L4 'log(x)+log(y)' vs log(x*y)": {
+  "acepta": 1,
+  "n": 200,
+  "veredicto": "FALLO-FP-OCASIONAL (1/200 acepta)"
+ },
+ "EQUIV :: B1 '1/2' vs 0.5": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: B2 '2i' vs 2*i": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: B3 '0,5' vs 1/2": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: B4 '(2+11i)/5' vs 2/5+11/5*i": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: B5 'sqrt(3)/2' vs 3^0.5/2": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: B6 'π/3' vs pi/3": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: B8 matriz '1/2' vs 0.5": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: B10 exprset orden '-2;4' vs ['4','-2']": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: B11 '1e3' vs 1000": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: B12 '5!' vs 120": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: B13 '-2^2' vs -4": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: B14 '2sqrt(3)' vs 2*sqrt(3)": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: B17 '3,14' vs 3.14": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: D1 'sqrt(2)/2' vs 1/sqrt(2)": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: D3 'i^2' vs -1": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: D4 '(1+i)^2' vs 2i": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: D5 '5*pi/6' vs pi*5/6": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: N2 T4-N3 '4-t-s' reordenado": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: N2b T4-N3 '4-(s+t)'": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: N3 T4-N3 correcto literal": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V1 'exp(log(x))' vs x (identidad en C\\{0})": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V2 '(x^2-1)/(x-1)' vs x+1": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V3 'conj(x*y)' vs conj(x)*conj(y)": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V4 '(x+y)^2' vs x^2+2*x*y+y^2": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V5 '1/(1/x)' vs x": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V6 'sqrt(x)^2' vs x": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V7 '(-x)^2' vs x^2": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V8 'cos(x)^2+sen(x)^2' vs 1": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V9 'cosh(x)^2-sinh(x)^2' vs 1": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V10 '2*(x+y)' vs 2*x+2*y": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V11 'sen(pi/6)' vs 1/2 (alias)": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V12 'tg(pi/4)' vs 1 (alias)": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V13 matriz 'sqrt(4)' vs 2": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V14 T5-E3 celda '3/10' exacta": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V15 T1-M2 mod correcto (multi)": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ },
+ "EQUIV :: V16 T1-N5 '2.34' redondeo": {
+  "acepta": 200,
+  "n": 200,
+  "veredicto": "OK (200/200 acepta)"
+ }
+}

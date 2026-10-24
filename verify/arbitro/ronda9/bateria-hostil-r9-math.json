@@ -1,0 +1,461 @@
+{
+ "N": 200,
+ "casos": {
+  "E1 '5+log(exp(x))-x' vs 5": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "E1b '5+3*(log(exp(x))-x)' vs 5": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "E8 'log(exp(x))-x' vs 0": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "E9 '0+log(exp(x))-x' vs 0": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "E10 'log(exp(x))' vs x": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "E11 '5+(log(exp(x))-x)^2' vs 5": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "E12 'log(exp(x))-x' vs 0": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "E3 T4-N3 '4-s-t+log(exp(s))-s'": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "F1 T4-N3 '4-s-t+log(exp(v))-v'": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "F2 T4-N3 '+log(exp(v))-v+log(exp(w))-w'": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "F3 T5-N5 celdas +log(exp(v))-v": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "F4 T4-M5 'i+log(exp(v))-v;-i'": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "F5 spec5 '5+log(exp(v))-v'": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "F6 multi T1-M2 mod +log(exp(v))-v": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "E4 celda 'log(exp(x))-x' vs 0": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "E5 exprset 'i+log(exp(x))-x;-i'": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "E6 'log(exp(x))' vs x": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "G1 'log(exp(log(exp(x))))' vs x": {
+   "grupo": "H_LOGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "O1 anulador 8-ptos vs 5": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "O2 anulador 8-ptos vs 0": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "O3 alias wrap 9 vars vs 4-s-t": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "O4 celda + anulador vs 0": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "O5 exprset 'i+anulador;-i'": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "A1 'x-y' vs 0": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "A10 celda 'x-y' vs 0": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "O3b wrap 20 vars 'v0-v8' vs 0": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "A4 '4-2*t' vs 4-s-t": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "A5 '4-s-t+(s-t)' vs 4-s-t": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "A6 '1/(x-x)' vs 5": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "A8 '1/(x-y)' vs 2/(x-y)": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "A9 'y^2' vs x^2": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "J8 'x*inf' vs x": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "J9 '1/(x-x)+5' vs 5": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "J10 '5+0*(x-x)/(x-x)' vs 5": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "P30 anulador ciego prod(x-k) vs 0": {
+   "grupo": "H_FIJO",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "L1 'log(exp(4-s-t))' vs 4-s-t": {
+   "grupo": "H_BRANCH",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "L2 'sqrt(x^2)' vs x": {
+   "grupo": "H_BRANCH",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "L3 'log(x^2)' vs 2*log(x)": {
+   "grupo": "H_BRANCH",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "L4 'log(x)+log(y)' vs log(x*y)": {
+   "grupo": "H_BRANCH",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "L5 'log(exp(2*x))/2' vs x": {
+   "grupo": "H_BRANCH",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "L6 'acos(cos(x))' vs x": {
+   "grupo": "H_BRANCH",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "L7 'sqrt(x*y)' vs sqrt(x)*sqrt(y)": {
+   "grupo": "H_BRANCH",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "L8 'arg(x*y)' vs arg(x)+arg(y)": {
+   "grupo": "H_BRANCH",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "L9 T4-N3 grind log-product": {
+   "grupo": "H_BRANCH",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "L10 T5-N5 grind sqrt celdas": {
+   "grupo": "H_BRANCH",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "L11 T4-M5 grind log exprset": {
+   "grupo": "H_BRANCH",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "L12 spec5 grind log-product": {
+   "grupo": "H_BRANCH",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M0 naive '5+log(u)+log(v)-log(u*v)' vs 5": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M0b naive 'log(x)+log(y)' vs log(x*y)": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M1 c=3.5 '5+2log(x+3.5)-log((x+3.5)^2)' vs 5": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M2 c=3.5 T4-N3 '4-s-t+2log(s+3.5)-log((s+3.5)^2)'": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M3 c=3.1 '5+2log(x+3.1)-log((x+3.1)^2)' vs 5": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M4 c=4.5 '5+2log(x+4.5)-log((x+4.5)^2)' vs 5": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M5 c=5 '5+log(x+5)+log(y+5)-log((x+5)(y+5))' vs 5": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M6 c=5 '5+2log(x+5)-log((x+5)^2)' vs 5": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M7 c=5 sqrt '5+sqrt((x+5)(y+5))-sqrt(x+5)sqrt(y+5)' vs 5": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M8 c=5 arg '5+arg((x+5)(y+5))-arg(x+5)-arg(y+5)' vs 5": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M9 c=5 T4-N3 universal": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M10 c=5 T4-M5 exprset": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M11 c=5 T5-N5 matriz": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M12 escala '5+log(exp((x+5)/20))-(x+5)/20' vs 5": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "M13 naive '5+log(exp(v))-v' vs 5": {
+   "grupo": "H_SHIFT",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "X1 'log(x^(-1))' vs -log(x) (falsa)": {
+   "grupo": "H_NEGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "X2 'x^(-1)+y^(-1)' vs (x*y)^(-1) (falsa)": {
+   "grupo": "H_NEGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "X3 'log(x*y*z)' vs log(x)+log(y)+log(z) (compuesto)": {
+   "grupo": "H_NEGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "X4 'sqrt(x)sqrt(y)sqrt(z)' vs sqrt(x*y*z) (compuesto)": {
+   "grupo": "H_NEGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "X5 'log(x+log(y))' vs log(x)+log(y) (átomos compuestos)": {
+   "grupo": "H_NEGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "X6 'x^(1/2)*y^(1/2)' vs (x*y)^(1/2) (fraccionario)": {
+   "grupo": "H_NEGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "X7 'log(x^3)' vs 3*log(x)": {
+   "grupo": "H_NEGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "X8 'arg(x^2)' vs 2*arg(x)": {
+   "grupo": "H_NEGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "X9 'asin(sin(x))' vs x": {
+   "grupo": "H_NEGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "X10 'x^(-2)' vs x^2 (signo de exponente)": {
+   "grupo": "H_NEGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "X11 '(x*y)^(-1)*x' vs y": {
+   "grupo": "H_NEGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "X12 'log(x^(-2))' vs -2*log(x) (falsa, compuesta)": {
+   "grupo": "H_NEGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "X13 'sqrt(x^2*y)' vs x*sqrt(y) (falsa)": {
+   "grupo": "H_NEGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  },
+  "X14 'exp(log(x)*2)' vs x^2 (falsa por rama)": {
+   "grupo": "H_NEGEXP",
+   "acepta": 0,
+   "n": 200,
+   "falsoPositivo": false
+  }
+ }
+}

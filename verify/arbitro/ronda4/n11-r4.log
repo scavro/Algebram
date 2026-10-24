@@ -1,0 +1,29 @@
+== N11-a sesión limpia
+  ✓ formato HH:MM:SS  [timer=01:59:59]
+  ✓ arranque ≈ plazo nominal 120 min  [timer=01:59:59]
+== N11-b deadline gigante 1e21 (repro de la R3)
+  ✓ formato HH:MM:SS de 8 chars (antes 21)  [timer=01:59:59 len=8]
+  ✓ clampeado al plazo nominal ≈ 02:00:00 (antes 277777777280012:37:20)  [timer=01:59:59]
+  ✓ deadline reescrito como finito dentro del plazo  [deadline=1791965587633]
+  ✓ examen operativo (sin bloqueo indebido)  [0/38]
+== N11-c deadline entero finito enorme (Date.now()+1e15)
+  ✓ clampeado a 02:00:00  [timer=01:59:58]
+== N11-d 10 h (> 2× nominal = 4 h → clampea)
+  ✓ clampeado a 02:00:00  [timer=01:59:59]
+== N11-e 4 h 30 min (justo por encima del umbral → clampea)
+  ✓ clampeado a 02:00:00  [timer=01:59:59]
+== N11-f 3 h (≤ 2× nominal → se respeta, no es deadline absurdo)
+  ✓ formato HH:MM:SS  [timer=02:59:57]
+  ✓ se respeta (≈ 03:00:00): el umbral de clampeo es > 2× nominal  [timer=02:59:57]
+  · regla implementada: clampea si deadline > ahora + 2×plazo (4 h para este examen)
+== N11-g 3 h 59 min (justo por debajo del umbral)
+  ✓ se respeta (≈ 03:54:00)  [timer=03:53:57]
+== N11-h deadline pasado
+  ✓ timer a 0  [timer=00:00:00]
+  ✓ todo bloqueado + auto-corrección  [38/38 nota=0]
+== N11-i basura no numérica
+  ✓ sesión nueva ≈ 02:00:00  [timer=01:59:59]
+== N11-j deadline válido se respeta (F5 no regala tiempo)
+  ✓ F5 conserva deadline (no regala tiempo)  [00:02:03 → 00:02:02]
+
+N11: TODO EN VERDE

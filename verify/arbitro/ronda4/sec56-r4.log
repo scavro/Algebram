@@ -1,0 +1,16 @@
+== 5. viewport 320 px
+  ✓ 320px index.html: sin overflow  [scrollW=322/322 desborde=[]]
+  ✓ 320px temas/tema-1.html: sin overflow  [scrollW=320/320 desborde=[]]
+  ✓ 320px examenes/examen-1.html: sin overflow  [scrollW=320/320 desborde=[]]
+  ✓ 320px matriz X1-12 con scroll horizontal  [{"found":true,"overflowX":"auto","scrollable":true,"docOverflow":false}]
+  ✓ 320px nav toggle abre menú  [{"open":true,"expandido":"true","ancho":320}]
+== 6. landscape
+  ✓ landscape 740×360 index.html: sin overflow  [scrollW=740/740 heroH=539 timer=null]
+  ✓ landscape 740×360 temas/tema-1.html: sin overflow  [scrollW=740/740 heroH=234 timer=null]
+  ✓ landscape 740×360 examenes/examen-1.html: sin overflow  [scrollW=740/740 heroH=273 timer=true]
+  ✓ landscape 812×375 index.html: sin overflow  [scrollW=812/812 heroH=555 timer=null]
+  ✓ landscape 812×375 temas/tema-1.html: sin overflow  [scrollW=812/812 heroH=240 timer=null]
+  ✓ landscape 812×375 examenes/examen-1.html: sin overflow  [scrollW=812/812 heroH=282 timer=true]
+  ✓ landscape: reveal completo con scroll instantáneo  [{"total":44,"ocultas":0}]
+
+secciones 5-6: VERDE

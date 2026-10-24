@@ -1,0 +1,80 @@
+OK   |  200/200 | HIST-B1 '1/2' vs 0.5
+OK   |  200/200 | HIST-B2 '2i' vs 2*i
+OK   |  200/200 | HIST-B3 '0,5' vs 1/2
+OK   |  200/200 | HIST-B4 '(2+11i)/5' vs 2/5+11/5*i
+OK   |  200/200 | HIST-B5 'sqrt(3)/2' vs 3^0.5/2
+OK   |  200/200 | HIST-B6 'π/3' vs pi/3
+OK   |  200/200 | HIST-B8 matriz '1/2' vs 0.5
+OK   |  200/200 | HIST-B10 exprset '-2;4' vs ['4','-2']
+OK   |  200/200 | HIST-B11 '1e3' vs 1000
+OK   |  200/200 | HIST-B12 '5!' vs 120
+OK   |  200/200 | HIST-B13 '-2^2' vs -4
+OK   |  200/200 | HIST-B14 '2sqrt(3)' vs 2*sqrt(3)
+OK   |  200/200 | HIST-B17 '3,14' vs 3.14
+OK   |  200/200 | HIST-D1 'sqrt(2)/2' vs 1/sqrt(2)
+OK   |  200/200 | HIST-D3 'i^2' vs -1
+OK   |  200/200 | HIST-D4 '(1+i)^2' vs 2i
+OK   |  200/200 | HIST-D5 '5*pi/6' vs pi*5/6
+OK   |  200/200 | HIST-N2 T4-N3 '4-t-s' reordenado
+OK   |  200/200 | HIST-N2b T4-N3 '4-(s+t)'
+OK   |  200/200 | HIST-N3 T4-N3 literal
+OK   |  200/200 | HIST-V1 'exp(log(x))' vs x (identidad en C\{0})
+OK   |  200/200 | HIST-V2 '(x^2-1)/(x-1)' vs x+1
+OK   |  200/200 | HIST-V3 'conj(x*y)' vs conj(x)*conj(y)
+OK   |  200/200 | HIST-V4 '(x+y)^2' vs x^2+2xy+y^2
+OK   |  200/200 | HIST-V5 '1/(1/x)' vs x
+OK   |  200/200 | HIST-V6 'sqrt(x)^2' vs x
+OK   |  200/200 | HIST-V7 '(-x)^2' vs x^2
+OK   |  200/200 | HIST-V8 'cos(x)^2+sen(x)^2' vs 1
+OK   |  200/200 | HIST-V9 'cosh(x)^2-sinh(x)^2' vs 1
+OK   |  200/200 | HIST-V10 '2*(x+y)' vs 2*x+2*y
+OK   |  200/200 | HIST-V11 'sen(pi/6)' vs 1/2
+OK   |  200/200 | HIST-V12 'tg(pi/4)' vs 1
+OK   |  200/200 | HIST-V13 matriz 'sqrt(4)' vs 2
+OK   |  200/200 | HIST-V14 '3/10' vs 3/10
+OK   |  200/200 | HIST-V15 T1-M2 mod/arg correctos
+OK   |  200/200 | HIST-V16 T1-N5 '2.34' redondeo
+OK   |  200/200 | HIST-V17 'senx' vs sin(x)
+OK   |  200/200 | HIST-V18 'log2' vs log(2)
+OK   |  200/200 | HIST-V19 'sqrt4' vs 2
+OK   |  200/200 | R10-C1 '(x+1)^2' vs x^2+2*x+1
+OK   |  200/200 | R10-C2 'x*x^(-1)' vs 1
+OK   |  200/200 | R10-C3 'x^(-2)' vs 1/(x^2)
+OK   |  200/200 | R10-C4 'x+y+z' vs 'z+y+x' (orden)
+OK   |  200/200 | R10-C5 '0.5*x' vs x/2 (fracción/decimal)
+OK   |  200/200 | R10-C6 '(x-1)*(x+1)' vs x^2-1
+OK   |  200/200 | R10-C7 'x^3-x' vs 'x*(x-1)*(x+1)'
+OK   |  200/200 | R10-C8 '1/(x*x)' vs x^(-2)
+OK   |  200/200 | NEW-T1 'sqrt(4*x)' vs 2*sqrt(x) (4>0)
+OK   |  200/200 | NEW-T2 'log(4*x)' vs log(4)+log(x) (4>0)
+OK   |  200/200 | NEW-T3 'log(sqrt(x))' vs log(x)/2
+OK   |  200/200 | NEW-T4 'sqrt(9*x)' vs 3*sqrt(x)
+OK   |  200/200 | NEW-T5 'exp(log(x))' vs x con x sustituida (log(exp(0))=0)
+OK   |  200/200 | NEW-A1 'log(x+y)' vs 'log(y+x)'
+OK   |  200/200 | NEW-A2 'log(2*x)' vs 'log(x*2)'
+OK   |  200/200 | NEW-A3 'sin(x+y)' vs 'sin(y+x)'
+OK   |  200/200 | NEW-A4 'log(x/2)' vs 'log(x*0.5)'
+OK   |  200/200 | NEW-A5 'log(x*(y+z))' vs 'log((y+z)*x)'
+OK   |  200/200 | NEW-A6 'sin(2*x)' vs 'sin(x*2)'
+OK   |  200/200 | NEW-A7 'exp(x+y)' vs 'exp(y+x)'
+OK   |  200/200 | NEW-A8 'sqrt(x+y)' vs 'sqrt(y+x)'
+OK   |  200/200 | NEW-A9 'abs(x*y)' vs 'abs(y*x)'
+OK   |  200/200 | NEW-A10 'log(0.1*x)' vs 'log(x/10)' (10>0)
+OK   |  200/200 | NEW-F1 'min(x,y)' vs 'min(y,x)'
+OK   |  200/200 | NEW-F2 'max(x,y,z)' vs 'max(z,y,x)'
+OK   |  200/200 | NEW-F3 '5!' vs 120 (expr)
+FN!! |    0/200 | NEW-F4 'x!' vs 'fact(x)'
+OK   |  200/200 | NEW-F5 'min(2,3)' vs 2
+OK   |  200/200 | NEW-P1 'x^(3/2)' vs 'x*sqrt(x)'
+OK   |  200/200 | NEW-P2 'x^(2/3)' vs '(x^(1/3))^2'
+OK   |  200/200 | NEW-P3 'x^(-1/2)' vs '1/sqrt(x)'
+OK   |  200/200 | NEW-P4 'x^(0.5)' vs 'sqrt(x)'
+OK   |  200/200 | NEW-P5 '(sqrt(x))^4' vs 'x^2'
+OK   |  200/200 | NEW-P6 'x^(4/2)' vs 'x^2'
+OK   |  200/200 | NEW-I1 'x*j' vs 'x*i' (alias)
+OK   |  200/200 | NEW-I2 'x*I' vs 'x*i' (alias)
+OK   |  200/200 | NEW-I3 'i*2' vs '2*i'
+OK   |  200/200 | NEW-I4 'ii' vs '-1' (i*i)
+OK   |  200/200 | NEW-I5 'e' vs 'exp(1)'
+
+RESUMEN: 1 casos con falsos negativos de 78 (N=200 runs/caso).

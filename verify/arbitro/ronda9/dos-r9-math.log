@@ -1,0 +1,8 @@
+   7617 ms | rechaza  | (x+y+z)^64 vs (x+y+z)^63*(x+y+z)
+  13655 ms | rechaza  | (x+y+z)^64 vs (x^2+y^2+z^2+2*x*y+2*x*z+2*y*z)^32
+  caso 3: TIMEOUT/CUELGE (exit 124)
+  caso 4: TIMEOUT/CUELGE (exit 124)
+  caso 5: TIMEOUT/CUELGE (exit 124)
+    897 ms | acepta   | (x+y+z)^32 vs ((x+y+z)^16)^2
+      2 ms | acepta   | x^64*y^64*z^64 vs (x*y*z)^64
+   6456 ms | rechaza  | (x+y+z)^64 vs 0

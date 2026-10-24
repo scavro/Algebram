@@ -1,0 +1,121 @@
+== M3 index.html
+   kicker cabecera: {"texto":"UNED · Grado en Ingeniería en Inteligenc","color":"rgb(122, 95, 28)","bg":"rgb(20,18,9)","ratio":3.11,"px":"11.52px","selector":"kicker"}
+   nav__brand-mark: {"texto":"Archivo","color":"rgb(122, 95, 28)","bg":"rgb(20,18,9)","ratio":3.11,"px":"11.52px","selector":"nav__brand-mark"}
+   meta: {"texto":"0 / 15 · 0%","color":"rgb(107, 98, 72)","bg":"rgb(244,239,227)","ratio":5.28,"px":"11.52px","selector":"meta"}
+   meta: {"texto":"0 / 15 · 0%","color":"rgb(107, 98, 72)","bg":"rgb(244,239,227)","ratio":5.28,"px":"11.52px","selector":"meta"}
+   meta: {"texto":"0 / 15 · 0%","color":"rgb(107, 98, 72)","bg":"rgb(244,239,227)","ratio":5.28,"px":"11.52px","selector":"meta"}
+   plaque__label: {"texto":"Por qué importa en IA","color":"rgb(77, 122, 75)","bg":"rgb(248,245,238)","ratio":4.59,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Cómo funciona","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"01 · Lee y reproduce","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"02 · Practica sin mirar","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"03 · Repasa con fichas","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"04 · Ensaya el examen","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+== M3 temas/tema-1.html
+   kicker cabecera: {"texto":"Tema I · Fundamentos algebraicos para la","color":"rgb(122, 95, 28)","bg":"rgb(20,18,9)","ratio":3.11,"px":"11.52px","selector":"kicker"}
+   nav__brand-mark: {"texto":"Archivo","color":"rgb(122, 95, 28)","bg":"rgb(244,239,227)","ratio":5.26,"px":"11.52px","selector":"nav__brand-mark"}
+   chip: {"texto":"Normal","color":"rgb(77, 122, 75)","bg":"rgb(235,228,210)","ratio":3.94,"px":"11.52px","selector":"drill__level"}
+   chip: {"texto":"Normal","color":"rgb(77, 122, 75)","bg":"rgb(235,228,210)","ratio":3.94,"px":"11.52px","selector":"drill__level"}
+   chip: {"texto":"Normal","color":"rgb(77, 122, 75)","bg":"rgb(235,228,210)","ratio":3.94,"px":"11.52px","selector":"drill__level"}
+   plaque__label: {"texto":"Definición 1.1","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Proposición 1.2","color":"rgb(122, 95, 28)","bg":"rgb(241,233,212)","ratio":4.97,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Error frecuente","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Definición 1.3","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Proposición 1.4","color":"rgb(122, 95, 28)","bg":"rgb(241,233,212)","ratio":4.97,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"En IA","color":"rgb(77, 122, 75)","bg":"rgb(248,245,238)","ratio":4.59,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Definición 1.5","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Proposición 1.6","color":"rgb(122, 95, 28)","bg":"rgb(241,233,212)","ratio":4.97,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Error frecuente","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"En IA","color":"rgb(77, 122, 75)","bg":"rgb(248,245,238)","ratio":4.59,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Definición 1.7","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Proposición 1.8","color":"rgb(122, 95, 28)","bg":"rgb(241,233,212)","ratio":4.97,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Error frecuente","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Definición 1.9","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Proposición 1.10","color":"rgb(122, 95, 28)","bg":"rgb(241,233,212)","ratio":4.97,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Teorema 1.11","color":"rgb(122, 95, 28)","bg":"rgb(241,233,212)","ratio":4.97,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"En IA","color":"rgb(77, 122, 75)","bg":"rgb(248,245,238)","ratio":4.59,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Error frecuente","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Proposición 1.12","color":"rgb(122, 95, 28)","bg":"rgb(241,233,212)","ratio":4.97,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Definición 1.13","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Error frecuente","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"En IA","color":"rgb(77, 122, 75)","bg":"rgb(248,245,238)","ratio":4.59,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Definición 1.14","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Proposición 1.15","color":"rgb(122, 95, 28)","bg":"rgb(241,233,212)","ratio":4.97,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Error frecuente","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Definición 1.16","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Teorema 1.17","color":"rgb(122, 95, 28)","bg":"rgb(241,233,212)","ratio":4.97,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Error frecuente","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"En IA","color":"rgb(77, 122, 75)","bg":"rgb(248,245,238)","ratio":4.59,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Definición 1.18","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Teorema 1.19 (Fórmula de Euler)","color":"rgb(122, 95, 28)","bg":"rgb(241,233,212)","ratio":4.97,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Proposición 1.20 (Potencias y Moivre)","color":"rgb(122, 95, 28)","bg":"rgb(241,233,212)","ratio":4.97,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Proposición 1.21 (Raíces nnn-ésimas)","color":"rgb(122, 95, 28)","bg":"rgb(241,233,212)","ratio":4.97,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Error frecuente","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"En IA","color":"rgb(77, 122, 75)","bg":"rgb(248,245,238)","ratio":4.59,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Teorema 1.22 (Teorema Fundamental del Ál","color":"rgb(122, 95, 28)","bg":"rgb(241,233,212)","ratio":4.97,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Error frecuente","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"En IA","color":"rgb(77, 122, 75)","bg":"rgb(248,245,238)","ratio":4.59,"px":"11.52px","selector":"plaque__label"}
+== M3 examenes/examen-1.html
+   kicker cabecera: {"texto":"Examen 1 · Temas I–II","color":"rgb(122, 95, 28)","bg":"rgb(20,18,9)","ratio":3.11,"px":"11.52px","selector":"kicker"}
+   nav__brand-mark: {"texto":"Archivo","color":"rgb(122, 95, 28)","bg":"rgb(244,239,227)","ratio":5.26,"px":"11.52px","selector":"nav__brand-mark"}
+   chip: {"texto":"Normal","color":"rgb(77, 122, 75)","bg":"rgb(235,228,210)","ratio":3.94,"px":"11.52px","selector":"drill__level"}
+   chip: {"texto":"Normal","color":"rgb(77, 122, 75)","bg":"rgb(235,228,210)","ratio":3.94,"px":"11.52px","selector":"drill__level"}
+   chip: {"texto":"Normal","color":"rgb(77, 122, 75)","bg":"rgb(235,228,210)","ratio":3.94,"px":"11.52px","selector":"drill__level"}
+   Tiempo restante: {"texto":"Tiempo restante","color":"rgba(236, 228, 207, 0.8)","bg":"rgb(20,18,9)","ratio":9.68,"px":"11.52px","selector":"meta"}
+   plaque__label: {"texto":"Instrucciones","color":"rgb(122, 95, 28)","bg":"rgb(241,233,212)","ratio":4.97,"px":"11.52px","selector":"plaque__label"}
+== M3 planificacion.html
+   kicker cabecera: {"texto":"Curso 2026–2027 · Cuatrimestre de otoño","color":"rgb(122, 95, 28)","bg":"rgb(20,18,9)","ratio":3.11,"px":"11.52px","selector":"kicker"}
+   nav__brand-mark: {"texto":"Archivo","color":"rgb(122, 95, 28)","bg":"rgb(244,239,227)","ratio":5.26,"px":"11.52px","selector":"nav__brand-mark"}
+   plaque__label: {"texto":"Advertencia","color":"rgb(122, 95, 28)","bg":"rgb(248,245,238)","ratio":5.54,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Regla de calificación","color":"rgb(122, 95, 28)","bg":"rgb(232,223,196)","ratio":4.53,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Lectura práctica","color":"rgb(77, 122, 75)","bg":"rgb(243,238,227)","ratio":4.32,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Justifica","color":"rgb(122, 95, 28)","bg":"rgb(243,238,227)","ratio":5.22,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Ordena","color":"rgb(122, 95, 28)","bg":"rgb(243,238,227)","ratio":5.22,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Comprueba","color":"rgb(122, 95, 28)","bg":"rgb(243,238,227)","ratio":5.22,"px":"11.52px","selector":"plaque__label"}
+   plaque__label: {"texto":"Ensaya","color":"rgb(122, 95, 28)","bg":"rgb(243,238,227)","ratio":5.22,"px":"11.52px","selector":"plaque__label"}
+== N3/N4 T2-E4: {
+ "found": true,
+ "radios": [
+  {
+   "aria": null,
+   "labelTexto": "Verdadero",
+   "value": "true"
+  },
+  {
+   "aria": null,
+   "labelTexto": "Falso",
+   "value": "false"
+  }
+ ],
+ "choicesTrasCorregir": [
+  {
+   "cls": "choice",
+   "txt": "Verdadero"
+  },
+  {
+   "cls": "choice is-selected",
+   "txt": "Falso"
+  }
+ ],
+ "feedback": "✗ Aún no es correcto. Campo 'orth' incorrecto Comprueba el p",
+ "tipoBool": true
+}
+== N2 matriz X1-12 @375: {
+ "found": true,
+ "overflowX": "auto",
+ "maxWidth": "100%",
+ "scrollWidth": 382,
+ "clientWidth": 283,
+ "scrollable": true,
+ "desbordeTarjeta": false,
+ "lastVisibleTrasFocus": true,
+ "lastRect": {
+  "l": 232,
+  "r": 315
+ },
+ "gridRect": {
+  "l": 44,
+  "r": 331
+ },
+ "docOverflow": false,
+ "innerW": 375
+}

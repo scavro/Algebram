@@ -1,0 +1,26 @@
+== (a) multi incompleto (T1-M2: mod=2 exact · arg=5*pi/6)
+  ✔ M-a solo mod correcto, arg vacío → wrong "✗ Aún no es correcto. Re" · JS-errs=0
+  ✔ M-b solo arg correcto, mod vacío → wrong "✗ Aún no es correcto. Re" · JS-errs=0
+  ✔ M-c ambos vacíos → wrong "✗ Aún no es correcto. Re" · JS-errs=0
+  ✔ M-d mod correcto, arg basura → wrong "✗ Aún no es correcto. Ca" · JS-errs=0
+  ✔ M-e recuperación multi correcta (2 · 5π/6) → correct con solución
+  ✔ M-f multi basura "((( · ***" → wrong sin crash
+
+== (b) choice sin selección
+  ✔ T1-N3 «Comprobar» sin marcar → wrong "✗ Aún no es correcto. Seleccio" · JS-errs=0
+  ✔ T1-M5 bool sin marcar → wrong "✗ Aún no es correcto. Seleccio"
+== (b2) examen-1 «Corregir examen» sin ninguna selección
+  ✔ examen-1 sin marcar → 12/12 ✗ · 0 ✓ · feedback ✗ en todas · JS-errs=0
+  ✔ marcador sin marcar: 0/12 · nota 0
+
+== (c) localStorage 'curso-algebra-progreso-v1' corrupto
+  ✔ L1  '{{{' JSON inválido → boots OK · drills tema=15 · katex=779 · labels idx=5 OK=true · T1-N4→correct · JS-errs=0
+  ✔ L2  'null' → boots OK · drills tema=15 · katex=779 · labels idx=5 OK=true · T1-N4→correct · JS-errs=0
+  ✔ L4  '[1,2,3]' array → boots OK · drills tema=15 · katex=779 · labels idx=5 OK=true · T1-N4→correct · JS-errs=0
+  ✔ L7  'undefined' literal → boots OK · drills tema=15 · katex=779 · labels idx=5 OK=true · T1-N4→correct · JS-errs=0
+  ✔ L9  '__proto__' pollution → boots OK · drills tema=15 · katex=779 · labels idx=5 OK=true · T1-N4→correct · JS-errs=0
+  ✔ L10 valor anidado → boots OK · drills tema=15 · katex=779 · labels idx=5 OK=true · T1-N4→correct · JS-errs=0
+  ✔ L12 sano: 1 solved → boots OK · drills tema=15 · katex=779 · labels idx=5 OK=true · T1-N4→correct · JS-errs=0
+  ✔ L15 claves ajenas + solved → boots OK · drills tema=15 · katex=779 · labels idx=5 OK=true · T1-N4→correct · JS-errs=0
+
+HOSTIL-UI R9: 0 fallos

@@ -1,0 +1,83 @@
+--- H_LOGEXP (18 casos × 200 runs) ---
+OK   |    0/200 | E1 '5+log(exp(x))-x' vs 5
+OK   |    0/200 | E1b '5+3*(log(exp(x))-x)' vs 5
+OK   |    0/200 | E8 'log(exp(x))-x' vs 0
+OK   |    0/200 | E9 '0+log(exp(x))-x' vs 0
+OK   |    0/200 | E10 'log(exp(x))' vs x
+OK   |    0/200 | E11 '5+(log(exp(x))-x)^2' vs 5
+OK   |    0/200 | E12 'log(exp(x))-x' vs 0
+OK   |    0/200 | E3 T4-N3 '4-s-t+log(exp(s))-s'
+OK   |    0/200 | F1 T4-N3 '4-s-t+log(exp(v))-v'
+OK   |    0/200 | F2 T4-N3 '+log(exp(v))-v+log(exp(w))-w'
+OK   |    0/200 | F3 T5-N5 celdas +log(exp(v))-v
+OK   |    0/200 | F4 T4-M5 'i+log(exp(v))-v;-i'
+OK   |    0/200 | F5 spec5 '5+log(exp(v))-v'
+OK   |    0/200 | F6 multi T1-M2 mod +log(exp(v))-v
+OK   |    0/200 | E4 celda 'log(exp(x))-x' vs 0
+OK   |    0/200 | E5 exprset 'i+log(exp(x))-x;-i'
+OK   |    0/200 | E6 'log(exp(x))' vs x
+OK   |    0/200 | G1 'log(exp(log(exp(x))))' vs x
+--- H_FIJO (17 casos × 200 runs) ---
+OK   |    0/200 | O1 anulador 8-ptos vs 5
+OK   |    0/200 | O2 anulador 8-ptos vs 0
+OK   |    0/200 | O3 alias wrap 9 vars vs 4-s-t
+OK   |    0/200 | O4 celda + anulador vs 0
+OK   |    0/200 | O5 exprset 'i+anulador;-i'
+OK   |    0/200 | A1 'x-y' vs 0
+OK   |    0/200 | A10 celda 'x-y' vs 0
+OK   |    0/200 | O3b wrap 20 vars 'v0-v8' vs 0
+OK   |    0/200 | A4 '4-2*t' vs 4-s-t
+OK   |    0/200 | A5 '4-s-t+(s-t)' vs 4-s-t
+OK   |    0/200 | A6 '1/(x-x)' vs 5
+OK   |    0/200 | A8 '1/(x-y)' vs 2/(x-y)
+OK   |    0/200 | A9 'y^2' vs x^2
+OK   |    0/200 | J8 'x*inf' vs x
+OK   |    0/200 | J9 '1/(x-x)+5' vs 5
+OK   |    0/200 | J10 '5+0*(x-x)/(x-x)' vs 5
+OK   |    0/200 | P30 anulador ciego prod(x-k) vs 0
+--- H_BRANCH (12 casos × 200 runs) ---
+OK   |    0/200 | L1 'log(exp(4-s-t))' vs 4-s-t
+OK   |    0/200 | L2 'sqrt(x^2)' vs x
+OK   |    0/200 | L3 'log(x^2)' vs 2*log(x)
+OK   |    0/200 | L4 'log(x)+log(y)' vs log(x*y)
+OK   |    0/200 | L5 'log(exp(2*x))/2' vs x
+OK   |    0/200 | L6 'acos(cos(x))' vs x
+OK   |    0/200 | L7 'sqrt(x*y)' vs sqrt(x)*sqrt(y)
+OK   |    0/200 | L8 'arg(x*y)' vs arg(x)+arg(y)
+OK   |    0/200 | L9 T4-N3 grind log-product
+OK   |    0/200 | L10 T5-N5 grind sqrt celdas
+OK   |    0/200 | L11 T4-M5 grind log exprset
+OK   |    0/200 | L12 spec5 grind log-product
+--- H_SHIFT (15 casos × 200 runs) ---
+OK   |    0/200 | M0 naive '5+log(u)+log(v)-log(u*v)' vs 5
+OK   |    0/200 | M0b naive 'log(x)+log(y)' vs log(x*y)
+OK   |    0/200 | M1 c=3.5 '5+2log(x+3.5)-log((x+3.5)^2)' vs 5
+OK   |    0/200 | M2 c=3.5 T4-N3 '4-s-t+2log(s+3.5)-log((s+3.5)^2)'
+OK   |    0/200 | M3 c=3.1 '5+2log(x+3.1)-log((x+3.1)^2)' vs 5
+OK   |    0/200 | M4 c=4.5 '5+2log(x+4.5)-log((x+4.5)^2)' vs 5
+OK   |    0/200 | M5 c=5 '5+log(x+5)+log(y+5)-log((x+5)(y+5))' vs 5
+OK   |    0/200 | M6 c=5 '5+2log(x+5)-log((x+5)^2)' vs 5
+OK   |    0/200 | M7 c=5 sqrt '5+sqrt((x+5)(y+5))-sqrt(x+5)sqrt(y+5)' vs 5
+OK   |    0/200 | M8 c=5 arg '5+arg((x+5)(y+5))-arg(x+5)-arg(y+5)' vs 5
+OK   |    0/200 | M9 c=5 T4-N3 universal
+OK   |    0/200 | M10 c=5 T4-M5 exprset
+OK   |    0/200 | M11 c=5 T5-N5 matriz
+OK   |    0/200 | M12 escala '5+log(exp((x+5)/20))-(x+5)/20' vs 5
+OK   |    0/200 | M13 naive '5+log(exp(v))-v' vs 5
+--- H_NEGEXP (14 casos × 200 runs) ---
+OK   |    0/200 | X1 'log(x^(-1))' vs -log(x) (falsa)
+OK   |    0/200 | X2 'x^(-1)+y^(-1)' vs (x*y)^(-1) (falsa)
+OK   |    0/200 | X3 'log(x*y*z)' vs log(x)+log(y)+log(z) (compuesto)
+OK   |    0/200 | X4 'sqrt(x)sqrt(y)sqrt(z)' vs sqrt(x*y*z) (compuesto)
+OK   |    0/200 | X5 'log(x+log(y))' vs log(x)+log(y) (átomos compuestos)
+OK   |    0/200 | X6 'x^(1/2)*y^(1/2)' vs (x*y)^(1/2) (fraccionario)
+OK   |    0/200 | X7 'log(x^3)' vs 3*log(x)
+OK   |    0/200 | X8 'arg(x^2)' vs 2*arg(x)
+OK   |    0/200 | X9 'asin(sin(x))' vs x
+OK   |    0/200 | X10 'x^(-2)' vs x^2 (signo de exponente)
+OK   |    0/200 | X11 '(x*y)^(-1)*x' vs y
+OK   |    0/200 | X12 'log(x^(-2))' vs -2*log(x) (falsa, compuesta)
+OK   |    0/200 | X13 'sqrt(x^2*y)' vs x*sqrt(y) (falsa)
+OK   |    0/200 | X14 'exp(log(x)*2)' vs x^2 (falsa por rama)
+
+RESUMEN: 0 casos con falsos positivos de 76 (N=200 runs/caso).

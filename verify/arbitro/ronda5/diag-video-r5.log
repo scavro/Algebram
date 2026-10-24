@@ -1,0 +1,54 @@
+
+== temas/tema-2.html
+  errEvents: [
+ {
+  "tag": "TRACK",
+  "src": "file:///home/scavro/AAA%20Uned/Fundamentos%20algebraicos%20para%20la%20ia/CURSO%20MIMO/assets/animaciones/ii_transformacion.vtt",
+  "msg": null,
+  "isErrEvent": false
+ },
+ {
+  "tag": "TRACK",
+  "src": "file:///home/scavro/AAA%20Uned/Fundamentos%20algebraicos%20para%20la%20ia/CURSO%20MIMO/assets/animaciones/ii_gram_schmidt.vtt",
+  "msg": null,
+  "isErrEvent": false
+ }
+]
+  video: {"src":"ii_transformacion.mp4","currentSrc":"ii_transformacion.mp4","networkState":1,"readyState":4,"error":null,"duration":10.733333,"tracks":[{"src":"ii_transformacion.vtt","cues":0,"mode":"showing"}]}
+  video: {"src":"ii_gram_schmidt.mp4","currentSrc":"ii_gram_schmidt.mp4","networkState":1,"readyState":4,"error":null,"duration":11.633333,"tracks":[{"src":"ii_gram_schmidt.vtt","cues":0,"mode":"showing"}]}
+
+== temas/tema-4.html
+  errEvents: [
+ {
+  "tag": "TRACK",
+  "src": "file:///home/scavro/AAA%20Uned/Fundamentos%20algebraicos%20para%20la%20ia/CURSO%20MIMO/assets/animaciones/iv_gauss.vtt",
+  "msg": null,
+  "isErrEvent": false
+ },
+ {
+  "tag": "TRACK",
+  "src": "file:///home/scavro/AAA%20Uned/Fundamentos%20algebraicos%20para%20la%20ia/CURSO%20MIMO/assets/animaciones/iv_minimos.vtt",
+  "msg": null,
+  "isErrEvent": false
+ }
+]
+  video: {"src":"iv_gauss.mp4","currentSrc":"iv_gauss.mp4","networkState":1,"readyState":4,"error":null,"duration":16.233333,"tracks":[{"src":"iv_gauss.vtt","cues":0,"mode":"showing"}]}
+  video: {"src":"iv_minimos.mp4","currentSrc":"iv_minimos.mp4","networkState":1,"readyState":4,"error":null,"duration":13.333333,"tracks":[{"src":"iv_minimos.vtt","cues":0,"mode":"showing"}]}
+
+== temas/tema-5.html
+  errEvents: [
+ {
+  "tag": "TRACK",
+  "src": "file:///home/scavro/AAA%20Uned/Fundamentos%20algebraicos%20para%20la%20ia/CURSO%20MIMO/assets/animaciones/v_espectral.vtt",
+  "msg": null,
+  "isErrEvent": false
+ },
+ {
+  "tag": "TRACK",
+  "src": "file:///home/scavro/AAA%20Uned/Fundamentos%20algebraicos%20para%20la%20ia/CURSO%20MIMO/assets/animaciones/v_svd.vtt",
+  "msg": null,
+  "isErrEvent": false
+ }
+]
+  video: {"src":"v_espectral.mp4","currentSrc":"v_espectral.mp4","networkState":1,"readyState":4,"error":null,"duration":11.233333,"tracks":[{"src":"v_espectral.vtt","cues":0,"mode":"showing"}]}
+  video: {"src":"v_svd.mp4","currentSrc":"v_svd.mp4","networkState":1,"readyState":4,"error":null,"duration":14.133333,"tracks":[{"src":"v_svd.vtt","cues":0,"mode":"showing"}]}

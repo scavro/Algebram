@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tema III · Aplicaciones lineales y multilineales · Fundamentos Algebraicos para la IA</title>
+  <meta name="description" content="Aplicaciones lineales y multilineales, determinante, los cuatro subespacios, autovalores y formas cuadráticas: explicación, resumen, mapa mental y ejercicios interactivos del Tema III." />
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/css/fonts.css" />
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+</head>
+<body data-theme="tema-3">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="progress-bar" aria-hidden="true"><div class="progress-bar__fill"></div></div>
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="wrap nav__inner">
+      <a class="nav__brand" href="../index.html"><span class="nav__brand-mark">Archivo</span><span>Álgebra · IA</span></a>
+      <button class="nav__toggle" aria-expanded="false" aria-label="Abrir menú">Menú</button>
+      <ul class="nav__links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../temas/tema-1.html">Temas</a></li>
+        <li><a href="../examenes/examen-1.html">Exámenes</a></li>
+        <li><a href="../planificacion.html">Planificación</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <header class="theme-head">
+    <div class="theme-head__bg" aria-hidden="true"></div>
+    <div class="theme-head__ghost ghost-num" aria-hidden="true">03</div>
+    <div class="theme-head__inner">
+      <p class="kicker">Tema III · Fundamentos algebraicos para la IA</p>
+      <h1>Aplicaciones lineales y multilineales</h1>
+      <div class="theme-head__row">
+        <span class="chip chip--gold">2–22 noviembre</span>
+        <span class="chip" data-count="tema-3" data-count-suffix=" ejercicios interactivos">15 ejercicios interactivos</span>
+        <span class="chip">Resumen + mapa mental</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrap toc" aria-label="Sumario del tema">
+    <a href="#s1"><span class="meta">§ 3.1</span><strong>La matriz asociada</strong></a>
+    <a href="#s2"><span class="meta">§ 3.2</span><strong>Composición, núcleo e imagen</strong></a>
+    <a href="#s3"><span class="meta">§ 3.3</span><strong>Aplicaciones multilineales</strong></a>
+    <a href="#s4"><span class="meta">§ 3.4</span><strong>El determinante</strong></a>
+    <a href="#s5"><span class="meta">§ 3.5</span><strong>Matrices especiales</strong></a>
+    <a href="#s6"><span class="meta">§ 3.6</span><strong>Determinante y volumen</strong></a>
+    <a href="#s7"><span class="meta">§ 3.7</span><strong>Los cuatro subespacios</strong></a>
+    <a href="#s8"><span class="meta">§ 3.8</span><strong>Núcleo generalizado</strong></a>
+    <a href="#s9"><span class="meta">§ 3.9</span><strong>Autovalores y autovectores</strong></a>
+    <a href="#s10"><span class="meta">§ 3.10</span><strong>Formas cuadráticas</strong></a>
+    <a href="#resumen"><span class="meta">Ficha</span><strong>Resumen</strong></a>
+    <a href="#mapa"><span class="meta">Visual</span><strong>Mapa mental</strong></a>
+    <a href="#ejercicios"><span class="meta">Práctica</span><strong>Ejercicios</strong></a>
+  </nav>
+
+  <main id="contenido">
+
+    <!-- ================= TEORÍA ================= -->
+    <section class="wrap section theory-section" id="s1">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 3.1</div>
+        <div>
+          <h2>Aplicaciones lineales: la matriz asociada</h2>
+          <p>Una matriz y un vector variable definen una transformación; toda transformación lineal entre espacios finitos se escribe así.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>En el Tema II viste que un tensor, junto con una operación de contracción de índices, determina una aplicación entre espacios de tensores. Nos quedamos ahora con el caso más simple y más útil: las transformaciones entre espacios de vectores, es decir, entre tensores de orden 1.</p>
+        <p>Si fijamos una matriz \(A \in \mathbb{K}^{n \times m}\) y tomamos como variable un vector \(x \in \mathbb{K}^{m}\), la contracción del segundo índice de \(A\) con el único índice de \(x\) —lo que conoces como producto de matrices— define una aplicación \(f : \mathbb{K}^{m} \to \mathbb{K}^{n}\):</p>
+        \[ f(x) = Ax, \qquad \text{en índices:} \quad y_i = \sum_{j=1}^{m} a_{ij} x_j, \quad i = 1, \dots, n. \]
+        <p>Cada componente \(y_i\) de la imagen es una combinación lineal de las componentes de \(x\), con los \(a_{ij}\) como pesos. Esa es la firma de la linealidad, que se verifica de forma inmediata:</p>
+        \[ f(\alpha u + \beta v) = A(\alpha u + \beta v) = \alpha Au + \beta Av = \alpha f(u) + \beta f(v). \]
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 3.1</span>
+          <p>Dados dos espacios vectoriales \(X, Y\) sobre un cuerpo de escalares \(\mathbb{K}\), una aplicación \(f : X \to Y\) es <strong>lineal</strong> si</p>
+          \[ f(\alpha u + \beta v) = \alpha f(u) + \beta f(v), \quad \forall u, v \in X,\ \alpha, \beta \in \mathbb{K}. \]
+          <p>Cuando el espacio de llegada es el propio cuerpo, \(Y = \mathbb{K}\), la aplicación se llama <strong>forma lineal</strong>. Si \(X\) e \(Y\) son espacios de funciones, las aplicaciones lineales suelen denominarse <strong>operadores</strong>.</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 3.2</span>
+          <p>Sea \(f : \mathbb{K}^{m} \to \mathbb{K}^{n}\) lineal y sean \(e_1, \dots, e_m\) los vectores de la base canónica de \(\mathbb{K}^{m}\). Entonces \(f(x) = Ax\) para toda \(x \in \mathbb{K}^{m}\), donde \(A = [\,f(e_1) \ \cdots \ f(e_m)\,] \in \mathbb{K}^{n \times m}\) es la única matriz con esa propiedad.</p>
+          <p><em>Demostración.</em> Todo vector se descompone como \(x = \sum_{j=1}^{m} x_j e_j\), y por linealidad \(f(x) = \sum_{j=1}^{m} x_j f(e_j)\). La columna \(j\)-ésima de \(A\) es precisamente \(f(e_j)\), de modo que esa suma es el producto \(Ax\). La unicidad se debe a que las columnas de \(A\) vienen forzadas a ser \(f(e_j)\). \(\blacksquare\)</p>
+        </div>
+
+        <p>En particular, las aplicaciones \(y = ax\) con \(a \in \mathbb{K}\) son <em>todas</em> las aplicaciones lineales de \(\mathbb{K}\) en \(\mathbb{K}\). El resto de funciones que conoces de \(\mathbb{R}\) en \(\mathbb{R}\) —\(y = 3x + 1\), \(y = x^2\), \(y = |x|\), \(y = \cos x\)…— no son lineales.</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>«Lineal» no significa «de recta». La función \(y = 3x + 1\) gráfica una recta, pero no es lineal: \(f(0) = 1 \neq 0\). Una aplicación lineal satisface siempre \(f(0) = 0\) (toma \(\alpha = \beta = 0\)). Confundir aplicaciones lineales con aplicaciones afines es un error que arrastra todo el tema.</p>
+        </div>
+
+        <p><strong>Ejemplo 3.1.</strong> La matriz \(A = \begin{pmatrix} 1 &amp; 2 &amp; 0 \\ 0 &amp; -1 &amp; 3 \end{pmatrix} \in \mathbb{R}^{2 \times 3}\) define \(f : \mathbb{R}^{3} \to \mathbb{R}^{2}\) mediante \(f(x) = (x_1 + 2x_2,\ -x_2 + 3x_3)\). Por ejemplo, \(f(2, -1, 3) = (2 - 2,\ 1 + 9) = (0, 10)\). Fíjate en que las columnas de \(A\) son \(f(e_1) = (1, 0)\), \(f(e_2) = (2, -1)\) y \(f(e_3) = (0, 3)\), tal como afirma la proposición anterior.</p>
+        <p><strong>Ejemplo 3.1 bis (operadores y formas lineales en espacios de polinomios).</strong> En el espacio vectorial \(V\) de los polinomios en una variable real (que tiene dimensión infinita), la <strong>derivación</strong> \(D : V \to V\) dada por \(D(p) = p'\) y la <strong>integración indefinida</strong> \(f : V \to V\) dada por \((f(p))(x) = \int_{0}^{x} p(t)\,dt\) son operadores lineales, puesto que \((\alpha p + \beta q)' = \alpha p' + \beta q'\) y la integral de una combinación lineal es la combinación lineal de las integrales. De igual modo, la <strong>integral definida</strong> \(g : V \to \mathbb{R}\) dada por \(g(p) = \int_{0}^{3} p(t)\,dt\) es una <em>forma lineal</em> (su espacio de llegada es el cuerpo \(\mathbb{R}\); por ejemplo, \(g(x^{2}) = \int_{0}^{3} t^{2}\,dt = 9\)). Conviene no confundir la linealidad del operador \(D : V \to V\) con que la imagen de un polinomio concreto sea una función lineal de \(\mathbb{R}\) en \(\mathbb{R}\): por ejemplo, \(D(x^{3}) = 3x^{2}\) no es lineal como función de \(x \in \mathbb{R}\), pero \(D\) sí es lineal como aplicación entre polinomios.</p>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s2">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 3.2</div>
+        <div>
+          <h2>Composición, núcleo e imagen</h2>
+          <p>Componer aplicaciones lineales es multiplicar sus matrices; el núcleo y la imagen miden qué se pierde y qué se gana en el camino.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Si \(f : \mathbb{K}^{m} \to \mathbb{K}^{n}\) tiene matriz \(A\) y \(g : \mathbb{K}^{n} \to \mathbb{K}^{p}\) tiene matriz \(B\), el compuesto \(g \circ f\) es lineal (la composición de lineales es lineal) y su matriz es el producto \(BA\): el orden importa, y en general \(AB \neq BA\).</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 3.3</span>
+          <p>Con las notaciones anteriores, \((g \circ f)(x) = BAx\) para todo \(x \in \mathbb{K}^{m}\), es decir, la matriz de \(g \circ f\) es \(BA\).</p>
+          <p><em>Demostración.</em> \((g \circ f)(x) = g(f(x)) = B(Ax) = (BA)x\) para todo \(x\), y dos aplicaciones lineales con la misma matriz coinciden. \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 3.4</span>
+          <p>Sea \(A \in \mathbb{K}^{n \times m}\). Se llaman:</p>
+          <p>\(\bullet\) <strong>núcleo</strong> (o espacio nulo) de \(A\): \(\mathrm{nul}(A) = \ker A = \{u \in \mathbb{K}^{m} : Au = 0\}\);</p>
+          <p>\(\bullet\) <strong>espacio imagen</strong> (o columna) de \(A\): \(\mathrm{col}(A) = \{Ax : x \in \mathbb{K}^{m}\}\), generado por las columnas de \(A\);</p>
+          <p>\(\bullet\) <strong>rango</strong> de \(A\): \(\operatorname{rng} A = \dim \mathrm{col}(A)\).</p>
+          <p>El núcleo vive en el espacio de partida (\(\mathbb{K}^{m}\)) y la imagen en el de llegada (\(\mathbb{K}^{n}\)).</p>
+        </div>
+
+        <p><strong>Ejemplo 3.2.</strong> Sean \(f\) y \(g\) de \(\mathbb{R}^{2}\) en \(\mathbb{R}^{2}\) con matrices \(F = \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}\) (un cizallamiento) y \(G = \begin{pmatrix} 2 &amp; 0 \\ 0 &amp; 3 \end{pmatrix}\). La matriz del compuesto es</p>
+        \[ GF = \begin{pmatrix} 2 &amp; 0 \\ 0 &amp; 3 \end{pmatrix}\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix} = \begin{pmatrix} 2 &amp; 2 \\ 0 &amp; 3 \end{pmatrix}. \]
+        <p>Compruébalo con \(x = (1, 2)\): \(f(x) = (3, 2)\), \(g(f(x)) = (6, 6)\) y directamente \(GFx = (2 + 4, 6) = (6, 6)\). Si calculas \(FG\) obtendrás \(\begin{pmatrix} 2 &amp; 3 \\ 0 &amp; 3 \end{pmatrix} \neq GF\): el orden de la composición se respeta en el producto de matrices.</p>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Una capa densa de una red neuronal es exactamente una aplicación lineal \(x \mapsto Wx + b\) seguida de una no linealidad. Toda la potencia de una red profunda nace de componer muchas de estas transformaciones simples: la linealidad de cada capa se codifica en una matriz, y la composición de capas, en productos de matrices (más las funciones de activación, que rompen la linealidad).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s3">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 3.3</div>
+        <div>
+          <h2>Aplicaciones multilineales y formas</h2>
+          <p>Linealidad respecto de cada variable por separado: bilinealidad, sesquilinealidad y el origen multilineal del determinante.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Hay aplicaciones que no son lineales en conjunto, pero sí lo son respecto de cada variable cuando se fijan las demás. El prototipo es el producto de dos números: \(g(x_1, x_2) = x_1 x_2\). Si fijas \(x_1 = \mu\), resulta \(g(\mu, x_2) = \mu x_2\), lineal en \(x_2\); y lo mismo en la otra variable. Sin embargo \(g\) no es lineal sobre \(\mathbb{R}^{2}\): \(g(1, 1) = 1\) pero \(g(2, 2) = 4 \neq 2g(1, 1)\).</p>
+        <p>La forma general de este comportamiento se escribe con matrices. Sean \(A \in \mathbb{K}^{n \times n}\) y</p>
+        \[ g : \mathbb{K}^{n} \times \mathbb{K}^{n} \to \mathbb{K}, \qquad g(u, v) = u^{\top} A v = \sum_{i,j=1}^{n} a_{ij} u_i v_j, \]
+        <p>que es lineal en \(u\) con \(v\) fijo, y lineal en \(v\) con \(u\) fijo. Si en lugar de dos variables consideramos \(n\) vectores \(u_1, \dots, u_n\) contraídos con un tensor \(H \in \mathbb{K}^{n \times \cdots \times n}\) de orden \(n\),</p>
+        \[ h(u_1, \dots, u_n) = \sum_{j_1, \dots, j_n = 1}^{n} h_{j_1 \dots j_n} u_{1 j_1} u_{2 j_2} \cdots u_{n j_n}, \]
+        <p>obtenemos una aplicación lineal en cada variable por separado.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 3.5</span>
+          <p>Una aplicación \(f : X_1 \times \cdots \times X_n \to Y\) es <strong>multilineal</strong> si es lineal respecto de cada variable cuando se consideran fijas las demás. Si además \(Y = \mathbb{K}\) y \(X_1 = \cdots = X_n = X\), se llama <strong>forma multilineal</strong> sobre \(X\).</p>
+          <p>Para \(n = 2\) se dice <strong>forma bilineal</strong>: \(g(u, v) = u^{\top} A v\). Es <strong>simétrica</strong> si \(g(u, v) = g(v, u)\) y <strong>antisimétrica</strong> si \(g(u, v) = -g(v, u)\); esto equivale a que \(A\) sea simétrica o antisimétrica, respectivamente.</p>
+          <p>Cuando \(\mathbb{K} = \mathbb{C}\), se llama <strong>forma sesquilineal</strong> a \(g(u, v) = u^{*} A v\) (con \(u^{*}\) la adjunta, es decir, la traspuesta conjugada); es <strong>hermítica</strong> si \(g(u, v) = \overline{g(v, u)}\) y <strong>antihermítica</strong> si \(g(u, v) = -\overline{g(v, u)}\).</p>
+          <p>Una forma multilineal \(h\) es <strong>antisimétrica</strong> si cambia de signo al permutar dos de sus entradas: \(h(u_1, \dots, u_i, \dots, u_j, \dots, u_n) = -h(u_1, \dots, u_j, \dots, u_i, \dots, u_n)\).</p>
+        </div>
+
+        <p>Sobre \(\mathbb{R}\) los términos «bilineal» y «sesquilineal» (y «simétrica» y «hermítica») designan lo mismo, y se prefiere el vocabulario tradicional. Sobre \(\mathbb{C}\) los conceptos divergen por completo: la única aplicación a la vez bilineal y sesquilineal es la nula. En efecto, si \(g\) fuera las dos cosas, para \(u, v\) cualesquiera y \(\alpha = i\) se tendría, por la bilinealidad, \(g(iu, v) = i\, g(u, v)\), y por la sesquilinealidad, \(g(iu, v) = \overline{i}\, g(u, v) = -i\, g(u, v)\); por tanto \(2i\, g(u, v) = 0\) y \(g \equiv 0\). Por eso, a una forma sesquilineal se la llama hermítica, nunca «simétrica».</p>
+
+        <p>Cuando consideramos formas multilineales de \(n\) variables sobre \(X = \mathbb{K}^{n}\), cada \(n\)-tupla de vectores columna \((u_1, \dots, u_n) \in \mathbb{K}^{n} \times \cdots \times \mathbb{K}^{n} = (\mathbb{K}^{n})^{n}\) se identifica de manera canónica con la matriz cuadrada \(U = [\,u_1 \ \cdots \ u_n\,] \in \mathbb{K}^{n \times n}\) que los tiene por columnas. Mediante esta identificación \((\mathbb{K}^{n})^{n} \equiv \mathbb{K}^{n \times n}\), decir que una función sobre \(\mathbb{K}^{n \times n}\) es una <em>forma multilineal</em> significa que es <strong>lineal respecto de cada columna por separado</strong> (manteniendo fijas las \(n - 1\) columnas restantes), pero <em>no</em> lineal respecto de la suma de matrices.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 3.6</span>
+          <p>Salvo un factor escalar, existe una única forma multilineal antisimétrica no nula sobre \((\mathbb{K}^{n})^{n} \equiv \mathbb{K}^{n \times n}\) (multilineal y antisimétrica respecto de las columnas de la matriz). Al normalizarla con \(\det(I_n) = 1\) se obtiene el determinante.</p>
+          <p><em>Demostración.</em> Si \(h\) es antisimétrica, al permutar dos índices de la componente \(h_{j_1 \dots j_n}\) solo cambia el signo, no el valor absoluto. En particular \(h_{j_1 \dots j_n} = 0\) cuando dos índices coinciden (el cero es el único número igual a su opuesto). Si los \(n\) índices son distintos, \(|h_{j_1 \dots j_n}| = |h_{1 2 \cdots n}|\) y el signo depende solo de cómo se reordenen los índices (la signatura de la permutación). Por tanto, dos formas antisimétricas no nulas \(h, g\) verifican \(g = \frac{g_{12\cdots n}}{h_{12\cdots n}} h\). \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 3.3.</strong> La forma bilineal de matriz \(B = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\) se escribe en forma analítica como</p>
+        \[ g(u, v) = u^{\top} B v = u_1 v_1 + 2 u_1 v_2 + 3 u_2 v_1 + 4 u_2 v_2. \]
+        <p>Recíprocamente, si solo tienes el polinomio, la matriz se recupera evaluando: \(b_{ij} = g(e_i, e_j)\). Así, \(b_{11} = g(e_1, e_1) = 1\), \(b_{12} = g(e_1, e_2) = 2\), \(b_{21} = g(e_2, e_1) = 3\) y \(b_{22} = g(e_2, e_2) = 4\). Con \(u = (2, -1)\) y \(v = (3, 1)\): \(g(u, v) = 6 + 4 - 9 - 4 = -3\).</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Bilineal no es lineal, y lineal no es bilineal. La multiplicación \(g(x_1, x_2) = x_1 x_2\) es bilineal pero no lineal sobre \(\mathbb{R}^{2}\); la suma \(s(x_1, x_2) = x_1 + x_2\) es lineal sobre \(\mathbb{R}^{2}\) (es una forma lineal) pero no bilineal: al fijar \(x_1 = \mu \neq 0\) queda \(h(x_2) = \mu + x_2\), que no es lineal. Antes de aplicar una propiedad, decide en qué categoría estás.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s4">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 3.4</div>
+        <div>
+          <h2>El determinante: definición y propiedades</h2>
+          <p>La única forma multilineal antisimétrica normalizada, y el rosario de propiedades que de ella se siguen.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>La proposición anterior nos dice que, dentro de las formas multilineales antisimétricas sobre \(\mathbb{K}^{n \times n}\), solo hay una (salvo escalares). Normalizándola obtenemos el protagonista de este tema.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 3.7</span>
+          <p>El <strong>determinante</strong> es la única forma multilineal antisimétrica (respecto de las columnas, o equivalentemente de las filas) \(\det : \mathbb{K}^{n \times n} \to \mathbb{K}\) que satisface \(\det(I_n) = 1\). En notación de componentes,</p>
+          \[ \det(A) = \sum_{\sigma \in S_n} \operatorname{sgn}(\sigma) \prod_{i=1}^{n} a_{i, \sigma(i)} = \sum_{j_1, \dots, j_n = 1}^{n} \varepsilon_{j_1 \dots j_n} a_{1 j_1} \cdots a_{n j_n}, \]
+          <p>donde \(S_n\) es el grupo de las permutaciones de \(\{1, \dots, n\}\), \(\operatorname{sgn}(\sigma) = \pm 1\) es su signatura y \(\varepsilon_{j_1 \dots j_n} = \det[\,e_{j_1} \ \cdots \ e_{j_n}\,]\) son las componentes del <strong>tensor de Levi-Civita</strong> de orden \(n\) (vale \(+1\) si \((j_1,\dots,j_n)\) es una permutación par de \((1,\dots,n)\), \(-1\) si es impar, y \(0\) si hay índices repetidos).</p>
+          <p>Dada una matriz \(A \in \mathbb{K}^{n \times m}\), se llaman <strong>menores principales líderes</strong> (o simplemente <em>menores principales</em>) de \(A\) a los determinantes \(\Delta_k = \det A_k\) de las submatrices cuadradas superiores izquierdas \(A_k = (a_{ij})_{1 \le i,j \le k}\), para \(1 \le k \le \min(n,m)\).</p>
+        </div>
+
+        <p>En tamaños pequeños y en el cálculo práctico mediante submatrices, la definición general se concreta en tres reglas fundamentales:</p>
+        <p>\(\bullet\) <strong>Determinante \(2 \times 2\) y \(3 \times 3\) (regla de Sarrus):</strong> en orden \(2\), \(\det\begin{pmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{pmatrix} = a_{11}a_{22} - a_{12}a_{21}\). En orden \(3\), la contracción \(\sum_{j_1,j_2,j_3=1}^{3} \varepsilon_{j_1 j_2 j_3} a_{1 j_1} a_{2 j_2} a_{3 j_3}\) de los \(3! = 6\) términos no nulos del tensor de Levi-Civita da la regla de Sarrus:</p>
+        \[ \det\begin{pmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33} \end{pmatrix} = a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31} - a_{12}a_{21}a_{33} - a_{11}a_{23}a_{32}. \]
+        <p>\(\bullet\) <strong>Desarrollo de Laplace por una fila o columna:</strong> si \(M_{ij}\) denota el <strong>menor complementario</strong> de la entrada \(a_{ij}\) (el determinante de la submatriz \((n-1) \times (n-1)\) que resulta de suprimir la fila \(i\) y la columna \(j\)), la multilinealidad permite desarrollar \(\det(A)\) por cualquier fila \(i\) o cualquier columna \(j\):</p>
+        \[ \det(A) = \sum_{j=1}^{n} (-1)^{i+j} a_{ij} M_{ij} = \sum_{i=1}^{n} (-1)^{i+j} a_{ij} M_{ij}. \]
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 3.8 (propiedades del determinante)</span>
+          <p>Para todo \(A, B \in \mathbb{K}^{n \times n}\) y \(\alpha \in \mathbb{K}\):</p>
+          <p>\(\text{(a)}\) \(\det(\alpha A) = \alpha^{n} \det(A)\); en particular el determinante es homogéneo de grado \(n\), <em>no</em> lineal.</p>
+          <p>\(\text{(b)}\) \(\det(AB) = \det(A) \det(B)\).</p>
+          <p>\(\text{(c)}\) \(\det(A^{\top}) = \det(A)\) (y, sobre \(\mathbb{C}\), \(\det(A^{*}) = \overline{\det(A)}\)).</p>
+          <p>\(\text{(d)}\) \(A\) es invertible si y solo si \(\det(A) \neq 0\), y entonces \(\det(A^{-1}) = \dfrac{1}{\det(A)}\).</p>
+          <p>\(\text{(e)}\) El determinante cambia de signo al permutar dos columnas, se anula si dos columnas coinciden y no se altera al sumar a una columna combinación lineal de las demás. Todo esto vale también para las filas.</p>
+          <p><em>Demostración.</em> \(\text{(a)}\): al multiplicar por \(\alpha\) cada columna y usar la multilinealidad, \(\det(\alpha A) = \alpha^{n} \det(A)\). \(\text{(b)}\): si \(\det(A) \neq 0\), la aplicación \(X \mapsto \frac{1}{\det(A)} \det(AX)\) es multilineal, antisimétrica y vale \(1\) en \(I_n\); por la unicidad de la proposición 3.6 coincide con \(\det\), luego \(\det(AX) = \det(A)\det(X)\). Si \(\det(A) = 0\), la forma \(X \mapsto \det(AX)\) es multilineal y antisimétrica y se anula en \(I_n\), luego es idénticamente nula; en ambos casos \(\det(AB) = \det(A)\det(B)\). \(\text{(c)}\): la aplicación \(X \mapsto \det(X^{\top})\) es de nuevo multilineal, antisimétrica y vale \(1\) en \(I_n\), luego es \(\det\). \(\text{(d)}\): si las columnas son linealmente dependientes, alguna es combinación lineal de las otras y por \(\text{(e)}\) el determinante es nulo; si son independientes, \(A\) es invertible y \(1 = \det(I_n) = \det(AA^{-1}) = \det(A)\det(A^{-1})\). \(\text{(e)}\): son consecuencia directa de la antisimetría y de la multilinealidad (si una columna es combinación lineal de las otras, desarrollar por esa columna da matriz con columna repetida en cada sumando). \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 3.4.</strong> Para una matriz triangular, todos los sumandos del desarrollo se anulan salvo el de la diagonal, de modo que el determinante es el producto de los elementos diagonales. Con \(A = \begin{pmatrix} 2 &amp; 0 &amp; 0 \\ 5 &amp; 1 &amp; 0 \\ 7 &amp; 3 &amp; -1 \end{pmatrix}\): \(\det(A) = 2 \cdot 1 \cdot (-1) = -2\). Por otra parte, de las propiedades \(\text{(a)}\) y \(\text{(c)}\) se deduce inmediatamente que <strong>toda matriz antisimétrica (\(A^{\top} = -A\)) de orden \(n\) impar tiene determinante nulo</strong>: en efecto, \(\det(A) = \det(A^{\top}) = \det(-A) = (-1)^{n}\det(A) = -\det(A)\), luego \(2\det(A) = 0 \implies \det(A) = 0\).</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>El determinante <em>no</em> es aditivo: en general \(\det(A + B) \neq \det(A) + \det(B)\). Por ejemplo, con \(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\) y \(B = \begin{pmatrix} 2 &amp; 0 \\ 1 &amp; 1 \end{pmatrix}\), \(\det(A) + \det(B) = -2 + 2 = 0\), pero \(\det(A + B) = \det \begin{pmatrix} 3 &amp; 2 \\ 4 &amp; 5 \end{pmatrix} = 7\). Lo que sí vale es la homogeneidad \(\det(\alpha A) = \alpha^{n} \det(A)\): \(\det(2A) = 4 \det(A)\) en \(2 \times 2\), no \(2 \det(A)\).</p>
+        </div>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Olvidar la equivalencia \(\det(A) = 0 \iff A\) no es invertible \(\iff\) las columnas de \(A\) son linealmente dependientes \(\iff \mathrm{nul}(A) \neq \{0\}\). Es el puente entre el determinante y la teoría de subespacios que desarrollamos en el § 3.7: si el determinante se anula, la transformación colapsa volumen y pierde información.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>En la práctica el determinante casi nunca se calcula con la fórmula de permutaciones: las bibliotecas científicas (por ejemplo <code>numpy.linalg.det</code>) usan transformaciones de la matriz que veremos en el Tema IV. Con \(A = [[2, 1], [1, 3]]\) NumPy devuelve \(5.000000000000001\) y no \(5\): los sucesivos redondeos de la aritmética de coma flotante se acumulan. Aprender a distinguir el resultado matemático exacto de su aproximación numérica es básico cuando trabajas con matrices de miles de filas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s5">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 3.5</div>
+        <div>
+          <h2>Determinantes de matrices especiales</h2>
+          <p>Estructura triangular y bloques: el determinante de un conjunto de piezas es el producto de los determinantes de las piezas.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Las propiedades del apartado anterior convierten el cálculo de determinantes en algo casi mecánico cuando la matriz tiene estructura. Las dos reglas que más vas a usar son las siguientes.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 3.9</span>
+          <p>\(\text{(a)}\) Si \(A \in \mathbb{K}^{k \times k}\) y \(B \in \mathbb{K}^{m \times m}\), entonces</p>
+          \[ \det \begin{pmatrix} A &amp; C \\ 0 &amp; B \end{pmatrix} = \det(A) \det(B), \]
+          <p>con \(C \in \mathbb{K}^{k \times m}\) arbitraria; en particular \(\det(\mathrm{diag}(A_1, \dots, A_s)) = \prod \det(A_i)\).</p>
+          <p>\(\text{(b)}\) (Fórmula de Schur) Si \(A\) es invertible, \(\det \begin{pmatrix} A &amp; B \\ C &amp; D \end{pmatrix} = \det(A) \det(D - C A^{-1} B)\).</p>
+          <p><em>Demostración.</em> \(\text{(a)}\): probemos primero que \(\det\begin{pmatrix} A &amp; 0 \\ 0 &amp; I_m \end{pmatrix} = \det(A)\). La aplicación \(A \mapsto \det\begin{pmatrix} A &amp; 0 \\ 0 &amp; I_m \end{pmatrix}\) sobre \(\mathbb{K}^{k \times k}\) es multilineal y antisimétrica respecto de las \(k\) columnas de \(A\), y en \(A = I_k\) vale \(\det(I_{k+m}) = 1\); por la unicidad de la Proposición 3.6 coincide con \(\det(A)\). Análogamente (variando las últimas \(m\) columnas), \(\det\begin{pmatrix} I_k &amp; 0 \\ 0 &amp; B \end{pmatrix} = \det(B)\). Multiplicando ambos bloques se obtiene el caso diagonal por bloques: \(\det\begin{pmatrix} A &amp; 0 \\ 0 &amp; B \end{pmatrix} = \det\left(\begin{pmatrix} A &amp; 0 \\ 0 &amp; I_m \end{pmatrix}\begin{pmatrix} I_k &amp; 0 \\ 0 &amp; B \end{pmatrix}\right) = \det(A)\det(B)\). Finalmente, para un bloque \(C\) arbitrario, si \(A\) es invertible la factorización</p>
+          \[ \begin{pmatrix} A &amp; C \\ 0 &amp; B \end{pmatrix} = \begin{pmatrix} A &amp; 0 \\ 0 &amp; B \end{pmatrix} \begin{pmatrix} I_k &amp; A^{-1} C \\ 0 &amp; I_m \end{pmatrix} \]
+          <p>y la multiplicatividad dan \(\det(A)\det(B) \cdot 1\), porque la segunda matriz es unitriangular superior (determinante \(1\)). Si \(\det(A) = 0\), las columnas del bloque \(A\) son dependientes, luego también lo son las primeras \(k\) columnas de la matriz por bloques y ambos miembros se anulan. \(\text{(b)}\): descomponiendo,</p>
+          \[ \begin{pmatrix} I &amp; 0 \\ C A^{-1} &amp; I \end{pmatrix} \begin{pmatrix} A &amp; 0 \\ 0 &amp; D - C A^{-1} B \end{pmatrix} \begin{pmatrix} I &amp; A^{-1} B \\ 0 &amp; I \end{pmatrix} = \begin{pmatrix} A &amp; B \\ C &amp; D \end{pmatrix}, \]
+          <p>y multiplicando los determinantes de los tres factores se obtiene el resultado. \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 3.5.</strong> Sea \(D = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4 \\ 3 &amp; 4 &amp; 5 &amp; 6 \\ 0 &amp; 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 3 \end{pmatrix}\), triangular por bloques con \(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\) y \(B = \begin{pmatrix} 2 &amp; 0 \\ 1 &amp; 3 \end{pmatrix}\). Entonces \(\det(A) = 4 - 6 = -2\), \(\det(B) = 6 - 0 = 6\) y</p>
+        \[ \det(D) = \det(A) \det(B) = (-2) \cdot 6 = -12, \]
+        <p>sin desarrollar ningún determinante de orden 4. El bloque \(C\) (arriba a la derecha) ni siquiera hace falta mirarlo.</p>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s6">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 3.6</div>
+        <div>
+          <h2>El determinante como factor de escala de volumen</h2>
+          <p>La lectura geométrica que importa en altas dimensiones: el determinante mide cuánto crece (o colapsa) el volumen.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>En \(\mathbb{R}^{2}\) y \(\mathbb{R}^{3}\) sabemos lo que son el área y el volumen por intuición sensible. En \(\mathbb{R}^{n}\) con \(n\) grande esa intuición desaparece, y hay que <em>definir</em> la medida de forma algebraica. La definición es natural: un punto \(p\) y \(k\) vectores \(u_1, \dots, u_k\) (las columnas de \(A = [u_1 \cdots u_k] \in \mathbb{R}^{n \times k}\)) determinan el paralelepípedo \(k\)-dimensional</p>
+        \[ P = \{p + t_1 u_1 + \cdots + t_k u_k : 0 \le t_j \le 1\}, \]
+        <p>generalizando el segmento (\(k = 1\)) y el paralelogramo (\(k = 2\)). El volumen 1-dimensional es la longitud, el 2-dimensional el área, y así sucesivamente.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 3.10</span>
+          <p>El <strong>volumen \(k\)-dimensional</strong> del paralelepípedo \(P \subset \mathbb{R}^{n}\) asociado a \(A \in \mathbb{R}^{n \times k}\) es</p>
+          \[ |P| = \sqrt{\det(A^{\top} A)}. \]
+          <p>En el caso cuadrado (\(n = k\)), usando \(\det(A^{\top} A) = \det(A^{\top}) \det(A) = \det(A)^2\):</p>
+          \[ |P| = \sqrt{\det(A)^2} = |\det(A)|. \]
+          <p>La matriz \(A^{\top} A\) (matriz de Gram) recoge productos escalares de las aristas, de modo que basta conocer longitudes y ángulos.</p>
+        </div>
+
+        <p><strong>Ejemplo 3.6.</strong> El paralelogramo generado por \(u = (3, 2)\) y \(v = (1, 4)\) en \(\mathbb{R}^{2}\) tiene área</p>
+        \[ |P| = \left|\det \begin{pmatrix} 3 &amp; 1 \\ 2 &amp; 4 \end{pmatrix}\right| = |12 - 2| = 10. \]
+        <p>La misma fórmula con Gram funciona cuando \(k &lt; n\): para \(A = \begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix} \in \mathbb{R}^{3 \times 2}\) (un paralelogramo flotando en \(\mathbb{R}^{3}\)),</p>
+        \[ A^{\top} A = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}, \qquad |P| = \sqrt{\det(A^{\top} A)} = \sqrt{4 - 1} = \sqrt{3}. \]
+        <p>Fíjate en que \(\det(A^{\top} A) = 3\) es el <em>cuadrado</em> del área.</p>
+        <p><strong>Ejemplo 3.6 bis (área de un triángulo y volumen de un tetraedro mediante longitudes y ángulos).</strong> Si una figura viene dada por sus vértices \(p_0, p_1, \dots, p_k \in \mathbb{R}^{n}\), las aristas que parten de \(p_0\) son \(u_j = p_j - p_0\). Un <strong>triángulo</strong> en \(\mathbb{R}^{3}\) de aristas \(u_1, u_2\) ocupa la mitad del paralelogramo que generan, por lo que su área es \(|T| = \frac{1}{2}\sqrt{\det(A^{\top}A)}\) con \(A = [u_1\ u_2]\) (en el ejemplo anterior, con \(u_1 = (1, 1, 0)\) y \(u_2 = (0, 1, 1)\), el triángulo tiene área \(\frac{\sqrt{3}}{2}\)). Análogamente, el volumen de un <strong>tetraedro</strong> determinado por tres aristas concurrentes \(u_1, u_2, u_3 \in \mathbb{R}^{3}\) es la sexta parte (\(\frac{1}{3!} = \frac{1}{6}\)) del paralelepípedo: \(|V_{\text{tet}}| = \frac{1}{6}\sqrt{\det(A^{\top}A)}\). Como las entradas de la matriz de Gram son los productos escalares \((A^{\top}A)_{ij} = u_i \cdot u_j = \|u_i\|\,\|u_j\|\cos\theta_{ij}\), basta conocer longitudes y ángulos sin necesidad de coordenadas: por ejemplo, si las tres aristas miden \(\|u_1\| = \|u_2\| = \|u_3\| = 2\) y forman entre sí ángulos de \(60^{\circ}\) (\(\cos 60^{\circ} = 1/2\)), entonces \(u_i \cdot u_i = 4\) y \(u_i \cdot u_j = 2\) (\(i \neq j\)), de modo que</p>
+        \[ A^{\top}A = \begin{pmatrix} 4 &amp; 2 &amp; 2 \\ 2 &amp; 4 &amp; 2 \\ 2 &amp; 2 &amp; 4 \end{pmatrix}, \qquad \det(A^{\top}A) = 32 \implies |V_{\text{tet}}| = \frac{\sqrt{32}}{6} = \frac{2\sqrt{2}}{3}. \]
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>El volumen es \(\sqrt{\det(A^{\top} A)}\), no \(\det(A^{\top} A)\). Este último es el cuadrado de la medida (y en el caso cuadrado, \(\det(A)^2\), que además pierde el signo). Si escribes el determinante sin la raíz, estarás midiendo «áreas al cuadrado», un error que en modelos probabilísticos (donde aparecen densidades y normalizaciones) tiene consecuencias serias.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>El determinante es el factor de escala del cambio de variables: si \(y = Tx\) con \(T\) invertible, un volumen se multiplica por \(|\det T|\). De ahí sale el jacobiano del cambio de variables en integrales y densidades: al transformar una variable aleatoria, la densidad nueva lleva el factor \(1/|\det T|\). Por ejemplo, la densidad de una gaussiana multivariable se normaliza con \(\sqrt{\det \Sigma}\) en el denominador. Comprender que las transformaciones lineales «estiran» el espacio de datos en un factor \(|\det T|\) ayuda a entender por qué la regularización y el preprocesado (escalar, rotar, reducir dimensionalidad) cambian el comportamiento de los modelos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s7">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 3.7</div>
+        <div>
+          <h2>Los cuatro subespacios y el teorema del rango</h2>
+          <p>Columnas, filas y los dos núcleos: el mapa completo de una matriz, con sus dimensiones ligadas por el rango.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Sea \(A \in \mathbb{K}^{n \times m}\) (con \(n\) filas y \(m\) columnas). Toda matriz, sea del tamaño que sea, tiene asociados <em>cuatro</em> subespacios canónicos: dos en el espacio de partida y dos en el de llegada.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 3.11</span>
+          <p>Para \(A \in \mathbb{K}^{n \times m}\):</p>
+          <p>\(\bullet\) \(\mathrm{col}(A) \subset \mathbb{K}^{n}\): espacio columna (imagen), generado por las columnas de \(A\).</p>
+          <p>\(\bullet\) \(\mathrm{fil}(A) = \mathrm{col}(A^{\top}) \subset \mathbb{K}^{m}\): espacio fila, generado por las filas de \(A\) (sobre \(\mathbb{C}\), para la ortogonalidad respecto del producto escalar hermítico se emplea \(\mathrm{col}(A^{*})\), generado por las filas conjugadas de \(A\), que coincide con \(\mathrm{fil}(A)\) cuando \(A\) es real).</p>
+          <p>\(\bullet\) \(\mathrm{nul}(A) = \ker A \subset \mathbb{K}^{m}\): vectores \(u\) con \(Au = 0\).</p>
+          <p>\(\bullet\) \(\mathrm{nul}(A^{\top}) = \ker A^{\top} \subset \mathbb{K}^{n}\): vectores \(v\) con \(A^{\top} v = 0\) (y \(\mathrm{nul}(A^{*}) = \ker A^{*}\) cuando se trabaja con la adjunta).</p>
+          <p>El rango es \(r = \operatorname{rng} A = \dim \mathrm{col}(A) = \dim \mathrm{fil}(A)\), y equivale al tamaño de la mayor submatriz cuadrada de \(A\) con determinante no nulo. Como \(\det(A^{\top}) = \det(A)\), también \(\operatorname{rng}(A^{\top}) = \operatorname{rng}(A^{*}) = \operatorname{rng} A\).</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 3.12 (teorema del rango o «teorema fundamental del álgebra lineal»)</span>
+          <p>Toda matriz \(A \in \mathbb{K}^{n \times m}\) de rango \(r\) verifica, sobre \(\mathbb{R}\) (sobre \(\mathbb{C}\) hay que sustituir la traspuesta por la adjunta: \(\mathrm{col}(A) \oplus \mathrm{nul}(A^{*}) = \mathbb{C}^{n}\) y \(\mathrm{col}(A^{*}) \oplus \mathrm{nul}(A) = \mathbb{C}^{m}\), con suma ortogonal):</p>
+          \[ \mathrm{col}(A) \oplus \mathrm{nul}(A^{\top}) = \mathbb{K}^{n}, \quad \mathrm{col}(A) \perp \mathrm{nul}(A^{\top}); \qquad \mathrm{fil}(A) \oplus \mathrm{nul}(A) = \mathbb{K}^{m}, \quad \mathrm{fil}(A) \perp \mathrm{nul}(A). \]
+          <p>En dimensiones: \(\dim \mathrm{col}(A) = r\), \(\dim \mathrm{nul}(A^{\top}) = n - r\), \(\dim \mathrm{fil}(A) = r\), \(\dim \mathrm{nul}(A) = m - r\). En particular:</p>
+          \[ \operatorname{rng} A + \dim \mathrm{nul}(A) = m, \qquad \operatorname{rng} A + \dim \mathrm{nul}(A^{\top}) = n. \]
+          <p><em>Demostración.</em> Sea \(\{f_1, \dots, f_r\}\) una base ortonormal de \(\mathrm{col}(A)\), que ampliamos a una base ortonormal \(\{f_1, \dots, f_n\}\) de \(\mathbb{K}^{n}\). Todo \(u \in \mathbb{K}^{n}\) se descompone como \(u = \sum_{j=1}^{n} (f_j^{*} u) f_j = u_c + v\), con \(u_c = \sum_{j=1}^{r} (f_j^{*} u) f_j \in \mathrm{col}(A)\) y \(v = \sum_{j=r+1}^{n} (f_j^{*} u) f_j\). Para \(j &gt; r\), \(f_j\) es ortogonal a \(\mathrm{col}(A)\), y el conjugado de la componente \(k\)-ésima de \(A^{*} f_j\) es el producto escalar de la columna \(k\)-ésima de \(A\) (que está en \(\mathrm{col}(A)\)) con \(f_j\), luego \(A^{*} f_j = 0\) y \(v \in \mathrm{nul}(A^{*})\). Se tiene así \(\mathbb{K}^{n} = \mathrm{col}(A) \oplus \mathrm{nul}(A^{*})\) con suma ortogonal, y tomando dimensiones, \(\dim \mathrm{nul}(A^{*}) = \dim \mathrm{nul}(A^{\top}) = n - r\). Aplicando el mismo razonamiento a \(A^{*}\) (y usando \(\operatorname{rng} A^{*} = \operatorname{rng} A\)) se obtiene \(\mathbb{K}^{m} = \mathrm{col}(A^{*}) \oplus \mathrm{nul}(A)\), que sobre \(\mathbb{R}\) es \(\mathrm{fil}(A) \oplus \mathrm{nul}(A)\). \(\blacksquare\)</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Subespacio</th><th>Dónde vive</th><th>Dimensión</th><th>Lectura</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>\(\mathrm{col}(A)\)</td><td>\(\mathbb{K}^{n}\) (llegada)</td><td>\(r\)</td><td>imágenes alcanzables</td></tr>
+              <tr><td>\(\mathrm{nul}(A^{\top})\)</td><td>\(\mathbb{K}^{n}\) (llegada)</td><td>\(n - r\)</td><td>restricciones sobre las imágenes</td></tr>
+              <tr><td>\(\mathrm{fil}(A)\)</td><td>\(\mathbb{K}^{m}\) (partida)</td><td>\(r\)</td><td>direcciones efectivas de las ecuaciones</td></tr>
+              <tr><td>\(\mathrm{nul}(A)\)</td><td>\(\mathbb{K}^{m}\) (partida)</td><td>\(m - r\)</td><td>grados de libertad del sistema \(Au = 0\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>Ejemplo 3.7.</strong> Sea \(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 6 \end{pmatrix}\), de rango \(r = 1\) (la segunda fila es triple de la primera). Sus cuatro subespacios son</p>
+        \[ \mathrm{col}(A) = \langle (1, 3) \rangle, \quad \mathrm{fil}(A) = \langle (1, 2) \rangle, \quad \mathrm{nul}(A) = \langle (-2, 1) \rangle, \quad \mathrm{nul}(A^{\top}) = \langle (-3, 1) \rangle. \]
+        <p>Comprueba las ortogonalidades: \((1, 3) \cdot (-3, 1) = 0\) y \((1, 2) \cdot (-2, 1) = 0\). Las dimensiones son \(1, 1, 1, 1\), y el teorema del rango se cumple: \(r + \dim \mathrm{nul}(A) = 1 + 1 = 2 = m\) y \(r + \dim \mathrm{nul}(A^{\top}) = 1 + 1 = 2 = n\).</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Intercambiar dónde vive cada núcleo. \(\mathrm{nul}(A)\) está en \(\mathbb{K}^{m}\) (tantas componentes como columnas) y \(\mathrm{nul}(A^{\top})\) en \(\mathbb{K}^{n}\) (tantas como filas). Si mezclas las dimensiones, el teorema del rango «no te cuadra»: en una matriz \(3 \times 4\) de rango 2, \(\dim \mathrm{nul}(A) = 4 - 2 = 2\) y \(\dim \mathrm{nul}(A^{\top}) = 3 - 2 = 1\).</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Los cuatro subespacios son el lenguaje de la redundancia en los datos. Si \(A\) es la matriz de datos (por ejemplo, \(m\) variables medidas en \(n\) muestras), el rango \(r\) es el número de grados de libertad efectivos: variables en \(\mathrm{nul}(A)\) son combinaciones redundantes de otras, y vectores en \(\mathrm{nul}(A^{\top})\) son dependencias entre las observaciones. Por eso la reducción dimensional (PCA) y la selección de características se entienden como «quedarse con las \(r\) direcciones que de verdad aportan información»; y por eso, cuando el rango es menor que el número de variables, los métodos de mínimos cuadrados necesitan regularización.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s8">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 3.8</div>
+        <div>
+          <h2>Núcleo generalizado</h2>
+          <p>La cadena de núcleos de potencias de una matriz singular se estabiliza: ahí viven los autovectores generalizados.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Si \(B \in \mathbb{K}^{n \times n}\) es singular, al elevarla a potencias crecientes aparece una cadena creciente de subespacios:</p>
+        \[ \mathrm{nul}(B) \subset \mathrm{nul}(B^{2}) \subset \cdots \subset \mathrm{nul}(B^{n}), \]
+        <p>porque \(u \in \mathrm{nul}(B^{k})\) implica \(B^{k} u = 0\) y por tanto \(B^{k+1} u = B(B^{k} u) = 0\). Como las dimensiones no pueden superar \(n\), la cadena se estabiliza.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 3.13</span>
+          <p>Sea \(B \in \mathbb{K}^{n \times n}\) singular. Existe un único \(p \in \{1, \dots, n\}\) con \(\mathrm{nul}(B^{p-1}) \neq \mathrm{nul}(B^{p}) = \mathrm{nul}(B^{p+1})\) (con la convención \(\mathrm{nul}(B^{0}) = \{0\}\)). El subespacio \(\mathrm{nul}(B^{p})\) se llama <strong>núcleo generalizado</strong> de \(B\) y se denota \(\ker^{\infty} B\).</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 3.14</span>
+          <p>Si \(\mathrm{nul}(B^{p}) = \mathrm{nul}(B^{p+1})\) para algún \(p \ge 1\), entonces \(\mathrm{nul}(B^{p}) = \mathrm{nul}(B^{k})\) para todo \(k \ge p\): la cadena se estabiliza desde \(p\) en adelante.</p>
+          <p><em>Demostración.</em> Basta ver que \(\mathrm{nul}(B^{p+1}) = \mathrm{nul}(B^{p+2})\); el resto sigue por inducción. Sea \(u \in \mathrm{nul}(B^{p+2})\), es decir \(B^{p+2} u = 0\). Entonces \(B^{p+1}(Bu) = 0\), de modo que \(Bu \in \mathrm{nul}(B^{p+1}) = \mathrm{nul}(B^{p})\), es decir \(B^{p}(Bu) = B^{p+1} u = 0\), y por tanto \(u \in \mathrm{nul}(B^{p+1})\). \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 3.8.</strong> Consideremos la matriz nilpotente de Jordan \(B = \begin{pmatrix} 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 \end{pmatrix}\). Resolviendo \(Bu = 0\) se obtiene \(u_2 = u_3 = 0\), luego \(\mathrm{nul}(B) = \langle (1, 0, 0) \rangle\), de dimensión 1. Como \(B^{2} = \begin{pmatrix} 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{pmatrix}\), la condición \(B^{2} u = 0\) es \(u_3 = 0\) y \(\mathrm{nul}(B^{2}) = \langle (1, 0, 0), (0, 1, 0) \rangle\), de dimensión 2. Finalmente \(B^{3} = 0\) y \(\mathrm{nul}(B^{3}) = \mathbb{R}^{3}\). La cadena se estabiliza en \(p = 3\): el núcleo generalizado es \(\mathbb{R}^{3}\), y solo \((1, 0, 0)\) está en el núcleo ordinario. Este es el comportamiento típico de las matrices no diagonalizables.</p>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s9">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 3.9</div>
+        <div>
+          <h2>Autovalores y autovectores</h2>
+          <p>Las direcciones que la transformación solo estira: polinomio característico, multiplicidades y el teorema de Cayley-Hamilton.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>De todas las direcciones del espacio, las más informativas para una aplicación lineal \(x \mapsto Ax\) son aquellas que la transformación respeta: solo las estira o comprime, sin girarlas.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 3.15</span>
+          <p>Sean \(A \in \mathbb{C}^{n \times n}\) y \(\lambda \in \mathbb{C}\). Se dice que \(\lambda\) es un <strong>autovalor</strong> de \(A\) si existe un vector no nulo \(u \in \mathbb{C}^{n}\) con</p>
+          \[ Au = \lambda u, \]
+          <p>caso en el que \(u\) se llama <strong>autovector</strong> de autovalor \(\lambda\). Equivalente a \(u \in \ker(\lambda I - A) \setminus \{0\}\). El subespacio \(\ker(\lambda I - A)\) es el <strong>autoespacio</strong> de \(\lambda\).</p>
+          <p>El polinomio mónico \(P_A(\lambda) = \det(\lambda I - A)\) es el <strong>polinomio característico</strong> de \(A\), y \(P_A(\lambda) = 0\) su ecuación característica.</p>
+        </div>
+
+        <p>Que \(\lambda\) sea autovalor equivale a que \(\lambda I - A\) sea singular, es decir, a que \(\lambda\) sea raíz de \(P_A\). Por el Teorema Fundamental del Álgebra, toda matriz cuadrada tiene autovalores… sobre \(\mathbb{C}\). Una matriz real puede tener autovalores y autovectores complejos: \(R = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}\) (rotación de 90°) tiene \(P_R(\lambda) = \lambda^{2} + 1\) y autovalores \(\pm i\). Si \(A\) es real y \(\lambda\) es autovalor, también lo es \(\overline{\lambda}\): los autovalores complejos de una matriz real vienen por parejas conjugadas.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 3.16</span>
+          <p>Sea \(A \in \mathbb{C}^{n \times n}\) con autovalores distintos \(\lambda_1, \dots, \lambda_p\) de multiplicidades \(m_1, \dots, m_p\) en \(P_A\), de modo que \(P_A(\lambda) = (\lambda - \lambda_1)^{m_1} \cdots (\lambda - \lambda_p)^{m_p}\) y \(m_1 + \cdots + m_p = n\). Entonces:</p>
+          <p>\(\text{(a)}\) \(P_{WAW^{-1}} = P_A\) para toda \(W\) invertible (el polinomio característico no depende de la base).</p>
+          <p>\(\text{(b)}\) La multiplicidad de \(\lambda_j\) es \(m_j = \dim \ker^{\infty}(\lambda_j I - A)\) (dimensión del autoespacio generalizado).</p>
+          <p>\(\text{(c)}\) \(\mathbb{C}^{n} = \ker^{\infty}(\lambda_1 I - A) \oplus \cdots \oplus \ker^{\infty}(\lambda_p I - A)\).</p>
+          <p>\(\text{(d)}\) \(P_A(A) = 0\) (teorema de Cayley-Hamilton). Además \(\det(A) = (-1)^{n} P_A(0) = \lambda_1^{m_1} \cdots \lambda_p^{m_p}\).</p>
+          <p><em>Demostración.</em> \(\text{(a)}\): \(\det(\lambda I - WAW^{-1}) = \det(W(\lambda I - A)W^{-1}) = \det(W)\det(\lambda I - A)\det(W^{-1}) = P_A(\lambda)\). \(\text{(b)}\): razonemos primero para \(\lambda_j = 0\). Ampliando una base de \(\ker^{\infty} A\) a una base cualquiera de \(\mathbb{C}^{n}\) (cuyos vectores forman las columnas de \(W\)), como \(\ker^{\infty} A\) es invariante por \(A\), la matriz en la nueva base \(C = W^{-1}AW\) es triangular por bloques \(C = \begin{pmatrix} C_{11} &amp; C_{12} \\ 0 &amp; C_{22} \end{pmatrix}\), donde \(C_{11}\) es nilpotente de tamaño \(q = \dim \ker^{\infty} A\) y \(C_{22}\) es invertible (si \(0\) fuera autovalor de \(C_{22}\), existiría un vector fuera de \(\ker^{\infty} A\) anulado por una potencia de \(A\), contradiciendo la definición de \(\ker^{\infty} A\)). Por \(\text{(a)}\) y la Proposición 3.9, \(P_A(\lambda) = P_C(\lambda) = \det(\lambda I_q - C_{11}) \det(\lambda I_{n-q} - C_{22}) = \lambda^{q} P_{C_{22}}(\lambda)\) con \(P_{C_{22}}(0) = (-1)^{n-q}\det(C_{22}) \neq 0\), luego la multiplicidad de \(0\) en \(P_A\) es \(q\). Para un autovalor arbitrario \(\lambda_j\), aplicando lo anterior a \(A' = A - \lambda_j I\) (cuyo núcleo generalizado \(\ker^{\infty} A' = \ker^{\infty}(\lambda_j I - A)\) tiene dimensión \(q\)) se obtiene \(P_A(\lambda) = P_{A'}(\lambda - \lambda_j) = (\lambda - \lambda_j)^{q} Q(\lambda)\) con \(Q(\lambda_j) \neq 0\), de modo que \(m_j = q\). \(\text{(c)}\): veamos primero que \(\ker^{\infty}(\lambda_i I - A) \cap \ker^{\infty}(\lambda_j I - A) = \{0\}\) si \(\lambda_i \neq \lambda_j\). Si existiera \(v \neq 0\) en la intersección, sean \(p, q \ge 1\) tales que \((\lambda_i I - A)^{p} v = 0\) y \((\lambda_j I - A)^{q} v = 0\); eligiendo el mayor \(r \ge 0\) con \(w = (\lambda_i I - A)^{r} v \neq 0\), resulta \((\lambda_i I - A)w = 0\), es decir, \(Aw = \lambda_i w\) (autovector ordinario de autovalor \(\lambda_i\)). Como \((\lambda_i I - A)\) y \((\lambda_j I - A)\) conmutan, \(w \in \ker^{\infty}(\lambda_j I - A)\), pero entonces \(0 = (\lambda_j I - A)^{q} w = (\lambda_j - \lambda_i)^{q} w\), lo que con \(\lambda_j \neq \lambda_i\) implica \(w = 0\), contradicción. Por inducción sobre el número de autovalores la suma de los autoespacios generalizados es directa, y como sus dimensiones suman \(m_1 + \cdots + m_p = n\), generan \(\mathbb{C}^{n}\). \(\text{(d)}\): como \((\lambda_j I - A)^{m_j}\) anula \(\ker^{\infty}(\lambda_j I - A)\) y los factores de \(P_A(A)\) conmutan, \(P_A(A)\) anula cada sumando de \(\text{(c)}\), luego \(P_A(A) = 0\). La identidad del determinante sale de \(\det(A) = (-1)^{n} P_A(0)\). \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 3.9.</strong> Para \(A = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\),</p>
+        \[ P_A(\lambda) = \det \begin{pmatrix} \lambda - 2 &amp; -1 \\ -1 &amp; \lambda - 2 \end{pmatrix} = (\lambda - 2)^{2} - 1 = \lambda^{2} - 4\lambda + 3 = (\lambda - 3)(\lambda - 1). \]
+        <p>Los autovalores son \(\lambda = 3\) y \(\lambda = 1\). Para \(\lambda = 3\): \((3I - A)u = 0\) da \(u_1 = u_2\), luego \(E_3 = \langle (1, 1) \rangle\); para \(\lambda = 1\): \(u_1 = -u_2\), luego \(E_1 = \langle (1, -1) \rangle\). Comprobación directa: \(A(1, 1)^{\top} = (3, 3)^{\top} = 3(1, 1)^{\top}\) y \(A(1, -1)^{\top} = (1, -1)^{\top}\). Como \(\det(A) = 3 = 3 \cdot 1\) y \(\operatorname{tr}(A) = 4 = 3 + 1\), todo cuadra con la proposición anterior.</p>
+
+        <div class="plaque plaque--prop">
+          <span class="plaque__label">Proposición 3.16 bis (autovalores de matrices hermíticas y simétricas)</span>
+          <p>Toda matriz hermítica \(A \in \mathbb{C}^{n \times n}\) (\(A^{*} = A\)), y en particular toda matriz real simétrica \(A \in \mathbb{R}^{n \times n}\) (\(A^{\top} = A\)), tiene todos sus autovalores reales.</p>
+          <p><em>Demostración.</em> Si \(Au = \lambda u\) con \(u \neq 0\), multiplicando por \(u^{*}\) a la izquierda y usando que \(A^{*} = A\) resulta \(\lambda \|u\|_{2}^{2} = u^{*}(Au) = (u^{*} A u) = \overline{u^{*} A^{*} u} = \overline{(Au)^{*} u} = \overline{\lambda} \|u\|_{2}^{2}\); como \(\|u\|_{2}^{2} &gt; 0\), se concluye \(\lambda = \overline{\lambda} \in \mathbb{R}\). \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente y nota terminológica</span>
+          <p>Confundir la multiplicidad algebraica con la geométrica. La <strong>algebraica</strong> \(m_j\) es el exponente de \((\lambda - \lambda_j)\) en \(P_A\); la <strong>geométrica</strong> es \(\dim \ker(\lambda_j I - A)\), es decir, la dimensión del autoespacio. Siempre \(\dim \ker(\lambda_j I - A) \le m_j = \dim \ker^{\infty}(\lambda_j I - A)\), y la desigualdad puede ser estricta. Por ejemplo, \(B = \begin{pmatrix} 2 &amp; 1 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 3 \end{pmatrix}\) tiene \(P_B(\lambda) = (\lambda - 2)^{2}(\lambda - 3)\): la multiplicidad algebraica de \(\lambda = 2\) es \(2\), pero \(\ker(2I - B) = \langle (1, 0, 0) \rangle\) tiene dimensión \(1\). La matriz no es diagonalizable (lo verás en el Tema V).</p>
+          <p><em>Nota terminológica:</em> En el libro base de Juan Perán se prescinde de los adjetivos «algebraica» y «geométrica»: se llama simplemente <strong>multiplicidad</strong> de \(\lambda_j\) a la multiplicidad algebraica (\(m_j = \dim \ker^{\infty}(\lambda_j I - A)\)) y <strong>dimensión del autoespacio</strong> a la multiplicidad geométrica (\(\dim \ker(\lambda_j I - A)\)).</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Dos usos estrella. Primero: el <strong>PCA</strong> diagonaliza la matriz de covarianza de los datos; sus autovalores, ordenados de mayor a menor, miden la varianza explicada por cada componente principal, y los autovectores son las direcciones de máxima dispersión. Segundo: la <strong>Hessiana</strong> de una función de pérdida (la matriz de segundas derivadas) define una forma cuadrática local; los autovalores de la Hessiana indican la curvatura en cada dirección: todos positivos implican mínimo local, y condicionar el problema (mejorar la relación entre el mayor y el menor autovalor) es lo que acelera el descenso de gradiente.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s10">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 3.10</div>
+        <div>
+          <h2>Formas bilineales, sesquilineales y cuadráticas</h2>
+          <p>De \(u^{\top} A v\) a \(x^{\top} A x\): la matriz simétrica de una forma cuadrática y su signo definitivo.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Una forma bilineal \(g(u, v) = u^{\top} A v\) queda determinada por su matriz, y a la inversa \(a_{ij} = g(e_i, e_j)\). Cuando \(A\) es simétrica, la forma también lo es:</p>
+        \[ g(u, v) = u^{\top} A v = (u^{\top} A v)^{\top} = v^{\top} A^{\top} u = v^{\top} A u = g(v, u), \]
+        <p>porque \(u^{\top} A v\) es un escalar (igual a su traspuesta). Y recíprocamente: si \(g(u, v) = g(v, u)\) para todo \(u, v\), entonces \(A = A^{\top}\). Lo mismo ocurre con las formas sesquilineales hermíticas y las matrices hermíticas (\(A^{*} = A\)). Toda matriz se descompone como suma de su parte hermítica y su antihermítica:</p>
+        \[ A = \frac{A + A^{*}}{2} + \frac{A - A^{*}}{2}, \]
+        <p>que sobre \(\mathbb{R}\) no es más que la descomposición en parte simétrica y antisimétrica.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 3.17</span>
+          <p>Una <strong>forma cuadrática</strong> es una aplicación \(f : \mathbb{K}^{n} \to \mathbb{K}\) de la forma</p>
+          \[ f(u) = u^{*} A u, \]
+          <p>con \(A\) hermítica (simétrica si \(\mathbb{K} = \mathbb{R}\)). Entonces \(f\) toma valores reales: \(\overline{f(u)} = u^{*} A^{*} u = u^{*} A u = f(u)\), de modo que \(f : \mathbb{K}^{n} \to \mathbb{R}\).</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 3.18</span>
+          <p>\(\text{(a)}\) Si \(B \in \mathbb{R}^{n \times n}\) no es simétrica, la aplicación \(f(u) = u^{\top} B u\) es igualmente una forma cuadrática, y su matriz simétrica asociada es \(\frac{B + B^{\top}}{2}\).</p>
+          <p>\(\text{(b)}\) Conocida la forma cuadrática como polinomio \(f(x)\), la matriz simétrica \(A\) se recupera con</p>
+          \[ a_{ij} = \frac{f(e_i + e_j) - f(e_i) - f(e_j)}{2}, \]
+          <p>en particular \(a_{ii} = f(e_i)\).</p>
+          <p><em>Demostración.</em> \(\text{(a)}\): separando \(B = \frac{B + B^{\top}}{2} + \frac{B - B^{\top}}{2}\), la parte antisimétrica no contribuye, pues \(u^{\top} C u = -u^{\top} C u = 0\) si \(C^{\top} = -C\); por tanto \(f(u) = u^{\top} \frac{B + B^{\top}}{2} u\). \(\text{(b)}\): desarrollando,</p>
+          \[ f(u + v) - f(u) - f(v) = v^{\top} A u + u^{\top} A v = 2 u^{\top} A v, \]
+          <p>y tomando \(u = e_i\), \(v = e_j\) se obtiene \(2 a_{ij}\). \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 3.10.</strong> Dada \(f(x) = 2x_1^{2} + 2x_1 x_2 + 4x_1 x_3 + 3x_2^{2} + 6x_2 x_3 + 5x_3^{2}\), la diagonal recoge los coeficientes de los cuadrados y los productos cruzados se parten por la mitad:</p>
+        \[ A = \begin{pmatrix} 2 &amp; 1 &amp; 2 \\ 1 &amp; 3 &amp; 3 \\ 2 &amp; 3 &amp; 5 \end{pmatrix}, \qquad f(x) = x^{\top} A x. \]
+        <p>Comprueba multiplicando: \(x^{\top} A x = 2x_1^{2} + 3x_2^{2} + 5x_3^{2} + 2x_1 x_2 + 4x_1 x_3 + 6x_2 x_3\), exactamente \(f\). Con la fórmula de la proposición: \(a_{12} = \frac{f(1,1,0) - f(1,0,0) - f(0,1,0)}{2} = \frac{7 - 2 - 3}{2} = 1\).</p>
+        <p>Según el signo que toma \(f(u) = u^{*} A u\) para vectores no nulos, las formas cuadráticas (y sus matrices hermíticas o reales simétricas asociadas) se clasifican en <strong>cinco categorías</strong>:</p>
+        <p>\(\bullet\) <strong>Definida positiva:</strong> \(u^{*} A u &gt; 0\) para todo \(u \neq 0\).</p>
+        <p>\(\bullet\) <strong>Semidefinida positiva:</strong> \(u^{*} A u \ge 0\) para todo \(u \in \mathbb{K}^{n}\).</p>
+        <p>\(\bullet\) <strong>Definida negativa:</strong> \(u^{*} A u &lt; 0\) para todo \(u \neq 0\) (equivale a que \(-A\) sea definida positiva).</p>
+        <p>\(\bullet\) <strong>Semidefinida negativa:</strong> \(u^{*} A u \le 0\) para todo \(u \in \mathbb{K}^{n}\) (equivale a que \(-A\) sea semidefinida positiva).</p>
+        <p>\(\bullet\) <strong>Indefinida:</strong> toma valores tanto estrictamente positivos como estrictamente negativos (existen \(u, v \in \mathbb{K}^{n}\) con \(u^{*} A u &gt; 0\) y \(v^{*} A v &lt; 0\)), como ocurre en \(f(x_1, x_2) = x_1^{2} - x_2^{2}\).</p>
+        <p>Por ejemplo, para \(C = \begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 3 \\ 1 &amp; 3 &amp; 6 \end{pmatrix}\) se tiene</p>
+        \[ x^{\top} C x = (x_1 + x_2 + x_3)^{2} + (x_2 + 2x_3)^{2} + x_3^{2} &gt; 0 \quad \text{para todo } x \neq 0, \]
+        <p>luego \(C\) es definida positiva (además, toda matriz definida positiva es invertible y su inversa también es definida positiva). Como contraste, la matriz \(\begin{pmatrix} 1 &amp; 2 \\ 2 &amp; 4 \end{pmatrix}\) es semidefinida positiva (pero no definida positiva): su forma es \((x_1 + 2x_2)^{2} \ge 0\), que se anula en \((2, -1) \neq 0\).</p>
+        <p>Un resultado clave para los Temas IV y V: para cualquier matriz \(B \in \mathbb{K}^{n \times m}\), la matriz \(B^{*} B \in \mathbb{K}^{m \times m}\) es hermítica (simétrica si \(B\) es real) y semidefinida positiva, pues \(u^{*} B^{*} B u = (Bu)^{*}(Bu) = \|Bu\|_{2}^{2} \ge 0\). Además, verifica las identidades fundamentales</p>
+        \[ \ker(B^{*} B) = \ker B, \qquad \operatorname{rng}(B^{*} B) = \operatorname{rng} B. \]
+        <p>En efecto, si \(Bu = 0\) es inmediato que \(B^{*} B u = 0\); recíprocamente, si \(B^{*} B u = 0\), entonces \(\|Bu\|_{2}^{2} = u^{*} B^{*} B u = 0\), de donde \(Bu = 0\). Al coincidir ambos núcleos en \(\mathbb{K}^{m}\), el teorema del rango (Teorema 3.12) garantiza que \(\operatorname{rng}(B^{*} B) = m - \dim\ker(B^{*} B) = m - \dim\ker B = \operatorname{rng} B\), y que \(B^{*} B\) es definida positiva si y solo si \(\ker B = \{0\}\). En el Tema V veremos además que toda forma cuadrática real se reduce a suma y diferencia de cuadrados mediante una base ortonormal (diagonalización ortogonal y ley de inercia de Sylvester). Sobre \(\mathbb{R}\), el producto escalar canónico \(u^{\top} v\) es la forma bilineal simétrica definida positiva asociada a la identidad, y cualquier otra forma bilineal simétrica definida positiva equivale a un cambio de coordenadas de dicho producto escalar.</p>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Las formas cuadráticas están en el corazón de la IA. El <em>kernel</em> lineal \(u^{\top} v\) y sus generalizaciones \(u^{\top} A v\) son la materia prima de los métodos de núcleos; la función de pérdida de mínimos cuadrados \(\|Ax - b\|_{2}^{2} = x^{\top} A^{\top} A x - 2 (A^{\top} b)^{\top} x + \|b\|_{2}^{2}\) tiene como parte cuadrática la forma de matriz \(A^{\top} A\) (simétrica y semidefinida positiva, según lo anterior); y la regularización ridge añade \(\lambda \|x\|_{2}^{2}\), otra forma cuadrática que hace definida positiva la Hessiana y, por tanto, garantiza unicidad del mínimo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESUMEN ================= -->
+    <section class="wrap section section--tint" id="resumen">
+      <p class="kicker reveal">Ficha de repaso</p>
+      <h2 class="reveal">Lo esencial del tema</h2>
+      <div class="summary reveal" data-summary></div>
+    </section>
+
+    <!-- ================= MAPA MENTAL ================= -->
+    <section class="wrap section" id="mapa">
+      <p class="kicker reveal">Vista global</p>
+      <h2 class="reveal">Mapa mental</h2>
+      <p class="prose reveal">Pulsa cualquier nodo para ver el detalle.</p>
+      <div class="mindmap" data-mindmap></div>
+    </section>
+
+    <!-- ================= EJERCICIOS ================= -->
+    <section class="wrap section section--tint" id="ejercicios">
+      <p class="kicker reveal">Práctica</p>
+      <h2 class="reveal">Ejercicios interactivos</h2>
+      <p class="prose reveal">Escribe tu respuesta y pulsa <strong>Comprobar</strong>. Al acertar se despliega la solución completa.</p>
+      <div data-drills></div>
+    </section>
+
+    <div class="wrap">
+      <nav class="pager" aria-label="Navegación entre temas">
+        <a class="prev" href="tema-2.html"><span class="meta">Anterior</span><strong>Tema II · Tensores y matrices</strong></a>
+        <a class="next" href="tema-4.html"><span class="meta">Siguiente</span><strong>Tema IV · Triangulación</strong></a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div>
+        <h4>Archivo</h4>
+        <ul>
+          <li><a href="../index.html">Índice del curso</a></li>
+          <li><a href="../planificacion.html">Planificación y evaluación</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Evaluación</h4>
+        <ul>
+          <li><a href="../examenes/examen-1.html">Examen 1 · Temas I–II</a></li>
+          <li><a href="../examenes/examen-2.html">Examen 2 · Temas III–IV</a></li>
+          <li><a href="../examenes/examen-3.html">Examen 3 · Tema V + global</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fuentes</h4>
+        <ul>
+          <li>J. Perán Mazón, <em>Fundamentos algebraicos para la IA</em>, UNED, 2026</li>
+          <li>Álgebra para Ingenieros (libro de apoyo)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer__colophon">
+      <span>Material de estudio personal · uso no comercial</span>
+      <span>Verificado con SymPy · errores → revisar con el árbitro</span>
+    </div>
+  </footer>
+
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/auto-render.min.js"></script>
+  <script defer src="../assets/js/grader.js"></script>
+  <script defer src="../assets/data/tema-3.js"></script>
+  <script defer src="../assets/js/app.js"></script>
+</body>
+</html>

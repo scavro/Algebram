@@ -1,0 +1,34 @@
+== index.html: 5 runs medidos
+== planificacion.html: 1 runs medidos
+== temas/tema-1.html: 1 runs medidos
+== temas/tema-2.html: 1 runs medidos
+== temas/tema-3.html: 1 runs medidos
+== temas/tema-4.html: 1 runs medidos
+== temas/tema-5.html: 1 runs medidos
+== examenes/examen-1.html: 1 runs medidos
+== examenes/examen-2.html: 1 runs medidos
+== examenes/examen-3.html: 1 runs medidos
+
+===== CLAIMS R5 (las 2 instancias reclamadas) =====
+
+[claim A: .theme-card--night .meta] 4 instancias
+  OK   14.79:1 (peor px 14.79 · estilo 14.79 · umbral 4.5) index.html span.meta 11.52px fg=rgb(236, 228, 207) bg=rgb(20, 18, 9) :: "Octubre 2026 → Enero 2027"
+  OK   14.79:1 (peor px 14.79 · estilo 14.79 · umbral 4.5) index.html span.meta 11.52px fg=rgb(236, 228, 207) bg=rgb(20, 18, 9) :: "120 minutos sugeridos"
+  OK   14.79:1 (peor px 14.79 · estilo 14.79 · umbral 4.5) index.html span.meta 11.52px fg=rgb(236, 228, 207) bg=rgb(20, 18, 9) :: "120 minutos sugeridos"
+  OK   14.79:1 (peor px 14.79 · estilo 14.79 · umbral 4.5) index.html span.meta 11.52px fg=rgb(236, 228, 207) bg=rgb(20, 18, 9) :: "120 minutos sugeridos"
+  → 4/4 ≥ umbral
+
+[claim B: .nav__brand-mark] 10 instancias
+  OK    7.69:1 (peor px 7.69 · estilo 7.75 · umbral 4.5) index.html span.nav__brand-mark 11.52px fg=rgb(201, 162, 39) bg=rgb(21, 19, 9) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) planificacion.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) temas/tema-1.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) temas/tema-2.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) temas/tema-3.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) temas/tema-4.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) temas/tema-5.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) examenes/examen-1.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) examenes/examen-2.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) examenes/examen-3.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  → 10/10 ≥ umbral
+
+RESUMEN claims: 14 runs · bajo umbral: 0

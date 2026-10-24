@@ -1,0 +1,148 @@
+== tema-1 @320 — nodos SVG del mapa mental
+{
+ "contOverflow": {
+  "x": "auto",
+  "y": "auto",
+  "w": 283,
+  "scrollW": 773,
+  "clientW": 281
+ },
+ "svgRect": {
+  "l": 38,
+  "r": 774,
+  "w": 736
+ },
+ "svgViewBox": "0 0 860 1224",
+ "svgMaxW": "100%",
+ "svgW": "736px",
+ "fuera": [
+  {
+   "tag": "path",
+   "cls": "",
+   "r": 551,
+   "w": 86
+  },
+  {
+   "tag": "path",
+   "cls": "",
+   "r": 551,
+   "w": 86
+  },
+  {
+   "tag": "path",
+   "cls": "",
+   "r": 551,
+   "w": 86
+  },
+  {
+   "tag": "path",
+   "cls": "",
+   "r": 551,
+   "w": 86
+  },
+  {
+   "tag": "path",
+   "cls": "",
+   "r": 551,
+   "w": 86
+  },
+  {
+   "tag": "path",
+   "cls": "",
+   "r": 551,
+   "w": 86
+  }
+ ],
+ "totalFuera": 150,
+ "docOverflow": false,
+ "innerW": 320
+}
+== examen-1 @320 — inputs de matriz fuera de viewport
+{
+ "fuera": [
+  {
+   "id": "X1-12",
+   "r": 324,
+   "grid": {
+    "overflowX": "auto",
+    "scrollW": 382,
+    "clientW": 228,
+    "scrollable": true
+   }
+  },
+  {
+   "id": "X1-12",
+   "r": 414,
+   "grid": {
+    "overflowX": "auto",
+    "scrollW": 382,
+    "clientW": 228,
+    "scrollable": true
+   }
+  },
+  {
+   "id": "X1-12",
+   "r": 324,
+   "grid": {
+    "overflowX": "auto",
+    "scrollW": 382,
+    "clientW": 228,
+    "scrollable": true
+   }
+  },
+  {
+   "id": "X1-12",
+   "r": 414,
+   "grid": {
+    "overflowX": "auto",
+    "scrollW": 382,
+    "clientW": 228,
+    "scrollable": true
+   }
+  },
+  {
+   "id": "X1-12",
+   "r": 324,
+   "grid": {
+    "overflowX": "auto",
+    "scrollW": 382,
+    "clientW": 228,
+    "scrollable": true
+   }
+  },
+  {
+   "id": "X1-12",
+   "r": 414,
+   "grid": {
+    "overflowX": "auto",
+    "scrollW": 382,
+    "clientW": 228,
+    "scrollable": true
+   }
+  },
+  {
+   "id": "X1-12",
+   "r": 324,
+   "grid": {
+    "overflowX": "auto",
+    "scrollW": 382,
+    "clientW": 228,
+    "scrollable": true
+   }
+  },
+  {
+   "id": "X1-12",
+   "r": 414,
+   "grid": {
+    "overflowX": "auto",
+    "scrollW": 382,
+    "clientW": 228,
+    "scrollable": true
+   }
+  }
+ ],
+ "total": 8,
+ "docOverflow": false,
+ "scrollW": 320,
+ "innerW": 320
+}

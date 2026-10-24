@@ -1,0 +1,14 @@
+OK   | T1-N6: obtenido=10 + 5*I esperado=10 + 5*I
+OK   | T1-M1: obtenido=1/2 + 3*I/2 esperado=1/2 + 3*I/2
+OK   | T1-M2-mod: obtenido=2 esperado=2
+OK   | T1-M2-arg: obtenido=5*pi/6 esperado=5*pi/6
+OK   | T1-M3: obtenido=16 esperado=16
+OK   | T1-M4: obtenido=[2, -1 - sqrt(3)*I, -1 + sqrt(3)*I] esperado=[2, -1 + sqrt(3)*I, -1 - sqrt(3)*I]
+OK   | T2-N2: obtenido=[[2, 7], [8, 8]] esperado=[[2, 7], [8, 8]]
+OK   | T2-M2: obtenido=[[-24, 18, 5], [20, -15, -4], [-5, 4, 1]] esperado=[[-24, 18, 5], [20, -15, -4], [-5, 4, 1]]
+OK   | T4-N3: obtenido=-s - t + 4 esperado=-s - t + 4
+OK   | T5-E3: obtenido=[[3/10, -1/10], [1/10, 3/10]] esperado=[[3/10, -1/10], [1/10, 3/10]]
+OK   | X3-10: obtenido=det2=256,trinv=1/4 esperado=det2=256,trinv=1/4
+OK   | T1-E4: obtenido=sqrt(3)/2 esperado=sqrt(3)/2
+
+RESUMEN sympy: 12 OK · 0 FALLOS (10 ejercicios, 11 comprobaciones)

@@ -1,0 +1,78 @@
+--- S_UNIV (20 casos × 200 runs) ---
+OK   |    0/200 | U1 '(x-x)/(x-x)' vs 5 — identidad universal 0/0
+OK   |    0/200 | U2 '0/(x-x)' vs 5
+OK   |    0/200 | U3 '1/(x-x)-1/(x-x)' vs 5
+OK   |    0/200 | U4 '5+0*(x-x)/(x-x)' vs 5 (J10 histórico R2)
+OK   |    0/200 | U5 '(x-y)/(x-y)' vs 5 (control: NO universal, x-y≠0 como polinomio)
+OK   |    0/200 | U6 '((x+1)*(x-x))/((x+2)*(x-x))' vs 5
+OK   |    0/200 | U7 '0*x/(x-x)' vs 5
+OK   |    0/200 | U8 '(x-x)^2/(x-x)' vs 5
+OK   |    0/200 | U9 '(x-x)*log(x)/(x-x)' vs 5
+OK   |    0/200 | U10 '(exp(x)-exp(x))/(x-x)' vs 5
+OK   |    0/200 | U11 '(x-x)/(x-x)' vs log(x*y) (cualquier esperado)
+OK   |    0/200 | U12 '(x-x)/(x-x)' vs 4-s-t (T4-N3 real)
+OK   |    0/200 | U13 '(x-x)/(x-x)' en TODAS las celdas de T5-N5 (matriz)
+OK   |    0/200 | U14 exprset T4-M5 con '(x-x)/(x-x);(x-x)/(x-x)'
+OK   |    0/200 | U15 multi T1-M2 campos '(x-x)/(x-x)' (control: tipo number no evalúa vars)
+OK   |    0/200 | U16 '0/(x-x)' vs 0
+OK   |    0/200 | U17 '(x+y-x-y)/(x-x)' vs 1
+OK   |    0/200 | U18 '(x-x)/(x-x+x-x)' vs 7
+OK   |    0/200 | U19 vector 2×1 con '(x-x)/(x-x)'
+OK   |    0/200 | U20 '1*(x-x)/(x-x)' vs pi
+--- S_FALLBACK (10 casos × 200 runs) ---
+OK   |    0/200 | F1 '5+log(x+5)+log(y+5)-log((x+5)(y+5))+x^(3/2)-x^(3/2)' vs 5
+OK   |    0/200 | F2 idem +x^z-x^z (exponente simbólico)
+OK   |    0/200 | F3 idem 0*x^(3/2)
+OK   |    0/200 | F4 idem +x^(0.3)-x^(0.3)
+OK   |    0/200 | F5 exploit N9r+forzado sobre T4-N3 real
+OK   |    0/200 | F6 exploit N9r+forzado sobre T4-M5 exprset
+OK   |    0/200 | F7 exploit sqrt desplazado+forzado vs 5
+OK   |    0/200 | F8 log(exp) escalado+forzado vs 5 (N9 residual R7)
+OK   |    0/200 | F9 '5+log(exp(x))-x+x^y-x^y' vs 5 (control: clase log(exp) cierra también vía fallback)
+OK   |    0/200 | F10 'x-y+x^(1/3)-x^(1/3)' vs 0 (control: x-y≢0)
+--- S_ATOM (14 casos × 200 runs) ---
+OK   |  200/200 | A1 'log(x+y)' vs 'log(y+x)' — MISMA expresión, orden de suma en átomo
+OK   |  200/200 | A2 'log(2*x)' vs 'log(x*2)' — MISMA expresión, orden de producto en átomo
+OK   |  200/200 | A3 'sin(x+y)' vs 'sin(y+x)'
+OK   |  200/200 | A4 'log(x/2)' vs 'log(x*0.5)'
+OK   |  200/200 | A5 'exp(x+y)' vs 'exp(y+x)'
+FN!! |    0/200 | A6 'sqrt(4*x)' vs '2*sqrt(x)' — identidad VERDADERA (4>0)
+FN!! |    0/200 | A7 'log(4*x)' vs 'log(4)+log(x)' — identidad VERDADERA (4>0)
+OK   |  200/200 | A8 'exp(log(x))' vs x — identidad VERDADERA en C\{0} (caso HIST-V1)
+OK   |  200/200 | A9 'conj(x*y)' vs 'conj(x)*conj(y)' — VERDADERA (HIST-V3)
+OK   |  200/200 | A10 'cos(x)^2+sin(x)^2' vs 1 — VERDADERA (HIST-V8)
+OK   |  200/200 | A11 'cosh(x)^2-sinh(x)^2' vs 1 — VERDADERA (HIST-V9)
+FN!! |    0/200 | A12 'log(sqrt(x))' vs 'log(x)/2' — VERDADERA
+OK   |  200/200 | A13 'sqrt(x)^2' vs x — control (rewrite la cierra)
+FN!! |    0/200 | A14 '(sqrt(x))^4' vs 'x^2' — VERDADERA
+--- S_FRAC (9 casos × 200 runs) ---
+FN!! |    0/200 | P1 'x^(3/2)' vs 'x*sqrt(x)' — VERDADERA
+FN!! |    0/200 | P2 'x^(2/3)' vs '(x^(1/3))^2' — VERDADERA
+FN!! |    0/200 | P3 'x^(-1/2)' vs '1/sqrt(x)' — VERDADERA
+OK   |    0/200 | P4 '(x^2)^(1/2)' vs x — FALSA (rama)
+OK   |    0/200 | P5 '(x*y)^(1/2)' vs 'sqrt(x)*sqrt(y)' — FALSA
+OK   |  200/200 | P6 'x^(4/2)' vs 'x^2' — VERDADERA
+FN!! |    0/200 | P7 'x^(2*y/y)' vs 'x^2' — VERDADERA
+OK   |  200/200 | P8 'x^2.0' vs 'x^2' — VERDADERA
+FN!! |    0/200 | P9 'x^2' vs 'x^2.0000000000000004' — tolerancia numérica
+--- S_MISC (18 casos × 200 runs) ---
+OK   |  200/200 | M1 '5!' vs 120 — VERDADERA
+OK   |    0/200 | M2 'x!' vs 'fact(x)' — control: 'fact(x)' NO es factorial escribible (parsea f·a·c·t(x))
+OK   |    0/200 | M3 '2.5!' vs 6 — FALSA (factorial de no entero = NaN)
+FN!! |    0/200 | M4 'min(x,y)' vs 'min(y,x)' — VERDADERA
+FN!! |    0/200 | M5 'max(x,y,z)' vs 'max(z,y,x)' — VERDADERA
+OK   |    0/200 | M6 'min(x,2)' vs 2 — FALSA
+OK   |  200/200 | M7 'x*j' vs 'x*i' — alias j=i
+OK   |  200/200 | M8 'x*I' vs 'x*i' — alias
+OK   |  200/200 | M9 'i^2' vs -1 — VERDADERA
+OK   |    0/200 | M10 'i' vs 1 — FALSA
+OK   |  200/200 | M11 'x*e' vs 'x*exp(1)' — e=exp(1)
+OK   |  200/200 | M12 '1e-9*x' vs 0 — tolerancia estructural polyIsZero 1e-8
+OK   |  200/200 | M13 '5e-9*x' vs 0 — tolerancia estructural
+OK   |  200/200 | M14 '0.1+0.2' vs 0.3 — ruido float
+OK   |  200/200 | M15 'inf-inf' vs 0 — inf es variable
+OK   |  200/200 | M16 'min(2,3)' vs 2 — coma decimal se come la coma de argumentos
+OK   |    0/200 | M17 'min(2,3)' vs 2.3 — FP del parser de coma decimal
+OK   |    0/200 | M18 'max(1,2)' vs 1.2 — FP del parser de coma decimal
+
+RESUMEN: FP=0 FN=11 de 71 (N=200 runs/caso).

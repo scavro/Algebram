@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tema IV · Procesos de triangulación · Fundamentos Algebraicos para la IA · Archivo</title>
+  <meta name="description" content="Sistemas lineales, Gauss, Rouché–Frobenius, factorizaciones PLU y QR, mínimos cuadrados y forma de Schur: teoría, resumen, mapa mental y ejercicios interactivos." />
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/css/fonts.css" />
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+</head>
+<body data-theme="tema-4">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="progress-bar" aria-hidden="true"><div class="progress-bar__fill"></div></div>
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="wrap nav__inner">
+      <a class="nav__brand" href="../index.html"><span class="nav__brand-mark">Archivo</span><span>Álgebra · IA</span></a>
+      <button class="nav__toggle" aria-expanded="false" aria-label="Abrir menú">Menú</button>
+      <ul class="nav__links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../temas/tema-1.html">Temas</a></li>
+        <li><a href="../examenes/examen-1.html">Exámenes</a></li>
+        <li><a href="../planificacion.html">Planificación</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <header class="theme-head">
+    <div class="theme-head__bg" aria-hidden="true"></div>
+    <div class="theme-head__ghost ghost-num" aria-hidden="true">04</div>
+    <div class="theme-head__inner">
+      <p class="kicker">Tema IV · Fundamentos algebraicos para la IA</p>
+      <h1>Procesos de triangulación</h1>
+      <div class="theme-head__row">
+        <span class="chip chip--gold">23 noviembre – 6 diciembre</span>
+        <span class="chip" data-count="tema-4" data-count-suffix=" ejercicios interactivos">20 ejercicios interactivos</span>
+        <span class="chip">Resumen + mapa mental</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrap toc" aria-label="Sumario del tema">
+    <a href="#s1"><span class="meta">§ 4.1</span><strong>Matrices triangulares</strong></a>
+    <a href="#s2"><span class="meta">§ 4.2</span><strong>Sistemas lineales</strong></a>
+    <a href="#s3"><span class="meta">§ 4.3</span><strong>Método de Gauss</strong></a>
+    <a href="#s4"><span class="meta">§ 4.4</span><strong>Rouché–Frobenius</strong></a>
+    <a href="#s5"><span class="meta">§ 4.5</span><strong>Factorización PLU</strong></a>
+    <a href="#s6"><span class="meta">§ 4.6</span><strong>Factorización QR</strong></a>
+    <a href="#s7"><span class="meta">§ 4.7</span><strong>Mínimos cuadrados</strong></a>
+    <a href="#s8"><span class="meta">§ 4.8</span><strong>Forma de Schur</strong></a>
+    <a href="#resumen"><span class="meta">Ficha</span><strong>Resumen</strong></a>
+    <a href="#mapa"><span class="meta">Visual</span><strong>Mapa mental</strong></a>
+    <a href="#ejercicios"><span class="meta">Práctica</span><strong>Ejercicios</strong></a>
+  </nav>
+
+  <main id="contenido">
+
+    <!-- ================= § 4.1 ================= -->
+    <section class="wrap section theory-section" id="s1">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 4.1</div>
+        <div>
+          <h2>Matrices triangulares y trapezoidales</h2>
+          <p>Por qué queremos triangular: determinantes, inversiones y sistemas que se resuelven en un santiamén.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>La idea que recorre este tema entero es sencilla: convertir un problema complicado en uno con estructura triangular u ortogonal. Una matriz triangular se entiende por completo mirando su diagonal, y este tema trata de llegar a esa diagonal (o a algo equivalente) por caminos distintos: el método de Gauss, las factorizaciones PLU y QR y, ya en el terreno complejo, la forma de Schur.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 4.1</span>
+          <p>Una matriz es <strong>trapezoidal superior</strong> si todas sus entradas situadas por debajo de la diagonal principal son nulas. Es <strong>escalonada</strong> (forma REF) si todas las filas nulas se sitúan debajo de las filas no nulas y los pivotes —las primeras entradas no nulas de cada fila no nula— avanzan estrictamente de izquierda a derecha: el pivote de cada fila no nula está en una columna estrictamente a la derecha que el de la fila anterior. Si, además, todos los pivotes valen \(1\) y son las únicas entradas no nulas de su columna, la matriz es <strong>escalonada reducida</strong> (RREF).</p>
+        </div>
+
+        <p>Las matrices triangulares superiores \(U \in \mathbb{K}^{n \times n}\) son trapezoidales superiores y cuadradas, y son las que de verdad nos van a interesar: su determinante y su inversa se calculan con la diagonal.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 4.2</span>
+          <p>Si \(U = (u_{ij}) \in \mathbb{K}^{n \times n}\) es triangular superior, entonces \(\det U = u_{11} u_{22} \cdots u_{nn}\). En particular, \(U\) es invertible si y solo si todos los elementos de su diagonal son no nulos, y en ese caso \(U^{-1} = (b_{ij})\) es triangular superior con entradas diagonales \(b_{jj} = 1/u_{jj}\) (\(j = 1, \dots, n\)); para cada columna \(j = 2, \dots, n\), sus entradas por encima de la diagonal \(b_{ij}\) con \(i \lt  j\) se obtienen en orden ascendente \(i = j-1, j-2, \dots, 1\) mediante la recurrencia</p>
+          \[ b_{ij} = -\frac{1}{u_{ii}} \sum_{k=i+1}^{j} u_{ik} b_{kj}. \]
+          <p><em>Demostración.</em> El desarrollo del determinante por la primera columna solo deja el término \(u_{11} \det U_{11}\), donde \(U_{11}\) es el menor inferior derecho; repitiendo el argumento por inducción sobre el tamaño se obtiene el producto de la diagonal. La recurrencia de \(U^{-1}\) se deduce de igualar a la identidad el producto \(U U^{-1}\): en la diagonal, \(u_{jj} b_{jj} = 1 \implies b_{jj} = 1/u_{jj}\); para \(i \lt  j\), la entrada \((i,j)\) de \(U U^{-1}\) es \(u_{ii} b_{ij} + \sum_{k=i+1}^{j} u_{ik} b_{kj} = 0\), que despejada para \(i = j-1, \dots, 1\) da la fórmula. \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 4.3</span>
+          <p>Las únicas matrices triangulares normales son las matrices diagonales.</p>
+          <p><em>Demostración.</em> Sea \(U\) triangular superior y normal, es decir, \(U U^{*} = U^{*} U\). En la columna \(1\) de \(U\) solo puede ser distinta de cero la entrada \(u_{11}\); igualando los módulos de la primera fila y de la primera columna (que para una matriz normal coinciden) se deduce que \(u_{12} = \cdots = u_{1n} = 0\). Repitiendo este razonamiento fila a fila y columna a columna, todo lo que está fuera de la diagonal se anula. \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>El determinante de una matriz triangular es el producto de su <em>diagonal</em>, no de su primera fila. Fíjate bien en que \(\det U = u_{11} u_{22} \cdots u_{nn}\); leer «\(u_{11} u_{12} \cdots\)» es un error de transcripción que se arrastra con mucha facilidad.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= § 4.2 ================= -->
+    <section class="wrap section theory-section" id="s2">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 4.2</div>
+        <div>
+          <h2>Sistemas de ecuaciones lineales en forma matricial</h2>
+          <p>De las ecuaciones sueltas a la ecuación matricial \(Ax = b\): el cambio de punto de vista que ordena todo el tema.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>En secundaria se resuelven sistemas manipulando ecuaciones una a una, con incógnitas \(x, y, z\). Aquí damos el paso adelante: un sistema se escribe como una única ecuación matricial \(Ax = b\), y el objeto de estudio pasan a ser las matrices \(A\) y \(b\), no las ecuaciones sueltas. Esta lectura compacta es la que permite generalizar los algoritmos a cualquier dimensión y la que usan, literalmente, todas las librerías numéricas.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 4.4</span>
+          <p>Dados \(A \in \mathbb{K}^{n \times m}\) y \(b \in \mathbb{K}^{n}\), el <strong>sistema de ecuaciones lineales</strong> asociado es la ecuación matricial \(Ax = b\), con incógnita \(x \in \mathbb{K}^{m}\). Se llama <strong>matriz ampliada</strong> a \(C = [[A, b]] \in \mathbb{K}^{n \times (m+1)}\), y el sistema es <strong>homogéneo</strong> si \(b = 0\).</p>
+        </div>
+
+        <p>El texto de la asignatura homogeneiza sistemáticamente el sistema mediante la matriz ampliada por bloques \(C = [[A, b]] \in \mathbb{K}^{n \times (m+1)}\) y el vector columna ampliado \(x' = (x_1, \dots, x_m, -1)^{\top} \in \mathbb{K}^{m+1}\): como \(C x' = A x - b\), resulta que \(x \in \mathbb{K}^{m}\) es solución de \(Ax = b\) si y solo si \(x'\) es solución del sistema homogéneo \(C x' = 0\). De este modo, al transformar \(C\) en una matriz escalonada \(U = M C\) mediante operaciones elementales de fila invertibles, se cumple \(Ax = b \iff C x' = 0 \iff U x' = 0\), lo que justifica operar directamente sobre toda la matriz ampliada \(C = [[A, b]]\).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 4.5</span>
+          <p>El sistema \(Ax = b\) es <strong>compatible</strong> si tiene al menos una solución, e <strong>incompatible</strong> en caso contrario. Dentro de los compatibles, es <strong>determinado</strong> si la solución es única, e <strong>indeterminado</strong> si tiene infinitas soluciones, que forman un subespacio afín de \(\mathbb{K}^{m}\).</p>
+        </div>
+
+        <p>El criterio básico de compatibilidad ni siquiera necesita algoritmos: \(Ax = b\) es compatible si y solo si \(b \in \operatorname{col} A\), es decir, si y solo si añadir \(b\) como columna no aumenta el rango: \(\operatorname{rng}(A) = \operatorname{rng}([[A, b]])\). El teorema de Rouché–Frobenius, en el § 4.4, convierte esto en una clasificación completa.</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>La solución cerrada \(x = A^{-1} b\) es magnífica para razonar y pésima para calcular: invertir matrices es caro y numéricamente delicado. En cálculo científico se factoriza (\(PLU\), \(QR\)) y se resuelve el sistema factorizado; no se forma \(A^{-1}\).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= § 4.3 ================= -->
+    <section class="wrap section theory-section" id="s3">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 4.3</div>
+        <div>
+          <h2>El método de Gauss</h2>
+          <p>Escalonar y sustituir hacia atrás, traducido a lenguaje matricial.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>El método de Gauss resuelve \(Ax = b\) en dos etapas. En el <em>escalonamiento</em> se transforma la matriz ampliada \(C = [[A, b]]\) mediante intercambios de filas y combinaciones lineales de filas hasta lograr una matriz escalonada. En la <em>sustitución hacia atrás</em> se resuelve el sistema escalonado desde la última ecuación hacia arriba.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 4.6</span>
+          <p>El <strong>pivote</strong> de una fila de una matriz es su primera entrada no nula. El objetivo del escalonamiento es que los pivotes avancen de izquierda a derecha; en cada paso se intercambian filas si hace falta (matriz de permutación \(P_j\)) y se anulan las entradas por debajo del pivote (matriz unitriangular \(E_j\), que codifica combinaciones lineales de filas).</p>
+        </div>
+
+        <p>Así, cada paso multiplica la ampliada por la izquierda por un producto \(E_j P_j\), y el proceso completo deja una matriz escalonada</p>
+        \[ U = M C, \qquad M = (E_m P_m) \cdots (E_j P_j) \cdots (E_1 P_1), \]
+        <p>de modo que \(C = M^{-1} U\). Esta es la clave del tema: <em>Gauss factoriza</em>. Las matrices de permutación son ortogonales (\(P^{-1} = P^{\top}\)) y las unitriangulares por bloques se invierten cambiando el signo del bloque, así que \(M^{-1}\) se escribe casi gratis. En el § 4.5 reordenamos estos factores y obtenemos la factorización \(PLU\).</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 4.7</span>
+          <p>Las operaciones elementales de fila del método de Gauss no alteran el rango de la matriz de coeficientes ni el de la matriz ampliada; de hecho, no alteran el rango de \(C\) ni el de sus submatrices por columnas (en particular, el de \(A\) y el de \([[A,b]]\)).</p>
+          <p><em>Demostración.</em> Los intercambios de filas solo reordenan las filas y las combinaciones lineales de filas son transformaciones invertibles por la izquierda (multiplicar por \(E_j\) unitriangular), que no cambian el espacio generado por las filas. El rango de una matriz es la dimensión del espacio de sus filas, y por tanto se conserva. \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 4.1</strong> (Gauss completo, paso a paso). Resolvamos</p>
+        \[ \begin{cases} x + y + z = 6, \\ 2x - y + z = 3, \\ x + 2y - z = 2. \end{cases} \]
+        <p>Trabajamos con la matriz ampliada y anulamos bajo el primer pivote, \(F_2 \leftarrow F_2 - 2 F_1\) y \(F_3 \leftarrow F_3 - F_1\):</p>
+        \[ \left(\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\ 2 & -1 & 1 & 3 \\ 1 & 2 & -1 & 2 \end{array}\right) \;\longrightarrow\; \left(\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\ 0 & -3 & -1 & -9 \\ 0 & 1 & -2 & -4 \end{array}\right). \]
+        <p>El pivote de la segunda columna está en la fila 2 (no hace falta permutar); anulamos la entrada \((3,2)\) con \(F_3 \leftarrow F_3 + \tfrac{1}{3} F_2\):</p>
+        \[ \left(\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\ 0 & -3 & -1 & -9 \\ 0 & 0 & -7/3 & -7 \end{array}\right). \]
+        <p>Ya tenemos la forma escalonada. Sustitución hacia atrás: de la tercera ecuación, \(-\tfrac{7}{3} z = -7\), luego \(z = 3\); de la segunda, \(-3y - 3 = -9\), luego \(y = 2\); de la primera, \(x + 2 + 3 = 6\), luego \(x = 1\). La solución única es \(x = (1, 2, 3)^{\top}\). Compruébalo sustituyendo en las tres ecuaciones.</p>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Gauss y PLU son la base sobre la que se construyen las implementaciones reales de álgebra lineal (LAPACK, las librerías de tensores de los marcos de aprendizaje profundo). Cada vez que un modelo resuelve un sistema o evalúa una capa lineal, en el fondo hay una factorización triangular optimizada; entender la teoría es entender qué están haciendo esas librerías y por qué a veces fallan.</p>
+        </div>
+      </div>
+    
+      <figure class="film reveal">
+        <video controls preload="metadata" playsinline src="../assets/animaciones/iv_gauss.mp4"><track kind="captions" src="data:text/vtt;charset=utf-8;base64,V0VCVlRUCgowMDowMC4wMDAgLS0+IDAwOjA0LjAwMApFbGltaW5hY2nDs24gZGUgR2F1c3M6IGNhZGEgcGFzbyByZXN0YSB1biBtw7psdGlwbG8gZGUgdW5hIGZpbGEuCgowMDowNC4wMDAgLS0+IDAwOjA4LjUwMApGMiBtZW5vcyAyIEYxLCBkZXNwdcOpcyBGMyBtZW5vcyBGMS4KCjAwOjA4LjUwMCAtLT4gMDA6MTYuMjAwCkYzIG3DoXMgMyBGMiBkZWphIGVsIHNpc3RlbWEgdHJpYW5ndWxhcjogc3VzdGl0dWNpw7NuIGhhY2lhIGF0csOhcy4K" srclang="es" label="Español" default data-vtt="iv_gauss.vtt"></video>
+        <figcaption>Animación · Eliminación de Gauss: restar múltiplos de filas hasta triangular el sistema</figcaption>
+      </figure>
+    </section>
+
+    <!-- ================= § 4.4 ================= -->
+    <section class="wrap section theory-section" id="s4">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 4.4</div>
+        <div>
+          <h2>Rango y compatibilidad: el teorema de Rouché–Frobenius</h2>
+          <p>La clasificación completa de los sistemas lineales según su número de soluciones.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Combinando la Proposición 4.7 con la forma escalonada obtenemos el resultado central de la teoría de sistemas. Recuerda que \(A \in \mathbb{K}^{n \times m}\), de modo que \(m\) es el número de incógnitas.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 4.8 (Rouché–Frobenius)</span>
+          <p>Para el sistema \(Ax = b\), con \(r = \operatorname{rng}(A)\):</p>
+          <p>\(\;\)1. El sistema es incompatible si y solo si \(\operatorname{rng}(A) &lt; \operatorname{rng}([[A, b]])\).</p>
+          <p>\(\;\)2. Es compatible determinado (solución única) si y solo si \(\operatorname{rng}(A) = \operatorname{rng}([[A, b]]) = m\).</p>
+          <p>\(\;\)3. Es compatible indeterminado (infinitas soluciones) si y solo si \(\operatorname{rng}(A) = \operatorname{rng}([[A, b]]) = r &lt; m\); en ese caso las soluciones forman un subespacio afín de dimensión \(m - r\).</p>
+          <p><em>Demostración.</em> Aplicamos Gauss hasta obtener la forma escalonada \(U = M C\) de la ampliada; los rangos de \(A\) y de \([[A,b]]\) no cambian (Proposición 4.7). (1) Si los rangos difieren, la forma escalonada termina con una fila de la forma \((0, \dots, 0 \mid 1)\), es decir, la ecuación imposible \(0 = 1\); recíprocamente, si el sistema es compatible, \(b \in \operatorname{col} A\) y añadir \(b\) no aumenta el rango. (2) Si \(r = m\), la parte de \(A\) en la forma escalonada es trapezoidal alta (o triangular) y la sustitución hacia atrás proporciona una única solución. (3) Si \(r \lt m\), la forma es trapezoidal ancha: quedan \(m - r\) incógnitas sin pivote, que se toman como parámetros libres; cada elección de parámetros determina una solución, y todas las soluciones se obtienen así. \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 4.2</strong> (clasificación por rangos). Consideremos</p>
+        \[ \begin{cases} x + y = 1, \\ 2x + 2y = 2, \\ x + y = 0. \end{cases} \]
+        <p>La matriz de coeficientes \(A = \begin{pmatrix} 1 & 1 \\ 2 & 2 \\ 1 & 1 \end{pmatrix}\) tiene todas sus filas proporcionales a \((1, 1)\), luego \(\operatorname{rng}(A) = 1\). En la ampliada \(C = \begin{pmatrix} 1 & 1 & 1 \\ 2 & 2 & 2 \\ 1 & 1 & 0 \end{pmatrix}\), la fila \(F_3 - F_1 = (0, 0, -1)\) aporta un pivote nuevo, luego \(\operatorname{rng}([[A,b]]) = 2\). Como \(1 \lt  2\), el sistema es incompatible: la primera y la tercera ecuación exigen \(x + y = 1\) y \(x + y = 0\) a la vez.</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>El teorema es exacto sobre \(\mathbb{K}\), pero en coma flotante decidir «¿es este pivote cero?» es delicado: un valor del orden de \(10^{-16}\) puede ser un cero real con errores de redondeo o un pivote legítimo. Por eso en la práctica computacional el rango exacto se estima con tolerancias (descomposición en valores singulares, que verás en el Tema V) y no por escalonamiento a ciegas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= § 4.5 ================= -->
+    <section class="wrap section theory-section" id="s5">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 4.5</div>
+        <div>
+          <h2>Factorización PLU</h2>
+          <p>Lo que realmente hace Gauss: escribir \(C = P L U\) y olvidarse del escalonado perfecto.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Llevar una matriz hasta la forma escalonada (REF) es útil para discutir rangos, pero computacionalmente resulta más costoso porque la columna del pivote de cada fila depende de qué entradas se hayan anulado antes, obligando a ramificaciones condicionales. Las librerías numéricas modernas prefieren una variante sin condicionales dinámicos de columna: en la etapa \(j\) se fija de antemano la posición diagonal \((j,j)\) como referencia (permutando con alguna fila inferior si hace falta) y se anulan las entradas por debajo de \((j,j)\), lo que produce una matriz <strong>trapezoidal superior</strong> \(U\) (aunque no necesariamente escalonada si la matriz tiene rango deficiente y queda algún cero en la diagonal).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 4.9</span>
+          <p>Una <strong>factorización PLU</strong> de una matriz \(C \in \mathbb{K}^{n \times m}\) es una descomposición \(C = P L U\) en la que \(P \in \mathbb{K}^{n \times n}\) es una matriz de permutación, \(L \in \mathbb{K}^{n \times n}\) es unitriangular inferior y \(U \in \mathbb{K}^{n \times m}\) es trapezoidal superior. Si se exige además que \(U\) sea escalonada (REF), hablamos de la factorización completa de Gauss.</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 4.10</span>
+          <p>Toda matriz \(C \in \mathbb{K}^{n \times m}\) admite factorización \(C = P L U\).</p>
+          <p><em>Demostración.</em> El método de Gauss da \(C = M^{-1} U\) con \(M = (E_m P_m) \cdots (E_1 P_1)\). Para \(j \le k\), las matrices por bloques verifican</p>
+          \[ E_j^{-1} = \begin{pmatrix} I_j & 0 \\ -B_j & I_{n-j} \end{pmatrix}, \qquad P_k^{-1} = \begin{pmatrix} I_k & 0 \\ 0 & Q_k^{\top} \end{pmatrix}, \]
+          <p>de donde se deduce la <strong>regla de conmutación por bloques</strong> \(E_j^{-1} P_k^{-1} = P_k^{-1} \widehat{E}_j^{-1}\), siendo \(\widehat{E}_j^{-1}\) otra matriz unitriangular inferior de la misma estructura en la que las filas inferiores del bloque de multiplicadores \(-B_j\) han quedado permutadas por \(Q_k^{\top}\). Esto permite desplazar todas las permutaciones a la izquierda y agrupar las unitriangulares: \(C = P L U\), con \(P = P_1^{-1} \cdots P_m^{-1}\) de permutación y \(L = \widehat{E}_1^{-1} \cdots \widehat{E}_m^{-1}\) unitriangular inferior. \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Regla de oro al permutar en pasos intermedios (\(\widehat{E}_j^{-1}\))</span>
+          <p>Si en la etapa \(1\) calculas los multiplicadores de la columna \(1\) y después, en la etapa \(2\), intercambias las filas \(2\) y \(3\) mediante \(P_2\), la identidad \(E_1^{-1} P_2^{-1} = P_2^{-1} \widehat{E}_1^{-1}\) significa que <strong>la permutación \(P_2\) también intercambia los multiplicadores ya calculados en la columna \(1\) de \(L\)</strong> (las entradas \(l_{21}\) y \(l_{31}\)). Olvidar permutar los multiplicadores de las columnas anteriores es el fallo más habitual al construir \(L\) a mano.</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 4.11 (existencia y unicidad de \(LU\))</span>
+          <p>Una matriz cuadrada <strong>no singular</strong> \(C\) admite factorización \(C = LU\) (sin permutación, con \(L\) unitriangular inferior y \(U\) triangular superior) si y solo si todos sus menores principales conducentes \(\Delta_1, \dots, \Delta_n\) son no nulos. En ese caso la factorización es única y \(\det C = u_{11} u_{22} \cdots u_{nn}\). En general, con factorización \(PLU\), \(\det C = \det(P) \, u_{11} \cdots u_{nn} = \pm \, u_{11} \cdots u_{nn}\).</p>
+          <p><em>Demostración.</em> En la etapa \(j\) de Gauss sin permutaciones previas, la entrada \((j,j)\) es no nula si y solo si el menor principal conducente \(j \times j\) es no nulo (pues las operaciones elementales unitriangulares conservan los menores principales conducentes). Si ningún menor principal se anula, no se necesita ninguna permutación, \(U\) no tiene ceros en la diagonal y la factorización es única igualando, paso a paso, los productos por bloques. El determinante sale de \(\det L = 1\), \(\det U = u_{11} \cdots u_{nn}\) y \(\det P = \pm 1\). (Observa que si \(C\) es singular, puede admitir factorización \(LU\) aunque se anule algún menor principal conducente). \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Comparación entre \(U\) escalonada (REF) y \(U\) trapezoidal superior, y forma PLU reducida.</strong> Cuando una matriz tiene rango deficiente (por ejemplo, si tras la etapa \(1\) se anula la entrada \((2,2)\) y todo lo que hay debajo de ella en la columna \(2\), como en el Ejemplo 142 del libro), la factorización \(PLU\) con \(U\) meramente trapezoidal superior pasa directamente a la etapa \(3\) dejando un cero en \(u_{22}\), mientras que la factorización con \(U\) escalonada (REF) busca el siguiente pivote en la columna \(3\) de la fila \(2\) para anular debajo de él. Por otra parte, cuando \(C \in \mathbb{K}^{n \times m}\) es una matriz alta (\(m \lt n\)), las últimas \(n - m\) filas de \(U\) son nulas y basta retener las primeras \(m\) columnas de \(L\) y las primeras \(m\) filas de \(U\), obteniendo la <strong>descomposición PLU reducida</strong> \(P^{\top} C = L_1 U_1\), con \(L_1 \in \mathbb{K}^{n \times m}\) trapezoidal inferior unitaria y \(U_1 \in \mathbb{K}^{m \times m}\) triangular superior.</p>
+
+        <p><strong>Ejemplo 4.3</strong> (PLU de una matriz \(3 \times 3\)). Factoricemos \(A = \begin{pmatrix} 0 & 1 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 0 \end{pmatrix}\) intercambiando las filas \(1\) y \(2\) en el primer paso (la entrada \((1,1)\) es nula) y sin más permutaciones:</p>
+        \[ \begin{pmatrix} 1 & 0 & 1 \\ 0 & 1 & 1 \\ 1 & 1 & 0 \end{pmatrix} \;\xrightarrow{\;F_3 \leftarrow F_3 - F_1\;}\; \begin{pmatrix} 1 & 0 & 1 \\ 0 & 1 & 1 \\ 0 & 1 & -1 \end{pmatrix} \;\xrightarrow{\;F_3 \leftarrow F_3 - F_2\;}\; \begin{pmatrix} 1 & 0 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & -2 \end{pmatrix} = U. \]
+        <p>Los multiplicadores \(l_{31} = 1\) y \(l_{32} = 1\) van a \(L\), y el intercambio inicial a \(P\):</p>
+        \[ P = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}, \quad L = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 1 & 1 & 1 \end{pmatrix}, \quad U = \begin{pmatrix} 1 & 0 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & -2 \end{pmatrix}. \]
+        <p>Comprueba que \(P L U = A\) y que \(\det A = \det(P) \cdot 1 \cdot 1 \cdot (-2) = (-1) \cdot (-2) = 2\) (o directamente \(\det A = 2\) por la regla de Sarrus).</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>No toda matriz admite \(C = LU\): basta un cero en una esquina, como en \(\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}\), para que la entrada \((1,1)\) sea nula y haga falta permutar. Si olvidas el pivoteo, o pretendes una factorización \(LU\) que no existe, el resto del cálculo se viene abajo. La permutación no es un adorno: es parte de la factorización.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>En problemas de gran escala (grafos, redes neuronales, conjuntos de datos enormes) las matrices suelen ser dispersas (<em>sparse</em>): casi todas las entradas son ceros. Al eliminar una fila, combinaciones lineales desafortunadas crean entradas no nulas donde antes había ceros: es el fenómeno del <strong>relleno (<em>fill-in</em>)</strong>, que puede disparar el consumo de memoria. El <strong>pivoteo completo</strong> \(C = P L U P'\) permuta tanto filas (\(P\)) como columnas (\(P'\)) para minimizar el <em>fill-in</em>, garantizar la estabilidad numérica eligiendo el mayor pivote en toda la submatriz activa y revelar el rango numérico.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= § 4.6 ================= -->
+    <section class="wrap section theory-section" id="s6">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 4.6</div>
+        <div>
+          <h2>Factorización QR</h2>
+          <p>La versión ortogonal de la triangulación: Gram–Schmidt se convierte en \(C = QR\).</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Si la reducción de Gauss se lee como la factorización \(PLU\), la ortogonalización de Gram–Schmidt (Tema II, § 2.8) se lee como la factorización \(QR\): aplicamos Gram–Schmidt a las columnas \(c_1, \dots, c_m \in \mathbb{K}^{n}\) de \(C \in \mathbb{K}^{n \times m}\) y recogemos los vectores ortonormales en \(Q\) y los coeficientes del proceso en \(R\).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 4.12</span>
+          <p>Una <strong>factorización QR</strong> de \(C \in \mathbb{K}^{n \times m}\) es \(C = Q R\) con \(Q\) ortogonal (unitaria si \(\mathbb{K} = \mathbb{C}\)) y \(R\) trapezoidal superior. Es la <strong>QR completa</strong> si \(Q \in \mathbb{K}^{n \times n}\) y \(R \in \mathbb{K}^{n \times m}\); la <strong>QR reducida</strong> (o delgada) si \(C\) es alta (\(m &lt; n\)), \(Q_1 \in \mathbb{K}^{n \times m}\) tiene columnas ortonormales (\(Q_1^{*} Q_1 = I_m\)) y \(R_1 \in \mathbb{K}^{m \times m}\) es triangular superior; y la <strong>QR de rango</strong> si \(r = \operatorname{rng}(C)\), \(Q_1 \in \mathbb{K}^{n \times r}\) con \(Q_1^{*} Q_1 = I_r\) y \(R_1 \in \mathbb{K}^{r \times m}\) trapezoidal superior de rango \(r\).</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 4.13</span>
+          <p>Toda matriz \(C \in \mathbb{K}^{n \times m}\) admite factorización QR completa, reducida y de rango. Si \(r = \operatorname{rng}(C)\) y escribimos la factorización completa por bloques a partir de la QR de rango como</p>
+          \[ C = \begin{pmatrix} Q_1 & Q_2 \end{pmatrix} \begin{pmatrix} R_1 \\ 0 \end{pmatrix} = Q_1 R_1, \]
+          <p>entonces las \(r\) columnas de \(Q_1 \in \mathbb{K}^{n \times r}\) forman una base ortonormal de \(\operatorname{col} C\) y, si \(r \lt n\), las \(n - r\) columnas de \(Q_2 \in \mathbb{K}^{n \times (n-r)}\) forman una base ortonormal de \((\operatorname{col} C)^{\perp} = \ker(C^{*})\).</p>
+          <p><em>Demostración.</em> Gram–Schmidt aplicado a las columnas de \(C\) —descartando los vectores nulos \(u_j = 0\) cuando una columna \(c_j\) es combinación lineal de las anteriores (caso \(r \lt m\))— genera \(r\) vectores ortonormales \(q_1, \dots, q_r\) que abarcan \(\operatorname{col} C\); los coeficientes \(r_{tj} = \langle q_t, c_j \rangle\) verifican \(c_j = \sum_{t=1}^{r} r_{tj} q_t\), es decir, \(C = Q_1 R_1\) con \(R_1 \in \mathbb{K}^{r \times m}\) trapezoidal superior y escalonada de rango \(r\). Completando \(q_{r+1}, \dots, q_n\) (por ejemplo, ortonormalizando vectores de la base canónica \(e_i\)) hasta una base ortonormal de \(\mathbb{K}^{n}\) se obtiene \(Q = \begin{pmatrix} Q_1 & Q_2 \end{pmatrix}\) unitaria y la forma completa \(C = Q R\). Como las columnas de \(Q_2\) son ortogonales a todas las columnas de \(Q_1\) (y por tanto a \(\operatorname{col} C\)), forman una base ortonormal de \((\operatorname{col} C)^{\perp} = \ker(C^{*})\). \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Factorización LQ.</strong> Aplicando una factorización QR a la traspuesta conjugada \(C^{*} = Q R\) y tomando adjuntas se obtiene \(C = R^{*} Q^{*} = L Q^{*}\), donde \(L = R^{*}\) es trapezoidal inferior y \(Q^{*}\) tiene filas ortonormales (unitaria en la versión completa). Esta variante, denominada <strong>factorización LQ</strong> (Ejemplo 146 del libro), ortonormaliza las <em>filas</em> de \(C\) en lugar de sus columnas.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 4.14 (unicidad)</span>
+          <p>Si \(C\) tiene rango completo por columnas y se exige que la diagonal de \(R_1\) sea estrictamente positiva, la factorización QR reducida (que en este caso coincide con la de rango) es única: no existen otros \(Q_1\) y \(R_1\) de esas características cuyo producto sea \(C\).</p>
+          <p><em>Demostración.</em> Si \(C = Q_1 R_1 = \widetilde{Q}_1 \widetilde{R}_1\), entonces \(\widetilde{Q}_1^{*} Q_1 = \widetilde{R}_1 R_1^{-1}\) es a la vez unitaria (por ser cociente de matrices con columnas ortonormales) y triangular superior; las únicas matrices triangulares unitarias con diagonal positiva son la identidad, de donde \(Q_1 = \widetilde{Q}_1\) y \(R_1 = \widetilde{R}_1\). \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 4.4</strong> (QR reducida por Gram–Schmidt). Sea \(A = \begin{pmatrix} 1 & 2 \\ 0 & 1 \\ 0 & 2 \end{pmatrix}\), de columnas \(c_1 = (1, 0, 0)\) y \(c_2 = (2, 1, 2)\). Etapa 1: \(\|c_1\| = 1\), luego \(q_1 = (1, 0, 0)\), \(r_{11} = 1\) y \(r_{12} = \langle q_1, c_2 \rangle = 2\). Etapa 2: \(u = c_2 - 2 q_1 = (0, 1, 2)\), con \(\|u\| = \sqrt{5}\), luego \(q_2 = \tfrac{1}{\sqrt{5}} (0, 1, 2)\) y \(r_{22} = \sqrt{5}\). Por tanto</p>
+        \[ Q = \begin{pmatrix} 1 & 0 \\ 0 & 1/\sqrt{5} \\ 0 & 2/\sqrt{5} \end{pmatrix}, \qquad R = \begin{pmatrix} 1 & 2 \\ 0 & \sqrt{5} \end{pmatrix}, \]
+        <p>y se comprueba \(Q R = A\) y \(Q^{\top} Q = I_2\). Como \(A\) es \(3 \times 2\) de rango \(2\), esta es a la vez la QR reducida y la QR de rango.</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Confundir la QR completa con la reducida. En \(A \in \mathbb{K}^{3 \times 2}\) la completa tiene \(Q \in \mathbb{K}^{3 \times 3}\) (¡tres columnas ortonormales!) y \(R \in \mathbb{K}^{3 \times 2}\), mientras que la reducida tiene \(Q_1 \in \mathbb{K}^{3 \times 2}\) y \(R_1 \in \mathbb{K}^{2 \times 2}\). Si el enunciado no pide la completa, no la des: dimensiones equivocadas invalidan el resultado.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Gram–Schmidt es insustituible para entender el concepto, pero numéricamente pierde ortogonalidad cuando las columnas están casi alineadas. Las librerías usan reflectores de Householder o rotaciones de Givens, y prefieren QR a PLU para sistemas sobredeterminados: cuesta unas dos veces más operaciones, pero la estabilidad compensa. Esta es la razón profunda de que el ajuste de modelos por mínimos cuadrados se resuelva hoy con QR y no con las ecuaciones normales clásicas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= § 4.7 ================= -->
+    <section class="wrap section theory-section" id="s7">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 4.7</div>
+        <div>
+          <h2>Mínimos cuadrados y ecuaciones normales</h2>
+          <p>Cuando el sistema no tiene solución, buscamos la mejor aproximación: proyección ortogonal y regresión lineal.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Los sistemas sobredeterminados —más ecuaciones que incógnitas— son la norma al ajustar modelos a datos: hay más mediciones que parámetros y, en general, \(b \notin \operatorname{col} A\). Como \(\mathbb{K}^{n} = \operatorname{col} A \oplus \ker A^{*}\) es una descomposición ortogonal (Tema III), tiene sentido pedir la \(x\) para la que \(Ax\) es la proyección ortogonal de \(b\) sobre \(\operatorname{col} A\): el punto más cercano, y por tanto el que minimiza \(\|b - Ax\|_2\).</p>
+
+        <p><em>Nota notacional:</em> sobre el cuerpo general \(\mathbb{K}\) (\(\mathbb{R}\) o \(\mathbb{C}\)), escribimos \(A^{*} = \overline{A}^{\top}\) para la <strong>traspuesta conjugada</strong> (o adjunta hermítica), que en el libro de J. Perán Mazón se denota \(A^{\dagger} = \overline{A}^{\top}\). Cuando trabajamos con matrices reales (\(\mathbb{K} = \mathbb{R}\)), la conjugación es trivial y \(A^{*} = A^{\dagger} = A^{\top}\).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 4.15</span>
+          <p>El <strong>ajuste de mínimos cuadrados</strong> de \(Ax \approx b\) es cualquier \(x \in \mathbb{K}^{m}\) que minimiza \(\|b - Ax\|_2\). La <strong>ecuación normal</strong> asociada es \(A^{*} A x = A^{*} b\) (que para matrices reales se escribe \(A^{\top} A x = A^{\top} b\)).</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 4.16 (validez de las ecuaciones normales)</span>
+          <p>Para \(A \in \mathbb{K}^{n \times m}\) y \(b \in \mathbb{K}^{n}\), se cumple</p>
+          \[ A x = \operatorname{proj}_{\operatorname{col} A}(b) \iff A^{*} A x = A^{*} b. \]
+          <p>En particular, toda solución de las ecuaciones normales es un ajuste de mínimos cuadrados. Si \(A\) tiene rango máximo por columnas (\(\operatorname{rng}(A) = m \le n\)), la matriz de Gram \(A^{*} A \in \mathbb{K}^{m \times m}\) es invertible y el ajuste es único: \(x = (A^{*} A)^{-1} A^{*} b\).</p>
+          <p><em>Demostración.</em> Por definición de proyección ortogonal, \(A x = \operatorname{proj}_{\operatorname{col} A}(b)\) si y solo si el residuo \(b - Ax\) es ortogonal a \(\operatorname{col} A\), es decir, \(b - Ax \in (\operatorname{col} A)^{\perp} = \ker A^{*}\). Esto equivale a \(A^{*}(b - Ax) = 0\), que reordenando da exactamente \(A^{*} A x = A^{*} b\). Si \(\operatorname{rng}(A) = m\), entonces \(\ker(A^{*}A) = \ker A = \{0\}\), luego \(A^{*} A \in \mathbb{K}^{m \times m}\) es hermítica (simétrica en \(\mathbb{R}\)) definida positiva e invertible, y el ajuste único se despeja. \(\blacksquare\)</p>
+        </div>
+
+        <p>Con la factorización QR se evita formar \(A^{*} A\): si \(A = Q_1 R_1\) es la QR reducida de una matriz de rango máximo por columnas (\(r = m \le n\)), como \(Q_1^{*} Q_1 = I_m\) y \(R_1 \in \mathbb{K}^{m \times m}\) es invertible, el sistema normal \(R_1^{*} Q_1^{*} Q_1 R_1 x = R_1^{*} Q_1^{*} b\) se simplifica a \(R_1 x = Q_1^{*} b\), de donde</p>
+        \[ x = R_1^{-1} Q_1^{*} b \]
+        <p>(en el caso real, \(x = R_1^{-1} Q_1^{\top} b\)). Es el método recomendado en cálculo numérico: \(\operatorname{cond}(A^{*} A) = \operatorname{cond}(A)^2\), de modo que formar las ecuaciones normales duplica el orden de magnitud del condicionamiento y degrada la precisión cuando \(A\) está mal condicionada.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Fórmula general cerrada mediante la QR de \(A^{*}\) (Perán, § 3.3, ec. 28)</span>
+          <p>Sea \(A \in \mathbb{K}^{n \times m}\) de rango \(r = \operatorname{rng}(A)\) y apliquemos la factorización QR completa y de rango a su <strong>traspuesta conjugada</strong> \(A^{*} \in \mathbb{K}^{m \times n}\):</p>
+          \[ A^{*} = \begin{pmatrix} Q_1 & Q_2 \end{pmatrix} \begin{pmatrix} R_1 \\ 0 \end{pmatrix} = Q_1 R_1, \]
+          <p>con \(Q_1 \in \mathbb{K}^{m \times r}\) (\(Q_1^{*} Q_1 = I_r\)), \(Q_2 \in \mathbb{K}^{m \times (m-r)}\) cuyas columnas forman una base ortonormal de \(\ker A\), y \(R_1 \in \mathbb{K}^{r \times n}\) trapezoidal superior de rango \(r\) (por lo que \(R_1 R_1^{*} \in \mathbb{K}^{r \times r}\) es invertible). Entonces las soluciones de las ecuaciones normales \(A^{*} A x = A^{*} b\) vienen dadas por la <strong>fórmula general cerrada</strong></p>
+          \[ x = Q_1 (R_1 R_1^{*})^{-1} R_1 b + Q_2 u, \qquad u \in \mathbb{K}^{m-r}. \]
+          <p>Esta única expresión unifica todos los casos posibles del problema lineal \(Ax \approx b\):</p>
+          <p>\(\;\)1. <strong>Ajuste único (\(r = m \le n\), rango completo por columnas):</strong> no existe bloque \(Q_2\) y \(x = Q_1 (R_1 R_1^{*})^{-1} R_1 b\). (Si además \(r = m = n\), el sistema es compatible determinado y \(x = A^{-1}b\)).</p>
+          <p>\(\;\)2. <strong>Sistema compatible indeterminado (\(r = n \lt m\), o en general \(b \in \operatorname{col} A\) con \(r \lt m\)):</strong> la fórmula proporciona exactamente el subespacio afín de todas las soluciones exactas de \(Ax = b\). Para \(u = 0\) se obtiene la <strong>solución de mínima norma euclídea</strong> \(x_0 = Q_1 (R_1 R_1^{*})^{-1} R_1 b \in \operatorname{col}(A^{*}) = (\ker A)^{\perp}\) (cuando \(r = n\), además \(R_1 \in \mathbb{K}^{n \times n}\) es cuadrada invertible y se simplifica a \(x_0 = Q_1 (R_1^{*})^{-1} b\)).</p>
+          <p>\(\;\)3. <strong>Ajuste por mínimos cuadrados con rango deficiente (\(r \lt m\) y \(b \notin \operatorname{col} A\)):</strong> existen infinitos vectores \(x\) que minimizan \(\|b - Ax\|_2\) (forman un subespacio afín de dimensión \(m - r\)), y tomando \(u = 0\) se selecciona el único ajuste de mínima norma \(\|x\|_2\).</p>
+        </div>
+
+        <p><strong>Ejemplo 4.5</strong> (ajuste de una recta por mínimos cuadrados). Ajustemos \(y = m x + n\) a los puntos \((0, 1)\), \((1, 2)\), \((2, 4)\) y \((3, 7)\). La matriz de diseño es \(A = \begin{pmatrix} 0 & 1 \\ 1 & 1 \\ 2 & 1 \\ 3 & 1 \end{pmatrix}\) (columna de \(x\) y columna de unos), \(b = (1, 2, 4, 7)^{\top}\) e incógnita \((m, n)^{\top}\). Entonces</p>
+        \[ A^{\top} A = \begin{pmatrix} 14 & 6 \\ 6 & 4 \end{pmatrix}, \qquad A^{\top} b = \begin{pmatrix} 31 \\ 14 \end{pmatrix}, \]
+        <p>y las ecuaciones normales \(\begin{cases} 14 m + 6 n = 31, \\ 6 m + 4 n = 14 \end{cases}\) dan \(m = 2\) y \(n = \tfrac{1}{2}\). La recta ajustada es \(y = 2x + \tfrac{1}{2}\). Comprueba que los residuos \((\tfrac{1}{2}, -\tfrac{1}{2}, -\tfrac{1}{2}, \tfrac{1}{2})\) son ortogonales a las dos columnas de \(A\) (suma nula y producto escalar con \((0,1,2,3)\) nulo): esa es la firma del óptimo de mínimos cuadrados.</p>
+
+        <p><strong>Ejemplo 4.5 bis</strong> (regresión lineal múltiple: ajuste de un plano en \(\mathbb{R}^3\)). Para ajustar un plano \(z = p_1 x + p_2 y + p_3\) a \(n = 5\) puntos \((x_i, y_i, z_i)\) dados por \((1, 0, 5)\), \((0, 1, 3)\), \((-1, 0, 1)\), \((0, -1, 3)\) y \((0, 0, 2)\), añadimos una tercera columna de unos en la matriz de diseño \(A \in \mathbb{R}^{5 \times 3}\) para absorber el término independiente (<em>bias</em> o <em>intercept</em>) \(p_3\):</p>
+        \[ A = \begin{pmatrix} 1 & 0 & 1 \\ 0 & 1 & 1 \\ -1 & 0 & 1 \\ 0 & -1 & 1 \\ 0 & 0 & 1 \end{pmatrix}, \qquad b = \begin{pmatrix} 5 \\ 3 \\ 1 \\ 3 \\ 2 \end{pmatrix}, \qquad A^{\top} A = \begin{pmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 5 \end{pmatrix}, \qquad A^{\top} b = \begin{pmatrix} 4 \\ 0 \\ 14 \end{pmatrix}. \]
+        <p>De \(A^{\top} A p = A^{\top} b\) resulta inmediatamente \(p_1 = 2\), \(p_2 = 0\) y \(p_3 = \tfrac{14}{5}\), es decir, el plano ajustado es \(z = 2x + \tfrac{14}{5}\), con vector residuo \(r = b - Ap = (\tfrac{1}{5}, \tfrac{1}{5}, \tfrac{1}{5}, \tfrac{1}{5}, -\tfrac{4}{5})^{\top}\) y error cuadrático mínimo \(\|r\|_2^2 = \tfrac{4}{5}\).</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Aplicar mínimos cuadrados a un sistema incompatible y presentar el resultado como «la solución del sistema». No lo es: si \(b \notin \operatorname{col} A\), el vector \(x\) que sale de las ecuaciones normales resuelve el problema <em>de ajuste</em> \(\min_x \|b - Ax\|_2\), pero \(Ax = b\) sigue sin cumplirse. Dilo siempre con claridad; en un examen, presentar un ajuste como solución de un sistema incompatible es un error conceptual.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>La regresión lineal múltiple <em>es</em> mínimos cuadrados: ajustar un hiperplano \(y = w_1 x_1 + \cdots + w_d x_d + b\) a una muestra de entrenamiento consiste en añadir una columna de unos a las variables explicativas (<em>features</em>) y resolver el problema normal. Cuando hay variables redundantes o colineales (<strong>multicolinealidad</strong>, \(r \lt m\)), \(A^{\top}A\) deja de ser invertible y existen infinitos ajustes; elegir \(u = 0\) en la fórmula de la QR de \(A^{\top}\) selecciona el vector de pesos de <strong>mínima norma \(\|w\|_2\)</strong> (el mismo sesgo inductivo que persigue la regularización \(L_2\) o <em>Ridge regression</em>).</p>
+        </div>
+      </div>
+    
+      <figure class="film reveal">
+        <video controls preload="metadata" playsinline src="../assets/animaciones/iv_minimos.mp4"><track kind="captions" src="data:text/vtt;charset=utf-8;base64,V0VCVlRUCgowMDowMC4wMDAgLS0+IDAwOjA0LjAwMApNw61uaW1vcyBjdWFkcmFkb3M6IGxhIHJlY3RhIG1pbmltaXphIGxhIHN1bWEgZGUgZXJyb3JlcyBhbCBjdWFkcmFkby4KCjAwOjA0LjAwMCAtLT4gMDA6MDkuMDAwClNlIGFqdXN0YSBsYSByZWN0YSBhIGxvcyBkYXRvcyBvYnNlcnZhZG9zLgoKMDA6MDkuMDAwIC0tPiAwMDoxMy4zMDAKTG9zIHJlc2lkdW9zIHNvbiBsYXMgZGlzdGFuY2lhcyB2ZXJ0aWNhbGVzIGRlIGNhZGEgcHVudG8gYSBsYSByZWN0YS4K" srclang="es" label="Español" default data-vtt="iv_minimos.vtt"></video>
+        <figcaption>Animación · Mínimos cuadrados: la recta que minimiza la suma de residuos al cuadrado</figcaption>
+      </figure>
+    </section>
+
+    <!-- ================= § 4.8 ================= -->
+    <section class="wrap section theory-section" id="s8">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 4.8</div>
+        <div>
+          <h2>La forma de Schur</h2>
+          <p>Triangularización unitaria: toda matriz cuadrada se parece a una triangular.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Cerramos el tema con la triangulación «definitiva»: ya no por eliminación, sino por cambio de base unitario. La forma de Schur es el resultado que garantiza que, sobre \(\mathbb{C}\), toda matriz cuadrada puede triangularizarse preservando la geometría del producto escalar.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 4.17 (factorización triangular de Schur)</span>
+          <p>Toda matriz \(A \in \mathbb{C}^{n \times n}\) admite una factorización \(A = Q U Q^{*}\) con \(Q \in \mathbb{C}^{n \times n}\) unitaria (\(Q^{*} = Q^{-1}\)) y \(U \in \mathbb{C}^{n \times n}\) triangular superior cuya diagonal contiene los autovalores de \(A\), repetidos según su multiplicidad. En particular, \(p_A = p_U\). Si \(A \in \mathbb{R}^{n \times n}\) solo tiene autovalores reales, \(Q\) puede elegirse real (ortogonal).</p>
+          <p><em>Demostración.</em> Por inducción sobre \(n\). Para \(n = 1\) es trivial. Sea \(A \in \mathbb{C}^{n \times n}\) y sea \(\lambda \in \mathbb{C}\) un autovalor de \(A\) con autovector unitario \(u \in \mathbb{C}^{n}\) (\(Au = \lambda u\), \(u^{*} u = 1\)). Completamos \(u\) a una base ortonormal de \(\mathbb{C}^{n}\) formando la matriz unitaria por bloques \(Q_1 = \begin{pmatrix} u & Q'_1 \end{pmatrix}\), donde \(Q'_1 \in \mathbb{C}^{n \times (n-1)}\) verifica \(u^{*} Q'_1 = 0\) y \({Q'_1}^{*} Q'_1 = I_{n-1}\). Como \(A u = \lambda u\), el producto por bloques da</p>
+          \[ Q_1^{*} A Q_1 = \begin{pmatrix} u^{*} \\ {Q'_1}^{*} \end{pmatrix} \begin{pmatrix} \lambda u & A Q'_1 \end{pmatrix} = \begin{pmatrix} \lambda u^{*} u & u^{*} A Q'_1 \\ \lambda {Q'_1}^{*} u & {Q'_1}^{*} A Q'_1 \end{pmatrix} = \begin{pmatrix} \lambda & u^{*} A Q'_1 \\ 0 & {Q'_1}^{*} A Q'_1 \end{pmatrix}. \]
+          <p>Aplicando la hipótesis de inducción a la submatriz \(A_1 = {Q'_1}^{*} A Q'_1 \in \mathbb{C}^{(n-1) \times (n-1)}\), existe \(Q'_2 \in \mathbb{C}^{(n-1) \times (n-1)}\) unitaria tal que \({Q'_2}^{*} A_1 Q'_2 = U_1\) es triangular superior. Definiendo \(Q_2 = \begin{pmatrix} 1 & 0 \\ 0 & Q'_2 \end{pmatrix}\) y \(Q = Q_1 Q_2\) (unitaria por ser producto de unitarias), resulta</p>
+          \[ Q^{*} A Q = Q_2^{*} (Q_1^{*} A Q_1) Q_2 = \begin{pmatrix} \lambda & u^{*} A Q'_1 Q'_2 \\ 0 & U_1 \end{pmatrix} = U, \]
+          <p>que es triangular superior, luego \(A = Q U Q^{*}\). \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 4.6</strong> (Schur de la rotación de \(\pi/2\)). Sea \(A = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\). Su polinomio característico es \(p_A(\lambda) = \lambda^2 + 1\), con autovalores \(\lambda = \pm i\). Por el teorema de Schur, \(A = Q U Q^{*}\) con \(U\) triangular superior de diagonal \((i, -i)\) (en algún orden), y \(Q\) unitaria. Como los autovalores no son reales, aquí \(Q\) no puede ser ortogonal real: triangularizar esta rotación exige trabajar en \(\mathbb{C}\).</p>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>La forma de Schur se usa en análisis de estabilidad de sistemas dinámicos lineales y de recurrentes: la posición de los autovalores (por ejemplo, dentro del círculo unidad o del semiplano izquierdo) decide si el sistema converge o explota. Y, de forma indirecta, está detrás de los algoritmos modernos de cálculo de autovalores, que resuelven la ecuación característica —inestable numéricamente— aplicando iterativamente factorizaciones QR hasta triangularizar la matriz.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESUMEN ================= -->
+    <section class="wrap section section--tint" id="resumen">
+      <p class="kicker reveal">Ficha de repaso</p>
+      <h2 class="reveal">Lo esencial del tema</h2>
+      <div class="summary reveal" data-summary></div>
+    </section>
+
+    <!-- ================= MAPA MENTAL ================= -->
+    <section class="wrap section" id="mapa">
+      <p class="kicker reveal">Vista global</p>
+      <h2 class="reveal">Mapa mental</h2>
+      <p class="prose reveal">Pulsa cualquier nodo para ver el detalle.</p>
+      <div class="mindmap" data-mindmap></div>
+    </section>
+
+    <!-- ================= EJERCICIOS ================= -->
+    <section class="wrap section section--tint" id="ejercicios">
+      <p class="kicker reveal">Práctica</p>
+      <h2 class="reveal">Ejercicios interactivos</h2>
+      <p class="prose reveal">Escribe tu respuesta y pulsa <strong>Comprobar</strong>. Al acertar se despliega la solución completa.</p>
+      <div data-drills></div>
+    </section>
+
+    <div class="wrap">
+      <nav class="pager" aria-label="Navegación entre temas">
+        <a class="prev" href="tema-3.html"><span class="meta">Anterior</span><strong>Tema III · Aplicaciones lineales</strong></a>
+        <a class="next" href="tema-5.html"><span class="meta">Siguiente</span><strong>Tema V · Diagonalización</strong></a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div>
+        <h4>Archivo</h4>
+        <ul>
+          <li><a href="../index.html">Índice del curso</a></li>
+          <li><a href="../planificacion.html">Planificación y evaluación</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Evaluación</h4>
+        <ul>
+          <li><a href="../examenes/examen-1.html">Examen 1 · Temas I–II</a></li>
+          <li><a href="../examenes/examen-2.html">Examen 2 · Temas III–IV</a></li>
+          <li><a href="../examenes/examen-3.html">Examen 3 · Tema V + global</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fuentes</h4>
+        <ul>
+          <li>J. Perán Mazón, <em>Fundamentos algebraicos para la IA</em>, UNED, 2026</li>
+          <li>Álgebra para Ingenieros (libro de apoyo)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer__colophon">
+      <span>Material de estudio personal · uso no comercial</span>
+      <span>Verificado con SymPy · errores → revisar con el árbitro</span>
+    </div>
+  </footer>
+
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/auto-render.min.js"></script>
+  <script defer src="../assets/js/grader.js"></script>
+  <script defer src="../assets/data/tema-4.js"></script>
+  <script defer src="../assets/js/app.js"></script>
+</body>
+</html>

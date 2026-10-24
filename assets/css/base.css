@@ -1,0 +1,438 @@
+/* ============================================================
+   ARCHIVO ALGEBRAICO — Fundamentos Algebraicos para la IA
+   Design system base: tokens, reset, tipografía, layout
+   Estética: museo-editorial (crema / carbón / oro)
+   ============================================================ */
+
+:root {
+  /* Paleta */
+  --paper: #f4efe3;
+  --paper-2: #ebe4d2;
+  --paper-3: #e2d9c3;
+  --night: #141209;
+  --night-2: #1e1b10;
+  --night-3: #2a2515;
+  --ink: #1c1910;
+  --ink-soft: #4c452f;
+  --ink-mute: #6b6248;
+  --cream: #ece4cf;
+  --cream-soft: rgba(236, 228, 207, 0.72);
+  --cream-mute: rgba(236, 228, 207, 0.62);
+  --gold: #6d5518;
+  --gold-bright: #c9a227;
+  --gold-pale: #d9c98a;
+  --ok: #416b40;
+  --ok-bg: rgba(77, 122, 75, 0.12);
+  --bad: #9e4826;
+  --bad-bg: rgba(176, 82, 44, 0.1);
+  --warn: #7d6114;
+
+  /* Trazos */
+  --line: rgba(28, 25, 16, 0.16);
+  --line-soft: rgba(28, 25, 16, 0.09);
+  --line-gold: rgba(154, 123, 40, 0.35);
+  --line-night: rgba(236, 228, 207, 0.14);
+  --line-night-soft: rgba(236, 228, 207, 0.08);
+
+  /* Tipografía */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+
+  /* Escala tipográfica fluida */
+  --t-hero: clamp(2.9rem, 8.2vw, 7.2rem);
+  --t-display: clamp(2.1rem, 4.6vw, 3.9rem);
+  --t-h1: clamp(1.85rem, 3.4vw, 2.9rem);
+  --t-h2: clamp(1.45rem, 2.4vw, 2.05rem);
+  --t-h3: clamp(1.18rem, 1.7vw, 1.42rem);
+  --t-body: clamp(1.02rem, 0.45vw + 0.95rem, 1.14rem);
+  --t-small: 0.875rem;
+  --t-micro: 0.72rem;
+
+  /* Ritmo */
+  --measure: 46rem;
+  --wide: 72rem;
+  --gutter: clamp(1.15rem, 4vw, 2.75rem);
+  --section-y: clamp(3.5rem, 8vw, 7rem);
+  --radius: 4px;
+  --radius-lg: 10px;
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur: 0.55s;
+
+  color-scheme: light;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  font-weight: 400;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Grano sutil tipo papel */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--line-gold);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.55em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--t-h1);
+}
+h2 {
+  font-size: var(--t-h2);
+}
+h3 {
+  font-size: var(--t-h3);
+}
+
+p {
+  margin: 0 0 1.05em;
+  text-wrap: pretty;
+}
+
+ul,
+ol {
+  margin: 0 0 1.1em;
+  padding-left: 1.3em;
+}
+
+li {
+  margin-bottom: 0.35em;
+}
+
+strong {
+  font-weight: 600;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 2.5rem 0;
+}
+
+code,
+kbd {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+}
+
+::selection {
+  background: rgba(201, 162, 39, 0.32);
+}
+
+/* ---------- Layout ---------- */
+.wrap {
+  width: min(var(--wide), 100% - var(--gutter) * 2);
+  margin-inline: auto;
+}
+
+.wrap--narrow {
+  width: min(var(--measure), 100% - var(--gutter) * 2);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+.section--night {
+  background: var(--night);
+  color: var(--cream);
+}
+
+.section--night a:hover {
+  color: var(--gold-bright);
+}
+
+.section--tint {
+  background: var(--paper-2);
+}
+
+.stack > * + * {
+  margin-top: 1.15rem;
+}
+
+.prose {
+  max-width: var(--measure);
+}
+
+.prose p,
+.prose li {
+  color: var(--ink-soft);
+}
+
+.prose strong {
+  color: var(--ink);
+}
+
+.section--night .prose p,
+.section--night .prose li {
+  color: var(--cream-soft);
+}
+
+.section--night .prose strong {
+  color: var(--cream);
+}
+
+/* ---------- Micro-tipografía / etiquetas ---------- */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65em;
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 1.15rem;
+}
+
+.kicker::before {
+  content: "";
+  width: 2.1rem;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.75;
+}
+
+.section--night .kicker,
+.theme-head .kicker,
+.hero .kicker {
+  color: var(--gold-bright);
+}
+
+.section--night .kicker::before,
+.theme-head .kicker::before,
+.hero .kicker::before {
+  background: var(--gold-bright);
+}
+
+.section--night .kicker::before {
+  background: var(--gold-bright);
+}
+
+.meta {
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.section--night .meta,
+.theme-head .meta,
+.hero .meta,
+.footer .meta {
+  color: var(--cream);
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.25rem 0;
+  color: var(--ink-mute);
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.rule::before,
+.rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* ---------- Números decorativos ---------- */
+.ghost-num {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(6rem, 22vw, 17rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line-gold);
+  user-select: none;
+  pointer-events: none;
+}
+
+.section--night .ghost-num {
+  -webkit-text-stroke-color: rgba(201, 162, 39, 0.35);
+}
+
+/* ---------- Tipos de bloque editorial ---------- */
+.plaque {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  background: rgba(255, 255, 255, 0.38);
+  padding: 1.35rem 1.5rem;
+  border-radius: var(--radius);
+  margin: 1.9rem 0;
+}
+
+.plaque__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.65rem;
+}
+
+.plaque p:last-child,
+.plaque ul:last-child,
+.plaque ol:last-child {
+  margin-bottom: 0;
+}
+
+.section--night .plaque {
+  background: rgba(236, 228, 207, 0.05);
+  border-color: var(--line-night);
+  border-left-color: var(--gold-bright);
+}
+
+.section--night .plaque__label {
+  color: var(--gold-bright);
+}
+
+.plaque--def {
+  border-left-color: var(--ink);
+}
+.plaque--thm {
+  border-left-color: var(--gold-bright);
+  background: rgba(201, 162, 39, 0.08);
+}
+.plaque--warn {
+  border-left-color: var(--bad);
+}
+.plaque--ia {
+  border-left-color: var(--ok);
+}
+
+.plaque--ia .plaque__label {
+  color: var(--ok);
+}
+
+.section--night .plaque--ia .plaque__label {
+  color: #9dc494;
+}
+
+/* ---------- KaTeX ---------- */
+.katex {
+  font-size: 1.06em;
+}
+
+.katex-display {
+  margin: 1.35em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.2em 0;
+}
+
+.section--night .katex {
+  color: var(--cream);
+}
+
+/* ---------- Focus & accesibilidad ---------- */
+:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0.5rem;
+  background: var(--night);
+  color: var(--cream);
+  padding: 0.6rem 1rem;
+  z-index: 10000;
+  border-radius: var(--radius);
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+}

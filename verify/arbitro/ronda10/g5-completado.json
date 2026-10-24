@@ -1,0 +1,110 @@
+{
+ "N": 20,
+ "timeoutMs": 20000,
+ "casos": {
+  "M1 suma 3999 monomios vs reordenada — VERDADERA": {
+   "esperaAcepta": true,
+   "acepta": 20,
+   "n": 20,
+   "ms": 244,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M2 suma 4001 monomios vs reordenada — VERDADERA": {
+   "esperaAcepta": true,
+   "acepta": 20,
+   "n": 20,
+   "ms": 235,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M3 '(a+b+c+d+e)^15' vs '^14*(a+b+c+d+e)' — VERDADERA (3876 monomios ≤4000)": {
+   "esperaAcepta": true,
+   "acepta": 20,
+   "n": 20,
+   "ms": 6,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M4 '(a+b+c+d+e)^16' vs '^15*(a+b+c+d+e)' — VERDADERA (4845 monomios >4000)": {
+   "esperaAcepta": true,
+   "acepta": 20,
+   "n": 20,
+   "ms": 10,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M5 '(a+b+c+d+e)^16' vs '^15*(a+b+c+d+e)+1' — FALSA": {
+   "esperaAcepta": false,
+   "acepta": 0,
+   "n": 20,
+   "ms": 8,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M6 '(a+b+c+d+e)^4096' vs '^4095*(a+b+c+d+e)' — DoS VERDADERA": {
+   "esperaAcepta": true,
+   "acepta": 20,
+   "n": 20,
+   "ms": 6,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M7 '(a+b+c+d+e)^4096' vs '^4096+1' — DoS FALSA": {
+   "esperaAcepta": false,
+   "acepta": 0,
+   "n": 20,
+   "ms": 8,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M8 '(a+b+c+d+e)^4096' vs 0 — DoS FALSA": {
+   "esperaAcepta": false,
+   "acepta": 0,
+   "n": 20,
+   "ms": 5,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M9 '(a+b+c+d+e)^4096' idénticas — fast-path": {
+   "esperaAcepta": true,
+   "acepta": 20,
+   "n": 20,
+   "ms": 2,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M10 '((x+y+z)^64+x)^64' vs '^63*((x+y+z)^64+x)' — DoS anidada VERDADERA": {
+   "esperaAcepta": true,
+   "acepta": 20,
+   "n": 20,
+   "ms": 6,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M11 '(a+b+c+d+e)^15' vs '^15+1' — FALSA (ventana relativa)": {
+   "esperaAcepta": false,
+   "acepta": 0,
+   "n": 20,
+   "ms": 9206,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M12 '(a+b+c+d+e)^16' vs '^16+1000' — FALSA (ventana relativa)": {
+   "esperaAcepta": false,
+   "acepta": 0,
+   "n": 20,
+   "ms": 6,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  },
+  "M13 'x^100' vs 'x^100+1' — control FALSA (vía estructural, seguro)": {
+   "esperaAcepta": false,
+   "acepta": 0,
+   "n": 20,
+   "ms": 12,
+   "falsoPositivo": false,
+   "falsoNegativo": false
+  }
+ }
+}

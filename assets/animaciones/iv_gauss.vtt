@@ -1,0 +1,10 @@
+WEBVTT
+
+00:00.000 --> 00:04.000
+Eliminación de Gauss: cada paso resta un múltiplo de una fila.
+
+00:04.000 --> 00:08.500
+F2 menos 2 F1, después F3 menos F1.
+
+00:08.500 --> 00:16.200
+F3 más 3 F2 deja el sistema triangular: sustitución hacia atrás.

@@ -1,0 +1,22 @@
+# Publicar únicamente la web estática, no el proyecto de desarrollo.
+/.git/
+/.github/
+/.wrangler/
+/node_modules/
+/animaciones-src/
+/certificaciones/
+/docs/
+/materiales/
+/scripts/
+/tests/
+/verify/
+
+/.assetsignore
+/.gitignore
+/Archivo de texto.txt
+/INFORME-VERIFICACION.md
+/README.md
+/package-lock.json
+/package.json
+/sympy-r8.json
+/wrangler.jsonc

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tema I · Escalares · Fundamentos Algebraicos para la IA · Archivo</title>
+  <meta name="description" content="Explicación, resumen, mapa mental y ejercicios interactivos del Tema I: conjuntos, números naturales, enteros, racionales, reales y complejos." />
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/css/fonts.css" />
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+</head>
+<body data-theme="tema-1">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="progress-bar" aria-hidden="true"><div class="progress-bar__fill"></div></div>
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="wrap nav__inner">
+      <a class="nav__brand" href="../index.html"><span class="nav__brand-mark">Archivo</span><span>Álgebra · IA</span></a>
+      <button class="nav__toggle" aria-expanded="false" aria-label="Abrir menú">Menú</button>
+      <ul class="nav__links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../temas/tema-1.html">Temas</a></li>
+        <li><a href="../examenes/examen-1.html">Exámenes</a></li>
+        <li><a href="../planificacion.html">Planificación</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <header class="theme-head">
+    <div class="theme-head__bg" aria-hidden="true"></div>
+    <div class="theme-head__ghost ghost-num" aria-hidden="true">01</div>
+    <div class="theme-head__inner">
+      <p class="kicker">Tema I · Fundamentos algebraicos para la IA</p>
+      <h1>Escalares</h1>
+      <div class="theme-head__row">
+        <span class="chip chip--gold">5–11 octubre</span>
+        <span class="chip" data-count="tema-1" data-count-suffix=" ejercicios interactivos">15 ejercicios interactivos</span>
+        <span class="chip">Resumen + mapa mental</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrap toc" aria-label="Sumario del tema">
+    <a href="#s1"><span class="meta">§ 1.1</span><strong>Conjuntos</strong></a>
+    <a href="#s2"><span class="meta">§ 1.2</span><strong>Tuplas y producto cartesiano</strong></a>
+    <a href="#s3"><span class="meta">§ 1.3</span><strong>Funciones</strong></a>
+    <a href="#s4"><span class="meta">§ 1.4</span><strong>Naturales y bases</strong></a>
+    <a href="#s5"><span class="meta">§ 1.5</span><strong>Racionales</strong></a>
+    <a href="#s6"><span class="meta">§ 1.6</span><strong>Reales y redondeo</strong></a>
+    <a href="#s7"><span class="meta">§ 1.7</span><strong>Complejos</strong></a>
+    <a href="#s8"><span class="meta">§ 1.8</span><strong>Módulo y argumento</strong></a>
+    <a href="#s9"><span class="meta">§ 1.9</span><strong>Euler y raíces</strong></a>
+    <a href="#s10"><span class="meta">§ 1.10</span><strong>Teorema Fundamental</strong></a>
+    <a href="#resumen"><span class="meta">Ficha</span><strong>Resumen</strong></a>
+    <a href="#mapa"><span class="meta">Visual</span><strong>Mapa mental</strong></a>
+    <a href="#ejercicios"><span class="meta">Práctica</span><strong>Ejercicios</strong></a>
+  </nav>
+
+  <main id="contenido">
+
+    <!-- ================= § 1.1 CONJUNTOS ================= -->
+    <section class="wrap section theory-section" id="s1">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 1.1</div>
+        <div>
+          <h2>Lógica y teoría (ingenua) de conjuntos</h2>
+          <p>El lenguaje en el que va a estar escrita toda la asignatura: pertenencia, operaciones entre conjuntos y notación.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>La matemática moderna se apoya en la lógica formal y en una teoría axiomática de conjuntos, pero se escribe en lenguaje natural con una notación de conjuntos esencialmente «ingenua». Vamos a trabajar así, con rigor pero sin jerga lógica innecesaria: de los símbolos lógicos casi solo emplearemos la implicación \(\Rightarrow\) y la equivalencia \(\Leftrightarrow\).</p>
+        <p>Fíjate en el verdadero significado de la implicación: «\(P \Rightarrow Q\)» significa que nunca ocurre «\(P\) y no \(Q\)». Los ejemplos cotidianos del tipo «si llueve, me mojo» confunden, porque arrastran causalidad; los buenos ejemplos son matemáticos: si \(x \gt  2\), entonces \(x^2 \gt  4\).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 1.1</span>
+          <p>La expresión \(b \in A\) significa que \(b\) pertenece a \(A\) («\(b\) es un elemento de \(A\)»); \(b \notin A\) niega esa pertenencia. El conjunto sin elementos es el <em>conjunto vacío</em>, \(\emptyset\), y es único. Las llaves \(\{\ldots\}\) describen conjuntos por extensión (enumerando) o por una condición referida a un conjunto ya fijado.</p>
+          <p>Dados conjuntos \(A\) y \(B\): la <em>intersección</em> es \(A \cap B = \{x \in A : x \in B\}\); la <em>unión</em> es \(A \cup B = \{x : x \in A \text{ o } x \in B\}\); el <em>complementario relativo</em> de \(B\) en \(A\) es \(A \setminus B = \{x \in A : x \notin B\}\). Decimos que \(A\) es <em>subconjunto</em> de \(B\), \(A \subset B\), si todo elemento de \(A\) lo es de \(B\). El <em>conjunto potencia</em> de \(X\) es \(\wp(X) = \{A : A \subset X\}\).</p>
+        </div>
+
+        <p><strong>Ejemplo 1.</strong> Veamos la notación en acción:</p>
+        \[ \{a, a, b\} = \{a, b\}, \qquad \{n \in \mathbb{N} : n \lt  6\} = \{0, 1, 2, 3, 4, 5\}, \qquad \wp(\{a,b\}) = \{\emptyset, \{a\}, \{b\}, \{a, b\}\}. \]
+        <p>Observa que \(\emptyset \subset A\) y \(A \subset A\) para todo \(A\), mientras que \(\emptyset \in \wp(A)\) y \(A \in \wp(A)\): pertenencia y contención son relaciones distintas. Una condición como «\(A = \{B : B\) tiene más de un elemento\(\}\)» está mal formada, porque no se fija el conjunto al que se refiere la condición.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 1.2</span>
+          <p>Para cualesquiera conjuntos \(A\) y \(B\) se cumple \(A \subset B \Leftrightarrow A \cap B = A \Leftrightarrow A \cup B = B\).</p>
+          <p><em>Demostración.</em> Si \(A \subset B\), todo \(x \in A\) verifica \(x \in B\), luego \(A \cap B = A\) y \(A \cup B = B\). Recíprocamente, si \(A \cap B = A\), dado \(x \in A = A \cap B\) se tiene \(x \in B\), es decir \(A \subset B\); y si \(A \cup B = B\), dado \(x \in A\) se tiene \(x \in A \cup B = B\), de nuevo \(A \subset B\). \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>No confundas \(A \setminus B\) (complementario relativo) con \(A - B\) (diferencia de conjuntos elemento a elemento, cuando hay una operación resta). Por ejemplo, \(\{1, 2, 5\} \setminus \{1, 2\} = \{5\}\), pero \(\{1, 2, 5\} - \{1, 2\} = \{0, -1, 1, 3, 4\}\). Son objetos de naturaleza distinta: el primero es un subconjunto de \(A\); el segundo es el conjunto de todas las diferencias \(a - b\).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= § 1.2 TUPLAS ================= -->
+    <section class="wrap section theory-section" id="s2">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 1.2</div>
+        <div>
+          <h2>Tuplas y producto cartesiano</h2>
+          <p>Cómo se «ordenan» los conjuntos y cómo se construyen los espacios de coordenadas que usará el curso.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>El par \(\{a, b\}\) no está ordenado: \(\{a, b\} = \{b, a\}\). Para ordenar hay que empaquetar de otra manera: el <em>par ordenado</em> \((a, b)\) se define como \((a, b) = \{\{a\}, \{a, b\}\}\). Con esta construcción, si \(a \neq b\) entonces \((a, b) \neq (b, a)\), y además se admiten coordenadas repetidas, \((a, a)\), sin ambigüedad.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 1.3</span>
+          <p>Dados conjuntos \(A\) y \(B\), su <em>producto cartesiano</em> es \(A \times B = \{(a, b) : a \in A,\ b \in B\}\); se escribe \(A^2 = A \times A\). Por inducción se definen las \(n\)-tuplas \((a_1, \ldots, a_n) = ((a_1, \ldots, a_{n-1}), a_n)\) y \(A^n = A \times \cdots \times A\) (\(n\) factores). La propiedad característica es:</p>
+          \[ (a_1, \ldots, a_n) = (b_1, \ldots, b_m) \ \Leftrightarrow\ n = m \text{ y } a_1 = b_1, \ldots, a_n = b_n. \]
+          <p>Una <em>relación</em> en \(X\) es un subconjunto \(R \subset X \times X\); se escribe \(x_1 \mathrel{R} x_2\) en lugar de \((x_1, x_2) \in R\). Una <em>relación de orden estricto</em> \(\lt\) en \(X\) es una relación <em>irreflexiva</em> (para ningún \(x \in X\) se cumple \(x \lt x\)) y <em>transitiva</em> (si \(x_1 \lt x_2\) y \(x_2 \lt x_3\), entonces \(x_1 \lt x_3\)); se escribe \(x_1 \le x_2\) cuando \(x_1 \lt x_2\) o \(x_1 = x_2\). Un orden es <em>total</em> si cualesquiera dos elementos distintos están relacionados (\(x_1 \neq x_2 \Rightarrow x_1 \lt x_2 \text{ o } x_2 \lt x_1\)), y <em>parcial</em> en caso contrario. Dado \(M \subset X\), un elemento \(c \in X\) es una <em>cota superior</em> de \(M\) si \(x \le c\) para todo \(x \in M\) (en cuyo caso \(M\) está <em>acotado superiormente</em>); si entre las cotas superiores de \(M\) existe una menor que todas las demás, se llama <em>cota superior mínima</em> (o <em>supremo</em>) de \(M\).</p>
+        </div>
+
+        <p><strong>Ejemplo 2.</strong> Sean \(A = \{a, b\}\) y \(B = \{0, 1, 2\}\). Entonces</p>
+        \[ A \times B = \{(a, 0), (a, 1), (a, 2), (b, 0), (b, 1), (b, 2)\}, \]
+        <p>con \(6 = 2 \cdot 3\) elementos. En cambio, \([1, 5] \times [-2, 7) = \{(x, y) \in \mathbb{R}^2 : 1 \le x \le 5,\ -2 \le y \lt  7\}\) es un rectángulo infinito. Comprueba también que \((1, 1, 2) \neq (1, 2, 1) \neq (1, 2)\): el orden y la longitud son parte del dato.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 1.4</span>
+          <p>Si \(A\) tiene \(m\) elementos y \(B\) tiene \(n\) elementos (con \(m, n\) finitos), entonces \(A \times B\) tiene \(m \cdot n\) elementos. En general, \(|A^n| = |A|^n\).</p>
+          <p><em>Demostración.</em> Para cada elemento fijo \(a \in A\), los pares con primera coordenada \(a\) son exactamente los \((a, b)\) con \(b \in B\), es decir \(n\) pares, y para distintas primeras coordenadas los conjuntos de pares son disjuntos. Sumando sobre los \(m\) valores de \(a\) se obtienen \(m \cdot n\) pares. La fórmula para \(A^n\) sale por inducción. \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Cada fila de un conjunto de datos es una tupla: una medición es un punto del producto cartesiano de los espacios de cada atributo. Codificar una categoría con \(k\) valores como una coordenada one-hot consiste, precisamente, en elegir una base del espacio \(\mathbb{R}^k\) asociado a ese factor del producto. Todo el Tema II (tensores) se apoya en estas ideas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= § 1.3 FUNCIONES ================= -->
+    <section class="wrap section theory-section" id="s3">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 1.3</div>
+        <div>
+          <h2>Funciones y familias indexadas</h2>
+          <p>La noción de aplicación, sus tipos, y cómo se etiquetan las familias de objetos con un conjunto de índices.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Una forma rigurosa de definir una función es por su gráfica: una función \(f : X \to Y\) es un subconjunto \(f \subset X \times Y\) tal que para cada \(x \in X\) existe un único \(y \in Y\) con \((x, y) \in f\). Una vez asentado esto, trabajamos con la idea intuitiva de regla de correspondencia \(y = f(x)\).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 1.5</span>
+          <p>Sea \(f : X \to Y\). La <em>imagen</em> de \(A \subset X\) es \(f(A) = \{y \in Y : \exists x \in A,\ f(x) = y\}\); el recorrido es \(f(X)\). La <em>imagen recíproca</em> de \(B \subset Y\) es \(f^{-1}(B) = \{x \in X : f(x) \in B\}\).</p>
+          <p>Decimos que \(f\) es <em>inyectiva</em> si elementos distintos tienen imágenes distintas, es decir, \(f(x) = f(x') \Rightarrow x = x'\) (equivalentemente, cada \(y \in f(X)\) tiene un único antecedente y \(f^{-1} : f(X) \to X\) es una función); <em>sobreyectiva</em> si \(f(X) = Y\); y <em>biyectiva</em> si es a la vez inyectiva y sobreyectiva. El conjunto de todas las aplicaciones de \(X\) en \(Y\) se denota \(Y^X\).</p>
+        </div>
+
+        <p>Las <em>operaciones internas</em> son funciones de un producto cartesiano en el propio conjunto: por ejemplo \(+ : \mathbb{N} \times \mathbb{N} \to \mathbb{N}\). Un subconjunto \(M \subset X\) es <em>cerrado</em> para una operación si al operar elementos de \(M\) el resultado sigue en \(M\): los impares son cerrados para el producto, pero no para la suma.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 1.6</span>
+          <p>Una función \(f : X \to Y\) es inyectiva (\(f(x) = f(x') \Rightarrow x = x'\)) si y solo si existe \(g : f(X) \to X\) con \(g(f(x)) = x\) para todo \(x \in X\), es decir, si la correspondencia inversa \(f^{-1}\) está bien definida como función sobre el recorrido \(f(X)\).</p>
+          <p><em>Demostración.</em> Si \(f\) es inyectiva y \(f(x) = f(x') = y\), entonces \(x = x'\), de modo que el antecedente de \(y\) es único y \(g(y) := x\) está bien definida. Recíprocamente, si existe tal \(g\) y \(f(x) = f(x')\), aplicando \(g\) se obtiene \(x = g(f(x)) = g(f(x')) = x'\), luego \(f\) es inyectiva. \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 3.</strong> Sea \(f : \{1, 2, 3\} \to \{a, b\}\) con \(f(1) = a\), \(f(2) = b\), \(f(3) = a\). No es inyectiva, porque \(f(1) = f(3)\) con \(1 \neq 3\), pero sí es sobreyectiva, porque \(f(\{1,2,3\}) = \{a, b\}\). Su imagen recíproca \(f^{-1}(\{a\}) = \{1, 3\}\) es un conjunto, no un número.</p>
+
+        <p>Una <em>familia indexada</em> es una función \(u : I \to X\) cuyo dominio \(I\) (el conjunto de índices) se usa solo para etiquetar: se escribe \((u_i)_{i \in I}\) con \(u_i = u(i)\). Los índices pueden ser cualquier conjunto, no solo números, y son <em>variables mudas</em>: llamar \(k\) a la \(i\) no cambia nada.</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>\(f^{-1}(B)\) denota la imagen recíproca del conjunto \(B\): es un conjunto de \(X\), siempre definido. Que \(f^{-1}\) sea además una función es otra cosa, y exige inyectividad. Escribe \(f^{-1}(\{a\})\), nunca «\(f^{-1}(a)\)», salvo que \(f\) sea biyectiva y estés hablando de la función inversa.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Un modelo supervisado es una función de un espacio de características en un conjunto de etiquetas; la clasificación consiste en decidir si esa función es, sobre los datos, «lo bastante inyectiva» como para separar clases. Las familias indexadas son la notación nativa de los tensores de datos: \(u_{i,h}\) puede ser la cantidad del producto \(i\) comprada por el hogar \(h\). Programar exige esta abstracción desde el primer día.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= § 1.4 NATURALES Y BASES ================= -->
+    <section class="wrap section theory-section" id="s4">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 1.4</div>
+        <div>
+          <h2>Números naturales y enteros. Sistemas de numeración</h2>
+          <p>De \(\mathbb{N}\) y \(\mathbb{Z}\) a las bases de numeración: qué es un número y qué es su escritura.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>El conjunto de los números naturales, \(\mathbb{N} = \{0, 1, 2, \ldots\}\), tiene adición, multiplicación y orden. La resta y la división no son siempre posibles dentro de \(\mathbb{N}\): no hay natural que sumado a \(5\) dé \(3\). Al añadir los opuestos se obtienen los enteros, \(\mathbb{Z} = \{0, \pm 1, \pm 2, \ldots\}\), cerrados ya para la resta y el producto. Un conjunto es <em>numerable</em> si sus elementos se pueden enumerar; \(\mathbb{N}\) y \(\mathbb{Z}\) lo son (a los enteros se les asigna \(0, 1, -1, 2, -2, \ldots\)).</p>
+        <p>Conviene separar desde el principio el <em>número</em> (objeto abstracto) de su <em>representación</em> (cómo lo escribimos): el «19» decimal y el «XIX» romano son el mismo número. Una propiedad matemática nunca depende de la notación.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 1.7</span>
+          <p>Un sistema de numeración es <em>posicional</em> en base \(b \ge 2\) si cada número natural \(n \ge 1\) se representa de modo único como</p>
+          \[ n = a_k b^k + a_{k-1} b^{k-1} + \cdots + a_1 b + a_0, \qquad 0 \le a_i \lt  b,\ a_k \neq 0, \]
+          <p>con \(b\) símbolos (dígitos), siendo el número \(0\) representado por la cifra \(0\). Se dice que \(n\) tiene \(k+1\) cifras en base \(b\). Para secuencias de igual longitud y sin ceros a la izquierda, el orden lexicográfico coincide con el orden numérico (con longitudes distintas no, como muestra el par «100» y «99»). En informática se usan además las bases \(8\) (octal) y \(16\) (hexadecimal), porque cada dígito octal son \(3\) bits y cada dígito hexadecimal son \(4\) bits: un byte (\(8\) bits) son exactamente dos cifras hexadecimales.</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 1.8</span>
+          <p>Cada número natural \(n \ge 0\) tiene una única representación en base \(b\).</p>
+          <p><em>Demostración.</em> Al dividir \(n = b\,q + a_0\) con \(0 \le a_0 \lt  b\), el resto \(a_0\) está determinado (algoritmo de la división) y es la última cifra. Aplicando lo mismo al cociente \(q\) se obtiene la siguiente cifra, y el proceso se detiene porque los cocientes decrecen hasta \(0\). Como cada paso es único, lo es la representación entera. \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 4.</strong> Pasar de binario a decimal es desarrollar según el valor posicional:</p>
+        \[ 1101101_2 = 2^6 + 2^5 + 2^3 + 2^2 + 2^0 = 64 + 32 + 8 + 4 + 1 = 109. \]
+        <p>Y para escribir \(78\) en base \(3\) se divide sucesivamente entre \(3\): \(78 = 3 \cdot 26 + 0\), \(26 = 3 \cdot 8 + 2\), \(8 = 3 \cdot 2 + 2\), \(2 = 3 \cdot 0 + 2\). Leyendo los restos de abajo arriba, \(78 = 2220_3\). Comprueba la vuelta atrás: \(2 \cdot 27 + 2 \cdot 9 + 2 \cdot 3 + 0 = 78\).</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>El cero no «no vale nada»: es un marcador de posición imprescindible. En \(5073 = 5 \cdot 10^3 + 0 \cdot 10^2 + 7 \cdot 10 + 3\), si borras el cero obtienes \(573\), otro número distinto. Y solo usa subíndices de base cuando conviven varios sistemas: sin contexto, \(231\) es doscientos treinta y uno, no \(231_4 = 45\).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= § 1.5 RACIONALES ================= -->
+    <section class="wrap section theory-section" id="s5">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 1.5</div>
+        <div>
+          <h2>Los números racionales: el cuerpo \(\mathbb{Q}\)</h2>
+          <p>Fracciones, estructura de cuerpo, desarrollos decimales periódicos y cifras significativas.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Al dividir \(p\) entre \(q\) sin exactitud caben dos salidas: la división entera (con resto), que genera cifras decimales, o la fracción \(p/q\). Tras establecer la equivalencia \(p/q = kp/(kq)\) y las operaciones habituales se obtienen los racionales</p>
+        \[ \mathbb{Q} = \left\{ \frac{p}{q} : p, q \in \mathbb{Z},\ q \neq 0 \right\}. \]
+        <p>Aunque entre dos racionales cualesquiera hay infinitos racionales, el conjunto \(\mathbb{Q}\) sigue siendo <em>numerable</em>: se puede enumerar disponiendo las fracciones en una tabla según \(|p| + |q|\) y recorriéndola por diagonales mientras se omiten las fracciones equivalentes ya listadas.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 1.9</span>
+          <p>Un <em>cuerpo</em> es un conjunto \(K\) con más de un elemento, con suma, resta, producto y división por no nulos, en el que son válidas todas las identidades algebraicas de \(\mathbb{Q}\) (igualdades que solo contienen letras, las cuatro operaciones y paréntesis). Es un <em>cuerpo ordenado</em> si admite un orden total compatible (los elementos positivos son cerrados por suma y producto), y <em>completo</em> si todo subconjunto no vacío acotado superiormente posee cota superior mínima. \(\mathbb{Q}\) es cuerpo ordenado, pero no es completo. El valor absoluto es \(|x| = \max\{x, -x\}\), con \(|x + y| \le |x| + |y|\) y \(|xy| = |x|\,|y|\).</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 1.10</span>
+          <p>El cuerpo ordenado \(\mathbb{Q}\) no es completo: el conjunto \(M = \{r \in \mathbb{Q} : r^2 \lt  2\}\) tiene cotas superiores (por ejemplo \(3\)), pero ninguna cota mínima.</p>
+          <p><em>Demostración.</em> Si \(r^2 \lt  2\), para \(n\) grande se cumple \((r + 1/n)^2 \lt  2\), luego \(r\) no es cota. Si \(r^2 \gt  2\), para \(n\) grande \((r - 1/n)^2 \gt  2\), luego \(r\) no es la menor cota. Y \(r^2 = 2\) es imposible: si \(r = p/q\) irreducible, \(p^2 = 2q^2\) obliga a \(p\) par, luego \(q\) par, contradiciendo la irreducibilidad. \(\blacksquare\)</p>
+        </div>
+
+        <p>En cualquier base \(b \ge 2\), las cifras situadas tras la coma fraccionaria representan potencias negativas sucesivas de la base: \(0{,}a_{-1}a_{-2}a_{-3}\ldots_b = a_{-1}b^{-1} + a_{-2}b^{-2} + a_{-3}b^{-3} + \cdots\) (con \(0 \le a_{-j} \lt b\)). Por ejemplo, en binario \(101{,}11_2 = 1\cdot 2^2 + 0\cdot 2^1 + 1\cdot 2^0 + 1\cdot 2^{-1} + 1\cdot 2^{-2} = 5 + \frac{1}{2} + \frac{1}{4} = \frac{23}{4} = 5{,}75\). Al dividir \(p\) entre \(q\) en base \(b\), en cada paso se multiplica el resto por \(b\). Como solo hay \(q\) restos posibles, \(0, \ldots, q-1\), tarde o temprano un resto se repite y las cifras entran en ciclo.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 1.11</span>
+          <p>En cualquier base \(b \ge 2\), un número \(r\) es racional si y solo si su desarrollo es eventualmente periódico (parte entera + anteperiódica + período). Además, si tiene \(m \ge 0\) cifras anteperiódicas y un período de longitud \(k \ge 1\), entonces \(p = b^{m+k}r - b^{m}r \in \mathbb{Z}\) es un entero y se cumple \(r = \dfrac{p}{b^{m}(b^{k}-1)}\).</p>
+          <p><em>Demostración.</em> «Solo si»: la división sucesiva genera solo \(q\) restos posibles, así que al repetirse un resto se repiten las cifras. «Si»: si \(b^{m+k}r\) y \(b^{m}r\) comparten la parte decimal periódica, al restar se cancela: \(b^{m+k}r - b^{m}r = p \in \mathbb{Z}\), de donde \(r = p / (b^{m}(b^{k}-1))\) es racional. \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 5.</strong> Desarrollemos \(7/12\) en base \(10\): \(7 \cdot 10 = 5 \cdot 12 + 10\), \(10 \cdot 10 = 8 \cdot 12 + 4\), \(4 \cdot 10 = 3 \cdot 12 + 4\)… el resto \(4\) se repite, luego \(7/12 = 0{,}58\overline{3}\). A la inversa, si \(r = 0{,}\overline{36}\), entonces \(100r - r = 36\), luego \(99r = 36\) y \(r = 36/99 = 4/11\). Observa además que la escritura periódica no es única: el período \(\overline{9}\) en base \(10\) (o \(\overline{b-1}\) en base \(b\)) equivale a incrementar en una unidad la cifra precedente, pues si \(r = 0{,}\overline{9}\) entonces \(10r - r = 9 \Rightarrow 9r = 9 \Rightarrow 0{,}\overline{9} = 1\) (y del mismo modo \(0{,}3\overline{4} = 0{,}3\overline{43}\)).</p>
+        <p>Llamamos <em>racional exacto en base \(b\)</em> al que tiene desarrollo finito en esa base; forman el conjunto \(\mathbb{Z}[b] = \{p\,b^{q} \in \mathbb{Q} : p, q \in \mathbb{Z}\}\) (en base \(10\), los de la forma \(p\,10^{q}\)). Un racional exacto no nulo \(r = p\,b^{q}\) (con \(p, q \in \mathbb{Z}\) y \(p\) no divisible entre \(b\)) tiene \(n\) <em>cifras significativas</em> en base \(b\) si \(b^{n-1} \le |p| \lt  b^{n}\); por convenio, \(0\) tiene cero. Cuidado: «exacto» no es un adjetivo absoluto. La notación de coma flotante \(4{,}63 \cdot 10^{-2}\) y la científica \(4{,}63\mathrm{E}{-}2\) son variantes del mismo número; los ceros de relleno indican precisión, no valores distintos.</p>
+        <p><strong>Ejemplo 5 bis (Cifras significativas y notación científica).</strong> Apliquemos la definición \(r = p\,b^{q}\) (con \(p\) no divisible entre \(b\)) en distintas bases:</p>
+        <ul>
+          <li>Para \(40\,000\) en base \(10\) (escrito como entero sin punto decimal): \(40\,000 = 4 \cdot 10^{4}\) con \(p = 4\) y \(q = 4\); como \(10^{0} \le 4 \lt 10^{1}\), tiene \(1\) cifra significativa (para indicar \(3\) cifras significativas se escribe en notación científica \(4{,}00 \cdot 10^{4}\)).</li>
+          <li>Para \(-0{,}010405\) en base \(10\): \(-0{,}010405 = -10\,405 \cdot 10^{-6}\) con \(|p| = 10\,405\) y \(q = -6\); como \(10^{4} \le 10\,405 \lt 10^{5}\), tiene \(5\) cifras significativas, y su notación científica normalizada es \(-1{,}0405 \cdot 10^{-2}\).</li>
+          <li>Para \(1{,}011_{2}\) en base \(2\): \(1{,}011_{2} = 1011_{2} \cdot 2^{-3} = 11 \cdot 2^{-3}\) con \(p = 11\) (impar, no divisible entre \(2\)); como \(2^{3} = 8 \le 11 \lt 16 = 2^{4}\), tiene \(4\) cifras significativas en base \(2\).</li>
+        </ul>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>El estándar IEEE 754 trabaja en base \(2\): el formato <code>float32</code> (32 bits) reparte \(1\) bit de signo, \(8\) de exponente y \(23\) de fracción, mientras que <code>float64</code> (64 bits) usa \(1 + 11 + 52\). Como en base \(2\) todo número normalizado no nulo empieza por \(1{,}\text{fracción}_{2}\), ese primer \(1\) no se almacena (es el <em>bit oculto</em> o implícito), lo que proporciona \(24\) bits de significando en <code>float32</code> y \(53\) bits en <code>float64</code>. Cuando el exponente alcanza su valor mínimo reservado, el bit inicial pasa a ser \(0\) para representar los números <em>subnormales</em> (o desnormalizados), que suavizan la pérdida de precisión cerca de cero y evitan el desbordamiento brusco por debajo (<em>underflow</em>). Como \(0{,}1_{10} = 0{,}0001100110011\ldots_2 = 0{,}0\overline{0011}_2\) no cabe en los \(53\) bits del significando, se redondea, y por eso en Python <code>0.1 + 0.2</code> devuelve <code>0.30000000000000004</code>. Cuando prepares datos o midas pérdidas de un modelo, trabaja con cifras significativas y no des por bueno un cero final.</p>
+        </div>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>La periodicidad eventual es independiente de la base, pero la finitud no: \(1/3 = 0{,}\overline{3}\) es periódico en base \(10\) y exacto en base \(3\) (\(1/3 = 0{,}1_3\)). Escribir «\(0{,}1\) es un número exacto» sin decir la base carece de sentido.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= § 1.6 REALES ================= -->
+    <section class="wrap section theory-section" id="s6">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 1.6</div>
+        <div>
+          <h2>Los números reales: completitud y redondeo</h2>
+          <p>Por qué \(\mathbb{R}\) es necesario, por qué no es numerable y cómo se redondea al calcular.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Denotamos por \(\mathbb{R}\) al menor cuerpo ordenado completo que contiene a \(\mathbb{Q}\); sus elementos son los <em>números reales</em>. Los que no son racionales son <em>irracionales</em>: su desarrollo no es eventualmente periódico (por ejemplo \(1{,}01001000100001\ldots\), \(\sqrt{2}\), \(\pi\) y \(e\)). Entre dos reales cualesquiera hay infinitos racionales: esa densidad es lo que permite aproximar cualquier real por números representables con la precisión deseada.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 1.12</span>
+          <p>El intervalo \([0, 1]\) no es numerable; en consecuencia, \(\mathbb{R}\) tampoco.</p>
+          <p><em>Demostración.</em> Si se pudiera enumerar \([0, 1] = \{x_1, x_2, \ldots\}\) con desarrollos \(x_n = 0{,}a_{n1}a_{n2}\ldots\), construyamos \(b = 0{,}b_1b_2\ldots\) tomando \(b_n = 1\) si \(a_{nn} \neq 1\) y \(b_n = 2\) si \(a_{nn} = 1\). Entonces \(b\) difiere de \(x_n\) en la \(n\)-ésima cifra para cada \(n\), así que \(b\) no figura en la lista: contradicción. \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 1.13</span>
+          <p>Fijado un conjunto \(\mathcal{R}\) de números representables exactos (por ejemplo \(\mathbb{Q}_{b,n}\), los exactos con menos de \(n+1\) cifras significativas en base \(b\)), <em>redondear</em> un número real consiste en sustituirlo por el elemento de \(\mathcal{R}\) más próximo; si hay dos equidistantes, se adopta el que termina en cifra par. Es el <em>redondeo al par más cercano</em> («round half to even») del estándar IEEE 754, que evita la acumulación sistemática de errores en una misma dirección.</p>
+        </div>
+
+        <p><strong>Ejemplo 6.</strong> Redondeemos \(2{,}345\) a \(3\) cifras significativas: los candidatos \(2{,}34\) y \(2{,}35\) están a la misma distancia, y \(2{,}34\) termina en cifra par, luego \(2{,}345 \approx 2{,}34\). En cambio \(1{,}25 \approx 1{,}2\) (el \(2\) es par) pero \(1{,}35 \approx 1{,}4\) (el \(4\) es par). Y \(3{,}14159265 \approx 3{,}14\) a \(3\) cifras significativas.</p>
+        <p><strong>Ejemplo 6 bis (Pérdida de asociatividad de la suma en precisión finita).</strong> En \(\mathbb{Q}_{10,2}\) (redondeando el resultado de cada operación a \(2\) cifras significativas en base \(10\) mediante redondeo al par), comparemos \((1 + 0{,}04) + 0{,}04\) con \(1 + (0{,}04 + 0{,}04)\):</p>
+        \[ (1 + 0{,}04) + 0{,}04 = 1{,}04 + 0{,}04 \approx 1{,}0 + 0{,}04 = 1{,}04 \approx 1, \]
+        \[ 1 + (0{,}04 + 0{,}04) = 1 + 0{,}08 = 1{,}08 \approx 1{,}1. \]
+        <p>Como \(1 \neq 1{,}1\), la adición con redondeo intermedio <strong>no es asociativa</strong>: al sumar un número pequeño (\(0{,}04\)) a uno mucho mayor (\(1\)), el incremento cae más allá de la última cifra significativa y se absorbe por completo antes de poder acumularse con el siguiente sumando.</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Redondear paso a paso no es lo mismo que redondear una sola vez sobre el valor exacto: el redondeo sucesivo acumula y sesga. Con \(2{,}4545\): redondear primero a \(3\) cifras significativas da \(2{,}45\), y después a \(2\) cifras da \(2{,}4\) (el \(4\) es par, por la equidistancia); pero el redondeo directo a \(2\) cifras da \(2{,}5\). Guarda toda la precisión intermedia y redondea solo el resultado final.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Entrenar una red implica encadenar millones de operaciones en coma flotante: por eso el hardware usa IEEE 754 y las bibliotecas cuidan la estabilidad numérica. En entrenamientos de precisión reducida (<code>float16</code> o <code>bfloat16</code>), al sumar gradientes pequeños \(\Delta w\) a pesos grandes \(w\) ocurre el mismo fenómeno del Ejemplo 6 bis (\(w + \Delta w \approx w\), llamado <em>swamping</em> o absorción numérica) si no se mantienen acumuladores en <code>float32</code> o suma compensada de Kahan. Elegir entre <code>float32</code> y <code>float64</code>, normalizar los datos o restar la media antes de calcular varianzas son control directo del error de redondeo. Compruébalo: <code>0.1 + 0.2 == 0.3</code> es <code>False</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= § 1.7 COMPLEJOS ================= -->
+    <section class="wrap section theory-section" id="s7">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 1.7</div>
+        <div>
+          <h2>El cuerpo de los números complejos</h2>
+          <p>La forma binómica \(a + bi\), las operaciones y el conjugado. Se completa la cadena de escalares.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>En \(\mathbb{R}\) la ecuación \(x^2 = -1\) no tiene solución. Denotamos por \(\mathbb{C}\) al menor cuerpo que, extendiendo a \(\mathbb{R}\), contiene una solución \(i\) de esa ecuación; la otra es \(-i\), pues \((-i)^2 = -1\). Operando como si \(i\) fuera una variable y sustituyendo \(i^2 = -1\), todo se reescribe como \(a + bi\) con \(a, b \in \mathbb{R}\):</p>
+        \[ \mathbb{C} = \{a + bi : a, b \in \mathbb{R}\}, \qquad \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}. \]
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 1.14</span>
+          <p>En la <em>forma binómica</em> \(z = a + bi\), el real \(a = \operatorname{Re}(z)\) es la <em>parte real</em> y el real \(b = \operatorname{Im}(z)\) la <em>parte imaginaria</em> (¡un número real!). Si \(\operatorname{Re}(z) = 0\), \(z\) es un imaginario puro; si \(\operatorname{Im}(z) = 0\), \(z\) es real. El <em>conjugado</em> de \(z = a + bi\) es \(\bar{z} = a - bi\). \(\mathbb{R}\) y \(\mathbb{C}\) son los <em>cuerpos de escalares</em> del curso. \(\mathbb{C}\) no admite orden compatible con su estructura de cuerpo: si lo tuviera, \(-1 = i^2 \gt  0\).</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 1.15</span>
+          <p>Para \(z, w \in \mathbb{C}\): \(\bar{\bar{z}} = z\); \(\bar{z} = z\) si y solo si \(z \in \mathbb{R}\); \(\overline{z + w} = \bar{z} + \bar{w}\); y \(\overline{zw} = \bar{z}\,\bar{w}\).</p>
+          <p><em>Demostración.</em> Las tres primeras son inmediatas escribiendo \(z = a + bi\), \(w = c + di\). Para la última:</p>
+          \[ \overline{zw} - \bar{z}\bar{w} = \overline{(ac - bd) + (ad + bc)i} - (a - bi)(c - di) \]
+          \[ = \big((ac - bd) - (ad + bc)i\big) - \big((ac - bd) - (ad + bc)i\big) = 0. \ \blacksquare \]
+        </div>
+
+        <p><strong>Ejemplo 7.</strong> Operaciones básicas, con \(i^2 = -1\):</p>
+        \[ (3 + 4i)(2 - i) = 6 - 3i + 8i - 4i^2 = 10 + 5i. \]
+        \[ \frac{2+i}{1-i} = \frac{(2+i)(1+i)}{(1-i)(1+i)} = \frac{1 + 3i}{2} = \frac{1}{2} + \frac{3}{2}\,i. \]
+        <p>El truco para dividir es multiplicar por el conjugado del denominador y dejarlo real. Las potencias de \(i\) son cíclicas de periodo \(4\): \(i^0 = 1\), \(i^1 = i\), \(i^2 = -1\), \(i^3 = -i\), \(i^4 = 1\); para \(k \in \mathbb{Z}\) basta el resto de \(k\) al dividir entre \(4\). Así \(i^{2026} = i^{4 \cdot 506 + 2} = i^2 = -1\).</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>La parte imaginaria es un número real: \(\operatorname{Im}(3 + 4i) = 4\), no \(4i\). Y no «simplifiques» sustituyendo \(i^2 = -1\) antes de tiempo: en \((5 + 7i)(-1 + 2i)\) hay que desarrollar primero, y solo al final usar \(i^2 = -1\).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= § 1.8 MÓDULO Y ARGUMENTO ================= -->
+    <section class="wrap section theory-section" id="s8">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 1.8</div>
+        <div>
+          <h2>Conjugado, módulo y argumento</h2>
+          <p>La geometría del plano complejo: longitud, ángulo y forma trigonométrica.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Identificando \(a + bi\) con el punto \((a, b) \in \mathbb{R}^2\), la parte real y la imaginaria son los catetos de un triángulo rectángulo de hipotenusa \(r\) y ángulo \(\theta\): \(z = r(\cos\theta + i\operatorname{sen}\theta)\).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 1.16</span>
+          <p>El <em>módulo</em> de \(z = a + bi\) es \(|z| = \sqrt{z\bar{z}} = \sqrt{a^2 + b^2} \ge 0\), que para números reales coincide con el valor absoluto. Si \(z \neq 0\), el <em>argumento</em> de \(z\) es el conjunto</p>
+          \[ \operatorname{Arg}(z) = \{\theta \in \mathbb{R} : a = |z|\cos\theta,\ b = |z|\operatorname{sen}\theta\} = \{\theta_0 + 2k\pi : k \in \mathbb{Z}\}, \]
+          <p>y la <em>determinación principal</em> \(\arg(z) \in (-\pi, \pi]\) es el único argumento de ese intervalo (para \(z = 0\) el argumento no está determinado). La expresión \(z = |z|\left(\cos\arg(z) + i\operatorname{sen}\arg(z)\right)\) es la <em>forma trigonométrica</em> de \(z \neq 0\).</p>
+        </div>
+
+        <p>De \(z = a + bi\) y \(\bar{z} = a - bi\) se deducen de inmediato las identidades que expresan la parte real y la parte imaginaria en función de \(z\) y su conjugado:</p>
+        \[ \operatorname{Re}(z) = \frac{z + \bar{z}}{2}, \qquad \operatorname{Im}(z) = \frac{z - \bar{z}}{2i}. \]
+        <p>Geométricamente, la conjugación \(z \mapsto \bar{z}\) transforma \((a, b)\) en \((a, -b)\), es decir, es la simetría o reflexión respecto del eje real.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 1.17</span>
+          <p>Para \(z, w \in \mathbb{C}\): \(|zw| = |z|\,|w|\) y \(|z + w| \le |z| + |w|\) (desigualdad triangular). Además \(|\operatorname{Re}(z)| \le |z|\) y \(1/z = \bar{z}/|z|^2\) si \(z \neq 0\).</p>
+          <p><em>Demostración.</em> \(|zw|^2 = (zw)\overline{(zw)} = z\bar{z}\,w\bar{w} = |z|^2|w|^2\), y como ambos módulos son no negativos, \(|zw| = |z||w|\). Para la triangular:</p>
+          \[ |z + w|^2 = (z+w)\overline{(z+w)} = |z|^2 + 2\operatorname{Re}(z\bar{w}) + |w|^2 \le |z|^2 + 2|z||w| + |w|^2 = (|z| + |w|)^2, \]
+          <p>donde se usa \(|\operatorname{Re}(u)| \le |u|\) y el caso anterior. Sacando raíces se concluye. \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 8.</strong> Para \(z = -\sqrt{3} + i\): \(|z| = \sqrt{3 + 1} = 2\), y como \(\cos\theta = -\sqrt{3}/2\), \(\operatorname{sen}\theta = 1/2\) con el punto en el segundo cuadrante, \(\arg(z) = 5\pi/6\) y \(\operatorname{Arg}(z) = \{5\pi/6 + 2k\pi : k \in \mathbb{Z}\}\). Así</p>
+        \[ z = 2\left(\cos\frac{5\pi}{6} + i\operatorname{sen}\frac{5\pi}{6}\right). \]
+        <p>Para \(w = 3i\) se tiene \(|w| = 3\) y \(\arg(w) = \pi/2\): el ángulo se mide desde el semieje real positivo, con giro antihorario.</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>El módulo es un real no negativo (una longitud); el argumento es un ángulo (y \(\operatorname{Arg}(z)\) es un conjunto infinito, no un número). Confundirlos produce barbaridades del tipo «\(|i| = \pi/2\)». Fija siempre el intervalo del argumento principal: en esta web (al igual que en Python <code>cmath.phase</code> y SymPy <code>arg</code>) adoptamos \((-\pi, \pi]\), donde \(\arg(-1) = \pi\); el libro impreso de la UNED toma \([-\pi, \pi)\), cuya única diferencia está en el semieje real negativo (\(\arg(-1) = -\pi\)), y el cuaderno de ejercicios usa a menudo \([0, 2\pi)\). Cualquier convenio es válido si no lo cambias a mitad de un problema.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Las señales discretas se manejan con números complejos: una frecuencia es \(e^{i\theta}\), la potencia de un componente es \(|z|^2\) y la Transformada Rápida de Fourier (FFT) descompone una señal en sumas de rotaciones. Rotar, escalar y desfasar son, literalmente, multiplicar por un complejo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= § 1.9 EULER ================= -->
+    <section class="wrap section theory-section" id="s9">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 1.9</div>
+        <div>
+          <h2>La exponencial compleja: Euler, Moivre, potencias y raíces</h2>
+          <p>La fórmula de Euler conecta exponenciales y trigonométricas, y convierte el álgebra de complejos en geometría de rotaciones.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Las series de potencias que definen las funciones trascendentes reales se extienden a \(\mathbb{C}\) sin más que permitir variable compleja (la dificultad real estaba, en su día, en pasar de \(\mathbb{Q}\) a \(\mathbb{R}\)):</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 1.18</span>
+          <p>Para \(z \in \mathbb{C}\) se define</p>
+          \[ e^{z} = \sum_{n=0}^{\infty} \frac{z^{n}}{n!}, \qquad \cos z = \sum_{n=0}^{\infty} \frac{(-1)^{n}}{(2n)!}\,z^{2n}, \qquad \operatorname{sen} z = \sum_{n=0}^{\infty} \frac{(-1)^{n}}{(2n+1)!}\,z^{2n+1}, \]
+          <p>series que para \(z \in \mathbb{R}\) coinciden con las usuales. La exponencial compleja conserva su propiedad fundamental: \(e^{z+w} = e^{z}e^{w}\) para todos \(z, w \in \mathbb{C}\).</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 1.19 (Fórmula de Euler)</span>
+          <p>Para todo \(\theta \in \mathbb{R}\): \(e^{i\theta} = \cos\theta + i\operatorname{sen}\theta\). En particular \(e^{i\pi} + 1 = 0\), y todo \(z \neq 0\) admite la <em>forma exponencial</em> \(z = r\,e^{i\theta}\) con \(r = |z|\) y \(\theta \in \operatorname{Arg}(z)\).</p>
+          <p><em>Demostración.</em> Agrupando los términos pares e impares de la serie de \(e^{i\theta}\) y usando \(i^{2k} = (-1)^{k}\), \(i^{2k+1} = (-1)^{k}i\):</p>
+          \[ e^{i\theta} = \sum_{n=0}^{\infty} \frac{i^{n}\theta^{n}}{n!} = \sum_{k=0}^{\infty} \frac{(-1)^{k}}{(2k)!}\,\theta^{2k} + i \sum_{k=0}^{\infty} \frac{(-1)^{k}}{(2k+1)!}\,\theta^{2k+1} = \cos\theta + i\operatorname{sen}\theta. \ \blacksquare \]
+        </div>
+
+        <p>La propiedad \(e^{i\alpha}e^{i\theta} = e^{i(\alpha+\theta)}\) significa que multiplicar por \(e^{i\theta}\) rota \(\theta\) radianes: los complejos de módulo \(1\) son rotaciones del plano. Multiplicar por \(i = e^{i\pi/2}\) da vueltas de un cuarto de vuelta.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 1.20 (Potencias y Moivre)</span>
+          <p>Si \(z = r\,e^{i\theta}\) y \(n \in \mathbb{Z}\), entonces \(z^{n} = r^{n}e^{in\theta}\), es decir \(|z^{n}| = |z|^{n}\) y \(\operatorname{Arg}(z^{n}) = \{n\theta + 2k\pi\}\). En forma trigonométrica, \((\cos\theta + i\operatorname{sen}\theta)^{n} = \cos n\theta + i\operatorname{sen} n\theta\) (fórmula de Moivre).</p>
+          <p><em>Demostración.</em> Es la propiedad \(e^{z+w} = e^{z}e^{w}\) aplicada \(n\) veces: \((r e^{i\theta})^{n} = r^{n}e^{i\theta n}\). Para \(n\) negativo, \(z^{n} = 1/z^{-n}\), y la fórmula se sostiene igual. \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 1.21 (Raíces \(n\)-ésimas)</span>
+          <p>Las soluciones de \(z^{n} = w\) con \(w = \rho\,e^{i\varphi}\), \(\rho \gt  0\), son exactamente \(n\) números:</p>
+          \[ z_k = \sqrt[n]{\rho}\; e^{i\frac{\varphi + 2k\pi}{n}}, \qquad k = 0, 1, \ldots, n-1, \]
+          <p>de módulo común \(\sqrt[n]{\rho}\) y argumentos equiespaciados: son los vértices de un polígono regular de \(n\) lados inscrito en esa circunferencia.</p>
+          <p><em>Demostración.</em> Si \(z = r e^{i\alpha}\), la ecuación \(z^n = w\) exige \(r^{n} = \rho\) y \(n\alpha \in \operatorname{Arg}(w) = \{\varphi + 2k\pi\}\). De aquí \(r = \sqrt[n]{\rho}\) y \(\alpha = (\varphi + 2k\pi)/n\). Distintos \(k\) en \(\{0, \ldots, n-1\}\) dan argumentos distintos módulo \(2\pi\), y los demás \(k\) se repiten. \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 9.</strong> Calculamos \((1+i)^{8}\) sin desarrollar: \(1 + i = \sqrt{2}\,e^{i\pi/4}\), luego \((1+i)^{8} = (\sqrt{2})^{8}e^{i2\pi} = 16\). Y las raíces cúbicas de \(8 = 8e^{i\cdot 0}\) tienen módulo \(2\) y argumentos \(0, 2\pi/3, 4\pi/3\):</p>
+        \[ \{\,2,\ -1 + \sqrt{3}\,i,\ -1 - \sqrt{3}\,i\,\} = \{\, z \in \mathbb{C} : z^{3} = 8 \,\}. \]
+        <p>Comprueba que \((-1 + \sqrt{3}\,i)^{3} = 8\): son las tres soluciones de \(z^{3} - 8 = 0\).</p>
+        <p><strong>Los números complejos como transformaciones lineales del plano \(\mathbb{R}^2\).</strong> Identificando cada punto \((x, y) \in \mathbb{R}^2\) con el número complejo \(w = x + yi\), la multiplicación por un complejo fijo \(z = a + bi = |z|\,e^{i\theta}\) se escribe \((a + bi)(x + yi) = (ax - by) + (bx + ay)i\), lo que define la aplicación \(T_{a,b} : \mathbb{R}^2 \to \mathbb{R}^2\) dada por</p>
+        \[ T_{a,b}(x, y) = (ax - by,\ bx + ay). \]
+        <p>Si \(z \neq 0\), como \(z\,w = |z|\,e^{i\theta}w\), esta transformación equivale geométricamente a una <em>homotecia</em> (escalado de las distancias al origen) de factor \(|z| = \sqrt{a^2 + b^2}\) compuesta con una <em>rotación</em> de ángulo \(\theta = \arg(z)\) alrededor del origen; su inversa es \(T_{z^{-1}}\), asociada a \(z^{-1} = \bar{z}/|z|^2\). Por ejemplo, para \(z = 2 - i\) (\(a = 2,\ b = -1\)), la transformación es \(T_{2,-1}(x, y) = (2x + y,\ -x + 2y)\), multiplica todas las distancias al origen por \(|2 - i| = \sqrt{5}\) y envía el punto \((3, 1)\) a \(T_{2,-1}(3, 1) = (7, -1)\).</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>En \(\mathbb{C}\) es falso que \(\sqrt{z^{2}} = z\) en general: con \(z = -1\), \(z^{2} = 1\) y la raíz principal de \(1\) es \(1 \neq -1\). Del mismo modo, \((z^{n})^{1/n}\) tiene \(n\) valores y el principal no siempre es \(z\). Una ecuación \(z^{n} = w\) con \(w \neq 0\) siempre tiene \(n\) soluciones: no te conformes con la real positiva.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>La exponencial es la función estrella de los modelos probabilísticos: la normalización softmax \(\sigma_i = e^{z_i}/\sum_j e^{z_j}\) convierte «logits» en probabilidades, y el decaimiento exponencial \(e^{-\lambda t}\) modela aprendizaje y descuento de memoria. Numericalmente, se calcula en forma estable sustrayendo \(\max_j z_j\) antes de exponenciar: otra vez control del error de redondeo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= § 1.10 TFA ================= -->
+    <section class="wrap section theory-section" id="s10">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 1.10</div>
+        <div>
+          <h2>Teorema Fundamental del Álgebra</h2>
+          <p>Por qué \(\mathbb{C}\) cierra la cadena: todo polinomio se descompone en raíces.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Un polinomio de grado \(n\) es \(P(z) = a_{n}z^{n} + a_{n-1}z^{n-1} + \cdots + a_{1}z + a_{0}\) con \(a_{i} \in \mathbb{C}\) y \(a_{n} \neq 0\). Una <em>raíz</em> es una solución de \(P(z) = 0\). En \(\mathbb{R}\), la fórmula de segundo grado \(x = \frac{-b \pm \sqrt{b^{2}-4ac}}{2a}\) puede no dar soluciones reales (si el discriminante es negativo); en \(\mathbb{C}\) el cuadrado siempre existe, y las raíces de coeficientes reales aparecen en pares conjugados.</p>
+
+        <p><strong>Ejemplo 10.</strong> La ecuación \(z^{2} - 2z + 10 = 0\) no tiene soluciones reales, pero sí complejas:</p>
+        \[ z = \frac{2 \pm \sqrt{4 - 40}}{2} = \frac{2 \pm \sqrt{-36}}{2} = \frac{2 \pm 6i}{2} = 1 \pm 3i, \]
+        <p>dos soluciones conjugadas, como siempre ocurre cuando los coeficientes son reales.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 1.22 (Teorema Fundamental del Álgebra)</span>
+          <p>Todo polinomio no constante \(P\) con coeficientes en \(\mathbb{C}\) tiene al menos una raíz en \(\mathbb{C}\). En consecuencia, un polinomio de grado \(n \ge 1\) tiene \(n\) raíces en \(\mathbb{C}\) contando multiplicidad y se factoriza como</p>
+          \[ P(z) = a_{n}(z - z_{1})^{m_{1}}(z - z_{2})^{m_{2}} \cdots (z - z_{p})^{m_{p}}, \qquad m_{1} + \cdots + m_{p} = n, \]
+          <p>donde \(z_{1}, \ldots, z_{p} \in \mathbb{C}\) son las raíces distintas de \(P\) y \(m_{1}, \ldots, m_{p} \ge 1\) sus multiplicidades.</p>
+          <p><em>Demostración (esbozo).</em> Escribiendo \(z = r e^{i\theta}\), la curva \(w(\theta) = P(r e^{i\theta})\) para \(r\) pequeño se mantiene cerca de \(a_{0}\) y no rodea el origen (\(P(z) \approx a_{0}\)); para \(r\) grande, \(P(z) \approx a_{n}z^{n}\) y la curva rodea el origen \(n\) veces. Al hacer variar \(r\) de \(0\) a muy grande, la curva pasa de no rodear a rodear el origen, y por continuidad hay un valor \(r_{0}, \theta_{0}\) con \(P(r_{0}e^{i\theta_{0}}) = 0\). Una vez conocida una raíz \(z_{1}\), la división sintética (esquema de Horner/Ruffini) da \(P(z) = (z - z_{1})P_{1}(z)\) con \(\deg P_{1} = n - 1\), y repitiendo se obtiene la factorización completa. \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 11.</strong> Descompongamos \(P(z) = z^{3} - 3z^{2} + 7z - 5\). Por inspección, \(P(1) = 0\), luego \(z - 1\) divide a \(P\). La división (Horner) da \(P(z) = (z - 1)(z^{2} - 2z + 5)\), y las raíces del segundo factor son</p>
+        \[ z = \frac{2 \pm \sqrt{4 - 20}}{2} = \frac{2 \pm 4i}{2} = 1 \pm 2i. \]
+        <p>Por tanto \(P(z) = (z - 1)\big(z - (1 + 2i)\big)\big(z - (1 - 2i)\big)\): tres raíces, contando multiplicidad, tal como anuncia el teorema.</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>El grado cuenta las raíces <em>con multiplicidad</em>: \(z^{4} - 6z^{3} + 14z^{2} - 14z + 5 = (z-1)^{2}(z - (2+i))(z - (2-i))\) tiene grado \(4\) y solo \(3\) raíces distintas. Si el enunciado pide «las raíces», distingue entre listar las distintas y descontar multiplicidades; y no confundas raíces complejas conjugadas con una raíz doble.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Los autovalores de una matriz son las raíces de su polinomio característico: sin \(\mathbb{C}\), la teoría de diagonalización (Temas III–IV) se rompe, porque esos polinomios no siempre tienen raíces reales. Diagonalizar, descomponer en componentes principales o estabilizar un método iterativo son, al final, problemas de raíces de polinomios sobre escalares complejos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESUMEN ================= -->
+    <section class="wrap section section--tint" id="resumen">
+      <p class="kicker reveal">Ficha de repaso</p>
+      <h2 class="reveal">Lo esencial del tema</h2>
+      <div class="summary reveal" data-summary></div>
+    </section>
+
+    <!-- ================= MAPA MENTAL ================= -->
+    <section class="wrap section" id="mapa">
+      <p class="kicker reveal">Vista global</p>
+      <h2 class="reveal">Mapa mental</h2>
+      <p class="prose reveal">Pulsa cualquier nodo para ver el detalle.</p>
+      <div class="mindmap" data-mindmap></div>
+    </section>
+
+    <!-- ================= EJERCICIOS ================= -->
+    <section class="wrap section section--tint" id="ejercicios">
+      <p class="kicker reveal">Práctica</p>
+      <h2 class="reveal">Ejercicios interactivos</h2>
+      <p class="prose reveal">Escribe tu respuesta y pulsa <strong>Comprobar</strong>. Al acertar se despliega la solución completa.</p>
+      <div data-drills></div>
+    </section>
+
+    <nav class="wrap" aria-label="Navegación entre temas">
+      <div class="pager">
+        <a class="prev" href="../index.html"><span class="meta">Volver</span><strong>Índice del curso</strong></a>
+        <a class="next" href="tema-2.html"><span class="meta">Siguiente</span><strong>Tema II · Tensores, matrices y vectores</strong></a>
+      </div>
+    </nav>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div>
+        <h4>Archivo</h4>
+        <ul>
+          <li><a href="../index.html">Índice del curso</a></li>
+          <li><a href="../planificacion.html">Planificación y evaluación</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Evaluación</h4>
+        <ul>
+          <li><a href="../examenes/examen-1.html">Examen 1 · Temas I–II</a></li>
+          <li><a href="../examenes/examen-2.html">Examen 2 · Temas III–IV</a></li>
+          <li><a href="../examenes/examen-3.html">Examen 3 · Tema V + global</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fuentes</h4>
+        <ul>
+          <li>J. Perán Mazón, <em>Fundamentos algebraicos para la IA</em>, UNED, 2026</li>
+          <li>Álgebra para Ingenieros (libro de apoyo)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer__colophon">
+      <span>Material de estudio personal · uso no comercial</span>
+      <span>Verificado con SymPy · errores → revisar con el árbitro</span>
+    </div>
+  </footer>
+
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/auto-render.min.js"></script>
+  <script defer src="../assets/js/grader.js"></script>
+  <script defer src="../assets/data/tema-1.js"></script>
+  <script defer src="../assets/js/app.js"></script>
+</body>
+</html>

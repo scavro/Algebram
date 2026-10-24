@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tema II · Tensores, matrices y vectores · Fundamentos Algebraicos para la IA · Archivo</title>
+  <meta name="description" content="Explicación, resumen, mapa mental y ejercicios interactivos del tema II: tensores, matrices y vectores." />
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/css/fonts.css" />
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+</head>
+<body data-theme="tema-2">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="progress-bar" aria-hidden="true"><div class="progress-bar__fill"></div></div>
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="wrap nav__inner">
+      <a class="nav__brand" href="../index.html"><span class="nav__brand-mark">Archivo</span><span>Álgebra · IA</span></a>
+      <button class="nav__toggle" aria-expanded="false" aria-label="Abrir menú">Menú</button>
+      <ul class="nav__links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../temas/tema-1.html">Temas</a></li>
+        <li><a href="../examenes/examen-1.html">Exámenes</a></li>
+        <li><a href="../planificacion.html">Planificación</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <header class="theme-head">
+    <div class="theme-head__bg" aria-hidden="true"></div>
+    <div class="theme-head__ghost ghost-num" aria-hidden="true">02</div>
+    <div class="theme-head__inner">
+      <p class="kicker">Tema II · Fundamentos algebraicos para la IA</p>
+      <h1>Tensores, matrices y vectores</h1>
+      <div class="theme-head__row">
+        <span class="chip chip--gold">12 octubre – 1 noviembre</span>
+        <span class="chip" data-count="tema-2" data-count-suffix=" ejercicios interactivos">15 ejercicios interactivos</span>
+        <span class="chip">Resumen + mapa mental</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrap toc" aria-label="Sumario del tema">
+    <a href="#s1"><span class="meta">§ 2.1</span><strong>El espacio lineal \(K^{I}\)</strong></a>
+    <a href="#s2"><span class="meta">§ 2.2</span><strong>Tensores: orden y formato</strong></a>
+    <a href="#s3"><span class="meta">§ 2.3</span><strong>Transposición y bloques</strong></a>
+    <a href="#s4"><span class="meta">§ 2.4</span><strong>Producto y contracción</strong></a>
+    <a href="#s5"><span class="meta">§ 2.5</span><strong>Propiedades del producto</strong></a>
+    <a href="#s6"><span class="meta">§ 2.6</span><strong>Inversa y cambio de base</strong></a>
+    <a href="#s7"><span class="meta">§ 2.7</span><strong>Normas, distancias y ángulos</strong></a>
+    <a href="#s8"><span class="meta">§ 2.8</span><strong>Gram–Schmidt</strong></a>
+    <a href="#s9"><span class="meta">§ 2.9</span><strong>Complemento y proyección</strong></a>
+    <a href="#s10"><span class="meta">§ 2.10</span><strong>Matrices ortogonales</strong></a>
+    <a href="#resumen"><span class="meta">Ficha</span><strong>Resumen</strong></a>
+    <a href="#mapa"><span class="meta">Visual</span><strong>Mapa mental</strong></a>
+    <a href="#ejercicios"><span class="meta">Práctica</span><strong>Ejercicios</strong></a>
+  </nav>
+
+  <main id="contenido">
+
+    <!-- ================= TEORÍA ================= -->
+    <section class="wrap section theory-section" id="s1">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 2.1</div>
+        <div>
+          <h2>El espacio lineal \(K^{I}\)</h2>
+          <p>Familias indexadas, subespacios lineales y afines, espacio lineal libre \(\mathcal{F}(I)\), bases, dimensión y producto de Hadamard.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>El objeto con el que trabaja todo este tema es muy simple de definir: fijamos un conjunto de índices \(I\) y un cuerpo de escalares \(K\) (en la práctica, \(K=\mathbb{R}\) o \(K=\mathbb{C}\)), y consideramos <em>todas</em> las familias de escalares indexadas por \(I\), es decir, todas las funciones \(u:I\to K\). A ese conjunto lo denotamos \(K^{I}\).</p>
+        <p>La ventaja de esta definición aparentemente abstracta es que engloba de golpe casi todo lo que necesitaremos: listas de números, vectores, matrices e incluso tensores de cualquier orden. Como verás, la abstracción aquí <em>simplifica</em>: una sola notación cubre todos los casos.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 2.1</span>
+          <p>Sean \(I\) un conjunto de índices y \(K\in\{\mathbb{R},\mathbb{C}\}\). El espacio lineal \(K^{I}\) es el conjunto de todas las familias \(u=(u_i)_{i\in I}\) con \(u_i\in K\), con las operaciones definidas componente a componente:</p>
+          \[ (\alpha u+\beta v)_i=\alpha u_i+\beta v_i,\qquad \alpha,\beta\in K,\ i\in I. \]
+          <p>Un subconjunto no vacío \(V\subset K^{I}\) es un <em>subespacio lineal</em> (o subespacio vectorial) si es cerrado para combinaciones lineales: \(\alpha u+\beta v\in V\) para todos \(u,v\in V\) y \(\alpha,\beta\in K\) (en particular, \(0\in V\)). Un subconjunto no vacío \(S\subset K^{I}\) es un <em>subespacio afín</em> si para algún \(b\in S\) (y, por tanto, para cualquiera) el conjunto trasladado \(S-b=\{u-b:u\in S\}\) es un subespacio lineal.</p>
+        </div>
+
+        <p>La expresión \(\alpha u+\beta v\) se llama <em>combinación lineal</em> de \(u\) y \(v\) con pesos \(\alpha,\beta\). En general, \(\sum_{j=1}^{m}\alpha_j u_j\) es una combinación lineal (siempre finita) de \(u_1,\dots,u_m\); si todos los pesos son cero, la combinación se dice <em>trivial</em>. Dados dos subconjuntos \(A,B\subset K^{I}\) y escalares \(\Lambda,\Gamma\subset K\), se escribe también \(\Lambda A+\Gamma B=\{\lambda a+\gamma b:\lambda\in\Lambda,\ \gamma\in\Gamma,\ a\in A,\ b\in B\}\).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 2.2</span>
+          <p>Sea \(B\subset K^{I}\).</p>
+          <p>El <em>subespacio generado</em> por \(B\) es \(\langle B\rangle\), el conjunto de todas las combinaciones lineales (finitas) de elementos de \(B\) (con el convenio \(\langle\emptyset\rangle=\{0\}\)). Es el menor subespacio lineal de \(K^{I}\) que contiene a \(B\).</p>
+          <p>\(B\) es <em>linealmente dependiente</em> si existe una combinación lineal no trivial de sus elementos que da el vector nulo; en caso contrario es <em>linealmente independiente</em> (l.i.).</p>
+          <p>Una familia l.i. que genera un subespacio lineal \(V\) se llama <em>base</em> de \(V\); si sus elementos están ordenados, base ordenada.</p>
+        </div>
+
+        <p>Los <em>elementos básicos</em> de \(K^{I}\) son las funciones \(e_j\in K^{I}\) definidas por \((e_j)_i=\delta_{ij}\) (delta de Kronecker: \(1\) si \(i=j\) y \(0\) en otro caso). El subespacio lineal generado por todos los elementos básicos se denomina <strong>espacio lineal libre</strong> sobre \(I\):</p>
+        \[ \mathcal{F}(I)=\langle\{e_j\}_{j\in I}\rangle\subset K^{I}. \]
+        <p>Como toda combinación lineal involucra solo una cantidad <em>finita</em> de sumandos, \(\mathcal{F}(I)\) está formado exactamente por las familias \(u\in K^{I}\) de <em>soporte finito</em> (aquellas que tienen a lo sumo un número finito de componentes no nulas). Cuando \(I=\{1,\dots,n\}\) es finito, \(\mathcal{F}(I)=K^{I}=K^{n}\), la familia \(\{e_1,\dots,e_n\}\) es la <em>base canónica</em> de \(K^{n}\) y todo vector se escribe \(u=\sum_{j=1}^{n} u_j e_j\). En cambio, cuando \(I\) es infinito se tiene la inclusión estricta \(\mathcal{F}(I)\subsetneq K^{I}\): por ejemplo, para \(I=\mathbb{N}\), la sucesión constante \(u=(1,1,1,\dots)\in K^{\mathbb{N}}\) tiene infinitas entradas no nulas y por tanto \(u\notin\mathcal{F}(\mathbb{N})\) (es decir, \(\{e_j\}_{j\in\mathbb{N}}\) es base de \(\mathcal{F}(\mathbb{N})\), pero <em>no</em> genera todo \(K^{\mathbb{N}}\)).</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 2.3 (Teorema de la base)</span>
+          <p>Sea \(B\subset K^{I}\) linealmente independiente con \(n\) elementos y \(A\subset\langle B\rangle\).</p>
+          <p>i) Si \(A\) tiene más de \(n\) elementos, entonces \(A\) es linealmente dependiente.</p>
+          <p>ii) Si \(A\) es l.i. y tiene \(n\) elementos, entonces \(\langle A\rangle=\langle B\rangle\).</p>
+          <p>iii) Todas las bases de \(\langle B\rangle\) tienen \(n\) elementos.</p>
+          <p><em>Demostración.</em> i) Cada \(v\in A\) se escribe como combinación lineal de \(B\); si un coeficiente es no nulo, se puede despejar el generador correspondiente y sustituirlo por \(v\), conservando el subespacio generado. Iterando el proceso, o bien se completa la sustitución de los \(n\) elementos de \(B\) (y entonces cualquier elemento restante de \(A\) es combinación lineal de los anteriores, con lo que \(A\) es dependiente), o bien en algún paso el elemento ya era combinación lineal de los introducidos, y \(A\) vuelve a ser dependiente. ii) Si \(\langle A\rangle\neq\langle B\rangle\), existiría \(v\in\langle B\rangle\setminus\langle A\rangle\) y \(A\cup\{v\}\) sería l.i. con \(n+1\) elementos, contradiciendo i). iii) Si dos bases tuvieran distinto número de elementos, aplicando i) y ii) se llegaría a una contradicción. \(\blacksquare\)</p>
+        </div>
+
+        <p>De ahí nace el concepto de <em>dimensión</em>: \(\dim(V)\) es el número de elementos de cualquiera de sus bases (por ejemplo, \(\dim(K^{n})=n\) y \(\dim(\{0\})=0\)). Dados dos <strong>subespacios lineales</strong> \(U,V\subset K^{I}\), su <em>suma</em> es el subespacio lineal</p>
+        \[ U+V=\langle U\cup V\rangle=\{u+v:\ u\in U,\ v\in V\}. \]
+        <p>Cuando los subespacios lineales \(U\) y \(V\) verifican además \(U\cap V=\{0\}\), la suma se llama <strong>suma directa</strong> y se denota \(U\oplus V\): todo vector de \(U\oplus V\) se descompone de manera <em>única</em> como \(u+v\) con \(u\in U\) y \(v\in V\), la unión disjunta de una base de \(U\) con una base de \(V\) es base de \(U\oplus V\), y \(\dim(U\oplus V)=\dim(U)+\dim(V)\).</p>
+
+        <p>Más generalmente, cualquier conjunto \(V\) dotado de una suma interna \(u+v\) y un producto por escalares \(\alpha u\) que verifiquen los <strong>ocho axiomas de espacio vectorial abstracto</strong> —<strong>(EV1)</strong> asociatividad \((u+v)+w=u+(v+w)\), <strong>(EV2)</strong> conmutatividad \(u+v=v+u\), <strong>(EV3)</strong> elemento neutro \(0+u=u\), <strong>(EV4)</strong> elemento opuesto \((-u)+u=0\), <strong>(EV5)</strong> asociatividad mixta \(\alpha(\beta u)=(\alpha\beta)u\), <strong>(EV6)</strong> unidad escalar \(1\cdot u=u\), <strong>(EV7)</strong> distributividad respecto a vectores \(\alpha(u+v)=\alpha u+\alpha v\) y <strong>(EV8)</strong> distributividad respecto a escalares \((\alpha+\beta)u=\alpha u+\beta u\)— y posea una base \(B\) se identifica de manera natural con el espacio lineal libre \(\mathcal{F}(B)\subset K^{B}\) asignando a cada vector la familia de sus coordenadas en \(B\).</p>
+
+        <p>Junto a las operaciones lineales, en \(K^{I}\) se define también el <strong>producto de Hadamard</strong> (o producto elemento a elemento) \(w=u\odot v\), dado por:</p>
+        \[ (u\odot v)_i = u_i v_i,\qquad i\in I. \]
+        <p>Es conmutativo, asociativo y distributivo respecto de la suma, y tiene como elemento neutro la familia constante \(1_I=(1)_{i\in I}\). En álgebra computacional e IA es omnipresente (puertas de olvido y entrada en redes LSTM/GRU, máscaras de atención, escalado de características).</p>
+
+        <p><strong>Ejemplo 2.1.</strong> Con \(u=(2,-1,3)\), \(v=(1,4,-2)\in\mathbb{R}^{3}\) y pesos \(\alpha=3\), \(\beta=-2\), la combinación lineal \(w=3u-2v\) se calcula componente a componente: \(w_1=6-2=4\), \(w_2=-3-8=-11\), \(w_3=9+4=13\). Luego \(w=(4,-11,13)\). Su producto de Hadamard es, en cambio, \(u\odot v=(2\cdot 1,\ (-1)\cdot 4,\ 3\cdot(-2))=(2,-4,-6)\).</p>
+
+        <p><strong>Ejemplo 2.2.</strong> La familia \(B=\{(1,1,0),(0,1,1),(1,2,1)\}\subset\mathbb{R}^{3}\) es linealmente dependiente, porque el tercer vector es la suma de los dos primeros: \(1\cdot(1,1,0)+1\cdot(0,1,1)+(-1)\cdot(1,2,1)=(0,0,0)\), una combinación nula no trivial. La familia \(B'=\{(1,1,0),(0,1,1)\}\), en cambio, es l.i. y genera un plano de \(\mathbb{R}^{3}\) de dimensión 2.</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Que un conjunto sea linealmente dependiente significa que <em>alguno</em> de sus elementos es combinación lineal de los demás (hay «redundancia»), no que <em>cualquiera</em> de ellos lo sea. En \(B=\{(1,0),(2,0),(0,1)\}\) el vector \((2,0)\) es combinación de los otros dos, pero \((0,1)\) no se obtiene a partir de \((1,0)\) y \((2,0)\).</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>El espacio lineal libre \(\mathcal{F}(I)\) formaliza la codificación <em>one-hot</em>: si \(I\) es un vocabulario de palabras, un conjunto de categorías o los nodos de un grafo, cada ítem \(j\in I\) se representa mediante su vector básico \(e_j\in\mathcal{F}(I)\) (todo ceros salvo un \(1\) en la posición \(j\)). Un <em>embedding</em> proyecta después esos vectores dispersos de \(\mathcal{F}(I)\) a un espacio denso \(\mathbb{R}^{d}\) con \(d\ll |I|\).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s2">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 2.2</div>
+        <div>
+          <h2>Tensores: orden, formato, ejes y simetría</h2>
+          <p>Los tensores son los contenedores de datos indexados del álgebra: orden, formato, transposición de ejes \(A^{\langle p,q\rangle}\) y tensor de Levi-Civita.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Una imagen Full HD en color necesita tres índices para localizar cada dato: fila, columna y canal de color. Esa es la idea de tensor: un conjunto de números organizado por uno o varios ejes. Formalmente, si \(I=n_{1}\times n_{2}\times\cdots\times n_{m}\) es un producto cartesiano de conjuntos de la forma \(\mathbb{N}_{n}=\{1,\dots,n\}\), los elementos de \(K^{I}\) se llaman <em>tensores de formato \(I\)</em>.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 2.4</span>
+          <p>Un <em>tensor</em> de formato \(n_{1}\times\cdots\times n_{m}\) sobre \(K\) es una familia \(A=(a_{j_{1}\dots j_{m}})\in K^{I}\) con \(I=n_{1}\times\cdots\times n_{m}\). El número \(m\) de ejes es el <em>orden</em> del tensor; \(n_{1},\dots,n_{m}\) son los tamaños de sus ejes (un eje está <em>degenerado</em> si su tamaño es 1), y \(\dim(K^{I})=n_{1}n_{2}\cdots n_{m}\).</p>
+        </div>
+
+        <p>Los tensores de orden 0 son los escalares (\(K=K^{1}=K^{1\times1}=\cdots\)), los de orden 1 son los <em>vectores</em> y los de orden 2 las <em>matrices</em>. La notación de <em>corchetes anidados</em> encapsula las componentes en «cajas dentro de cajas»: el número de corchetes consecutivos de apertura indica el orden, y la cantidad de elementos de cada nivel, el formato.</p>
+
+        <p><strong>Ejemplo 2.3.</strong> El tensor \(W=[[[2,1],[0,3]],[[1,1],[4,0]],[[0,2],[2,2]]]\) abre tres corchetes, luego es de orden 3. El corchete exterior contiene tres bloques y cada bloque es una matriz \(2\times2\): el formato es \(3\times2\times2\), es decir, \(W\in\mathbb{R}^{3\times2\times2}\). Sus componentes se denotan \(w_{j_{1}j_{2}j_{3}}\), por ejemplo \(w_{1,1,1}=2\) y \(w_{3,1,2}=2\).</p>
+
+        <p>Identificamos las tuplas con los vectores y estos con las matrices columna: \([v_{1},\dots,v_{n}]=(v_{1},\dots,v_{n})=[[v_{1}],[v_{2}],\dots,[v_{n}]]\), de modo que \(K^{n}=K^{n\times1}\). Una matriz fila \([[v_{1},\dots,v_{n}]]\in K^{1\times n}\) es, en cambio, un tensor de orden 2 llamado <em>covector</em>: observa que el vector separa sus componentes con comas, mientras que en la presentación tipográfica de matrices los elementos se separan con espacios.</p>
+
+        <p>En un tensor general \(A\in K^{n_1\times\cdots\times n_r}\) de orden \(r\ge 2\), la <strong>transposición de los ejes \(p\) y \(q\)</strong> (\(1\le p\lt q\le r\)) es el tensor \(A^{\langle p,q\rangle}\) que resulta de intercambiar entre sí los índices de las posiciones \(p\) y \(q\) (de modo que los tamaños \(n_p\) y \(n_q\) se permutan en el formato). Un tensor se dice <em>cuadrado</em> si todos sus ejes tienen el mismo tamaño (\(n\times\cdots\times n\)). Un tensor cuadrado es <strong>simétrico</strong> si \(A^{\langle p,q\rangle}=A\) para cualquier par de ejes \(p\neq q\), y <strong>antisimétrico</strong> si \(A^{\langle p,q\rangle}=-A\) para todo \(p\neq q\).</p>
+
+        <p>Un ejemplo fundamental de tensor cúbico antisimétrico es el <strong>tensor de Levi-Civita</strong> (o de permutación) \(H=(h_{ijk})\in\mathbb{R}^{3\times 3\times 3}\), definido por:</p>
+        \[ H=\Big[\begin{pmatrix}0&0&0\\0&0&1\\0&-1&0\end{pmatrix},\ \begin{pmatrix}0&0&-1\\0&0&0\\1&0&0\end{pmatrix},\ \begin{pmatrix}0&1&0\\-1&0&0\\0&0&0\end{pmatrix}\Big], \]
+        <p>donde \(h_{ijk}=1\) si \((i,j,k)\) es una permutación par de \((1,2,3)\) —esto es, \((1,2,3),(2,3,1),(3,1,2)\)—, \(h_{ijk}=-1\) si es una permutación impar —\((1,3,2),(2,1,3),(3,2,1)\)— y \(h_{ijk}=0\) si algún índice se repite. Al intercambiar dos cualesquiera de sus tres ejes, el tensor cambia de signo: \(H^{\langle 1,2\rangle}=H^{\langle 1,3\rangle}=H^{\langle 2,3\rangle}=-H\).</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>No confundas el vector \([v_{1},v_{2},\dots,v_{n}]\) (orden 1) con la matriz fila \([[v_{1},v_{2},\dots,v_{n}]]\) (orden 2). En papel la diferencia son solo unos corchetes, pero al programar son objetos de distinto formato y no se multiplican igual.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Un lote de datos se almacena como un tensor de pocos ejes: un lote de 64 imágenes RGB de \(32\times32\) píxeles tiene cuatro ejes, <em>muestras \(\times\) alto \(\times\) ancho \(\times\) canales</em>, de formato \(64\times32\times32\times3\) (en PyTorch se transponen los ejes a \(64\times3\times32\times32\)); un lote de secuencias tiene tres, <em>muestras \(\times\) posición \(\times\) características</em>. Dominar el formato y la transposición de ejes \(A^{\langle p,q\rangle}\) es requisito previo para cualquier operación con redes neuronales.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s3">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 2.3</div>
+        <div>
+          <h2>Representación matricial, transposición, bloques y catálogo de matrices</h2>
+          <p>Matrices como tablas rectangulares, transpuesta y transpuesta conjugada, convenio notacional UNED, matrices por bloques y tipos estructurados (unitriangulares, trapezoidales, REF y RREF).</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Una matriz \(A\in K^{n\times m}\) se presenta como una tabla con \(n\) filas y \(m\) columnas, cuya entrada \((i,j)\) es \(a_{ij}\). Se dice que \(A\) es <em>cuadrada</em> si \(n=m\), <em>alta</em> (o vertical) si \(n\gt m\) y <em>ancha</em> (u horizontal) si \(n\lt m\). Las entradas \(a_{ii}\) (\(1\le i\le\min(n,m)\)) forman la <em>diagonal principal</em>. La matriz con todas las entradas nulas es \(0_{n\times m}\), la de todas las entradas iguales a \(1\) es \(1_{n\times m}\), y las <em>matrices básicas</em> \(e_{ij}\in K^{n\times m}\) (con un \(1\) en la celda \((i,j)\) y \(0\) en el resto) forman la base canónica de \(K^{n\times m}\), de modo que \(A=\sum_{i=1}^{n}\sum_{j=1}^{m}a_{ij}e_{ij}\).</p>
+
+        <p>Para cada \(k\le\min(n,m)\), la <strong>submatriz principal líder</strong> de orden \(k\) de \(A\) es la matriz cuadrada \(A_k=(a_{ij})_{1\le i,j\le k}\in K^{k\times k}\) formada por las \(k\) primeras filas y las \(k\) primeras columnas, lo que induce la partición en bloques \(A=\begin{pmatrix}A_k&B_k\\C_k&D_k\end{pmatrix}\).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 2.5</span>
+          <p>Si \(A\in K^{n\times m}\), su <em>transpuesta</em> \(A^{\top}\in K^{m\times n}\) (para un tensor de orden 2, \(A^{\langle 1,2\rangle}\)) intercambia filas y columnas: \((A^{\top})_{ij}=a_{ji}\).</p>
+          <p>Si \(K=\mathbb{C}\), su <em>transpuesta conjugada</em> (o <em>adjunta hermítica</em>) es \(A^{*}=\overline{A}^{\top}\in K^{m\times n}\), con \((A^{*})_{ij}=\overline{a_{ji}}\). Para matrices reales, \(A^{*}=A^{\top}\).</p>
+          <p>Una matriz cuadrada \(A\) es <em>simétrica</em> si \(A^{\top}=A\), <em>antisimétrica</em> si \(A^{\top}=-A\), <em>hermítica</em> si \(A^{*}=A\) y <em>antihermítica</em> si \(A^{*}=-A\).</p>
+        </div>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Convenio notacional del libro de la UNED (J. Perán Mazón)</span>
+          <p><strong>¡Atención para el examen!</strong> En el texto base de la asignatura (<em>Fundamentos algebraicos para la IA</em>, págs. 71–72 y 207) se emplea una notación distinta a la estándar internacional de este curso web:</p>
+          <ul>
+            <li>En el <strong>libro de la UNED</strong>, la transpuesta simple (sin conjugar) se escribe con la letra mayúscula \(A^{T}\), mientras que el símbolo \(A^{\top}\) se reserva para la <strong>transpuesta conjugada</strong>: \(A^{\top}=\overline{A}^{T}\). Cuando trabajes con matrices complejas en exámenes de la UNED, recuerda que allí \(B^{\top}\) <em>sí conjuga</em> las entradas.</li>
+            <li>En <strong>este curso web</strong> escribimos \(A^{\top}\) para la transpuesta simple y \(A^{*}\) para la transpuesta conjugada (en \(\mathbb{R}\) ambas coinciden: \(A^{*}=A^{\top}=A^{T}\)). Además, llamamos siempre a \(A^{*}\) «transpuesta conjugada» o «adjunta hermítica» —nunca «adjunta» a secas— para no confundirla con la matriz adjunta clásica de cofactores \(\operatorname{adj}(A)\).</li>
+          </ul>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 2.6</span>
+          <p>Para todos \(\alpha,\beta\in K\) y \(A,B\in K^{n\times m}\) se cumple \((\alpha A+\beta B)^{\top}=\alpha A^{\top}+\beta B^{\top}\), y lo mismo vale para la transpuesta conjugada con los escalares conjugados: \((\alpha A+\beta B)^{*}=\overline{\alpha}A^{*}+\overline{\beta}B^{*}\).</p>
+          <p><em>Demostración.</em> Trabajamos por componentes: \(((\alpha A+\beta B)^{\top})_{ij}=(\alpha A+\beta B)_{ji}=\alpha a_{ji}+\beta b_{ji}=(\alpha A^{\top}+\beta B^{\top})_{ij}\). Para la transpuesta conjugada, además se conjuga cada componente: \(((\alpha A+\beta B)^{*})_{ij}=\overline{\alpha a_{ji}+\beta b_{ji}}=\overline{\alpha}\,\overline{a_{ji}}+\overline{\beta}\,\overline{b_{ji}}\). \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 2.4.</strong> Con \(A=\begin{pmatrix}1&2&0\\8&-1&3\end{pmatrix}\in\mathbb{R}^{2\times3}\) se obtiene \(A^{\top}=\begin{pmatrix}1&8\\2&-1\\0&3\end{pmatrix}\in\mathbb{R}^{3\times2}\). Con la matriz compleja \(B=\begin{pmatrix}i&2\\0&1+i\end{pmatrix}\in\mathbb{C}^{2\times2}\), la transpuesta simple es \(B^{\top}=\begin{pmatrix}i&0\\2&1+i\end{pmatrix}\) (\(B^{T}\) en notación del libro), pero la transpuesta conjugada conjuga además cada entrada: \(B^{*}=\begin{pmatrix}-i&0\\2&1-i\end{pmatrix}\) (\(B^{\top}\) en notación del libro). Fíjate en que \(B^{\top}\neq B^{*}\): solo coinciden cuando las entradas son reales.</p>
+
+        <p>Otra operación esencial es construir matrices <em>por bloques</em>, concatenando submatrices. Si \(A\in K^{2\times3}\) y \(B\in K^{2\times2}\), la matriz \([\,A\ \ B\,]\in K^{2\times5}\) pega las columnas; y si \(D\in K^{1\times3}\), la matriz \(\begin{pmatrix}A\\D\end{pmatrix}\in K^{3\times3}\) pega las filas. En general, la notación \(\begin{pmatrix}A&B\\C&D\end{pmatrix}\) sobrentiende los formatos compatibles. No confundas <em>concatenar</em> (unir a lo largo de un eje existente) con <em>apilar</em> (crear un eje nuevo: tres matrices \(2\times5\) apiladas forman un tensor \(3\times2\times5\)).</p>
+
+        <p>Conviene dominar el <strong>catálogo de matrices estructuradas</strong> que protagonizan las factorizaciones de los temas siguientes:</p>
+        <ul>
+          <li><strong>Diagonales, diagonal-rectangulares y diagonales por bloques:</strong> una matriz cuadrada \(D=\operatorname{diag}(d_1,\dots,d_n)\) tiene \(d_{ij}=0\) para \(i\neq j\) (en particular, la identidad es \(I_n=\operatorname{diag}(1,\dots,1)\)). Una matriz <em>diagonal-rectangular</em> \(D\in K^{n\times m}\) cumple igualmente \(d_{ij}=0\) para \(i\neq j\), adoptando la forma \(\begin{pmatrix}\operatorname{diag}(d_1,\dots,d_n)&0\end{pmatrix}\) si \(n\lt m\) o \(\begin{pmatrix}\operatorname{diag}(d_1,\dots,d_m)\\0\end{pmatrix}\) si \(n\gt m\) (estructura clave en la descomposición en valores singulares, SVD). Una matriz <em>diagonal por bloques</em> tiene bloques \(\operatorname{diag}(A_1,\dots,A_r)\) en la diagonal principal y bloques nulos fuera.</li>
+          <li><strong>Matrices de permutación:</strong> se obtienen reordenando las columnas (o filas) de la identidad \(I_n\); tienen exactamente un \(1\) en cada fila y en cada columna, y \(0\) en el resto.</li>
+          <li><strong>Triangulares y unitriangulares:</strong> una matriz cuadrada es <em>triangular superior</em> si \(a_{ij}=0\) para \(i\gt j\), y <em>triangular inferior</em> si \(a_{ij}=0\) para \(i\lt j\). Si además todos los elementos de su diagonal principal son iguales a \(1\) (\(a_{ii}=1\)), se llama <strong>unitriangular</strong> (superior o inferior). En eliminación gaussiana destacan las <strong>matrices unitriangulares inferiores por bloques</strong>:
+            \[ S=\begin{pmatrix}I_k&0\\A&I_m\end{pmatrix}\in K^{(k+m)\times(k+m)}, \]
+            y, como caso particular, las unitriangulares concentradas en una sola columna \(k\) debajo de la diagonal.</li>
+          <li><strong>Matrices trapezoidales:</strong> generalizan a las triangulares cuando \(n\neq m\). Una matriz <em>trapezoidal superior</em> tiene ceros por debajo de la diagonal principal (\(a_{ij}=0\) si \(i\gt j\)), adoptando la forma ancha \(\begin{pmatrix}U&B\end{pmatrix}\) si \(n\lt m\) o alta \(\begin{pmatrix}U\\0\end{pmatrix}\) si \(n\gt m\), con \(U\) triangular superior; las <em>trapezoidales inferiores</em> son sus transpuestas.</li>
+          <li><strong>Matrices escalonadas (REF y RREF):</strong> el <em>pivote</em> (o entrada principal) de una fila no nula es su primer elemento distinto de cero leyendo de izquierda a derecha. Una matriz está en <strong>forma escalonada por filas (REF)</strong> si todas las filas nulas están al final y el pivote de cada fila no nula está estrictamente a la derecha del pivote de la fila anterior. Está en <strong>forma escalonada reducida por filas (RREF)</strong> si además cada pivote vale \(1\) y es la única entrada no nula de su columna.</li>
+        </ul>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Confundir la transpuesta simple con la transpuesta conjugada en \(\mathbb{C}\). La transpuesta simple solo reordena entradas; la transpuesta conjugada (adjunta hermítica) reordena <em>y conjuga</em>. En \(B=\begin{pmatrix}i&2\\0&1+i\end{pmatrix}\) la entrada \((1,1)\) sigue siendo \(i\) al transponer sin conjugar, pero pasa a ser \(-i\) al transponer y conjugar.</p>
+        </div>
+      </div>
+    
+      <figure class="film reveal">
+        <video controls preload="metadata" playsinline src="../assets/animaciones/ii_transformacion.mp4"><track kind="captions" src="data:text/vtt;charset=utf-8;base64,V0VCVlRUCgowMDowMC4wMDAgLS0+IDAwOjAzLjUwMApVbmEgbWF0cml6IGVzIHVuYSBhcGxpY2FjacOzbiBsaW5lYWwuCgowMDowMy41MDAgLS0+IDAwOjA3LjAwMApFbCBwbGFubyBzZSBkZWZvcm1hIGxpbmVhbG1lbnRlOyBzaSBBIGVzIGludmVydGlibGUsIGxhcyByZWN0YXMgc2lndWVuIHNpZW5kbyByZWN0YXMuCgowMDowNy4wMDAgLS0+IDAwOjEwLjcwMApMYSBtYXRyaXogQSB0cmFuc2Zvcm1hIGxhIGN1YWRyw61jdWxhLCBlbCBjdWFkcmFkbyB1bmlkYWQgeSBsYSBiYXNlLgo=" srclang="es" label="Español" default data-vtt="ii_transformacion.vtt"></video>
+        <figcaption>Animación · Una matriz como aplicación lineal: el plano se transforma conservando las combinaciones lineales</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap section theory-section" id="s4">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 2.4</div>
+        <div>
+          <h2>Producto de matrices, contracción de índices y traza</h2>
+          <p>El producto matricial, producto interior frente a exterior, matrices de permutación, contracción tensorial \(C_{i,j}(A,B)\), reglas de <code>einsum</code> y la traza.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Para multiplicar dos matrices hace falta que las columnas de la primera coincidan con las filas de la segunda. Este producto no es un capricho: es el que codifica la composición de combinaciones lineales.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 2.7</span>
+          <p>Si \(A\in K^{n\times k}\) y \(B\in K^{k\times m}\), su producto \(C=AB\in K^{n\times m}\) es</p>
+          \[ c_{ij}=\sum_{s=1}^{k} a_{is}b_{sj},\qquad 1\leq i\leq n,\ 1\leq j\leq m. \]
+          <p>Es decir, en el caso real (\(K=\mathbb{R}\)), la entrada \((i,j)\) coincide con el producto escalar de la fila \(i\) de \(A\) por la columna \(j\) de \(B\) (mientras que en \(K=\mathbb{C}\) la definición de \(AB\) no conjuga las entradas de \(A\)).</p>
+        </div>
+
+        <p>Las componentes de una matriz se recuperan con la base canónica: la columna \(j\) es \(Ae_{j}\), la fila \(i\) es \(e_{i}^{\top}A\) y la entrada \((i,j)\) es \(e_{i}^{\top}Ae_{j}\). Esto, que parece obvio, es la clave para razonar con matrices gigantes sin escribir sus entradas.</p>
+
+        <p>Con un vector columna \(a\in K^{n}=K^{n\times 1}\) y su transpuesto \(a^{\top}\in K^{1\times n}\), el orden de los factores cambia radicalmente el resultado:</p>
+        <ul>
+          <li><strong>Producto interior</strong> \(a^{\top}a = \sum_{i=1}^{n}a_{i}^{2}\in K^{1\times 1}\equiv K\) (en \(\mathbb{C}\), \(a^{*}a=\sum_{i}|a_{i}|^{2}\)): contrae el eje de tamaño \(n\) y devuelve un único escalar.</li>
+          <li><strong>Producto exterior</strong> \(aa^{\top} = (a_{i}a_{j})_{1\le i,j\le n}\in K^{n\times n}\) (en general, \(ab^{\top}\in K^{n\times m}\)): si \(a\neq 0\), produce una matriz cuadrada de <em>rango 1</em> cuyas columnas son todas múltiplos escalares de \(a\).</li>
+        </ul>
+
+        <p>Asimismo, multiplicar por una <strong>matriz de permutación</strong> \(P\) reordena filas o columnas sin hacer ninguna operación aritmética: multiplicar por la izquierda (\(PA\)) permuta las <em>filas</em> de \(A\), mientras que multiplicar por la derecha (\(AP\)) permuta las <em>columnas</em> de \(A\).</p>
+
+        <p>El producto de matrices es un caso particular de la <strong>contracción de índices \(C_{i,j}(A,B)\)</strong>. Dados un tensor \(A\) de orden \(p\) y un tensor \(B\) de orden \(q\) tales que el eje \(i\)-ésimo de \(A\) y el eje \(j\)-ésimo de \(B\) tienen el mismo tamaño \(k\), la contracción \(C_{i,j}(A,B)\) es el tensor de orden \(p+q-2\) cuyas componentes se obtienen sumando los productos de entradas homólogas a lo largo de ese eje común (desde \(s=1\) hasta \(k\)); los ejes \(i\) de \(A\) y \(j\) de \(B\) desaparecen y el tensor resultante hereda los \(p-1\) ejes restantes de \(A\) seguidos de los \(q-1\) ejes restantes de \(B\). En particular, si \(A\in K^{n\times k}\) y \(B\in K^{k\times m}\), el producto matricial es \(AB=C_{2,1}(A,B)\).</p>
+
+        <p><strong>Ejemplo 2.4 bis (Contracción tensor-vector \(C_{3,1}\) frente a \(C_{2,1}\)).</strong> Sea el tensor de orden 3 \(A=[[[1,2],[3,4]],[[5,6],[7,8]]]\in\mathbb{R}^{2\times 2\times 2}\) y el vector \(v=(1,2)\in\mathbb{R}^{2}\). Si contraemos el tercer eje de \(A\) con el único eje de \(v\), obtenemos la matriz \(C=C_{3,1}(A,v)\in\mathbb{R}^{2\times 2}\) con entradas \(c_{rs}=\sum_{l=1}^{2}a_{rsl}v_{l}\):</p>
+        \[ C_{3,1}(A,v)=\begin{pmatrix}1\cdot 1+2\cdot 2 & 3\cdot 1+4\cdot 2\\ 5\cdot 1+6\cdot 2 & 7\cdot 1+8\cdot 2\end{pmatrix}=\begin{pmatrix}5&11\\17&23\end{pmatrix}. \]
+        <p>Si en cambio contraemos el segundo eje de \(A\) con el de \(v\), obtenemos \(D=C_{2,1}(A,v)\in\mathbb{R}^{2\times 2}\) con entradas \(d_{rs}=\sum_{l=1}^{2}a_{rls}v_{l}\):</p>
+        \[ C_{2,1}(A,v)=\begin{pmatrix}1\cdot 1+3\cdot 2 & 2\cdot 1+4\cdot 2\\ 5\cdot 1+7\cdot 2 & 6\cdot 1+8\cdot 2\end{pmatrix}=\begin{pmatrix}7&10\\19&22\end{pmatrix}\neq C_{3,1}(A,v). \]
+        <p>Otro ejemplo clásico es el <strong>producto vectorial</strong> \(u\times v\in\mathbb{R}^{3}\) de dos vectores de \(\mathbb{R}^{3}\), que se expresa mediante una doble contracción con el tensor de Levi-Civita \(H\in\mathbb{R}^{3\times 3\times 3}\): \((u\times v)_{i}=\sum_{j=1}^{3}\sum_{k=1}^{3}h_{ijk}u_{j}v_{k}\), es decir, \(u\times v=C_{2,1}(C_{2,1}(H,u),v)\).</p>
+
+        <p>En NumPy, PyTorch o TensorFlow cualquier contracción o reordenación de ejes se escribe mediante el convenio de sumación de Einstein con <code>einsum</code>: los índices que aparecen a la izquierda de <code>-&gt;</code> pero se omiten a la derecha se suman (contraen). Por ejemplo: suma de cada fila de una matriz <code>'ij-&gt;i'</code>; traza <code>'ii-&gt;'</code>; transposición <code>'ij-&gt;ji'</code>; producto matriz-vector <code>'ik,k-&gt;i'</code>; producto de matrices <code>'ik,kj-&gt;ij'</code>; contracciones del ejemplo anterior \(C_{3,1}(A,v)\) como <code>'rsl,l-&gt;rs'</code> y \(C_{2,1}(A,v)\) como <code>'rls,l-&gt;rs'</code>; y producto vectorial \(u\times v\) con Levi-Civita <code>'ijk,j,k-&gt;i'</code>.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 2.8</span>
+          <p>La <em>traza</em> de una matriz cuadrada \(A\in K^{n\times n}\) es la suma de su diagonal principal:</p>
+          \[ \operatorname{tr}(A)=\sum_{i=1}^{n}a_{ii}. \]
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 2.9</span>
+          <p>Si \(A\in K^{n\times m}\) y \(B\in K^{m\times n}\), entonces \(\operatorname{tr}(AB)=\operatorname{tr}(BA)\).</p>
+          <p><em>Demostración.</em> \(\operatorname{tr}(AB)=\sum_{i=1}^{n}\sum_{s=1}^{m}a_{is}b_{si}\) y \(\operatorname{tr}(BA)=\sum_{s=1}^{m}\sum_{i=1}^{n}b_{si}a_{is}\); ambas sumas recorren los mismos pares \((i,s)\), solo que en distinto orden. \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 2.5.</strong> Con \(A=\begin{pmatrix}1&2\\3&4\end{pmatrix}\) y \(B=\begin{pmatrix}5&6\\7&8\end{pmatrix}\):</p>
+        \[ AB=\begin{pmatrix}1\cdot5+2\cdot7 & 1\cdot6+2\cdot8\\ 3\cdot5+4\cdot7 & 3\cdot6+4\cdot8\end{pmatrix}=\begin{pmatrix}19&22\\43&50\end{pmatrix},\qquad \operatorname{tr}(AB)=19+50=69. \]
+        <p>Por su parte, \(BA=\begin{pmatrix}23&34\\31&46\end{pmatrix}\) y \(\operatorname{tr}(BA)=23+46=69\): las trazas coinciden, pero \(AB\neq BA\). La traza «ignora» el orden de los factores; el producto, no.</p>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s5">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 2.5</div>
+        <div>
+          <h2>Propiedades del producto, bloques y matrices normales</h2>
+          <p>Asociatividad, distributividad, transpuesta del producto, identidades de bloques unitriangulares y matrices normales (\(AA^{*}=A^{*}A\)).</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>El producto de matrices comparte con el producto de números las propiedades asociativa y distributiva, pero <em>no</em> la conmutativa:</p>
+        \[ (AB)C=A(BC),\qquad AB+AC=A(B+C),\qquad \text{pero}\qquad AB\neq BA\ \text{en general}. \]
+        <p>La asociatividad se demuestra bajando a las componentes y aplicando la asociatividad de la suma y el producto de escalares: ambos productos valen \(\sum_{s}\sum_{t}a_{is}b_{st}c_{tj}\). Cuando \(AB=BA\), decimos que \(A\) y \(B\) <em>conmutan</em>.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 2.10</span>
+          <p>Para \(A\in K^{n\times m}\) y \(B\in K^{m\times k}\) se cumple \((AB)^{\top}=B^{\top}A^{\top}\) y \((AB)^{*}=B^{*}A^{*}\).</p>
+          <p><em>Demostración.</em> Calculemos por componentes: \(((AB)^{\top})_{ij}=(AB)_{ji}=\sum_{s}a_{js}b_{si}=\sum_{s}(B^{\top})_{is}(A^{\top})_{sj}=(B^{\top}A^{\top})_{ij}\). Para la transpuesta conjugada basta conjugar además cada escalar: \(((AB)^{*})_{ij}=\overline{\sum_{s}a_{js}b_{si}}=\sum_{s}\overline{b_{si}}\,\overline{a_{js}}=(B^{*}A^{*})_{ij}\). \(\blacksquare\)</p>
+        </div>
+
+        <p>La multiplicación <em>por bloques</em> respeta el producto ordinario siempre que los formatos de los bloques sean compatibles:</p>
+        \[ \begin{pmatrix}A&B\\C&D\end{pmatrix}\begin{pmatrix}E&F\\G&H\end{pmatrix}=\begin{pmatrix}AE+BG&AF+BH\\CE+DG&CF+DH\end{pmatrix}. \]
+        <p>Aunque con matrices numéricas pequeñas no se gana mucho, razonar con bloques genéricos aclara muchísimas propiedades estructurales (y es como trabajan las librerías de álgebra lineal, que dividen las matrices grandes en <em>tiles</em> o bloques de caché). En particular, para las <strong>matrices unitriangulares inferiores por bloques</strong> (base de la eliminación gaussiana y la factorización LU del Tema IV) se verifican de inmediato tres identidades fundamentales:</p>
+        \[ \begin{pmatrix}I_k&0\\B&I_m\end{pmatrix}\begin{pmatrix}I_k&0\\A&I_m\end{pmatrix}=\begin{pmatrix}I_k&0\\A+B&I_m\end{pmatrix},\qquad \begin{pmatrix}I_k&0\\A&I_m\end{pmatrix}^{-1}=\begin{pmatrix}I_k&0\\-A&I_m\end{pmatrix}, \]
+        \[ \begin{pmatrix}I_k&0\\A&I_m\end{pmatrix}\begin{pmatrix}C_1\\C_2\end{pmatrix}=\begin{pmatrix}C_1\\AC_1+C_2\end{pmatrix}, \]
+        <p>es decir, multiplicar dos matrices unitriangulares inferiores por bloques del mismo particionado equivale simplemente a <em>sumar</em> sus bloques subdiagonales \(A+B\), e invertir una de ellas consiste tan solo en cambiar el signo de \(A\).</p>
+
+        <p><strong>Ejemplo 2.6.</strong> Sean \(X=\begin{pmatrix}A&B\\C&D\end{pmatrix}\) con \(A=\begin{pmatrix}1&2\\0&1\end{pmatrix}\), \(B=\begin{pmatrix}1\\0\end{pmatrix}\), \(C=\begin{pmatrix}0&1\end{pmatrix}\), \(D=(1)\); e \(Y=\begin{pmatrix}E\\F\end{pmatrix}\) con \(E=\begin{pmatrix}3&1\\1&2\end{pmatrix}\) y \(F=\begin{pmatrix}2&5\end{pmatrix}\). Por bloques:</p>
+        \[ XY=\begin{pmatrix}AE+BF\\CE+DF\end{pmatrix},\qquad AE+BF=\begin{pmatrix}5&5\\1&2\end{pmatrix}+\begin{pmatrix}2&5\\0&0\end{pmatrix}=\begin{pmatrix}7&10\\1&2\end{pmatrix},\qquad CE+DF=(1,2)+(2,5)=(3,7). \]
+        <p>Recomponiendo, \(XY=\begin{pmatrix}7&10\\1&2\\3&7\end{pmatrix}\), exactamente lo que da multiplicar las matrices completas \(X\in\mathbb{R}^{3\times3}\) e \(Y\in\mathbb{R}^{3\times2}\).</p>
+
+        <h3>Matrices normales</h3>
+        <p>Aunque una matriz y su transpuesta conjugada no conmutan en general (\(AA^{*}\neq A^{*}A\)), la familia de matrices para las que sí conmutan desempeña un papel central en el Teorema Espectral del Tema V:</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 2.10 bis (Matriz normal)</span>
+          <p>Una matriz \(A\in K^{n\times m}\) es <strong>normal</strong> si conmuta con su transpuesta conjugada:</p>
+          \[ AA^{*} = A^{*}A \]
+          <p>(en el caso real, \(AA^{\top}=A^{\top}A\); en notación del libro de la UNED, \(AA^{\top}=A^{\top}A\) tanto en \(\mathbb{R}\) como en \(\mathbb{C}\)). Como \(AA^{*}\in K^{n\times n}\) y \(A^{*}A\in K^{m\times m}\), toda matriz normal es necesariamente <em>cuadrada</em> (\(n=m\)).</p>
+        </div>
+
+        <p>Toda matriz hermítica o simétrica (\(A^{*}=A\)), toda matriz antihermítica o antisimétrica (\(A^{*}=-A\)), toda matriz diagonal y toda matriz unitaria u ortogonal (\(A^{*}A=AA^{*}=I\)) es normal. Pero existen muchas matrices normales que no pertenecen a ninguna de esas clases particulares. Una propiedad característica e importantísima de las matrices normales es que <strong>cada fila tiene exactamente la misma norma euclídea que su columna homóloga</strong>:</p>
+        \[ \|Ae_i\|^{2} = (Ae_i)^{*}(Ae_i) = e_i^{*}A^{*}Ae_i = e_i^{*}AA^{*}e_i = (A^{*}e_i)^{*}(A^{*}e_i) = \|A^{*}e_i\|^{2}\implies \|Ae_i\|=\|A^{*}e_i\|, \]
+        <p>donde \(Ae_i\) es la columna \(i\)-ésima de \(A\) y \(A^{*}e_i\) es la fila \(i\)-ésima transpuesta y conjugada.</p>
+
+        <p><strong>Ejemplo 2.6 bis (Ejemplo 87 del libro).</strong> Consideremos la matriz real</p>
+        \[ A=\begin{pmatrix}3&0&0\\0&1&-2\\0&2&1\end{pmatrix}. \]
+        <p>No es simétrica (\(A^{\top}\neq A\)), ni antisimétrica (\(A^{\top}\neq -A\)), ni ortogonal. Sin embargo, al multiplicar por su transpuesta en ambos órdenes resulta:</p>
+        \[ AA^{\top}=\begin{pmatrix}3&0&0\\0&1&-2\\0&2&1\end{pmatrix}\begin{pmatrix}3&0&0\\0&1&2\\0&-2&1\end{pmatrix}=\begin{pmatrix}9&0&0\\0&5&0\\0&0&5\end{pmatrix}=A^{\top}A. \]
+        <p>Por tanto, \(A\) es una <strong>matriz normal</strong>. Observa cómo se cumple la igualdad de normas entre filas y columnas: la fila 1 y la columna 1 tienen norma \(3\); la fila 2 y la columna 2 tienen norma \(\sqrt{1^{2}+(\pm 2)^{2}}=\sqrt{5}\); y la fila 3 y la columna 3 tienen norma \(\sqrt{2^{2}+1^{2}}=\sqrt{5}\).</p>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Multiplicar matrices en el orden equivocado. Dos avisos: primero, \(AB\) y \(BA\) casi nunca coinciden (en el ejemplo 2.5, \(AB=\begin{pmatrix}19&22\\43&50\end{pmatrix}\) pero \(BA=\begin{pmatrix}23&34\\31&46\end{pmatrix}\)); segundo, ni siquiera están definidos los dos productos a la vez si los formatos no casan: multiplicar una \(2\times3\) por una \(2\times3\) es un error de dimensiones. Antes de calcular, comprueba siempre que columnas de la primera = filas de la segunda.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Una capa densa de una red neuronal es un producto de matrices: \(y=Wx\) para un dato \(x\), o \(Y=XW^{\top}\) para un lote entero \(X\) de muestras. Las mismas identidades por bloques que practicas aquí son las que permiten que una GPU paralelice el cálculo por lotes sin cambiar el resultado.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s6">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 2.6</div>
+        <div>
+          <h2>Matriz inversa y cambio de base</h2>
+          <p>Inversas laterales, unicidad e igualdad en matrices cuadradas, Gauss–Jordan, sustitución hacia atrás y cambio de base.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>La identidad \(I\) es el neutro del producto: \(I_{n}A=AI_{m}=A\). Pero, a diferencia de los escalares, no toda matriz no nula tiene inversa. Se llama <em>inversa por la derecha</em> de \(A\in K^{n\times m}\) a una matriz \(R\in K^{m\times n}\) con \(AR=I_{n}\); la <em>inversa por la izquierda</em> \(L\in K^{m\times n}\) cumple \(LA=I_{m}\). Por el Teorema de la base (Teorema 2.3), \(A\) tiene alguna inversa por la izquierda si y solo si sus \(m\) columnas son l.i. (lo que exige \(n\ge m\)), y tiene alguna inversa por la derecha si y solo si sus \(n\) filas son l.i. (lo que exige \(n\le m\)).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 2.11</span>
+          <p>Una matriz cuadrada \(A\in K^{n\times n}\) es <em>singular</em> si sus filas (o sus columnas) son linealmente dependientes; en caso contrario es <em>regular</em>, <em>no singular</em> o <em>invertible</em>. Una matriz \(A\in K^{n\times m}\) es invertible (por ambos lados) si y solo si es cuadrada (\(n=m\)) y no singular; en tal caso, su inversa es única y se denota \(A^{-1}\), verificando \(A^{-1}A=AA^{-1}=I_{n}\).</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 2.11 bis (Inversas laterales e invertibilidad de matrices cuadradas)</span>
+          <p>i) Si \(A\in K^{n\times m}\) posee una inversa por la derecha \(R\) (\(AR=I_{n}\)) y una inversa por la izquierda \(L\) (\(LA=I_{m}\)), entonces \(n=m\) y \(L=R=A^{-1}\).</p>
+          <p>ii) Si \(A\in K^{n\times n}\) es <strong>cuadrada</strong> y posee una inversa por un solo lado (\(AR=I_{n}\) o bien \(LA=I_{n}\)), entonces esa misma matriz es automáticamente inversa por ambos lados (\(RA=I_{n}\) o \(AL=I_{n}\)) y \(A\) es invertible.</p>
+          <p><em>Demostración.</em> i) La cadena asociativa \(L = L I_{n} = L(AR) = (LA)R = I_{m} R = R\) prueba que toda inversa a izquierda coincide con toda inversa a derecha. Además, \(AR=I_{n}\) implica que las \(n\) columnas de \(I_{n}\) pertenecen al subespacio generado por las \(m\) columnas de \(A\), luego por el Teorema de la base \(n\le m\); simétricamente, \(LA=I_{m}\) implica que las \(m\) filas de \(I_{m}\) están generadas por las \(n\) filas de \(A\), luego \(m\le n\), de donde \(n=m\) (alternativamente, tomando trazas: \(n=\operatorname{tr}(I_{n})=\operatorname{tr}(AR)=\operatorname{tr}(RA)=\operatorname{tr}(I_{m})=m\)).<br>
+          ii) Supongamos \(A\in K^{n\times n}\) cuadrada con \(AR=I_{n}\). Entonces las \(n\) columnas de \(A\) generan \(K^{n}\) y, por el Teorema de la base (apartado ii), son linealmente independientes. Sea \(D=RA\); como \(AD=A(RA)=(AR)A=I_{n}A=A\), resulta \(A(D-I_{n})=0\). Como las columnas de \(A\) son l.i., cada columna de \(D-I_{n}\) debe ser nula, luego \(D=RA=I_{n}\). El caso \(LA=I_{n}\) es completamente análogo transponiendo. \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 2.12</span>
+          <p>Si \(A,B\in K^{n\times n}\) son invertibles, entonces \(AB\) es invertible y \((AB)^{-1}=B^{-1}A^{-1}\). Además, \(A^{\top}\) y \(A^{*}\) son invertibles con \((A^{\top})^{-1}=(A^{-1})^{\top}\) y \((A^{*})^{-1}=(A^{-1})^{*}\).</p>
+          <p><em>Demostración.</em> \((AB)(B^{-1}A^{-1})=A(BB^{-1})A^{-1}=AA^{-1}=I\), y lo mismo por el otro lado, luego \(B^{-1}A^{-1}\) es la inversa de \(AB\). Para la transpuesta: \(A^{\top}(A^{-1})^{\top}=(A^{-1}A)^{\top}=I^{\top}=I\); el caso de la transpuesta conjugada es idéntico conjugando. \(\blacksquare\)</p>
+        </div>
+
+        <p>En la práctica, existen tres métodos constructivos principales para calcular \(A^{-1}\) en el Tema II:</p>
+        <ul>
+          <li><strong>Método de Gauss–Jordan sobre la matriz ampliada \([A\mid I_n]\):</strong> se aplican operaciones elementales de fila (intercambiar dos filas, multiplicar una fila por un escalar no nulo, o sumar a una fila un múltiplo de otra, que equivalen a multiplicar por la izquierda por matrices elementales \(G_1,\dots,G_s\)) a los dos bloques de \([A\mid I_n]\) simultáneamente hasta transformar el bloque izquierdo en la forma escalonada reducida \(I_n\). Como el producto \(G=G_s\cdots G_1\) cumple \(GA=I_n\), el bloque derecho queda transformado en \(GI_n=G=A^{-1}\): \([A\mid I_n]\sim\cdots\sim [I_n\mid A^{-1}]\).</li>
+          <li><strong>Sustitución hacia atrás para matrices triangulares:</strong> una matriz triangular superior \(A=(a_{ij})\in K^{n\times n}\) es invertible si y solo si todos sus elementos diagonales son no nulos (\(a_{ii}\neq 0\)). Su inversa \(B=A^{-1}=(b_{ij})\) es también triangular superior, tiene diagonal \(b_{ii}=1/a_{ii}\) y sus entradas por encima de la diagonal (\(i\lt j\)) se calculan fila a fila de abajo arriba mediante la recurrencia:
+            \[ b_{ij} = -\frac{1}{a_{ii}}\sum_{k=i+1}^{j} a_{ik}b_{kj},\qquad 1\le i\lt j\le n. \]
+          </li>
+          <li><strong>Inversión por bloques:</strong> si una matriz está particionada en bloques triangulares, como \(S=\begin{pmatrix}I_k&0\\A&I_m\end{pmatrix}\), su inversa es directamente \(S^{-1}=\begin{pmatrix}I_k&0\\-A&I_m\end{pmatrix}\); y en general \(\begin{pmatrix}A&B\\0&C\end{pmatrix}^{-1}=\begin{pmatrix}A^{-1}&-A^{-1}BC^{-1}\\0&C^{-1}\end{pmatrix}\) siempre que \(A\) y \(C\) sean invertibles.</li>
+        </ul>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Escribir \((AB)^{-1}=A^{-1}B^{-1}\). ¡El orden se invierte! Compruébalo multiplicando: \((AB)(A^{-1}B^{-1})\) no da \(I\) salvo que \(A\) y \(B\) conmuten. La regla mnemotécnica es: «al invertir un producto, quítate los zapatos antes que los calcetines».</p>
+        </div>
+
+        <p>El <em>cambio de base</em> es la otra cara de la inversa. Si \(W=[w_{1}\ \cdots\ w_{n}]\in K^{n\times n}\) es una base ordenada de \(K^{n}\) (vectores columna), todo \(u\in K^{n}\) se escribe de forma única \(u=Wc=\sum_{j}c_{j}w_{j}\), y las coordenadas son \(c=W^{-1}u\).</p>
+
+        <p><strong>Ejemplo 2.7.</strong> Calculemos la inversa de \(A=\begin{pmatrix}2&5\\1&3\end{pmatrix}\) por Gauss–Jordan sobre \([A\mid I_2]\). Intercambiamos \(F_1\leftrightarrow F_2\), luego hacemos \(F_2\leftarrow F_2-2F_1\) y finalmente \(F_1\leftarrow F_1-3F_2\) y \(F_2\leftarrow -F_2\):</p>
+        \[ \left(\begin{array}{cc|cc}2&5&1&0\\1&3&0&1\end{array}\right)\sim\left(\begin{array}{cc|cc}1&3&0&1\\0&-1&1&-2\end{array}\right)\sim\left(\begin{array}{cc|cc}1&0&3&-5\\0&1&-1&2\end{array}\right)\implies A^{-1}=\begin{pmatrix}3&-5\\-1&2\end{pmatrix}. \]
+        <p>La comprobación \(AA^{-1}=I_2\) es inmediata: \(\begin{pmatrix}2&5\\1&3\end{pmatrix}\begin{pmatrix}3&-5\\-1&2\end{pmatrix}=\begin{pmatrix}1&0\\0&1\end{pmatrix}\).</p>
+
+        <p><strong>Ejemplo 2.8.</strong> Sea la base ordenada de \(\mathbb{R}^{3}\) dada por \(w_{1}=(1,0,0)\), \(w_{2}=(1,1,0)\), \(w_{3}=(0,1,1)\), y \(u=(2,3,1)\). Resolvemos \(u=c_{1}w_{1}+c_{2}w_{2}+c_{3}w_{3}\): de la tercera coordenada, \(c_{3}=1\); de la segunda, \(c_{2}+1=3\) con \(c_{2}=2\); de la primera, \(c_{1}+2=2\) con \(c_{1}=0\). Las coordenadas son \((0,2,1)\), es decir \(c=W^{-1}u\) con \(W=\begin{pmatrix}1&1&0\\0&1&1\\0&0&1\end{pmatrix}\) (cuya inversa por sustitución hacia atrás es \(W^{-1}=\begin{pmatrix}1&-1&1\\0&1&-1\\0&0&1\end{pmatrix}\)).</p>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>En el entrenamiento de modelos casi nunca se calcula \(A^{-1}\) explícitamente: es caro e inestable numéricamente. Se resuelven sistemas \(Ax=b\) mediante factorizaciones triangulares y sustitución hacia atrás. Lo que sí se lleva de este apartado a la práctica es el cambio de base: PCA y las representaciones latentes no son más que coordenadas en una base más conveniente.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s7">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 2.7</div>
+        <div>
+          <h2>Normas, distancias y ángulos</h2>
+          <p>Producto escalar, módulo, Cauchy–Schwarz, coseno del ángulo, ortogonalidad y distancia euclídea.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>La multiplicación de matrices introduce geometría en el espacio de los datos. La operación que asigna a cada par de vectores \(u,v\in K^{n}\) el escalar \(u^{*}v\in K\) es el <em>producto escalar</em> (en el caso real, \(u^{\top}v\)).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 2.13</span>
+          <p>El <em>módulo</em> (norma euclídea) de \(u\in K^{n}\) es \(\|u\|=\sqrt{u^{*}u}=\sqrt{\sum_{i}|u_{i}|^{2}}\). Un vector es <em>unitario</em> si \(\|u\|=1\); <em>normalizar</em> \(v\neq0\) es dividirlo por \(\|v\|\). La <em>distancia euclídea</em> entre \(u\) y \(v\) es \(d(u,v)=\|u-v\|\).</p>
+        </div>
+
+        <p>El módulo es absolutamente homogéneo: \(\|\alpha u\|=|\alpha|\,\|u\|\). Y con él se miden ángulos: para vectores unitarios se cumple \(|u^{*}v|\leq1\), lo que da la desigualdad de Cauchy–Schwarz en general.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 2.14 (Cauchy–Schwarz)</span>
+          <p>Para todos \(u,v\in K^{n}\), \(\ |u^{*}v|\leq\|u\|\,\|v\|\).</p>
+          <p><em>Demostración.</em> Basta normalizar: sean \(u,v\) unitarios y \(w=v-(u^{*}v)u\). Desarrollando, \(w^{*}w=\|v\|^{2}-2|u^{*}v|^{2}+|u^{*}v|^{2}\|u\|^{2}=1-|u^{*}v|^{2}\), y como \(0\leq\|w\|^{2}\), se deduce \(|u^{*}v|\leq1\). Para vectores arbitrarios, aplícalo a \(u/\|u\|\) y \(v/\|v\|\). \(\blacksquare\)</p>
+        </div>
+
+        <p>En el caso real, el triángulo anterior es rectángulo y se obtiene la expresión del coseno del ángulo entre dos vectores no nulos:</p>
+        \[ \cos(u,v)=\frac{u^{\top}v}{\|u\|\,\|v\|}. \]
+        <p>Dos vectores no nulos son <em>ortogonales</em> si \(u^{*}v=0\), y se escribe \(u\perp v\). Una familia de vectores no nulos dos a dos ortogonales es <em>ortogonal</em>; si además todos son unitarios, <em>ortonormal</em>.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 2.15</span>
+          <p>Toda familia ortogonal de vectores no nulos es linealmente independiente.</p>
+          <p><em>Demostración.</em> Si \(\sum_{j}\alpha_{j}u_{j}=0\) fuera una combinación no trivial, existiría \(k\) con \(\alpha_{k}\neq0\). Multiplicando escalarmente por \(u_{k}^{*}\) se obtiene \(0=\alpha_{k}u_{k}^{*}u_{k}=\alpha_{k}\|u_{k}\|^{2}\), y como \(u_{k}\neq0\), resulta \(\alpha_{k}=0\), absurdo. \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 2.9.</strong> Con \(u=(2,3,6)\) y \(v=(1,2,2)\): \(\|u\|=\sqrt{4+9+36}=7\), \(\|v\|=\sqrt{1+4+4}=3\), \(u^{\top}v=2+6+12=20\) y \(d(u,v)=\|u-v\|=\|(1,1,4)\|=\sqrt{18}=3\sqrt{2}\). El coseno del ángulo es \(\cos(u,v)=\tfrac{20}{21}\approx0{,}952\): vectores muy alineados. La desigualdad de Cauchy–Schwarz se cumple de forma ajustada: \(20\leq 7\cdot3=21\).</p>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>En recuperación de información y en los modelos de lenguaje se compara el <em>producto punto</em> de los embeddings, o su versión normalizada, la <em>similitud coseno</em> \(\operatorname{CosSim}(u,v)=\frac{u^{\top}v}{\|u\|\|v\|}\). Un coseno cercano a 1 indica conceptos próximos; un coseno 0, conceptos independientes. Se prefiere al coseno a la distancia cruda porque la longitud de un embedding depende de factores ajenos al significado (frecuencia, escala de entrenamiento).</p>
+        </div>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Comparar embeddings sin normalizar y quedarte solo con el producto punto: un vector largo parecerá «más similar» aunque apunte a otra dirección. Si la magnitud no te interesa, divide por los módulos y trabaja con el coseno.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s8">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 2.8</div>
+        <div>
+          <h2>Ortogonalización de Gram–Schmidt</h2>
+          <p>Cómo convertir cualquier familia generadora en una base ortonormal del mismo subespacio.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>La idea geométrica de la demostración de Cauchy–Schwarz se convierte en un algoritmo: dado un conjunto de vectores, ir restando a cada uno sus proyecciones sobre los ya obtenidos, para acabar con una familia ortonormal.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 2.16 (Gram–Schmidt)</span>
+          <p>Sea \(B=\{v_{1},\dots,v_{p}\}\) una familia de vectores no nulos de \(K^{n}\). Definimos, descartando los vectores que resulten nulos,</p>
+          \[ u_{k}=v_{k}-\sum_{j=1}^{k-1}(f_{j}^{*}v_{k})f_{j},\qquad f_{k}=\frac{u_{k}}{\|u_{k}\|}, \]
+          <p>con \(f_{1}=v_{1}/\|v_{1}\|\). Entonces \(\{f_{1},\dots,f_{m}\}\) es una base ortonormal de \(\langle B\rangle\).</p>
+          <p><em>Demostración.</em> Por inducción: cada \(u_{k}\) es ortogonal a \(f_{1},\dots,f_{k-1}\) por construcción (al multiplicar \(u_{k}^{*}f_{j}\) las proyecciones cancelan), y \(u_{k}\in\langle B\rangle\). Si \(u_{k}=0\), entonces \(v_{k}\) es combinación lineal de los \(f_{j}\) anteriores y se descarta sin perder el subespacio generado. Al terminar, la familia es ortonormal y genera exactamente \(\langle B\rangle\); por la proposición 2.15 es l.i., luego es base. \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 2.10.</strong> Apliquemos Gram–Schmidt a \(v_{1}=(1,1,0)\) y \(v_{2}=(2,0,1)\) en \(\mathbb{R}^{3}\). Primero \(f_{1}=\frac{v_{1}}{\|v_{1}\|}=\frac{1}{\sqrt{2}}(1,1,0)\). Después, con \(v_{1}^{\top}v_{2}=2\) y \(\|v_{1}\|^{2}=2\):</p>
+        \[ u_{2}=v_{2}-\frac{v_{1}^{\top}v_{2}}{\|v_{1}\|^{2}}v_{1}=(2,0,1)-(1,1,0)=(1,-1,1),\qquad f_{2}=\frac{1}{\sqrt{3}}(1,-1,1). \]
+        <p>Comprobación: \(f_{1}^{\top}f_{2}\propto 1-1+0=0\), así que \(\{f_{1},f_{2}\}\) es una base ortonormal del plano generado por \(v_{1}\) y \(v_{2}\).</p>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Gram–Schmidt es la base conceptual de la descomposición QR, que elimina la redundancia entre variables correlacionadas y estabiliza los algoritmos de entrenamiento. En aprendizaje profundo se emplea para mantener matrices de pesos casi ortonormales, lo que previene la explosión y el desvanecimiento del gradiente: las transformaciones que conservan normas propagan la información sin amplificarla hasta el infinito ni apagarla.</p>
+        </div>
+      </div>
+    
+      <figure class="film reveal">
+        <video controls preload="metadata" playsinline src="../assets/animaciones/ii_gram_schmidt.mp4"><track kind="captions" src="data:text/vtt;charset=utf-8;base64,V0VCVlRUCgowMDowMC4wMDAgLS0+IDAwOjAzLjUwMApHcmFt4oCTU2NobWlkdDogcmVzdGFyIGxhIHByb3llY2Npw7NuIHByb2R1Y2Ugb3J0b2dvbmFsaWRhZC4KCjAwOjAzLjUwMCAtLT4gMDA6MDguMDAwCkRhZG9zIHUgeSB2LCBzZSBjYWxjdWxhIGxhIHByb3llY2Npw7NuIGRlIHYgc29icmUgdS4KCjAwOjA4LjAwMCAtLT4gMDA6MTEuNjAwCkVsIGNvbXBvbmVudGUgcmVzdWx0YW50ZSBlcyBvcnRvZ29uYWwgYSB1Lgo=" srclang="es" label="Español" default data-vtt="ii_gram_schmidt.vtt"></video>
+        <figcaption>Animación · Gram–Schmidt: al restar la proyección, el componente resultante es ortogonal</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap section theory-section" id="s9">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 2.9</div>
+        <div>
+          <h2>Complemento ortogonal y proyección ortogonal</h2>
+          <p>La descomposición \(K^{n}=V\oplus V^{\perp}\) y las dos fórmulas de la proyección ortogonal.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Dos subconjuntos \(A,B\subset K^{n}\) son <em>ortogonales</em> (\(A\perp B\)) si \(a^{*}b=0\) para todos sus elementos, lo que equivale a \(\langle A\rangle\perp\langle B\rangle\).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 2.17</span>
+          <p>El <em>complemento ortogonal</em> de \(B\subset K^{n}\) es</p>
+          \[ B^{\perp}=\{u\in K^{n}\ :\ u^{*}b=0\ \ \forall b\in B\}, \]
+          <p>un subespacio de \(K^{n}\). Si \(V=\langle B\rangle\), entonces \(K^{n}=V\oplus V^{\perp}\): cada vector \(w\) se descompone de forma única como \(w=v+u\) con \(v\in V\) y \(u\in V^{\perp}\).</p>
+        </div>
+
+        <p>El vector \(v\) de esa descomposición es la <em>proyección ortogonal</em> \(\operatorname{proy}_{V}(w)\), y \(u=w-v\) es el componente ortogonal. Si dispones de una base ortonormal \(\{f_{1},\dots,f_{m}\}\) de \(V\) (por ejemplo, la que devuelve Gram–Schmidt), el cálculo es trivial: \(\operatorname{proy}_{V}(w)=\sum_{j}(f_{j}^{*}w)f_{j}\).</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 2.18</span>
+          <p>Sea \(A\in K^{n\times m}\) la matriz cuyas columnas son una base de \(V\). Entonces \(A^{*}A\) es invertible y</p>
+          \[ \operatorname{proy}_{V}(w)=A(A^{*}A)^{-1}A^{*}w. \]
+          <p><em>Demostración.</em> Si \((A^{*}A)b=0\), multiplicando por \(b^{*}\) se obtiene \(\|Ab\|^{2}=0\), luego \(Ab=0\) y \(b=0\) (columnas l.i.): \(A^{*}A\) es invertible. El vector \(v=A(A^{*}A)^{-1}A^{*}w\) pertenece a \(V\) (es combinación de columnas de \(A\)) y \(u=w-v\) verifica \(A^{*}u=A^{*}w-(A^{*}A)(A^{*}A)^{-1}A^{*}w=0\), es decir, \(u\perp V\). Por la unicidad de la descomposición ortogonal, \(v=\operatorname{proy}_{V}(w)\). \(\blacksquare\)</p>
+        </div>
+
+        <p><strong>Ejemplo 2.11.</strong> Sea \(V=\langle(1,1,0),(0,1,1)\rangle\subset\mathbb{R}^{3}\) y \(w=(3,0,3)\). Con \(A=\begin{pmatrix}1&0\\1&1\\0&1\end{pmatrix}\), \(A^{\top}A=\begin{pmatrix}2&1\\1&2\end{pmatrix}\) y \((A^{\top}A)^{-1}=\frac{1}{3}\begin{pmatrix}2&-1\\-1&2\end{pmatrix}\). Como \(A^{\top}w=(3,3)\), obtenemos \((A^{\top}A)^{-1}A^{\top}w=(1,1)\) y</p>
+        \[ \operatorname{proy}_{V}(w)=1\cdot(1,1,0)+1\cdot(0,1,1)=(1,2,1). \]
+        <p>El componente ortogonal es \(w-\operatorname{proy}_{V}(w)=(2,-2,2)\), que efectivamente es ortogonal a ambos generadores: \((2,-2,2)\cdot(1,1,0)=0\) y \((2,-2,2)\cdot(0,1,1)=0\).</p>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>La proyección ortogonal es el corazón de los mínimos cuadrados (regresión lineal: la predicción es la proyección del vector de observaciones sobre el subespacio de las variables) y del PCA (proyectar los datos sobre las componentes principales retiene la máxima varianza con la mínima dimensión). Restar la proyección es, literalmente, «quitar lo predecible».</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s10">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 2.10</div>
+        <div>
+          <h2>Matrices ortogonales y unitarias</h2>
+          <p>Transformaciones que conservan la norma, con inversa gratuita: \(Q^{-1}=Q^{*}\).</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Cerramos el tema con la familia de matrices «bien educadas» del álgebra lineal: aquellas cuyas columnas forman una base ortonormal.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 2.19</span>
+          <p>Una matriz cuadrada \(Q\in K^{n\times n}\) es <em>ortogonal</em> si \(Q^{*}Q=I\); si \(K=\mathbb{C}\) se dice <em>unitaria</em> y se reserva «ortogonal» para el caso real. Equivale a que las columnas de \(Q\) formen una base ortonormal de \(K^{n}\).</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 2.20</span>
+          <p>\(Q\) es ortogonal (unitaria) \(\iff Q^{*}Q=I \iff QQ^{*}=I \iff Q^{-1}=Q^{*}\).</p>
+          <p><em>Demostración.</em> Si \(Q^{*}Q=I\), \(Q^{*}\) es inversa por la izquierda de una matriz cuadrada; como la inversa por la izquierda de una matriz cuadrada también es inversa por la derecha (apartado de la definición 2.11), se tiene \(QQ^{*}=I\) y \(Q^{-1}=Q^{*}\). La implicación recíproca es inmediata. Por otro lado, \((Q^{*}Q)_{ij}\) es el producto escalar de las columnas \(i\) y \(j\) de \(Q\), así que \(Q^{*}Q=I\) expresa exactamente que las columnas son ortonormales. \(\blacksquare\)</p>
+        </div>
+
+        <p>Las matrices de permutación son ortogonales (sus columnas son la base canónica reordenada), y las rotaciones del plano también. La consecuencia práctica es decisiva: invertir una matriz ortogonal cuesta solo transponer (y conjugar), un orden de magnitud menos que cualquier inversión general.</p>
+
+        <p><strong>Ejemplo 2.12.</strong> Comprobemos que \(Q=\frac{1}{7}\begin{pmatrix}2&3&6\\6&2&-3\\-3&6&-2\end{pmatrix}\) es ortogonal. Las columnas \(q_{1}=\frac{1}{7}(2,6,-3)\), \(q_{2}=\frac{1}{7}(3,2,6)\), \(q_{3}=\frac{1}{7}(6,-3,-2)\) tienen módulo 1 (por ejemplo \(\|q_{1}\|^{2}=\frac{4+36+9}{49}=1\)) y son ortogonales dos a dos (\(q_{1}^{\top}q_{2}=\frac{6+12-18}{49}=0\), y análogamente para el resto). Por tanto \(Q^{\top}Q=I\) y</p>
+        \[ Q^{-1}=Q^{\top}=\frac{1}{7}\begin{pmatrix}2&6&-3\\3&2&6\\6&-3&-2\end{pmatrix}. \]
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Creer que basta con que las columnas sean ortogonales para que la matriz sea ortogonal. Hace falta además que sean <em>unitarias</em>: la matriz \(\begin{pmatrix}1&1\\1&-1\end{pmatrix}\) tiene columnas ortogonales, pero \(Q^{\top}Q=2I\). Si la normalizas con el factor \(\frac{1}{\sqrt{2}}\), entonces sí es ortogonal.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Las matrices ortogonales son la materia prima de las transformaciones que <em>conservan la norma</em>. Se usan para inicializar los pesos de redes profundas (inicializaciones ortogonales) porque, al no amplificar ni atenuar las señales, mantienen el gradiente estable a lo largo de muchas capas. En arquitecturas modernas (atención, normalización, transformadas) reaparecen las mismas ideas: rotaciones y reflexiones baratas de invertir y numéricamente robustas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESUMEN ================= -->
+    <section class="wrap section section--tint" id="resumen">
+      <p class="kicker reveal">Ficha de repaso</p>
+      <h2 class="reveal">Lo esencial del tema</h2>
+      <div class="summary reveal" data-summary></div>
+    </section>
+
+    <!-- ================= MAPA MENTAL ================= -->
+    <section class="wrap section" id="mapa">
+      <p class="kicker reveal">Vista global</p>
+      <h2 class="reveal">Mapa mental</h2>
+      <p class="prose reveal">Pulsa cualquier nodo para ver el detalle.</p>
+      <div class="mindmap" data-mindmap></div>
+    </section>
+
+    <!-- ================= EJERCICIOS ================= -->
+    <section class="wrap section section--tint" id="ejercicios">
+      <p class="kicker reveal">Práctica</p>
+      <h2 class="reveal">Ejercicios interactivos</h2>
+      <p class="prose reveal">Escribe tu respuesta y pulsa <strong>Comprobar</strong>. Al acertar se despliega la solución completa.</p>
+      <div data-drills></div>
+    </section>
+
+    <div class="wrap">
+      <nav class="pager" aria-label="Navegación entre temas">
+        <a class="prev" href="tema-1.html"><span class="meta">Anterior</span><strong>Tema I · Escalares</strong></a>
+        <a class="next" href="tema-3.html"><span class="meta">Siguiente</span><strong>Tema III · Aplicaciones lineales</strong></a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div>
+        <h4>Archivo</h4>
+        <ul>
+          <li><a href="../index.html">Índice del curso</a></li>
+          <li><a href="../planificacion.html">Planificación y evaluación</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Evaluación</h4>
+        <ul>
+          <li><a href="../examenes/examen-1.html">Examen 1 · Temas I–II</a></li>
+          <li><a href="../examenes/examen-2.html">Examen 2 · Temas III–IV</a></li>
+          <li><a href="../examenes/examen-3.html">Examen 3 · Tema V + global</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fuentes</h4>
+        <ul>
+          <li>J. Perán Mazón, <em>Fundamentos algebraicos para la IA</em>, UNED, 2026</li>
+          <li>Álgebra para Ingenieros (libro de apoyo)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer__colophon">
+      <span>Material de estudio personal · uso no comercial</span>
+      <span>Verificado con SymPy · errores → revisar con el árbitro</span>
+    </div>
+  </footer>
+
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/auto-render.min.js"></script>
+  <script defer src="../assets/js/grader.js"></script>
+  <script defer src="../assets/data/tema-2.js"></script>
+  <script defer src="../assets/js/app.js"></script>
+</body>
+</html>

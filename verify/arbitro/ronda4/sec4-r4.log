@@ -1,0 +1,12 @@
+== 4a. X1-8 multi 2 vectores exacto
+  ✓ X1-8 exacto → correcto  [{"celdas":6,"fb":"✓ Correcto. Revisa la solución detallada","ok":true}]
+== 4b. una celda alterada → rechazo
+  ✓ X1-8 1 celda alterada → rechazado  [{"ok":false,"fb":"✗ Aún no es correcto. Campo 'f"}]
+== 4c. multi incompleto → rechazo
+  ✓ X1-8 solo f1 → rechazado  [{"ok":false}]
+== 4d. T2-E4 bool + matriz 3×3 fracciones
+  ✓ T2-E4 exacto → correcto  [{"celdas":9,"ok":true,"fb":"✓ Correcto. Revisa la solución detallada"}]
+== 4e. X1-12 matriz 4×4 exacta
+  ✓ X1-12 exacta → correcto  [{"celdas":16,"ok":true,"fb":"✓ Correcto. Revisa la solución"}]
+
+sección 4: VERDE

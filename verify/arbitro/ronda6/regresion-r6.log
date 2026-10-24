@@ -1,0 +1,100 @@
+================ REGRESIÓN R6 (R1+R2+R5 vs código actual) ================
+--- ronda1/dump_answers.js ---
+OK dump: tema-1=15, tema-2=15, tema-3=15, tema-4=15, tema-5=15, examen-1=12, examen-2=12, examen-3=12
+--- ronda1/check_*.py (recálculo de expected) ---
+[verify/arbitro/ronda1/check_examen1.py]
+Matrix([[1, 0, -1, -2], [0, 1, -3, -4], [0, 0, 1, 0], [0, 0, 0, 1]])
+
+EXAMEN-1: 13 OK, 0 FALLOS
+[verify/arbitro/ronda1/check_examen2.py]
+Matrix([[sqrt(3), sqrt(3)], [0, sqrt(2)]])
+
+EXAMEN-2: 17 OK, 0 FALLOS
+[verify/arbitro/ronda1/check_examen3.py]
+Matrix([[6/5], [6/5]])
+
+EXAMEN-3: 17 OK, 0 FALLOS
+[verify/arbitro/ronda1/check_tema1.py]
+[OK ] T1-E4: recalc=sqrt(3)/2  expected=sqrt(3)/2 
+
+TEMA-1: 18 OK, 0 FALLOS
+[verify/arbitro/ronda1/check_tema2.py]
+Matrix([[2/7, 6/7, -3/7], [3/7, 2/7, 6/7], [6/7, -3/7, -2/7]])
+
+TEMA-2: 19 OK, 0 FALLOS
+[verify/arbitro/ronda1/check_tema3.py]
+[OK ] T3-E4: recalc=1 expected=1
+
+TEMA-3: 25 OK, 0 FALLOS
+[verify/arbitro/ronda1/check_tema4.py]
+[OK ] T4-E4.pred: recalc=6 expected=6
+
+TEMA-4: 23 OK, 0 FALLOS
+[verify/arbitro/ronda1/check_tema5.py]
+[OK ] T5-E4.neg: recalc=1 expected=1
+
+TEMA-5: 20 OK, 0 FALLOS
+--- ronda1/ataque_grader.js (51 casos) ---
+✔ D1 'sqrt(2)/2' vs '1/sqrt(2)': grader=ACEPTA (debía aceptar)
+✔ D2 'sqrt(5)/5' vs '1/sqrt(5)': grader=ACEPTA (debía aceptar)
+✔ D3 'i^2' vs '-1': grader=ACEPTA (debía aceptar)
+✔ D4 '(1+i)^2' vs '2i': grader=ACEPTA (debía aceptar)
+✔ D5 '5*pi/6' vs 'pi*5/6': grader=ACEPTA (debía aceptar)
+✔ D6 'sqrt(3)/2' vs '0.8660254037844386' (tol): grader=ACEPTA (debía aceptar)
+
+Resumen: 3 desajustes del grader frente al criterio matemático
+--- ronda2/ataque_grader2.js (108 casos) ---
+--- O. EXPLOIT DE MUESTREO (puntos fijos públicos) ---
+✔ O1 polinomio anulador en los 8 puntos vs '5' (debe rechazar): grader=RECHAZA (debía rechazar)
+✔ O2 el mismo polinomio vs '0' (debe rechazar): grader=RECHAZA (debía rechazar)
+✔ O3 alias de variables por wrap-around vs '4-s-t' (T4-N3): grader=RECHAZA (debía rechazar)
+✔ O4 celda matriz con polinomio anulador vs '0': grader=RECHAZA (debía rechazar)
+✔ O5 exprset T4-M5 con 'i+polinomio anulador' como 'i': grader=RECHAZA (debía rechazar)
+
+Resumen R2: 3 desajustes frente al criterio matemático
+--- ronda2/scan_lt_gt.js ---
+
+TOTAL ocurrencias 'lt'/'gt' sin barra dentro de TeX: 0
+--- ronda2/muestra.py (57 ej / 87 comp) ---
+[OK ] X3-10 tr(A^-1): recalc=1/4  expected=1/4
+
+MUESTRA R2: 87 OK, 0 FALLOS
+--- ronda2/soluciones_corregidas.py (35) ---
+[OK ] el conjunto se describe como { z : z^3 = 8 }: True == True
+
+RESUMEN soluciones corregidas: 35 OK, 0 FALLOS
+--- ronda5/n2-escapes.js ---
+[OK ] examen-1.js: fuente fix=2 bug=0 | runtime \op=2 lt/gt-desnudos=0
+[OK ] examen-2.js: fuente fix=7 bug=0 | runtime \op=7 lt/gt-desnudos=0
+[OK ] examen-3.js: fuente fix=5 bug=0 | runtime \op=5 lt/gt-desnudos=0
+
+TOTAL: fix(\\lt/\\gt)=31  bug(\lt suelto)=0
+N2 OK: los 31 tokens son barra doble; runtime con operadores \lt/\gt; 0 letras sueltas.
+--- ronda5/n3-svd.py ---
+[OK ] σi = sqrt(λi(A*A)) = {3,1} = diag(Σ) [3, 1]
+
+RESUMEN N3: 13 OK, 0 FALLOS 
+--- ronda5/n5-alias.js ---
+[OK ] B2 'senx' vs sin(x): grader=ACEPTA (debía aceptar)
+[OK ] B3 'sinx' vs sin(x): grader=ACEPTA (debía aceptar)
+[OK ] B4 'sin x' vs sin(x): grader=ACEPTA (debía aceptar)
+[OK ] B5 'cosx' vs cos(x): grader=ACEPTA (debía aceptar)
+
+Resumen N5: 0 desajustes frente al criterio matemático
+--- ronda5/muestra20.py (44 comp) ---
+[OK ] X3-12 ecuaciones normales A*A x = A*b
+
+MUESTRA R5: 44 OK, 0 FALLOS 
+--- ronda5/estabilidad-n1.js (65 casos × 200) ---
+[OK ] V7 '(-x)^2' vs x^2 → OK (200/200 acepta)
+[OK ] V8 'cos(x)^2+sen(x)^2' vs 1 → OK (200/200 acepta)
+[OK ] V9 'cosh(x)^2-sinh(x)^2' vs 1 → OK (200/200 acepta)
+[OK ] V10 '2*(x+y)' vs 2*x+2*y → OK (200/200 acepta)
+[OK ] V11 'sen(pi/6)' vs 1/2 (alias) → OK (200/200 acepta)
+[OK ] V12 'tg(pi/4)' vs 1 (alias) → OK (200/200 acepta)
+[OK ] V13 matriz 'sqrt(4)' vs 2 → OK (200/200 acepta)
+[OK ] V14 T5-E3 celda '3/10' exacta → OK (200/200 acepta)
+[OK ] V15 T1-M2 mod correcto (multi) → OK (200/200 acepta)
+[OK ] V16 T1-N5 '2.34' redondeo → OK (200/200 acepta)
+
+RESUMEN ESTABILIDAD: 1 casos inestables o en la dirección errónea (de 65)

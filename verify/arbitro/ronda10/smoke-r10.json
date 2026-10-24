@@ -1,0 +1,284 @@
+{
+ "index.html": {
+  "errs": [],
+  "drills": 0,
+  "campos": 0,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 10,
+  "nav": true,
+  "navLabel": null,
+  "navLinks": 4,
+  "progressBars": 5,
+  "progressLabels": [
+   {
+    "theme": "tema-1",
+    "text": "0 / 15 · 0%"
+   },
+   {
+    "theme": "tema-2",
+    "text": "0 / 15 · 0%"
+   },
+   {
+    "theme": "tema-3",
+    "text": "0 / 15 · 0%"
+   },
+   {
+    "theme": "tema-4",
+    "text": "0 / 20 · 0%"
+   },
+   {
+    "theme": "tema-5",
+    "text": "0 / 21 · 0%"
+   }
+  ],
+  "readingBar": true,
+  "timer": null,
+  "videos": [],
+  "mediaError": 0,
+  "loadMs": 142
+ },
+ "planificacion.html": {
+  "errs": [],
+  "drills": 0,
+  "campos": 0,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 37,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": null,
+  "videos": [],
+  "mediaError": 0,
+  "loadMs": 114
+ },
+ "temas/tema-1.html": {
+  "errs": [],
+  "drills": 15,
+  "campos": 22,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 910,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": null,
+  "videos": [],
+  "mediaError": 0,
+  "loadMs": 226
+ },
+ "temas/tema-2.html": {
+  "errs": [],
+  "drills": 15,
+  "campos": 74,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 1010,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": null,
+  "videos": [
+   {
+    "src": "ii_transformacion.mp4",
+    "tracks": [
+     {
+      "kind": "captions",
+      "src": "data:text/vtt;charset=utf-8;base64,V0VCVlRUCgowMDowMC4wMDAgLS0+IDAwOjAzLjUwMApVbmEgbWF0cml6IGVzIHVuYSBhcGxpY2FjacOzbiBsaW5lYWwuCgowMDowMy41MDAgLS0+IDAwOjA3LjAwMApFbCBwbGFubyBzZSBkZWZvcm1hIGxpbmVhbG1lbnRlOyBzaSBBIGVzIGludmVydGlibGUsIGxhcyByZWN0YXMgc2lndWVuIHNpZW5kbyByZWN0YXMuCgowMDowNy4wMDAgLS0+IDAwOjEwLjcwMApMYSBtYXRyaXogQSB0cmFuc2Zvcm1hIGxhIGN1YWRyw61jdWxhLCBlbCBjdWFkcmFkbyB1bmlkYWQgeSBsYSBiYXNlLgo=",
+      "vtt": "ii_transformacion.vtt",
+      "readyState": 2,
+      "cues": 3,
+      "mode": "showing"
+     }
+    ]
+   },
+   {
+    "src": "ii_gram_schmidt.mp4",
+    "tracks": [
+     {
+      "kind": "captions",
+      "src": "data:text/vtt;charset=utf-8;base64,V0VCVlRUCgowMDowMC4wMDAgLS0+IDAwOjAzLjUwMApHcmFt4oCTU2NobWlkdDogcmVzdGFyIGxhIHByb3llY2Npw7NuIHByb2R1Y2Ugb3J0b2dvbmFsaWRhZC4KCjAwOjAzLjUwMCAtLT4gMDA6MDguMDAwCkRhZG9zIHUgeSB2LCBzZSBjYWxjdWxhIGxhIHByb3llY2Npw7NuIGRlIHYgc29icmUgdS4KCjAwOjA4LjAwMCAtLT4gMDA6MTEuNjAwCkVsIGNvbXBvbmVudGUgcmVzdWx0YW50ZSBlcyBvcnRvZ29uYWwgYSB1Lgo=",
+      "vtt": "ii_gram_schmidt.vtt",
+      "readyState": 2,
+      "cues": 3,
+      "mode": "showing"
+     }
+    ]
+   }
+  ],
+  "mediaError": 0,
+  "loadMs": 595
+ },
+ "temas/tema-3.html": {
+  "errs": [],
+  "drills": 15,
+  "campos": 40,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 1002,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": null,
+  "videos": [],
+  "mediaError": 0,
+  "loadMs": 252
+ },
+ "temas/tema-4.html": {
+  "errs": [],
+  "drills": 20,
+  "campos": 109,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 954,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": null,
+  "videos": [
+   {
+    "src": "iv_gauss.mp4",
+    "tracks": [
+     {
+      "kind": "captions",
+      "src": "data:text/vtt;charset=utf-8;base64,V0VCVlRUCgowMDowMC4wMDAgLS0+IDAwOjA0LjAwMApFbGltaW5hY2nDs24gZGUgR2F1c3M6IGNhZGEgcGFzbyByZXN0YSB1biBtw7psdGlwbG8gZGUgdW5hIGZpbGEuCgowMDowNC4wMDAgLS0+IDAwOjA4LjUwMApGMiBtZW5vcyAyIEYxLCBkZXNwdcOpcyBGMyBtZW5vcyBGMS4KCjAwOjA4LjUwMCAtLT4gMDA6MTYuMjAwCkYzIG3DoXMgMyBGMiBkZWphIGVsIHNpc3RlbWEgdHJpYW5ndWxhcjogc3VzdGl0dWNpw7NuIGhhY2lhIGF0csOhcy4K",
+      "vtt": "iv_gauss.vtt",
+      "readyState": 2,
+      "cues": 3,
+      "mode": "showing"
+     }
+    ]
+   },
+   {
+    "src": "iv_minimos.mp4",
+    "tracks": [
+     {
+      "kind": "captions",
+      "src": "data:text/vtt;charset=utf-8;base64,V0VCVlRUCgowMDowMC4wMDAgLS0+IDAwOjA0LjAwMApNw61uaW1vcyBjdWFkcmFkb3M6IGxhIHJlY3RhIG1pbmltaXphIGxhIHN1bWEgZGUgZXJyb3JlcyBhbCBjdWFkcmFkby4KCjAwOjA0LjAwMCAtLT4gMDA6MDkuMDAwClNlIGFqdXN0YSBsYSByZWN0YSBhIGxvcyBkYXRvcyBvYnNlcnZhZG9zLgoKMDA6MDkuMDAwIC0tPiAwMDoxMy4zMDAKTG9zIHJlc2lkdW9zIHNvbiBsYXMgZGlzdGFuY2lhcyB2ZXJ0aWNhbGVzIGRlIGNhZGEgcHVudG8gYSBsYSByZWN0YS4K",
+      "vtt": "iv_minimos.vtt",
+      "readyState": 2,
+      "cues": 3,
+      "mode": "showing"
+     }
+    ]
+   }
+  ],
+  "mediaError": 0,
+  "loadMs": 469
+ },
+ "temas/tema-5.html": {
+  "errs": [],
+  "drills": 21,
+  "campos": 125,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 1073,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": null,
+  "videos": [
+   {
+    "src": "v_espectral.mp4",
+    "tracks": [
+     {
+      "kind": "captions",
+      "src": "data:text/vtt;charset=utf-8;base64,V0VCVlRUCgowMDowMC4wMDAgLS0+IDAwOjA0LjAwMApUZW9yZW1hIGVzcGVjdHJhbDogbGFzIGRpcmVjY2lvbmVzIHByb3BpYXMgc29sbyBzZSBlc2NhbGFuLgoKMDA6MDQuMDAwIC0tPiAwMDowOC41MDAKdjEgeSB2MiBzb24gZGlyZWNjaW9uZXMgcHJvcGlhczsgdSBubyBsbyBlcy4KCjAwOjA4LjUwMCAtLT4gMDA6MTEuMjAwCkJham8gbGEgdHJhbnNmb3JtYWNpw7NuLCB2MSB5IHYyIGNvbnNlcnZhbiBzdSBkaXJlY2Npw7NuLgo=",
+      "vtt": "v_espectral.vtt",
+      "readyState": 2,
+      "cues": 3,
+      "mode": "showing"
+     }
+    ]
+   },
+   {
+    "src": "v_svd.mp4",
+    "tracks": [
+     {
+      "kind": "captions",
+      "src": "data:text/vtt;charset=utf-8;base64,V0VCVlRUCgowMDowMC4wMDAgLS0+IDAwOjA0LjAwMApEZXNjb21wb3NpY2nDs24gU1ZEOiByb3RhciwgZXN0aXJhciB5IHJvdGFyLgoKMDA6MDQuNTAwIC0tPiAwMDowNy4yMDAKUHJpbWVybyByb3RhIFYgdHJhbnNwdWVzdGEuCgowMDowNy4yMDAgLS0+IDAwOjA5LjYwMApEZXNwdcOpcyBTaWdtYSBlc3RpcmEgbG9zIGVqZXMuCgowMDowOS42MDAgLS0+IDAwOjE0LjEwMApQb3Igw7psdGltbyByb3RhIFU6IEEgZXMgaWd1YWwgYSBVIFNpZ21hIFYgdHJhbnNwdWVzdGEuCg==",
+      "vtt": "v_svd.vtt",
+      "readyState": 2,
+      "cues": 4,
+      "mode": "showing"
+     }
+    ]
+   }
+  ],
+  "mediaError": 0,
+  "loadMs": 442
+ },
+ "examenes/examen-1.html": {
+  "errs": [],
+  "drills": 12,
+  "campos": 38,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 152,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": "01:59:58",
+  "videos": [],
+  "mediaError": 0,
+  "loadMs": 101
+ },
+ "examenes/examen-2.html": {
+  "errs": [],
+  "drills": 12,
+  "campos": 31,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 239,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": "01:59:58",
+  "videos": [],
+  "mediaError": 0,
+  "loadMs": 83
+ },
+ "examenes/examen-3.html": {
+  "errs": [],
+  "drills": 12,
+  "campos": 53,
+  "sinCampo": [],
+  "katexErrors": 0,
+  "katexSpans": 252,
+  "nav": true,
+  "navLabel": "Navegación principal",
+  "navLinks": 4,
+  "progressBars": 0,
+  "progressLabels": [],
+  "readingBar": true,
+  "timer": "01:59:58",
+  "videos": [],
+  "mediaError": 0,
+  "loadMs": 113
+ }
+}

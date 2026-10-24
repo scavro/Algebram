@@ -1,0 +1,2285 @@
+{
+ "tema-1": [
+  {
+   "id": "T1-N1",
+   "level": "normal",
+   "answer": {
+    "type": "number",
+    "expected": "109",
+    "exact": true
+   },
+   "statement": "<p>Escribe en base diez el número \\(1101101_2\\), expresado en el sistema binario.</p>"
+  },
+  {
+   "id": "T1-N2",
+   "level": "normal",
+   "answer": {
+    "type": "text",
+    "expected": "2220"
+   },
+   "statement": "<p>Escribe el número \\(78\\) en base \\(3\\). Introduce solo la secuencia de cifras de la representación, sin subíndice de base.</p>"
+  },
+  {
+   "id": "T1-N3",
+   "level": "normal",
+   "answer": {
+    "type": "choice",
+    "expected": 1,
+    "choices": [
+     "<p>Inyectiva y no sobreyectiva</p>",
+     "<p>Sobreyectiva y no inyectiva</p>",
+     "<p>Biyectiva</p>",
+     "<p>Ni inyectiva ni sobreyectiva</p>"
+    ]
+   },
+   "statement": "<p>Sea \\(f : \\{1, 2, 3\\} \\to \\{a, b\\}\\) la función definida por \\(f(1) = a\\), \\(f(2) = b\\), \\(f(3) = a\\). ¿Qué tipo de función es?</p>"
+  },
+  {
+   "id": "T1-N4",
+   "level": "normal",
+   "answer": {
+    "type": "expr",
+    "expected": "4/11"
+   },
+   "statement": "<p>Escribe como fracción irreducible el número \\(r = 0{,}\\overline{36} = 0{,}363636\\ldots\\).</p>"
+  },
+  {
+   "id": "T1-N5",
+   "level": "normal",
+   "answer": {
+    "type": "expr",
+    "expected": "2.34"
+   },
+   "statement": "<p>Redondea \\(2{,}345\\) a \\(3\\) cifras significativas aplicando el criterio de redondeo al par más cercano.</p>"
+  },
+  {
+   "id": "T1-N6",
+   "level": "normal",
+   "answer": {
+    "type": "expr",
+    "expected": "10+5*i"
+   },
+   "statement": "<p>Escribe el producto \\(z = (3 + 4i)(2 - i)\\) en la forma binómica \\(a + bi\\).</p>"
+  },
+  {
+   "id": "T1-M1",
+   "level": "medio",
+   "answer": {
+    "type": "expr",
+    "expected": "1/2+3/2*i"
+   },
+   "statement": "<p>Escribe el cociente \\(z = \\dfrac{2 + i}{1 - i}\\) en la forma binómica \\(a + bi\\).</p>"
+  },
+  {
+   "id": "T1-M2",
+   "level": "medio",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "mod": {
+      "type": "number",
+      "expected": "2",
+      "exact": true
+     },
+     "arg": {
+      "type": "expr",
+      "expected": "5*pi/6"
+     }
+    },
+    "labels": {
+     "mod": "Módulo |z|",
+     "arg": "Argumento principal"
+    }
+   },
+   "statement": "<p>Sea \\(z = -\\sqrt{3} + i\\). Calcula su módulo \\(|z|\\) y su argumento principal \\(\\arg(z) \\in (-\\pi, \\pi]\\).</p>"
+  },
+  {
+   "id": "T1-M3",
+   "level": "medio",
+   "answer": {
+    "type": "expr",
+    "expected": "16"
+   },
+   "statement": "<p>Calcula \\((1 + i)^8\\) y escribe el resultado en la forma \\(a + bi\\).</p>"
+  },
+  {
+   "id": "T1-M4",
+   "level": "medio",
+   "answer": {
+    "type": "exprset",
+    "expected": [
+     "2",
+     "-1+sqrt(3)*i",
+     "-1-sqrt(3)*i"
+    ]
+   },
+   "statement": "<p>Calcula las tres raíces cúbicas de \\(8\\), es decir, las soluciones en \\(\\mathbb{C}\\) de \\(z^3 = 8\\). Escríbelas en forma binómica, separadas por punto y coma.</p>"
+  },
+  {
+   "id": "T1-M5",
+   "level": "medio",
+   "answer": {
+    "type": "bool",
+    "expected": false
+   },
+   "statement": "<p>Verdadero o falso: para todo \\(z \\in \\mathbb{C}\\) se cumple \\(\\sqrt{z^2} = z\\), donde \\(\\sqrt{\\cdot}\\) denota la rama principal de la raíz cuadrada.</p>"
+  },
+  {
+   "id": "T1-E1",
+   "level": "examen",
+   "answer": {
+    "type": "number",
+    "expected": "93/8"
+   },
+   "statement": "<p>Escribe en base diez el número \\(1011{,}101_2\\). Da el resultado exacto, como fracción irreducible o como decimal exacto.</p>"
+  },
+  {
+   "id": "T1-E2",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "mod": {
+      "type": "number",
+      "expected": "2",
+      "exact": true
+     },
+     "arg": {
+      "type": "expr",
+      "expected": "pi/3"
+     },
+     "cub": {
+      "type": "expr",
+      "expected": "-8"
+     }
+    },
+    "labels": {
+     "mod": "Módulo |z|",
+     "arg": "Argumento principal",
+     "cub": "z^3"
+    }
+   },
+   "statement": "<p>Sea \\(z = 1 + \\sqrt{3}\\,i\\). Calcula su módulo, su argumento principal (en \\(( -\\pi, \\pi]\\)) y el valor de \\(z^3\\) en forma binómica.</p>"
+  },
+  {
+   "id": "T1-E3",
+   "level": "examen",
+   "answer": {
+    "type": "exprset",
+    "expected": [
+     "2",
+     "2*i",
+     "-2",
+     "-2*i"
+    ]
+   },
+   "statement": "<p>Obtén las cuatro raíces cuartas de \\(16\\), es decir, las soluciones en \\(\\mathbb{C}\\) de \\(z^4 = 16\\). Escríbelas en forma binómica, separadas por punto y coma.</p>"
+  },
+  {
+   "id": "T1-E4",
+   "level": "examen",
+   "answer": {
+    "type": "expr",
+    "expected": "sqrt(3)/2"
+   },
+   "statement": "<p>Usando la fórmula de Euler, simplifica \\(w = \\dfrac{e^{i\\pi/3} - e^{-i\\pi/3}}{2i}\\) y escribe el resultado en forma exacta.</p>"
+  }
+ ],
+ "tema-2": [
+  {
+   "id": "T2-N1",
+   "level": "normal",
+   "answer": {
+    "type": "vector",
+    "rows": 3,
+    "cols": 1,
+    "expected": [
+     [
+      "4"
+     ],
+     [
+      "-11"
+     ],
+     [
+      "13"
+     ]
+    ]
+   },
+   "statement": "<p>Sean \\(u=(2,-1,3)\\) y \\(v=(1,4,-2)\\) vectores de \\(\\mathbb{R}^{3}\\). Calcula la combinación lineal \\(w=3u-2v\\).</p>"
+  },
+  {
+   "id": "T2-N2",
+   "level": "normal",
+   "answer": {
+    "type": "matrix",
+    "rows": 2,
+    "cols": 2,
+    "expected": [
+     [
+      "2",
+      "7"
+     ],
+     [
+      "8",
+      "8"
+     ]
+    ]
+   },
+   "statement": "<p>Calcula el producto \\(AB\\) de las matrices \\(A=\\begin{pmatrix}1&2&0\\\\3&1&2\\end{pmatrix}\\) y \\(B=\\begin{pmatrix}2&1\\\\0&3\\\\1&1\\end{pmatrix}\\).</p>"
+  },
+  {
+   "id": "T2-N3",
+   "level": "normal",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "prod": {
+      "type": "matrix",
+      "rows": 2,
+      "cols": 2,
+      "expected": [
+       [
+        "26",
+        "30"
+       ],
+       [
+        "38",
+        "44"
+       ]
+      ]
+     },
+     "tr": {
+      "type": "number",
+      "expected": "70"
+     }
+    },
+    "labels": {
+     "prod": "Matriz C = A transpuesta por B",
+     "tr": "Traza de C"
+    }
+   },
+   "statement": "<p>Sean \\(A=\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}\\) y \\(B=\\begin{pmatrix}5&6\\\\7&8\\end{pmatrix}\\). Calcula la matriz \\(C=A^{\\top}B\\) y su traza \\(\\operatorname{tr}(C)\\).</p>"
+  },
+  {
+   "id": "T2-N4",
+   "level": "normal",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "norm": {
+      "type": "number",
+      "expected": "7"
+     },
+     "dist": {
+      "type": "number",
+      "expected": "3*sqrt(2)"
+     }
+    },
+    "labels": {
+     "norm": "Módulo de u",
+     "dist": "Distancia d(u,v)"
+    }
+   },
+   "statement": "<p>Sean \\(u=(2,3,6)\\) y \\(v=(1,2,2)\\) en \\(\\mathbb{R}^{3}\\). Calcula el módulo \\(\\|u\\|\\) y la distancia euclídea \\(d(u,v)=\\|u-v\\|\\).</p>"
+  },
+  {
+   "id": "T2-N5",
+   "level": "normal",
+   "answer": {
+    "type": "bool",
+    "expected": true
+   },
+   "statement": "<p>¿Es ortogonal la matriz \\(Q=\\dfrac{1}{5}\\begin{pmatrix}3&4\\\\4&-3\\end{pmatrix}\\)? Responde verdadero o falso.</p>"
+  },
+  {
+   "id": "T2-N6",
+   "level": "normal",
+   "answer": {
+    "type": "matrix",
+    "rows": 2,
+    "cols": 2,
+    "expected": [
+     [
+      "3",
+      "-5"
+     ],
+     [
+      "-1",
+      "2"
+     ]
+    ]
+   },
+   "statement": "<p>Calcula la matriz inversa de \\(A=\\begin{pmatrix}2&5\\\\1&3\\end{pmatrix}\\). Escribe en cada celda el número correspondiente.</p>"
+  },
+  {
+   "id": "T2-M1",
+   "level": "medio",
+   "answer": {
+    "type": "matrix",
+    "rows": 3,
+    "cols": 2,
+    "expected": [
+     [
+      "7",
+      "10"
+     ],
+     [
+      "1",
+      "2"
+     ],
+     [
+      "3",
+      "7"
+     ]
+    ]
+   },
+   "statement": "<p>Sea \\(X=\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}\\) con los bloques \\(A=\\begin{pmatrix}1&2\\\\0&1\\end{pmatrix}\\), \\(B=\\begin{pmatrix}1\\\\0\\end{pmatrix}\\), \\(C=\\begin{pmatrix}0&1\\end{pmatrix}\\), \\(D=(1)\\); e \\(Y=\\begin{pmatrix}E\\\\F\\end{pmatrix}\\) con \\(E=\\begin{pmatrix}3&1\\\\1&2\\end{pmatrix}\\) y \\(F=\\begin{pmatrix}2&5\\end{pmatrix}\\). Calcula el producto \\(XY\\) por bloques.</p>"
+  },
+  {
+   "id": "T2-M2",
+   "level": "medio",
+   "answer": {
+    "type": "matrix",
+    "rows": 3,
+    "cols": 3,
+    "expected": [
+     [
+      "-24",
+      "18",
+      "5"
+     ],
+     [
+      "20",
+      "-15",
+      "-4"
+     ],
+     [
+      "-5",
+      "4",
+      "1"
+     ]
+    ]
+   },
+   "statement": "<p>Calcula la matriz inversa de \\(A=\\begin{pmatrix}1&2&3\\\\0&1&4\\\\5&6&0\\end{pmatrix}\\).</p>"
+  },
+  {
+   "id": "T2-M3",
+   "level": "medio",
+   "answer": {
+    "type": "vector",
+    "rows": 3,
+    "cols": 1,
+    "expected": [
+     [
+      "1"
+     ],
+     [
+      "-1"
+     ],
+     [
+      "1"
+     ]
+    ]
+   },
+   "statement": "<p>Sean \\(v_1=(1,1,0)\\) y \\(v_2=(2,0,1)\\) en \\(\\mathbb{R}^{3}\\). Aplica el primer paso del procedimiento de Gram–Schmidt: calcula \\(u_2=v_2-\\dfrac{v_1^{\\top}v_2}{\\|v_1\\|^{2}}v_1\\) (sin normalizar).</p>"
+  },
+  {
+   "id": "T2-M4",
+   "level": "medio",
+   "answer": {
+    "type": "vector",
+    "rows": 3,
+    "cols": 1,
+    "expected": [
+     [
+      "1"
+     ],
+     [
+      "2"
+     ],
+     [
+      "1"
+     ]
+    ]
+   },
+   "statement": "<p>Sea el subespacio \\(V=\\langle (1,1,0),(0,1,1)\\rangle\\subset\\mathbb{R}^{3}\\). Calcula la proyección ortogonal de \\(w=(3,0,3)\\) sobre \\(V\\).</p>"
+  },
+  {
+   "id": "T2-M5",
+   "level": "medio",
+   "answer": {
+    "type": "vector",
+    "rows": 3,
+    "cols": 1,
+    "expected": [
+     [
+      "0"
+     ],
+     [
+      "2"
+     ],
+     [
+      "1"
+     ]
+    ]
+   },
+   "statement": "<p>Sea la base ordenada de \\(\\mathbb{R}^{3}\\) dada por \\(w_1=(1,0,0)\\), \\(w_2=(1,1,0)\\), \\(w_3=(0,1,1)\\). Calcula las coordenadas de \\(u=(2,3,1)\\) respecto de esa base.</p>"
+  },
+  {
+   "id": "T2-E1",
+   "level": "examen",
+   "answer": {
+    "type": "matrix",
+    "rows": 3,
+    "cols": 3,
+    "expected": [
+     [
+      "1",
+      "-1",
+      "1"
+     ],
+     [
+      "-38",
+      "41",
+      "-34"
+     ],
+     [
+      "27",
+      "-29",
+      "24"
+     ]
+    ]
+   },
+   "statement": "<p>Sea \\(A=\\begin{pmatrix}2&5&7\\\\6&3&4\\\\5&-2&-3\\end{pmatrix}\\). Calcula \\(A^{-1}\\).</p>"
+  },
+  {
+   "id": "T2-E2",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "proj": {
+      "type": "vector",
+      "rows": 3,
+      "cols": 1,
+      "expected": [
+       [
+        "1"
+       ],
+       [
+        "0"
+       ],
+       [
+        "1"
+       ]
+      ]
+     },
+     "perp": {
+      "type": "vector",
+      "rows": 3,
+      "cols": 1,
+      "expected": [
+       [
+        "1"
+       ],
+       [
+        "1"
+       ],
+       [
+        "-1"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "proj": "Proyección sobre V",
+     "perp": "Componente ortogonal"
+    }
+   },
+   "statement": "<p>Sea \\(V=\\langle (1,0,1),(0,1,1)\\rangle\\subset\\mathbb{R}^{3}\\) y \\(w=(2,1,0)\\). Calcula la proyección ortogonal \\(\\operatorname{proy}_V(w)\\) y el componente ortogonal \\(w-\\operatorname{proy}_V(w)\\).</p>"
+  },
+  {
+   "id": "T2-E3",
+   "level": "examen",
+   "answer": {
+    "type": "choice",
+    "expected": 1,
+    "choices": [
+     "<p>\\(A=\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}\\)</p>",
+     "<p>\\(B=\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\\)</p>",
+     "<p>\\(C=\\begin{pmatrix}1&1\\\\1&-1\\end{pmatrix}\\)</p>",
+     "<p>\\(D=\\begin{pmatrix}2&0\\\\0&2\\end{pmatrix}\\)</p>"
+    ]
+   },
+   "statement": "<p>¿Cuál de las siguientes matrices es ortogonal?</p>"
+  },
+  {
+   "id": "T2-E4",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "orth": {
+      "type": "bool",
+      "expected": true
+     },
+     "inv": {
+      "type": "matrix",
+      "rows": 3,
+      "cols": 3,
+      "expected": [
+       [
+        "2/7",
+        "6/7",
+        "-3/7"
+       ],
+       [
+        "3/7",
+        "2/7",
+        "6/7"
+       ],
+       [
+        "6/7",
+        "-3/7",
+        "-2/7"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "orth": "¿Es Q ortogonal?",
+     "inv": "Matriz Q inversa"
+    }
+   },
+   "statement": "<p>Sea \\(Q=\\dfrac{1}{7}\\begin{pmatrix}2&3&6\\\\6&2&-3\\\\-3&6&-2\\end{pmatrix}\\). (a) ¿Es \\(Q\\) una matriz ortogonal? (b) Calcula \\(Q^{-1}\\).</p>"
+  }
+ ],
+ "tema-3": [
+  {
+   "id": "T3-N1",
+   "level": "normal",
+   "answer": {
+    "type": "number",
+    "expected": "10",
+    "exact": true
+   },
+   "statement": "<p>Calcula el determinante de la matriz \\(A = \\begin{pmatrix} 3 &amp; 1 \\\\ 2 &amp; 4 \\end{pmatrix}\\).</p>"
+  },
+  {
+   "id": "T3-N2",
+   "level": "normal",
+   "answer": {
+    "type": "number",
+    "expected": "15",
+    "exact": true
+   },
+   "statement": "<p>Calcula el determinante de \\(A = \\begin{pmatrix} 2 &amp; 0 &amp; 1 \\\\ 1 &amp; 3 &amp; 2 \\\\ 4 &amp; 1 &amp; 5 \\end{pmatrix}\\) desarrollando por la primera fila.</p>"
+  },
+  {
+   "id": "T3-N3",
+   "level": "normal",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "detAB": {
+      "type": "number",
+      "expected": "-6",
+      "exact": true
+     },
+     "detInv": {
+      "type": "number",
+      "expected": "-1/2"
+     }
+    },
+    "labels": {
+     "detAB": "det(AB)",
+     "detInv": "det(A inversa)"
+    }
+   },
+   "statement": "<p>Sea \\(A \\in \\mathbb{R}^{3 \\times 3}\\) con \\(\\det(A) = -2\\) y \\(B \\in \\mathbb{R}^{3 \\times 3}\\) con \\(\\det(B) = 3\\). Calcula \\(\\det(AB)\\) y \\(\\det(A^{-1})\\).</p>"
+  },
+  {
+   "id": "T3-N4",
+   "level": "normal",
+   "answer": {
+    "type": "number",
+    "expected": "2",
+    "exact": true
+   },
+   "statement": "<p>Calcula el rango de la matriz \\(A = \\begin{pmatrix} 1 &amp; 2 &amp; 3 \\\\ 2 &amp; 4 &amp; 6 \\\\ 1 &amp; 1 &amp; 1 \\end{pmatrix}\\).</p>"
+  },
+  {
+   "id": "T3-N5",
+   "level": "normal",
+   "answer": {
+    "type": "exprset",
+    "expected": [
+     "4",
+     "-2"
+    ]
+   },
+   "statement": "<p>Calcula los autovalores de la matriz \\(A = \\begin{pmatrix} 4 &amp; 7 \\\\ 0 &amp; -2 \\end{pmatrix}\\). Escribe los valores separados por punto y coma.</p>"
+  },
+  {
+   "id": "T3-N6",
+   "level": "normal",
+   "answer": {
+    "type": "number",
+    "expected": "3",
+    "exact": true
+   },
+   "statement": "<p>Sea la forma cuadrática \\(f(x) = x^{\\top} A x\\) con \\(A = \\begin{pmatrix} 2 &amp; 1 \\\\ 1 &amp; 3 \\end{pmatrix}\\). Evalúa \\(f\\) en \\(x = (1, -1)\\).</p>"
+  },
+  {
+   "id": "T3-M1",
+   "level": "medio",
+   "answer": {
+    "type": "vector",
+    "rows": 3,
+    "cols": 1,
+    "expected": [
+     [
+      "1"
+     ],
+     [
+      "-1"
+     ],
+     [
+      "1"
+     ]
+    ]
+   },
+   "statement": "<p>Sea \\(A = \\begin{pmatrix} 1 &amp; 1 &amp; 0 \\\\ 0 &amp; 1 &amp; 1 \\\\ 1 &amp; 2 &amp; 1 \\end{pmatrix}\\). Halla el vector del núcleo de \\(A\\) cuya tercera componente vale \\(1\\) y escríbelo como columna de tres componentes.</p>"
+  },
+  {
+   "id": "T3-M2",
+   "level": "medio",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "col": {
+      "type": "number",
+      "expected": "2",
+      "exact": true
+     },
+     "fil": {
+      "type": "number",
+      "expected": "2",
+      "exact": true
+     },
+     "nul": {
+      "type": "number",
+      "expected": "1",
+      "exact": true
+     },
+     "nulT": {
+      "type": "number",
+      "expected": "1",
+      "exact": true
+     }
+    },
+    "labels": {
+     "col": "dim col(A)",
+     "fil": "dim fil(A)",
+     "nul": "dim nul(A)",
+     "nulT": "dim nul(A traspuesta)"
+    }
+   },
+   "statement": "<p>Para \\(A = \\begin{pmatrix} 1 &amp; 2 &amp; 3 \\\\ 2 &amp; 4 &amp; 6 \\\\ 1 &amp; 1 &amp; 1 \\end{pmatrix}\\) calcula las dimensiones de los cuatro subespacios fundamentales: \\(\\mathrm{col}(A)\\), \\(\\mathrm{fil}(A)\\), \\(\\mathrm{nul}(A)\\) y \\(\\mathrm{nul}(A^{\\top})\\).</p>"
+  },
+  {
+   "id": "T3-M3",
+   "level": "medio",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "malg": {
+      "type": "number",
+      "expected": "2",
+      "exact": true
+     },
+     "mgeo": {
+      "type": "number",
+      "expected": "1",
+      "exact": true
+     }
+    },
+    "labels": {
+     "malg": "Multiplicidad algebraica",
+     "mgeo": "Multiplicidad geométrica"
+    }
+   },
+   "statement": "<p>Sea \\(A = \\begin{pmatrix} 2 &amp; 1 &amp; 0 \\\\ 0 &amp; 2 &amp; 0 \\\\ 0 &amp; 0 &amp; 3 \\end{pmatrix}\\). Indica la multiplicidad algebraica y la multiplicidad geométrica del autovalor \\(\\lambda = 2\\).</p>"
+  },
+  {
+   "id": "T3-M4",
+   "level": "medio",
+   "answer": {
+    "type": "bool",
+    "expected": true
+   },
+   "statement": "<p>Verdadero o falso: si \\(A \\in \\mathbb{R}^{n \\times n}\\) es simétrica, entonces todos sus autovalores son números reales.</p>"
+  },
+  {
+   "id": "T3-M5",
+   "level": "medio",
+   "answer": {
+    "type": "matrix",
+    "rows": 3,
+    "cols": 3,
+    "expected": [
+     [
+      "1",
+      "1",
+      "3"
+     ],
+     [
+      "1",
+      "2",
+      "2"
+     ],
+     [
+      "3",
+      "2",
+      "3"
+     ]
+    ]
+   },
+   "statement": "<p>Dada la forma cuadrática \\(f(x) = x_1^2 + 2x_1x_2 + 6x_1x_3 + 2x_2^2 + 4x_2x_3 + 3x_3^2\\), escribe la matriz simétrica \\(A\\) tal que \\(f(x) = x^{\\top}Ax\\).</p>"
+  },
+  {
+   "id": "T3-E1",
+   "level": "examen",
+   "answer": {
+    "type": "number",
+    "expected": "-6",
+    "exact": true
+   },
+   "statement": "<p>Calcula el determinante de \\(D = \\begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4 \\\\ 3 &amp; 4 &amp; 5 &amp; 6 \\\\ 0 &amp; 0 &amp; 2 &amp; 1 \\\\ 0 &amp; 0 &amp; 1 &amp; 2 \\end{pmatrix}\\).</p>"
+  },
+  {
+   "id": "T3-E2",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "lam": {
+      "type": "number",
+      "expected": "4",
+      "exact": true
+     },
+     "v": {
+      "type": "vector",
+      "rows": 3,
+      "cols": 1,
+      "expected": [
+       [
+        "1"
+       ],
+       [
+        "1"
+       ],
+       [
+        "1"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "lam": "Mayor autovalor",
+     "v": "Autovector (columna)"
+    }
+   },
+   "statement": "<p>Sea \\(A = \\begin{pmatrix} 2 &amp; 1 &amp; 1 \\\\ 1 &amp; 2 &amp; 1 \\\\ 1 &amp; 1 &amp; 2 \\end{pmatrix}\\). Calcula su mayor autovalor y un autovector asociado de primera componente \\(1\\).</p>"
+  },
+  {
+   "id": "T3-E3",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "col": {
+      "type": "number",
+      "expected": "2",
+      "exact": true
+     },
+     "fil": {
+      "type": "number",
+      "expected": "2",
+      "exact": true
+     },
+     "nul": {
+      "type": "number",
+      "expected": "2",
+      "exact": true
+     },
+     "nulT": {
+      "type": "number",
+      "expected": "1",
+      "exact": true
+     }
+    },
+    "labels": {
+     "col": "dim col(A)",
+     "fil": "dim fil(A)",
+     "nul": "dim nul(A)",
+     "nulT": "dim nul(A traspuesta)"
+    }
+   },
+   "statement": "<p>Sea \\(A = \\begin{pmatrix} 1 &amp; 0 &amp; 1 &amp; 1 \\\\ 0 &amp; 1 &amp; 1 &amp; 2 \\\\ 1 &amp; 1 &amp; 2 &amp; 3 \\end{pmatrix}\\). Calcula las dimensiones de \\(\\mathrm{col}(A)\\), \\(\\mathrm{fil}(A)\\), \\(\\mathrm{nul}(A)\\) y \\(\\mathrm{nul}(A^{\\top})\\).</p>"
+  },
+  {
+   "id": "T3-E4",
+   "level": "examen",
+   "answer": {
+    "type": "choice",
+    "expected": 1,
+    "choices": [
+     "<p>\\(\\det(A + B) = \\det(A) + \\det(B)\\)</p>",
+     "<p>\\(\\det(AB) = \\det(A)\\det(B)\\)</p>",
+     "<p>\\(\\det(2A) = 2\\det(A)\\)</p>",
+     "<p>\\(\\det(A + B) = \\det(A)\\det(B)\\)</p>"
+    ]
+   },
+   "statement": "<p>Sea \\(A, B \\in \\mathbb{R}^{n \\times n}\\). ¿Cuál de las siguientes afirmaciones es siempre cierta?</p>"
+  }
+ ],
+ "tema-4": [
+  {
+   "id": "T4-N1",
+   "level": "normal",
+   "answer": {
+    "type": "vector",
+    "rows": 3,
+    "cols": 1,
+    "expected": [
+     [
+      "1"
+     ],
+     [
+      "2"
+     ],
+     [
+      "3"
+     ]
+    ]
+   },
+   "statement": "<p>Resuelve por eliminación de Gauss el sistema</p>\\[ \\begin{cases} x + y + z = 6, \\\\ 2x - y + z = 3, \\\\ x + 2y - z = 2, \\end{cases} \\]<p>y escribe la solución \\((x, y, z)\\) como vector columna.</p>"
+  },
+  {
+   "id": "T4-N2",
+   "level": "normal",
+   "answer": {
+    "type": "choice",
+    "expected": 2,
+    "choices": [
+     "<p>Compatible determinado (solución única).</p>",
+     "<p>Compatible indeterminado (infinitas soluciones).</p>",
+     "<p>Incompatible (sin solución).</p>"
+    ]
+   },
+   "statement": "<p>Considera el sistema</p>\\[ \\begin{cases} x + y = 1, \\\\ 2x + 2y = 3. \\end{cases} \\]<p>Aplicando el teorema de Rouché–Frobenius, ¿qué tipo de sistema es?</p>"
+  },
+  {
+   "id": "T4-N3",
+   "level": "normal",
+   "answer": {
+    "type": "expr",
+    "expected": "4-s-t"
+   },
+   "statement": "<p>El sistema</p>\\[ \\begin{cases} x + y + z = 4, \\\\ 2x + 2y + 2z = 8 \\end{cases} \\]<p>es compatible indeterminado. Toma como parámetros libres \\(y = s\\) y \\(z = t\\), y escribe \\(x\\) en función de \\(s\\) y \\(t\\) (por ejemplo, <code>4-s-t</code>).</p>"
+  },
+  {
+   "id": "T4-N4",
+   "level": "normal",
+   "answer": {
+    "type": "vector",
+    "rows": 2,
+    "cols": 1,
+    "expected": [
+     [
+      "2"
+     ],
+     [
+      "2"
+     ]
+    ]
+   },
+   "statement": "<p>Calcula la proyección ortogonal del vector \\(b = (3, 1)\\) sobre el vector \\(a = (1, 1)\\),</p>\\[ \\operatorname{proj}_{a}(b) = \\frac{\\langle a, b \\rangle}{\\langle a, a \\rangle}\\, a, \\]<p>y escribe el resultado como vector columna.</p>"
+  },
+  {
+   "id": "T4-N5",
+   "level": "normal",
+   "answer": {
+    "type": "bool",
+    "expected": false
+   },
+   "statement": "<p>¿Es compatible el sistema \\(\\begin{cases} x + 2y = 3, \\\\ 2x + 4y = 7 \\end{cases}\\)? Responde verdadero o falso.</p>"
+  },
+  {
+   "id": "T4-N6",
+   "level": "normal",
+   "answer": {
+    "type": "matrix",
+    "rows": 2,
+    "cols": 2,
+    "expected": [
+     [
+      "3",
+      "3"
+     ],
+     [
+      "3",
+      "5"
+     ]
+    ]
+   },
+   "statement": "<p>Sea \\(A = \\begin{pmatrix} 1 & 0 \\\\ 1 & 1 \\\\ 1 & 2 \\end{pmatrix}\\). Escribe la matriz \\(A^{\\top} A\\) que aparece en las ecuaciones normales \\(A^{\\top} A x = A^{\\top} b\\).</p>"
+  },
+  {
+   "id": "T4-M1",
+   "level": "medio",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "l21": {
+      "type": "number",
+      "expected": "2",
+      "exact": true
+     },
+     "U": {
+      "type": "matrix",
+      "rows": 2,
+      "cols": 2,
+      "expected": [
+       [
+        "2",
+        "1"
+       ],
+       [
+        "0",
+        "1"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "l21": "Coeficiente \\(l_{21}\\)",
+     "U": "Matriz \\(U\\)"
+    }
+   },
+   "statement": "<p>Sea \\(A = \\begin{pmatrix} 2 & 1 \\\\ 4 & 3 \\end{pmatrix}\\). Todos sus menores principales son no nulos, así que admite factorización \\(A = LU\\) con \\(L = \\begin{pmatrix} 1 & 0 \\\\ l_{21} & 1 \\end{pmatrix}\\) unitriangular inferior y \\(U\\) triangular superior.</p><p>Escribe el coeficiente \\(l_{21}\\) y la matriz \\(U\\).</p>"
+  },
+  {
+   "id": "T4-M2",
+   "level": "medio",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "Q": {
+      "type": "matrix",
+      "rows": 3,
+      "cols": 2,
+      "expected": [
+       [
+        "1",
+        "0"
+       ],
+       [
+        "0",
+        "1/sqrt(5)"
+       ],
+       [
+        "0",
+        "2/sqrt(5)"
+       ]
+      ]
+     },
+     "R": {
+      "type": "matrix",
+      "rows": 2,
+      "cols": 2,
+      "expected": [
+       [
+        "1",
+        "2"
+       ],
+       [
+        "0",
+        "sqrt(5)"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "Q": "Matriz \\(Q\\)",
+     "R": "Matriz \\(R\\)"
+    }
+   },
+   "statement": "<p>Aplica el procedimiento de Gram–Schmidt para hallar la factorización QR reducida \\(A = Q R\\) de</p>\\[ A = \\begin{pmatrix} 1 & 2 \\\\ 0 & 1 \\\\ 0 & 2 \\end{pmatrix}, \\]<p>con \\(Q\\) de columnas ortonormales y \\(R\\) triangular superior con diagonal positiva. Escribe \\(Q\\) (matriz \\(3 \\times 2\\)) y \\(R\\) (matriz \\(2 \\times 2\\)).</p>"
+  },
+  {
+   "id": "T4-M3",
+   "level": "medio",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "m": {
+      "type": "number",
+      "expected": "2"
+     },
+     "n": {
+      "type": "number",
+      "expected": "1/2"
+     }
+    },
+    "labels": {
+     "m": "Pendiente \\(m\\)",
+     "n": "Ordenada \\(n\\)"
+    }
+   },
+   "statement": "<p>Ajusta por mínimos cuadrados la recta \\(y = m x + n\\) a los puntos \\((0, 1)\\), \\((1, 2)\\), \\((2, 4)\\) y \\((3, 7)\\). Escribe la pendiente \\(m\\) y la ordenada \\(n\\).</p>"
+  },
+  {
+   "id": "T4-M4",
+   "level": "medio",
+   "answer": {
+    "type": "number",
+    "expected": "21/2"
+   },
+   "statement": "<p>El ajuste por mínimos cuadrados de una recta a las alturas (en decímetros) de cuatro plantas en función de su edad (en semanas) es \\(y = 2x + \\tfrac{1}{2}\\). ¿Qué altura predice el modelo a las \\(5\\) semanas? Escribe el resultado como fracción.</p>"
+  },
+  {
+   "id": "T4-M5",
+   "level": "medio",
+   "answer": {
+    "type": "exprset",
+    "expected": [
+     "i",
+     "-i"
+    ]
+   },
+   "statement": "<p>Sea \\(A = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}\\) (la rotación de \\(\\pi/2\\) del plano). Por el teorema de Schur, \\(A = Q U Q^{*}\\) con \\(U\\) triangular superior cuya diagonal contiene los autovalores de \\(A\\). Escribe esos autovalores (sepáralos con punto y coma, por ejemplo <code>i; -i</code>).</p>"
+  },
+  {
+   "id": "T4-E1",
+   "level": "examen",
+   "answer": {
+    "type": "vector",
+    "rows": 3,
+    "cols": 1,
+    "expected": [
+     [
+      "1"
+     ],
+     [
+      "2"
+     ],
+     [
+      "3"
+     ]
+    ]
+   },
+   "statement": "<p>Resuelva el sistema de ecuaciones</p>\\[ \\begin{cases} y + z = 5, \\\\ x + z = 4, \\\\ x + y = 3. \\end{cases} \\]<p>Escriba la solución \\((x, y, z)\\) como vector columna.</p>"
+  },
+  {
+   "id": "T4-E2",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "rangoA": {
+      "type": "number",
+      "expected": "1",
+      "exact": true
+     },
+     "rangoC": {
+      "type": "number",
+      "expected": "2",
+      "exact": true
+     }
+    },
+    "labels": {
+     "rangoA": "\\(\\operatorname{rng}(A)\\)",
+     "rangoC": "\\(\\operatorname{rng}([[A,b]])\\)"
+    }
+   },
+   "statement": "<p>Considere el sistema</p>\\[ \\begin{cases} x + y = 1, \\\\ 2x + 2y = 2, \\\\ x + y = 0. \\end{cases} \\]<p>Aplique el teorema de Rouché–Frobenius: escriba el rango de la matriz de coeficientes y el rango de la matriz ampliada.</p>"
+  },
+  {
+   "id": "T4-E3",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "L": {
+      "type": "matrix",
+      "rows": 3,
+      "cols": 3,
+      "expected": [
+       [
+        "1",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "1",
+        "0"
+       ],
+       [
+        "1",
+        "1",
+        "1"
+       ]
+      ]
+     },
+     "U": {
+      "type": "matrix",
+      "rows": 3,
+      "cols": 3,
+      "expected": [
+       [
+        "1",
+        "0",
+        "1"
+       ],
+       [
+        "0",
+        "1",
+        "1"
+       ],
+       [
+        "0",
+        "0",
+        "-2"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "L": "Matriz \\(L\\)",
+     "U": "Matriz \\(U\\)"
+    }
+   },
+   "statement": "<p>Factorice la matriz \\(A = \\begin{pmatrix} 0 & 1 & 1 \\\\ 1 & 0 & 1 \\\\ 1 & 1 & 0 \\end{pmatrix}\\) en la forma \\(A = P L U\\), intercambiando las filas \\(1\\) y \\(2\\) en el primer paso del método de Gauss y sin más permutaciones. Aquí \\(L\\) es unitriangular inferior y \\(U\\) es trapezoidal superior. Escriba \\(L\\) y \\(U\\).</p>"
+  },
+  {
+   "id": "T4-E4",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "m": {
+      "type": "number",
+      "expected": "1",
+      "exact": true
+     },
+     "n": {
+      "type": "number",
+      "expected": "2",
+      "exact": true
+     },
+     "pred": {
+      "type": "number",
+      "expected": "6",
+      "exact": true
+     }
+    },
+    "labels": {
+     "m": "Pendiente \\(m\\)",
+     "n": "Ordenada \\(n\\)",
+     "pred": "Predicción \\(y(4)\\)"
+    }
+   },
+   "statement": "<p>Ajuste por mínimos cuadrados la recta \\(y = m x + n\\) a los puntos \\((0, 3)\\), \\((1, 1)\\) y \\((2, 5)\\). Escriba la pendiente \\(m\\), la ordenada \\(n\\) y la predicción del modelo para \\(x = 4\\).</p>"
+  }
+ ],
+ "tema-5": [
+  {
+   "id": "T5-N1",
+   "level": "normal",
+   "answer": {
+    "type": "exprset",
+    "expected": [
+     "5",
+     "2"
+    ]
+   },
+   "statement": "<p>Calcula los autovalores de la matriz \\[ A = \\begin{pmatrix} 4 & 1 \\\\ 2 & 3 \\end{pmatrix}. \\] Escríbelos separados por punto y coma (por ejemplo <code>3;-1</code>).</p>"
+  },
+  {
+   "id": "T5-N2",
+   "level": "normal",
+   "answer": {
+    "type": "bool",
+    "expected": false
+   },
+   "statement": "<p>Decide si es verdadero o falso: la matriz \\[ A = \\begin{pmatrix} 3 & 1 \\\\ 0 & 3 \\end{pmatrix} \\] es diagonalizable.</p>"
+  },
+  {
+   "id": "T5-N3",
+   "level": "normal",
+   "answer": {
+    "type": "matrix",
+    "rows": 2,
+    "cols": 2,
+    "expected": [
+     [
+      "2",
+      "0"
+     ],
+     [
+      "1",
+      "2"
+     ]
+    ]
+   },
+   "statement": "<p>Calcula la factorización de Cholesky \\(A=LL^{\\top}\\) de \\[ A = \\begin{pmatrix} 4 & 2 \\\\ 2 & 5 \\end{pmatrix}, \\] con \\(L\\) triangular inferior de diagonal positiva. Escribe la matriz \\(L\\).</p>"
+  },
+  {
+   "id": "T5-N4",
+   "level": "normal",
+   "answer": {
+    "type": "choice",
+    "expected": 2,
+    "choices": [
+     "<p>Definida positiva</p>",
+     "<p>Semidefinida positiva, pero no definida positiva</p>",
+     "<p>Indefinida</p>",
+     "<p>Definida negativa</p>"
+    ]
+   },
+   "statement": "<p>La forma cuadrática \\(q(x,y)=2x^{2}+6xy+2y^{2}\\), de matriz simétrica \\(A=\\begin{pmatrix} 2 & 3 \\\\ 3 & 2 \\end{pmatrix}\\), es:</p>"
+  },
+  {
+   "id": "T5-N5",
+   "level": "normal",
+   "answer": {
+    "type": "matrix",
+    "rows": 2,
+    "cols": 2,
+    "expected": [
+     [
+      "1/2",
+      "0"
+     ],
+     [
+      "0",
+      "1/4"
+     ]
+    ]
+   },
+   "statement": "<p>Calcula la pseudoinversa de Moore–Penrose de la matriz diagonal \\[ A = \\begin{pmatrix} 2 & 0 \\\\ 0 & 4 \\end{pmatrix}. \\]</p>"
+  },
+  {
+   "id": "T5-N6",
+   "level": "normal",
+   "answer": {
+    "type": "number",
+    "expected": "3",
+    "exact": true
+   },
+   "statement": "<p>Calcula la norma espectral (norma \\(2\\)) de \\[ A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix}. \\] Recuerda que \\(\\|A\\|_{2}=\\sigma_{1}\\), el mayor valor singular de \\(A\\).</p>"
+  },
+  {
+   "id": "T5-M1",
+   "level": "medio",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "P": {
+      "type": "matrix",
+      "rows": 2,
+      "cols": 2,
+      "expected": [
+       [
+        "1",
+        "1"
+       ],
+       [
+        "2",
+        "1"
+       ]
+      ]
+     },
+     "D": {
+      "type": "matrix",
+      "rows": 2,
+      "cols": 2,
+      "expected": [
+       [
+        "3",
+        "0"
+       ],
+       [
+        "0",
+        "4"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "P": "Matriz P",
+     "D": "Matriz D"
+    }
+   },
+   "statement": "<p>Diagonaliza por similitud la matriz \\[ A = \\begin{pmatrix} 5 & -1 \\\\ 2 & 2 \\end{pmatrix}. \\] Escribe \\(A=PDP^{-1}\\) con \\(D=\\operatorname{diag}(\\lambda_{1},\\lambda_{2})\\), \\(\\lambda_{1}\\lt \\lambda_{2}\\), y \\(P\\) de columnas los autovectores asociados normalizados para que su primera componente sea \\(1\\).</p>"
+  },
+  {
+   "id": "T5-M2",
+   "level": "medio",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "L": {
+      "type": "matrix",
+      "rows": 2,
+      "cols": 2,
+      "expected": [
+       [
+        "1",
+        "0"
+       ],
+       [
+        "2",
+        "1"
+       ]
+      ]
+     },
+     "D": {
+      "type": "matrix",
+      "rows": 2,
+      "cols": 2,
+      "expected": [
+       [
+        "2",
+        "0"
+       ],
+       [
+        "0",
+        "2"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "L": "Matriz L (unitriangular inferior)",
+     "D": "Matriz D (diagonal)"
+    }
+   },
+   "statement": "<p>Obtén la factorización \\(LDU\\) de la matriz simétrica \\[ A = \\begin{pmatrix} 2 & 4 \\\\ 4 & 10 \\end{pmatrix}: \\qquad A=LDU, \\] con \\(L\\) unitriangular inferior, \\(D\\) diagonal y \\(U=L^{\\top}\\) unitriangular superior. Escribe \\(L\\) y \\(D\\).</p>"
+  },
+  {
+   "id": "T5-M3",
+   "level": "medio",
+   "answer": {
+    "type": "exprset",
+    "expected": [
+     "4",
+     "2"
+    ]
+   },
+   "statement": "<p>Sea \\(A=\\begin{pmatrix} 1 & 3 \\\\ 3 & 1 \\end{pmatrix}\\). Calcula los valores singulares de \\(A\\) (las raíces cuadradas de los autovalores de \\(A^{\\top}A\\)) y escríbelos en orden decreciente, separados por punto y coma.</p>"
+  },
+  {
+   "id": "T5-M4",
+   "level": "medio",
+   "answer": {
+    "type": "matrix",
+    "rows": 2,
+    "cols": 2,
+    "expected": [
+     [
+      "2/25",
+      "1/25"
+     ],
+     [
+      "4/25",
+      "2/25"
+     ]
+    ]
+   },
+   "statement": "<p>Calcula la pseudoinversa de Moore–Penrose de la matriz de rango \\(1\\) \\[ A = \\begin{pmatrix} 2 & 4 \\\\ 1 & 2 \\end{pmatrix}. \\]</p>"
+  },
+  {
+   "id": "T5-M5",
+   "level": "medio",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "Q": {
+      "type": "matrix",
+      "rows": 2,
+      "cols": 2,
+      "expected": [
+       [
+        "sqrt(2)/2",
+        "sqrt(2)/2"
+       ],
+       [
+        "sqrt(2)/2",
+        "-sqrt(2)/2"
+       ]
+      ]
+     },
+     "Lam": {
+      "type": "matrix",
+      "rows": 2,
+      "cols": 2,
+      "expected": [
+       [
+        "3",
+        "0"
+       ],
+       [
+        "0",
+        "1"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "Q": "Matriz Q (columnas: autovectores ortonormales)",
+     "Lam": "Matriz \\(\\Lambda\\) (diagonal de autovalores)"
+    }
+   },
+   "statement": "<p>Por el teorema espectral, escribe \\(A=Q\\Lambda Q^{\\top}\\) para la matriz simétrica \\[ A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix}, \\] tomando como autovectores normalizados \\(\\tfrac{1}{\\sqrt{2}}(1,1)^{\\top}\\) (asociado a \\(\\lambda=3\\)) y \\(\\tfrac{1}{\\sqrt{2}}(1,-1)^{\\top}\\) (asociado a \\(\\lambda=1\\)), en ese orden. Escribe \\(Q\\) y \\(\\Lambda\\). Puedes escribir \\(\\sqrt{2}/2\\) como <code>sqrt(2)/2</code>.</p>"
+  },
+  {
+   "id": "T5-E1",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "Q": {
+      "type": "matrix",
+      "rows": 3,
+      "cols": 3,
+      "expected": [
+       [
+        "sqrt(2)/2",
+        "sqrt(2)/2",
+        "0"
+       ],
+       [
+        "sqrt(2)/2",
+        "-sqrt(2)/2",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "1"
+       ]
+      ]
+     },
+     "Lam": {
+      "type": "matrix",
+      "rows": 3,
+      "cols": 3,
+      "expected": [
+       [
+        "3",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "-1",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "4"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "Q": "Matriz Q",
+     "Lam": "Matriz \\(\\Lambda\\)"
+    }
+   },
+   "statement": "<p>Diagonaliza ortogonalmente la matriz simétrica \\[ A = \\begin{pmatrix} 1 & 2 & 0 \\\\ 2 & 1 & 0 \\\\ 0 & 0 & 4 \\end{pmatrix}. \\] Escribe \\(A=Q\\Lambda Q^{\\top}\\) con las columnas de \\(Q\\) en el orden de los autovalores \\(3,-1,4\\), tomando los autovectores \\(\\tfrac{1}{\\sqrt{2}}(1,1,0)^{\\top}\\), \\(\\tfrac{1}{\\sqrt{2}}(1,-1,0)^{\\top}\\) y \\((0,0,1)^{\\top}\\). Puedes escribir \\(\\sqrt{2}/2\\) como <code>sqrt(2)/2</code>.</p>"
+  },
+  {
+   "id": "T5-E2",
+   "level": "examen",
+   "answer": {
+    "type": "matrix",
+    "rows": 3,
+    "cols": 3,
+    "expected": [
+     [
+      "2",
+      "0",
+      "0"
+     ],
+     [
+      "1",
+      "2",
+      "0"
+     ],
+     [
+      "1",
+      "1",
+      "3"
+     ]
+    ]
+   },
+   "statement": "<p>Calcula la factorización de Cholesky \\(A=LL^{\\top}\\) de la matriz definida positiva \\[ A = \\begin{pmatrix} 4 & 2 & 2 \\\\ 2 & 5 & 3 \\\\ 2 & 3 & 11 \\end{pmatrix}. \\] Escribe la matriz \\(L\\) (triangular inferior de diagonal positiva).</p>"
+  },
+  {
+   "id": "T5-E3",
+   "level": "examen",
+   "answer": {
+    "type": "matrix",
+    "rows": 2,
+    "cols": 2,
+    "expected": [
+     [
+      "3/10",
+      "-1/10"
+     ],
+     [
+      "1/10",
+      "3/10"
+     ]
+    ]
+   },
+   "statement": "<p>Calcula la pseudoinversa de Moore–Penrose de \\[ A = \\begin{pmatrix} 3 & 1 \\\\ -1 & 3 \\end{pmatrix}. \\]</p>"
+  },
+  {
+   "id": "T5-E4",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "pos": {
+      "type": "number",
+      "expected": "2",
+      "exact": true
+     },
+     "neg": {
+      "type": "number",
+      "expected": "1",
+      "exact": true
+     }
+    },
+    "labels": {
+     "pos": "Autovalores positivos",
+     "neg": "Autovalores negativos"
+    }
+   },
+   "statement": "<p>La forma cuadrática \\(q(x,y,z)=2x^{2}+2y^{2}-3z^{2}+2xy\\) tiene por matriz simétrica \\[ A = \\begin{pmatrix} 2 & 1 & 0 \\\\ 1 & 2 & 0 \\\\ 0 & 0 & -3 \\end{pmatrix}. \\] Determina su inercia: el número de autovalores positivos de \\(A\\) y el número de autovalores negativos de \\(A\\).</p>"
+  }
+ ],
+ "examen-1": [
+  {
+   "id": "X1-1",
+   "level": "normal",
+   "answer": {
+    "type": "text",
+    "expected": "1211"
+   },
+   "statement": "<p>Escribe en base \\(4\\) el número \\(101\\) (escrito en base diez). Introduce solo la secuencia de cifras de la representación, sin subíndice de base.</p>"
+  },
+  {
+   "id": "X1-2",
+   "level": "normal",
+   "answer": {
+    "type": "expr",
+    "expected": "1/7"
+   },
+   "statement": "<p>Escribe como fracción irreducible el número \\(r = 0{,}\\overline{142857} = 0{,}142857142857\\ldots\\).</p>"
+  },
+  {
+   "id": "X1-3",
+   "level": "normal",
+   "answer": {
+    "type": "bool",
+    "expected": false
+   },
+   "statement": "<p>Verdadero o falso: si \\(A\\) y \\(B\\) son conjuntos finitos con \\(|A| = 3\\) y \\(|B| = 4\\), entonces hay \\(12\\) funciones de \\(A\\) en \\(B\\).</p>"
+  },
+  {
+   "id": "X1-4",
+   "level": "normal",
+   "answer": {
+    "type": "number",
+    "expected": "7",
+    "exact": true
+   },
+   "statement": "<p>Sean \\(A = \\begin{pmatrix}1&2&0\\\\0&1&1\\end{pmatrix}\\) y \\(B = \\begin{pmatrix}2&0\\\\1&1\\\\0&2\\end{pmatrix}\\). Calcula \\(\\operatorname{tr}(AB)\\).</p>"
+  },
+  {
+   "id": "X1-5",
+   "level": "medio",
+   "answer": {
+    "type": "expr",
+    "expected": "0.12"
+   },
+   "statement": "<p>Redondea \\(0{,}125\\) a \\(2\\) cifras significativas aplicando el criterio de redondeo al par más cercano.</p>"
+  },
+  {
+   "id": "X1-6",
+   "level": "medio",
+   "answer": {
+    "type": "expr",
+    "expected": "4/9"
+   },
+   "statement": "<p>Sean \\(u = (1,2,2)\\) y \\(v = (2,-1,2)\\) vectores de \\(\\mathbb{R}^{3}\\). Calcula el coseno del ángulo que forman, \\(\\cos(u,v) = \\dfrac{u^{\\top}v}{\\|u\\|\\,\\|v\\|}\\), y da el resultado como fracción.</p>"
+  },
+  {
+   "id": "X1-7",
+   "level": "medio",
+   "answer": {
+    "type": "expr",
+    "expected": "2/5+11/5*i"
+   },
+   "statement": "<p>Escribe el cociente \\(w = \\dfrac{3 + 4i}{2 - i}\\) en la forma binómica \\(a + bi\\).</p>"
+  },
+  {
+   "id": "X1-8",
+   "level": "medio",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "f1": {
+      "type": "vector",
+      "rows": 3,
+      "cols": 1,
+      "expected": [
+       [
+        "1/sqrt(2)"
+       ],
+       [
+        "1/sqrt(2)"
+       ],
+       [
+        "0"
+       ]
+      ]
+     },
+     "f2": {
+      "type": "vector",
+      "rows": 3,
+      "cols": 1,
+      "expected": [
+       [
+        "1/sqrt(6)"
+       ],
+       [
+        "-1/sqrt(6)"
+       ],
+       [
+        "2/sqrt(6)"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "f1": "Vector f1 (unitario)",
+     "f2": "Vector f2 (unitario)"
+    }
+   },
+   "statement": "<p>Aplica el procedimiento de Gram–Schmidt a la familia \\(v_1 = (1,1,0)\\), \\(v_2 = (1,0,1)\\) de \\(\\mathbb{R}^{3}\\) y escribe la base ortonormal \\(f_1, f_2\\) resultante. Escribe cada vector como matriz columna.</p>"
+  },
+  {
+   "id": "X1-9",
+   "level": "examen",
+   "answer": {
+    "type": "exprset",
+    "expected": [
+     "-1+2*i",
+     "-1-2*i"
+    ]
+   },
+   "statement": "<p>Resuelve en \\(\\mathbb{C}\\) la ecuación \\(z^{2} + 2z + 5 = 0\\). Escribe las dos soluciones en forma binómica, separadas por punto y coma.</p>"
+  },
+  {
+   "id": "X1-10",
+   "level": "examen",
+   "answer": {
+    "type": "vector",
+    "rows": 3,
+    "cols": 1,
+    "expected": [
+     [
+      "5/2"
+     ],
+     [
+      "5/2"
+     ],
+     [
+      "1"
+     ]
+    ]
+   },
+   "statement": "<p>Sea \\(V = \\langle (1,1,0), (0,0,1) \\rangle \\subset \\mathbb{R}^{3}\\) y \\(w = (3,2,1)\\). Calcula la proyección ortogonal \\(\\operatorname{proy}_V(w)\\). Escribe el vector como matriz columna.</p>"
+  },
+  {
+   "id": "X1-11",
+   "level": "examen",
+   "answer": {
+    "type": "choice",
+    "expected": 2,
+    "choices": [
+     "<p>A: \\(\\{(1,1,0),\\ (0,1,1)\\}\\)</p>",
+     "<p>B: \\(\\{(1,2,2),\\ (2,-1,2)\\}\\)</p>",
+     "<p>C: \\(\\{(2,2,1),\\ (2,-1,-2)\\}\\)</p>",
+     "<p>D: \\(\\{(3,0,4),\\ (4,0,3)\\}\\)</p>"
+    ]
+   },
+   "statement": "<p>¿Cuál de las siguientes familias de vectores de \\(\\mathbb{R}^{3}\\) es ortogonal?</p>"
+  },
+  {
+   "id": "X1-12",
+   "level": "examen",
+   "answer": {
+    "type": "matrix",
+    "rows": 4,
+    "cols": 4,
+    "expected": [
+     [
+      "1",
+      "0",
+      "-1",
+      "-2"
+     ],
+     [
+      "0",
+      "1",
+      "-3",
+      "-4"
+     ],
+     [
+      "0",
+      "0",
+      "1",
+      "0"
+     ],
+     [
+      "0",
+      "0",
+      "0",
+      "1"
+     ]
+    ]
+   },
+   "statement": "<p>Sea \\(M = \\begin{pmatrix} I_2 & B \\\\ 0 & I_2 \\end{pmatrix}\\), con \\(B = \\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}\\) e \\(I_2\\) la matriz identidad de orden \\(2\\). Calcula \\(M^{-1}\\) utilizando la estructura por bloques.</p>"
+  }
+ ],
+ "examen-2": [
+  {
+   "id": "X2-1",
+   "level": "normal",
+   "answer": {
+    "type": "number",
+    "expected": "32",
+    "exact": true
+   },
+   "statement": "<p>Sea \\(A \\in \\mathbb{R}^{3 \\times 3}\\) una matriz con \\(\\det(A) = -2\\). Calcula \\(\\det(2A^{\\top}A)\\).</p>"
+  },
+  {
+   "id": "X2-2",
+   "level": "normal",
+   "answer": {
+    "type": "number",
+    "expected": "49",
+    "exact": true
+   },
+   "statement": "<p>Calcula el volumen \\(2\\)-dimensional del paralelepípedo \\(P \\subset \\mathbb{R}^{3}\\) generado por las columnas de \\(A = \\begin{pmatrix} 2 & -3 \\\\ 3 & 6 \\\\ 6 & -2 \\end{pmatrix}\\):</p>\\[ |P| = \\sqrt{\\det(A^{\\top}A)}. \\]<p>Da el resultado como número.</p>"
+  },
+  {
+   "id": "X2-3",
+   "level": "normal",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "nul": {
+      "type": "number",
+      "expected": "3",
+      "exact": true
+     },
+     "nulT": {
+      "type": "number",
+      "expected": "1",
+      "exact": true
+     }
+    },
+    "labels": {
+     "nul": "\\(\\dim \\mathrm{nul}(A)\\)",
+     "nulT": "\\(\\dim \\mathrm{nul}(A^{\\top})\\)"
+    }
+   },
+   "statement": "<p>Sea \\(A \\in \\mathbb{R}^{4 \\times 6}\\) una matriz de rango \\(r = 3\\). Aplicando el teorema del rango, calcula \\(\\dim \\mathrm{nul}(A)\\) y \\(\\dim \\mathrm{nul}(A^{\\top})\\).</p>"
+  },
+  {
+   "id": "X2-4",
+   "level": "normal",
+   "answer": {
+    "type": "vector",
+    "rows": 3,
+    "cols": 1,
+    "expected": [
+     [
+      "2"
+     ],
+     [
+      "-1"
+     ],
+     [
+      "3"
+     ]
+    ]
+   },
+   "statement": "<p>Resuelve por eliminación de Gauss el sistema</p>\\[ \\begin{cases} x + y + z = 4, \\\\ 2x - y + z = 8, \\\\ x + 2y - z = -3. \\end{cases} \\]<p>Escribe la solución \\((x, y, z)\\) como vector columna.</p>"
+  },
+  {
+   "id": "X2-5",
+   "level": "medio",
+   "answer": {
+    "type": "bool",
+    "expected": false
+   },
+   "statement": "<p>Verdadero o falso: la matriz \\(A = \\begin{pmatrix} 2 & 1 \\\\ 0 & 2 \\end{pmatrix}\\) es diagonalizable sobre \\(\\mathbb{C}\\).</p>"
+  },
+  {
+   "id": "X2-6",
+   "level": "medio",
+   "answer": {
+    "type": "number",
+    "expected": "-24",
+    "exact": true
+   },
+   "statement": "<p>Sea \\(A = PLU \\in \\mathbb{R}^{3 \\times 3}\\) una factorización PLU en la que \\(P\\) intercambia las filas \\(1\\) y \\(2\\), \\(L = \\begin{pmatrix} 1 & 0 & 0 \\\\ 2 & 1 & 0 \\\\ 3 & 1 & 1 \\end{pmatrix}\\) es unitriangular inferior y \\(U = \\begin{pmatrix} 1 & 2 & 3 \\\\ 0 & 4 & 5 \\\\ 0 & 0 & 6 \\end{pmatrix}\\). Calcula \\(\\det(A)\\).</p>"
+  },
+  {
+   "id": "X2-7",
+   "level": "medio",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "m": {
+      "type": "number",
+      "expected": "2",
+      "exact": true
+     },
+     "n": {
+      "type": "number",
+      "expected": "1",
+      "exact": true
+     },
+     "res": {
+      "type": "number",
+      "expected": "2",
+      "exact": true
+     }
+    },
+    "labels": {
+     "m": "Pendiente \\(m\\)",
+     "n": "Ordenada \\(n\\)",
+     "res": "Norma del residuo \\(\\|b - Ax\\|_{2}\\)"
+    }
+   },
+   "statement": "<p>Ajusta por mínimos cuadrados la recta \\(y = m x + n\\) a los puntos \\((0, 2)\\), \\((1, 2)\\), \\((2, 4)\\) y \\((3, 8)\\). Escribe la pendiente \\(m\\), la ordenada \\(n\\) y la norma del residuo \\(\\|b - Ax\\|_{2}\\) del ajuste.</p>"
+  },
+  {
+   "id": "X2-8",
+   "level": "medio",
+   "answer": {
+    "type": "exprset",
+    "expected": [
+     "4",
+     "2",
+     "1"
+    ]
+   },
+   "statement": "<p>Calcula los autovalores de la matriz \\(A = \\begin{pmatrix} 3 & 1 & 0 \\\\ 1 & 3 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}\\). Escribe los tres valores separados por punto y coma.</p>"
+  },
+  {
+   "id": "X2-9",
+   "level": "examen",
+   "answer": {
+    "type": "choice",
+    "expected": 3,
+    "choices": [
+     "<p>Definida positiva.</p>",
+     "<p>Definida negativa.</p>",
+     "<p>Semidefinida (positiva o negativa), pero no definida.</p>",
+     "<p>Indefinida.</p>"
+    ]
+   },
+   "statement": "<p>Sea \\(f(x) = x^{\\top} A x\\) la forma cuadrática de matriz simétrica \\(A = \\begin{pmatrix} 1 & 2 & 0 \\\\ 2 & 1 & 0 \\\\ 0 & 0 & 3 \\end{pmatrix}\\). Clasifica \\(f\\) según su signo.</p>"
+  },
+  {
+   "id": "X2-10",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "alpha": {
+      "type": "number",
+      "expected": "7",
+      "exact": true
+     },
+     "beta": {
+      "type": "number",
+      "expected": "5",
+      "exact": true
+     }
+    },
+    "labels": {
+     "alpha": "\\(\\alpha\\)",
+     "beta": "\\(\\beta\\)"
+    }
+   },
+   "statement": "<p>Considera el sistema de incógnitas \\(x, y, z\\)</p>\\[ \\begin{cases} x + y + z = 1, \\\\ 2x + 3y + 4z = 3, \\\\ 3x + 5y + \\alpha z = \\beta. \\end{cases} \\]<p>Determina los valores de \\(\\alpha\\) y \\(\\beta\\) para los que el sistema es compatible indeterminado (infinitas soluciones).</p>"
+  },
+  {
+   "id": "X2-11",
+   "level": "examen",
+   "answer": {
+    "type": "number",
+    "expected": "15",
+    "exact": true
+   },
+   "statement": "<p>Sea \\(A = \\begin{pmatrix} 2 & -1 & 0 \\\\ 1 & 2 & 0 \\\\ 0 & 0 & 3 \\end{pmatrix}\\) y \\(A = Q U Q^{*}\\) su forma de Schur sobre \\(\\mathbb{C}\\), con \\(Q\\) unitaria y \\(U\\) triangular superior. Calcula \\(\\det(U)\\) (recuerda que \\(\\det(U)\\) es el producto de los elementos de su diagonal).</p>"
+  },
+  {
+   "id": "X2-12",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "Q": {
+      "type": "matrix",
+      "rows": 3,
+      "cols": 2,
+      "expected": [
+       [
+        "1/sqrt(3)",
+        "0"
+       ],
+       [
+        "1/sqrt(3)",
+        "-1/sqrt(2)"
+       ],
+       [
+        "1/sqrt(3)",
+        "1/sqrt(2)"
+       ]
+      ]
+     },
+     "R": {
+      "type": "matrix",
+      "rows": 2,
+      "cols": 2,
+      "expected": [
+       [
+        "sqrt(3)",
+        "sqrt(3)"
+       ],
+       [
+        "0",
+        "sqrt(2)"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "Q": "Matriz \\(Q\\)",
+     "R": "Matriz \\(R\\)"
+    }
+   },
+   "statement": "<p>Aplica el procedimiento de Gram–Schmidt para hallar la factorización QR reducida \\(A = QR\\) de</p>\\[ A = \\begin{pmatrix} 1 & 1 \\\\ 1 & 0 \\\\ 1 & 2 \\end{pmatrix}, \\]<p>con \\(Q\\) de columnas ortonormales (matriz \\(3 \\times 2\\)) y \\(R\\) triangular superior \\(2 \\times 2\\) de diagonal positiva. Escribe \\(Q\\) y \\(R\\).</p>"
+  }
+ ],
+ "examen-3": [
+  {
+   "id": "X3-1",
+   "level": "normal",
+   "answer": {
+    "type": "matrix",
+    "rows": 2,
+    "cols": 2,
+    "expected": [
+     [
+      "5",
+      "0"
+     ],
+     [
+      "3",
+      "3"
+     ]
+    ]
+   },
+   "statement": "<p>Calcula la factorización de Cholesky \\(A = LL^{\\top}\\) de \\[ A = \\begin{pmatrix} 25 & 15 \\\\ 15 & 18 \\end{pmatrix}, \\] con \\(L\\) triangular inferior de diagonal positiva. Escribe la matriz \\(L\\).</p>"
+  },
+  {
+   "id": "X3-2",
+   "level": "normal",
+   "answer": {
+    "type": "expr",
+    "expected": "-1+2*i"
+   },
+   "statement": "<p>Escribe el cociente \\[ z = \\frac{3+4i}{1-2i} \\] en la forma binómica \\(a+bi\\).</p>"
+  },
+  {
+   "id": "X3-3",
+   "level": "normal",
+   "answer": {
+    "type": "bool",
+    "expected": false
+   },
+   "statement": "<p>Verdadero o falso: para cualesquiera matrices \\(A, B \\in \\mathbb{R}^{n \\times n}\\) se cumple \\((AB)^{\\top} = A^{\\top}B^{\\top}\\).</p>"
+  },
+  {
+   "id": "X3-4",
+   "level": "normal",
+   "answer": {
+    "type": "number",
+    "expected": "-16",
+    "exact": true
+   },
+   "statement": "<p>Sea \\(A \\in \\mathbb{R}^{3 \\times 3}\\) una matriz con \\(\\det(A) = -2\\). Calcula \\(\\det(2A)\\).</p>"
+  },
+  {
+   "id": "X3-5",
+   "level": "medio",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "L": {
+      "type": "matrix",
+      "rows": 3,
+      "cols": 3,
+      "expected": [
+       [
+        "1",
+        "0",
+        "0"
+       ],
+       [
+        "2",
+        "1",
+        "0"
+       ],
+       [
+        "1",
+        "2",
+        "1"
+       ]
+      ]
+     },
+     "D": {
+      "type": "matrix",
+      "rows": 3,
+      "cols": 3,
+      "expected": [
+       [
+        "2",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "1",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "3"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "L": "Matriz \\(L\\) (unitriangular inferior)",
+     "D": "Matriz \\(D\\) (diagonal)"
+    }
+   },
+   "statement": "<p>Obtén la factorización \\(LDL^{\\top}\\) de la matriz simétrica \\[ A = \\begin{pmatrix} 2 & 4 & 2 \\\\ 4 & 9 & 6 \\\\ 2 & 6 & 9 \\end{pmatrix}, \\] con \\(L\\) unitriangular inferior y \\(D\\) diagonal. Escribe \\(L\\) y \\(D\\).</p>"
+  },
+  {
+   "id": "X3-6",
+   "level": "medio",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "m": {
+      "type": "number",
+      "expected": "6/5"
+     },
+     "n": {
+      "type": "number",
+      "expected": "1/5"
+     }
+    },
+    "labels": {
+     "m": "Pendiente \\(m\\)",
+     "n": "Ordenada \\(n\\)"
+    }
+   },
+   "statement": "<p>Ajusta por mínimos cuadrados la recta \\(y = mx + n\\) a los puntos \\((0,0)\\), \\((1,2)\\), \\((2,2)\\) y \\((3,4)\\). Escribe la pendiente \\(m\\) y la ordenada \\(n\\), como fracciones si hace falta.</p>"
+  },
+  {
+   "id": "X3-7",
+   "level": "medio",
+   "answer": {
+    "type": "matrix",
+    "rows": 2,
+    "cols": 2,
+    "expected": [
+     [
+      "2",
+      "1"
+     ],
+     [
+      "0",
+      "2"
+     ]
+    ]
+   },
+   "statement": "<p>Sea \\[ A = \\begin{pmatrix} 3 & -1 \\\\ 1 & 1 \\end{pmatrix}. \\] Escribe su forma canónica de Jordan \\(J\\).</p>"
+  },
+  {
+   "id": "X3-8",
+   "level": "medio",
+   "answer": {
+    "type": "number",
+    "expected": "4",
+    "exact": true
+   },
+   "statement": "<p>Considera el sistema dependiente del parámetro \\(k \\in \\mathbb{R}\\): \\[ \\begin{cases} x + y + z = 1, \\\\ 2x + y + 3z = 3, \\\\ 3x + 2y + 4z = k. \\end{cases} \\] ¿Para qué valor de \\(k\\) es el sistema compatible?</p>"
+  },
+  {
+   "id": "X3-9",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "Q": {
+      "type": "matrix",
+      "rows": 2,
+      "cols": 2,
+      "expected": [
+       [
+        "sqrt(5)/5",
+        "2*sqrt(5)/5"
+       ],
+       [
+        "-2*sqrt(5)/5",
+        "sqrt(5)/5"
+       ]
+      ]
+     },
+     "Lam": {
+      "type": "matrix",
+      "rows": 2,
+      "cols": 2,
+      "expected": [
+       [
+        "-2",
+        "0"
+       ],
+       [
+        "0",
+        "3"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "Q": "Matriz \\(Q\\) (columnas: autovectores ortonormales)",
+     "Lam": "Matriz \\(\\Lambda\\) (diagonal de autovalores)"
+    }
+   },
+   "statement": "<p>Diagonaliza ortogonalmente la matriz simétrica \\[ A = \\begin{pmatrix} 2 & 2 \\\\ 2 & -1 \\end{pmatrix} \\] mediante el teorema espectral: escribe \\(A = Q\\Lambda Q^{\\top}\\), con \\(\\Lambda = \\operatorname{diag}(\\lambda_{1},\\lambda_{2})\\) de autovalores en orden creciente y \\(Q\\) de autovectores unitarios asociados, cada uno con primera componente positiva. Puedes escribir \\(\\sqrt{5}/5\\) como <code>sqrt(5)/5</code>.</p>"
+  },
+  {
+   "id": "X3-10",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "det2": {
+      "type": "number",
+      "expected": "256",
+      "exact": true
+     },
+     "trinv": {
+      "type": "number",
+      "expected": "1/4"
+     }
+    },
+    "labels": {
+     "det2": "\\(\\det(A^{2})\\)",
+     "trinv": "\\(\\operatorname{tr}(A^{-1})\\)"
+    }
+   },
+   "statement": "<p>Sea \\(A \\in \\mathbb{R}^{4 \\times 4}\\) una matriz invertible de autovalores \\(2\\), \\(2\\), \\(-1\\) y \\(4\\). Calcula \\(\\det(A^{2})\\) y la traza de \\(A^{-1}\\).</p>"
+  },
+  {
+   "id": "X3-11",
+   "level": "examen",
+   "answer": {
+    "type": "choice",
+    "expected": 1,
+    "choices": [
+     "<p>Definida positiva</p>",
+     "<p>Semidefinida positiva, pero no definida positiva</p>",
+     "<p>Indefinida</p>",
+     "<p>Definida negativa</p>"
+    ]
+   },
+   "statement": "<p>La forma cuadrática \\(q(x,y,z) = 2x^{2}+2y^{2}+2z^{2}-2xy-2xz-2yz\\), de matriz simétrica \\[ A = \\begin{pmatrix} 2 & -1 & -1 \\\\ -1 & 2 & -1 \\\\ -1 & -1 & 2 \\end{pmatrix}, \\] es:</p>"
+  },
+  {
+   "id": "X3-12",
+   "level": "examen",
+   "answer": {
+    "type": "multi",
+    "fields": {
+     "Adag": {
+      "type": "matrix",
+      "rows": 2,
+      "cols": 2,
+      "expected": [
+       [
+        "1/10",
+        "1/5"
+       ],
+       [
+        "1/10",
+        "1/5"
+       ]
+      ]
+     },
+     "x": {
+      "type": "vector",
+      "rows": 2,
+      "cols": 1,
+      "expected": [
+       [
+        "6/5"
+       ],
+       [
+        "6/5"
+       ]
+      ]
+     }
+    },
+    "labels": {
+     "Adag": "Matriz \\(A^{\\dagger}\\)",
+     "x": "Vector \\(\\mathbf{x} = A^{\\dagger}\\mathbf{b}\\)"
+    }
+   },
+   "statement": "<p>Sean \\[ A = \\begin{pmatrix} 1 & 1 \\\\ 2 & 2 \\end{pmatrix}, \\qquad \\mathbf{b} = \\begin{pmatrix} 2 \\\\ 5 \\end{pmatrix}. \\] (a) Calcula la pseudoinversa de Moore–Penrose \\(A^{\\dagger}\\). (b) Escribe la solución de mínima norma de \\(A\\mathbf{x}=\\mathbf{b}\\) dada por \\(\\mathbf{x}=A^{\\dagger}\\mathbf{b}\\), que resuelve las ecuaciones normales de mínimos cuadrados. Da cada componente como fracción.</p>"
+  }
+ ]
+}

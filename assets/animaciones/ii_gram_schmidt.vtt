@@ -1,0 +1,10 @@
+WEBVTT
+
+00:00.000 --> 00:03.500
+Gram–Schmidt: restar la proyección produce ortogonalidad.
+
+00:03.500 --> 00:08.000
+Dados u y v, se calcula la proyección de v sobre u.
+
+00:08.000 --> 00:11.600
+El componente resultante es ortogonal a u.

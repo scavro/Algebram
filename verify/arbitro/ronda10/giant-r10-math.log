@@ -1,0 +1,17 @@
+--- overflow de coeficientes binomiales (double) ---
+      0 ms | acepta   | (x+y)^100 vs (x+y)^100 (idénticas)
+      0 ms | acepta   | (x+y)^500 vs (x+y)^500 (idénticas)
+      0 ms | acepta   | (x+y)^800 vs (x+y)^800 (idénticas)
+      0 ms | acepta   | (x+y)^1000 vs (x+y)^1000 (idénticas)
+      0 ms | acepta   | (x+y)^1024 vs (x+y)^1024 (idénticas)
+      0 ms | acepta   | (x+y)^1100 vs (x+y)^1100 (idénticas)
+      0 ms | acepta   | (x+y)^1500 vs (x+y)^1500 (idénticas)
+      0 ms | acepta   | (x+y)^2000 vs (x+y)^2000 (idénticas)
+    705 ms | rechaza  | (x+y)^2000 vs (x+y)^2001 (diferentes)
+      0 ms | acepta   | x^100000 vs x^100000 (monomio, sin overflow)
+--- otras cargas ---
+      0 ms | acepta   | suma de 2000 átomos log(k*x) idéntica
+      2 ms | acepta   | 1000 paréntesis anidados
+      0 ms | acepta   | (x+y+z)^60 vs sí mismo (trivariable)
+
+(giant-r9-math.json guardado; '(x+y+z)^3000' documentado aparte: timeout 25s)

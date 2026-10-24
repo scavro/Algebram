@@ -1,0 +1,18 @@
+-- mecanismo: tope de monomios |exp|>64 → vía numérica --
+  1/(x+y)^64 vs 0: 0/20 acepta (|exp|≤64 → estructural: esperado 0)
+  1/(x+y)^65 vs 0: 11/20 acepta (|exp|≤64 → estructural: esperado 0)
+  1/(x+y)^300 vs 0: 17/20 acepta (|exp|≤64 → estructural: esperado 0)
+  1/(x+y)^301 vs 0: 18/20 acepta (|exp|≤64 → estructural: esperado 0)
+  (x+y)^(-64) vs 0: 0/20 acepta
+  (x+y)^(-65) vs 0: 12/20 acepta
+  (x+y)^(-300) vs 0: 36/50 acepta
+
+-- impacto en drill real (T1-N4, expected 4/11): E + perturbación minúscula --
+  4/11+(x+y)^(-300): 34/50 acepta
+  4/11+(x^2+y^2+2)^(-200): 48/50 acepta
+  (x+y)^(-300) sola (para expected 0): 34/50 acepta
+
+-- hueco de esqueleto: bases constantes con exponente variable --
+  4/11+0^x: 30/30 acepta
+  4/11+(2^x-2^x) [matemáticamente 4/11]: 30/30 acepta
+  4/11+(x-x)*x^0.5 [matemáticamente 4/11]: 30/30 acepta

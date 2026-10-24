@@ -1,0 +1,11 @@
+[OK ] tema-1.js: fuente fix=3 bug=0 | runtime \op=3 lt/gt-desnudos=0
+[OK ] tema-2.js: fuente fix=1 bug=0 | runtime \op=1 lt/gt-desnudos=0
+[OK ] tema-3.js: fuente fix=2 bug=0 | runtime \op=2 lt/gt-desnudos=0
+[OK ] tema-4.js: fuente fix=4 bug=0 | runtime \op=4 lt/gt-desnudos=0
+[OK ] tema-5.js: fuente fix=7 bug=0 | runtime \op=7 lt/gt-desnudos=0
+[OK ] examen-1.js: fuente fix=2 bug=0 | runtime \op=2 lt/gt-desnudos=0
+[OK ] examen-2.js: fuente fix=7 bug=0 | runtime \op=7 lt/gt-desnudos=0
+[OK ] examen-3.js: fuente fix=5 bug=0 | runtime \op=5 lt/gt-desnudos=0
+
+TOTAL: fix(\\lt/\\gt)=31  bug(\lt suelto)=0
+N2 OK: los 31 tokens son barra doble; runtime con operadores \lt/\gt; 0 letras sueltas.

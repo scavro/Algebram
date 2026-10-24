@@ -1,0 +1,43 @@
+=== R1 ataque_grader.js (regresión) ===
+✔ D6 'sqrt(3)/2' vs '0.8660254037844386' (tol): grader=ACEPTA (debía aceptar)
+
+Resumen: 3 desajustes del grader frente al criterio matemático
+
+=== R1 checks (152 campos) ===
+TEMA-1: 18 OK, 0 FALLOS
+TEMA-2: 19 OK, 0 FALLOS
+TEMA-3: 25 OK, 0 FALLOS
+TEMA-4: 23 OK, 0 FALLOS
+TEMA-5: 20 OK, 0 FALLOS
+EXAMEN-1: 13 OK, 0 FALLOS
+EXAMEN-2: 17 OK, 0 FALLOS
+EXAMEN-3: 17 OK, 0 FALLOS
+
+=== R2 ataque_grader2.js (regresión) ===
+✔ O5 exprset T4-M5 con 'i+polinomio anulador' como 'i': grader=RECHAZA (debía rechazar)
+
+Resumen R2: 1 desajustes frente al criterio matemático
+
+=== R2 scan_lt_gt.js ===
+TOTAL ocurrencias 'lt'/'gt' sin barra dentro de TeX: 0
+
+=== R2 muestra.py ===
+MUESTRA R2: 87 OK, 0 FALLOS
+
+=== R2 soluciones_corregidas.py ===
+RESUMEN soluciones corregidas: 35 OK, 0 FALLOS
+
+=== tests autores ===
+
+Node.js v24.20.0
+=== tests/grader.test.js (re-run desde raíz) ===
+Pasaron: 74 · Fallaron: 0
+TODO OK
+
+=== sondeo de residuos abiertos NO afirmados (N4, N8, m7) ===
+[OK ] N4/m4 T5-N5 coma decimal en rejilla (R2 N9b): RECHAZA (estado actual rechaza)
+[OK ] N8a exact con expected no entero 1/2 (R2 F9): RECHAZA (estado actual rechaza)
+[OK ] N8b exact 2 vs sqrt(4): ACEPTA (estado actual acepta)
+[FALLO] m7/A11 celda 1e-7 vs 0 con tolerancia: ACEPTA (estado actual rechaza)
+[OK ] M5 cerrado a nivel de ejercicio: T1-N2 222*10: RECHAZA (estado actual rechaza)
+[OK ] M5 cerrado a nivel de ejercicio: T1-N2 2220: ACEPTA (estado actual acepta)

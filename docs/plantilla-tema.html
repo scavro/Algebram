@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEMA · Fundamentos Algebraicos para la IA · Archivo</title>
+  <meta name="description" content="Explicación, resumen, mapa mental y ejercicios interactivos del tema." />
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/css/fonts.css" />
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+</head>
+<body data-theme="tema-N">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="progress-bar" aria-hidden="true"><div class="progress-bar__fill"></div></div>
+
+  <header class="theme-head">
+    <div class="theme-head__bg" aria-hidden="true"></div>
+    <div class="theme-head__ghost ghost-num" aria-hidden="true">N</div>
+    <div class="theme-head__inner">
+      <p class="kicker">Tema N · Fundamentos algebraicos para la IA</p>
+      <h1>Título del tema</h1>
+      <div class="theme-head__row">
+        <span class="chip chip--gold">Semana del …</span>
+        <span class="chip">15 ejercicios interactivos</span>
+        <span class="chip">Resumen + mapa mental</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrap toc" aria-label="Sumario del tema">
+    <a href="#s1"><span class="meta">§ N.1</span><strong>Primera sección</strong></a>
+    <a href="#resumen"><span class="meta">Ficha</span><strong>Resumen</strong></a>
+    <a href="#mapa"><span class="meta">Visual</span><strong>Mapa mental</strong></a>
+    <a href="#ejercicios"><span class="meta">Práctica</span><strong>Ejercicios</strong></a>
+  </nav>
+
+  <main id="contenido">
+
+    <!-- ================= TEORÍA ================= -->
+    <section class="wrap section theory-section" id="s1">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ N.1</div>
+        <div>
+          <h2>Primera sección</h2>
+          <p>Resumen en una frase de lo que se explica aquí.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Texto de la explicación. Las fórmulas van entre <code>\( … \)</code> en línea:</p>
+        <p>La solución general es \( x = \frac{-b \pm \sqrt{b^2-4ac}}{2a} \).</p>
+        <p>Y en bloque centrado:</p>
+        \[ \det(A) = \sum_{\sigma \in S_n} \operatorname{sgn}(\sigma) \prod_{i=1}^{n} a_{i,\sigma(i)} \]
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición N.1</span>
+          <p>Enunciado de la definición con su notación.</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición N.2</span>
+          <p>Enunciado del resultado.</p>
+          <p><em>Demostración.</em> Pasos esenciales. \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Descripción del error típico y cómo evitarlo.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Conexión con aprendizaje automático, datos o robótica.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESUMEN ================= -->
+    <section class="wrap section section--tint" id="resumen">
+      <p class="kicker reveal">Ficha de repaso</p>
+      <h2 class="reveal">Lo esencial del tema</h2>
+      <div class="summary reveal" data-summary></div>
+    </section>
+
+    <!-- ================= MAPA MENTAL ================= -->
+    <section class="wrap section" id="mapa">
+      <p class="kicker reveal">Vista global</p>
+      <h2 class="reveal">Mapa mental</h2>
+      <p class="prose reveal">Pulsa cualquier nodo para ver el detalle.</p>
+      <div class="mindmap reveal" data-mindmap></div>
+    </section>
+
+    <!-- ================= EJERCICIOS ================= -->
+    <section class="wrap section section--tint" id="ejercicios">
+      <p class="kicker reveal">Práctica</p>
+      <h2 class="reveal">Ejercicios interactivos</h2>
+      <p class="prose reveal">Escribe tu respuesta y pulsa <strong>Comprobar</strong>. Al acertar se despliega la solución completa.</p>
+      <div data-drills></div>
+    </section>
+
+    <nav class="wrap pager" aria-label="Navegación entre temas">
+      <a class="prev" href="../index.html"><span class="meta">Volver</span><strong>Índice del curso</strong></a>
+      <a class="next" href="tema-N+1.html"><span class="meta">Siguiente</span><strong>Tema N+1 · …</strong></a>
+    </nav>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div>
+        <h4>Archivo</h4>
+        <ul>
+          <li><a href="../index.html">Índice del curso</a></li>
+          <li><a href="../planificacion.html">Planificación y evaluación</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Evaluación</h4>
+        <ul>
+          <li><a href="../examenes/examen-1.html">Examen 1 · Temas I–II</a></li>
+          <li><a href="../examenes/examen-2.html">Examen 2 · Temas III–IV</a></li>
+          <li><a href="../examenes/examen-3.html">Examen 3 · Tema V + global</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fuentes</h4>
+        <ul>
+          <li>J. Perán Mazón, <em>Fundamentos algebraicos para la IA</em>, UNED, 2026</li>
+          <li>Álgebra para Ingenieros (libro de apoyo)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer__colophon">
+      <span>Material de estudio personal · uso no comercial</span>
+      <span>Verificado con SymPy · errores → revisar con el árbitro</span>
+    </div>
+  </footer>
+
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/auto-render.min.js"></script>
+  <script defer src="../assets/js/grader.js"></script>
+  <script defer src="../assets/data/tema-N.js"></script>
+  <script defer src="../assets/js/app.js"></script>
+</body>
+</html>

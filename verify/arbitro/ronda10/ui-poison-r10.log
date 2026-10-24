@@ -1,0 +1,47 @@
+== tema-1 · T1-N4 (expr, expected 4/11) + T1-M2 (multi) — drills reales
+
+-- C1-R8 · (x-x)/(x-x) y familia U --
+  ✔ T1-N4 «(x-x)/(x-x)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «0/(x-x)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «1/(x-x)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «x/(x-x)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «1*(x-x)/(x-x)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «5+0*(x-x)/(x-x)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «(x-x)^2/(x-x)» → RECHAZA · progreso=failed
+
+-- M1-R8 · Δ·x^0.5 y afines --
+  ✔ T1-N4 «4/11+(log(x+5)+log(y+5)-log((x+5)*(y+5))» → RECHAZA · progreso=failed
+  ✔ T1-N4 «4/11+(log(x+5)+log(y+5)-log((x+5)*(y+5))» → RECHAZA · progreso=failed
+  ✔ T1-N4 «4/11+(log(x+5)+log(y+5)-log((x+5)*(y+5))» → RECHAZA · progreso=failed
+  ✔ T1-N4 «4/11+(log(x+5)+log(y+5)-log((x+5)*(y+5))» → RECHAZA · progreso=failed
+  ✔ T1-N4 «4/11+(log(x+5)+log(y+5)-log((x+5)*(y+5))» → RECHAZA · progreso=failed
+
+-- R1 · E+x^(-65) / (x+y)^(-300) / 1/x^300 --
+  ✔ T1-N4 «4/11+x^(-65)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «4/11+x^(-300)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «4/11+(x+y)^(-300)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «4/11+1/x^300» → RECHAZA · progreso=failed
+  ✘ T1-N4 «4/11+(x^2+y^2+2)^(-200)» → ACEPTA + SOLUCIÓN VISIBLE (¡fuga!) · progreso=solved
+
+-- R1 · 0^x y huecos de esqueleto --
+  ✘ T1-N4 «0^x» → RECHAZA + SOLUCIÓN VISIBLE (¡fuga!) · progreso=failed
+  ✘ T1-N4 «4/11+0^x» → RECHAZA + SOLUCIÓN VISIBLE (¡fuga!) · progreso=failed
+  ✘ T1-N4 «4/11+(2^x-2^x)» → RECHAZA + SOLUCIÓN VISIBLE (¡fuga!) · progreso=failed
+  ✘ T1-N4 «4/11+(x-x)*x^0.5» → ACEPTA + SOLUCIÓN VISIBLE (¡fuga!) · progreso=solved
+
+-- venenos en T1-M2 (multi) --
+  ✔ T1-M2 «U / 5π/6+Δ·x^0.5» → RECHAZA · progreso=failed
+  ✔ T1-M2 «2 / 5π/6+x^(-65)» → RECHAZA · progreso=failed
+
+-- venenos en T5-N5 (matriz 2×2 real) --
+  ✔ T5-N5 «U,U,U, 1/4+Δ·x^0.5» → RECHAZA · progreso=failed
+  ✔ T5-N5 «1/2,0,0, 1/4+x^(-65)» → RECHAZA · progreso=failed
+
+-- control positivo --
+  ✔ T1-N4 «4/11» → ACEPTA con solución visible · progreso=solved · "✓ Correcto. Revisa la so"
+  ✔ T1-N4 «8/22» ≡ 4/11 → ACEPTA
+  ✔ T1-N4 «0.36363636363636365» ≡ 4/11 → ACEPTA
+  ✔ T1-M2 correcta (2 · 5π/6) → ACEPTA con solución · progreso=solved
+  ✘ T1-N4 basura → RECHAZA sin solución
+
+UI-POISON R10: 6 fallos

@@ -1,0 +1,45 @@
+✔ localStorage="no-es-json" → tema-1 sano :: drills=15 mapa=1 resumen=5
+✔   comprobar con LS sucio responde :: ✗ Aún no es correcto. Com
+✔ localStorage="[1,2,3]" → tema-1 sano :: drills=15 mapa=1 resumen=5
+✔   comprobar con LS sucio responde :: ✗ Aún no es correcto. Com
+✔ localStorage="null" → tema-1 sano :: drills=15 mapa=1 resumen=5
+✔   comprobar con LS sucio responde :: ✗ Aún no es correcto. Com
+✔ localStorage="42" → tema-1 sano :: drills=15 mapa=1 resumen=5
+✔   comprobar con LS sucio responde :: ✗ Aún no es correcto. Com
+✔ localStorage="{\"T1-N1\":\"solved\",\"X1-8\":\"failed\"}" → tema-1 sano :: drills=15 mapa=1 resumen=5
+✔   comprobar con LS sucio responde :: ✗ Aún no es correcto. Com
+✔ localStorage="{\"a\":" → tema-1 sano :: drills=15 mapa=1 resumen=5
+✔   comprobar con LS sucio responde :: ✗ Aún no es correcto. Com
+✔ localStorage="true" → tema-1 sano :: drills=15 mapa=1 resumen=5
+✔   comprobar con LS sucio responde :: ✗ Aún no es correcto. Com
+✔ localStorage="\"hola\"" → tema-1 sano :: drills=15 mapa=1 resumen=5
+✔   comprobar con LS sucio responde :: ✗ Aún no es correcto. Com
+✔ localStorage="undefined" → tema-1 sano :: drills=15 mapa=1 resumen=5
+✔   comprobar con LS sucio responde :: ✗ Aún no es correcto. Com
+✔ localStorage="" → tema-1 sano :: drills=15 mapa=1 resumen=5
+✔   comprobar con LS sucio responde :: ✗ Aún no es correcto. Com
+✔ sessionStorage="abc" → examen sano :: timer=01:59:58 drills=12 bloqueados=0/38 nota=—
+✔ sessionStorage="-1" → examen sano :: timer=00:00:00 drills=12 bloqueados=38/38 nota=0
+✔   a 0s todo bloqueado :: 38/38
+✔ sessionStorage="0" → examen sano :: timer=01:59:59 drills=12 bloqueados=0/38 nota=—
+✔ sessionStorage="123abc" → examen sano :: timer=00:00:00 drills=12 bloqueados=38/38 nota=0
+✔   a 0s todo bloqueado :: 38/38
+✔ sessionStorage="NaN" → examen sano :: timer=01:59:59 drills=12 bloqueados=0/38 nota=—
+✔ sessionStorage="1e30" → examen sano :: timer=00:00:00 drills=12 bloqueados=38/38 nota=0
+✔   a 0s todo bloqueado :: 38/38
+✔ sessionStorage="null" → examen sano :: timer=01:59:59 drills=12 bloqueados=0/38 nota=—
+✔ sessionStorage="{}" → examen sano :: timer=01:59:59 drills=12 bloqueados=0/38 nota=—
+✔ sessionStorage="  1791931922893  " → examen sano :: timer=00:00:00 drills=12 bloqueados=38/38 nota=0
+✔   a 0s todo bloqueado :: 38/38
+✔ sessionStorage="[]" → examen sano :: timer=01:59:59 drills=12 bloqueados=0/38 nota=—
+✔ sessionStorage="Infinity" → examen sano :: timer=01:59:59 drills=12 bloqueados=0/38 nota=—
+✔ multi incompleto rechazado (X1-8) :: ✗ Aún no es correcto. Campo 'f1' incorrecto Comprueba el pla
+✔ payload XSS + 10k chars → sin ejecución, sin DOM inyectado :: {"alert":false,"hayImg":false,"hayScript":false,"textLen":66,"drills":15}
+✔ examen no escribe en curso-algebra-progreso-v1 :: null
+✔ triple clic Comprobar sin crash :: ✗ Aún no es correcto
+✔ Pista se revela y desactiva botón :: {"found":true,"visible":true,"disabled":true}
+✔ reveal en examen-2 tras scroll :: {"total":12,"sinRevelar":[]}
+✔ inputs enfocables por teclado :: {"found":true,"focus":true}
+✔ temporizador estable en 00:00:00 tras agotarse :: 00:00:00
+
+Resumen app-hostil: 0 fallos

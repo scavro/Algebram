@@ -1,0 +1,54 @@
+{
+ "(x+y)^100 vs (x+y)^100 (idénticas)": {
+  "ms": 0,
+  "res": "acepta"
+ },
+ "(x+y)^500 vs (x+y)^500 (idénticas)": {
+  "ms": 0,
+  "res": "acepta"
+ },
+ "(x+y)^800 vs (x+y)^800 (idénticas)": {
+  "ms": 0,
+  "res": "acepta"
+ },
+ "(x+y)^1000 vs (x+y)^1000 (idénticas)": {
+  "ms": 0,
+  "res": "acepta"
+ },
+ "(x+y)^1024 vs (x+y)^1024 (idénticas)": {
+  "ms": 0,
+  "res": "acepta"
+ },
+ "(x+y)^1100 vs (x+y)^1100 (idénticas)": {
+  "ms": 0,
+  "res": "acepta"
+ },
+ "(x+y)^1500 vs (x+y)^1500 (idénticas)": {
+  "ms": 0,
+  "res": "acepta"
+ },
+ "(x+y)^2000 vs (x+y)^2000 (idénticas)": {
+  "ms": 0,
+  "res": "acepta"
+ },
+ "(x+y)^2000 vs (x+y)^2001 (diferentes)": {
+  "ms": 1,
+  "res": "rechaza"
+ },
+ "x^100000 vs x^100000 (monomio, sin overflow)": {
+  "ms": 1,
+  "res": "acepta"
+ },
+ "suma de 2000 átomos log(k*x) idéntica": {
+  "ms": 0,
+  "res": "acepta"
+ },
+ "1000 paréntesis anidados": {
+  "ms": 2,
+  "res": "acepta"
+ },
+ "(x+y+z)^60 vs sí mismo (trivariable)": {
+  "ms": 0,
+  "res": "acepta"
+ }
+}

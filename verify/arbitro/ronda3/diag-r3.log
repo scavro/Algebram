@@ -1,0 +1,113 @@
+== KaTeX >320px en temas/tema-1.html: {
+ "n": 40,
+ "ejemplos": [
+  {
+   "tag": "math",
+   "cls": "",
+   "right": 345,
+   "w": 175,
+   "texto": "A∩B={x∈A:x∈B}A \\cap B = \\{x \\i",
+   "scrollableEnAncestro": false,
+   "cadena": [
+    "math[ox=visible]",
+    "katex-mathml[ox=hidden]"
+   ]
+  },
+  {
+   "tag": "math",
+   "cls": "",
+   "right": 328,
+   "w": 174,
+   "texto": "A∖B={x∈A:x∉B}A \\setminus B = \\",
+   "scrollableEnAncestro": false,
+   "cadena": [
+    "math[ox=visible]",
+    "katex-mathml[ox=hidden]"
+   ]
+  },
+  {
+   "tag": "math",
+   "cls": "",
+   "right": 430,
+   "w": 248,
+   "texto": "A⊂B⇔A∩B=A⇔A∪B=BA \\subset B \\Le",
+   "scrollableEnAncestro": false,
+   "cadena": [
+    "math[ox=visible]",
+    "katex-mathml[ox=hidden]"
+   ]
+  },
+  {
+   "tag": "math",
+   "cls": "",
+   "right": 369,
+   "w": 247,
+   "texto": "{1,2,5}−{1,2}={0,−1,1,3,4}\\{1,",
+   "scrollableEnAncestro": false,
+   "cadena": [
+    "math[ox=visible]",
+    "katex-mathml[ox=hidden]"
+   ]
+  },
+  {
+   "tag": "math",
+   "cls": "",
+   "right": 452,
+   "w": 221,
+   "texto": "A×B={(a,b):a∈A, b∈B}A \\times B",
+   "scrollableEnAncestro": false,
+   "cadena": [
+    "math[ox=visible]",
+    "katex-mathml[ox=hidden]"
+   ]
+  },
+  {
+   "tag": "math",
+   "cls": "",
+   "right": 355,
+   "w": 257,
+   "texto": "(a1,…,an)=((a1,…,an−1),an)(a_1",
+   "scrollableEnAncestro": false,
+   "cadena": [
+    "math[ox=visible]",
+    "katex-mathml[ox=hidden]"
+   ]
+  }
+ ],
+ "innerW": 320,
+ "docScroll": 320
+}
+== KaTeX >320px en examenes/examen-1.html: {
+ "n": 2,
+ "ejemplos": [
+  {
+   "tag": "math",
+   "cls": "",
+   "right": 475,
+   "w": 259,
+   "texto": "r=0,142857‾=0,142857142857…r =",
+   "scrollableEnAncestro": false,
+   "cadena": [
+    "math[ox=visible]",
+    "katex-mathml[ox=hidden]"
+   ]
+  },
+  {
+   "tag": "math",
+   "cls": "",
+   "right": 326,
+   "w": 88,
+   "texto": "B=(1234)B = \\begin{pmatrix}1&2",
+   "scrollableEnAncestro": false,
+   "cadena": [
+    "math[ox=visible]",
+    "katex-mathml[ox=hidden]"
+   ]
+  }
+ ],
+ "innerW": 320,
+ "docScroll": 320
+}
+== reveal landscape 740×360 instant: {"totalDrills":15,"sinIsIn":[],"opacidades":[]}
+== cross-page T1-N1: {"label":"1 / 15 · 7%","width":"7%"} · esperado label=1 / 15 · 7% width=7%
+== deadline 1e21: {"timer":"277777777280012:37:20","len":21,"deadline":"999999999999999999999"}

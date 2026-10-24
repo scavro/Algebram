@@ -1,0 +1,34 @@
+== tema-1 · T1-N4 (expr, expected 4/11) — drill real
+
+-- C1-R8 · respuesta universal (0/0 sin definir) --
+  ✔ T1-N4 «(x-x)/(x-x)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «0/(x-x)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «(x-x)^2/(x-x)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «1*(x-x)/(x-x)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «5+0*(x-x)/(x-x)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «((x-x)*(x-x))/(x-x)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «1/(x-x)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «x/(x-x)» → RECHAZA · progreso=failed
+
+-- M1-R8 · perturbación E+Δ·x^0.5 y venenos afines --
+  ✔ T1-N4 «B0  E+Δ (naive M5)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «B1  E+Δ·x^0.5» → RECHAZA · progreso=failed
+  ✔ T1-N4 «B2  E+Δ·x^(1/2)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «B3  E+Δ·x^0.3333» → RECHAZA · progreso=failed
+  ✔ T1-N4 «B4  E+Δ·x^y» → RECHAZA · progreso=failed
+  ✔ T1-N4 «B5  E+Δ·2^x» → RECHAZA · progreso=failed
+  ✔ T1-N4 «B6  E+Δ/(x^0.5+1)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «B7  E+Δ·(x+y)^(-1)» → RECHAZA · progreso=failed
+  ✔ T1-N4 «B8  1/2+Δ·x^0.5 (E erróneo)» → RECHAZA · progreso=failed
+
+-- M1-R8 · veneno en campo multi (T1-M2) --
+  ✔ T1-M2 «5*pi/6+Δ·x^0.5» → RECHAZA · progreso=failed
+  ✔ T1-M2 universal 0/0 en ambos campos → RECHAZA · progreso=failed
+
+-- control positivo --
+  ✔ T1-N4 «4/11» → ACEPTA con solución visible · progreso=solved · "✓ Correcto. Revisa la solución detallada"
+  ✔ T1-N4 «8/22» ≡ 4/11 → ACEPTA
+  ✔ T1-N4 «0.36363636363636365» → ACEPTA
+  ✔ T1-M2 correcta (2 · 5π/6) → ACEPTA con solución · progreso=solved
+
+UI-C1-M1 R9: 0 fallos

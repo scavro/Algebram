@@ -1,0 +1,395 @@
+{
+ "N": 100,
+ "casos": {
+  "HIST-B1 '1/2' vs 0.5": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-B2 '2i' vs 2*i": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-B3 '0,5' vs 1/2": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-B4 '(2+11i)/5' vs 2/5+11/5*i": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-B5 'sqrt(3)/2' vs 3^0.5/2": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-B6 'π/3' vs pi/3": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-B8 matriz '1/2' vs 0.5": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-B10 exprset '-2;4' vs ['4','-2']": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-B11 '1e3' vs 1000": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-B12 '5!' vs 120": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-B13 '-2^2' vs -4": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-B14 '2sqrt(3)' vs 2*sqrt(3)": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-B17 '3,14' vs 3.14": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-D1 'sqrt(2)/2' vs 1/sqrt(2)": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-D3 'i^2' vs -1": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-D4 '(1+i)^2' vs 2i": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-D5 '5*pi/6' vs pi*5/6": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-N2 T4-N3 '4-t-s' reordenado": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-N2b T4-N3 '4-(s+t)'": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-N3 T4-N3 literal": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V1 'exp(log(x))' vs x (identidad en C\\{0})": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "HIST-V2 '(x^2-1)/(x-1)' vs x+1": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V3 'conj(x*y)' vs conj(x)*conj(y)": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "HIST-V4 '(x+y)^2' vs x^2+2xy+y^2": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V5 '1/(1/x)' vs x": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V6 'sqrt(x)^2' vs x": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V7 '(-x)^2' vs x^2": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V8 'cos(x)^2+sen(x)^2' vs 1": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "HIST-V9 'cosh(x)^2-sinh(x)^2' vs 1": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "HIST-V10 '2*(x+y)' vs 2*x+2*y": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V11 'sen(pi/6)' vs 1/2": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V12 'tg(pi/4)' vs 1": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V13 matriz 'sqrt(4)' vs 2": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V14 '3/10' vs 3/10": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V15 T1-M2 mod/arg correctos": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V16 T1-N5 '2.34' redondeo": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V17 'senx' vs sin(x)": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V18 'log2' vs log(2)": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "HIST-V19 'sqrt4' vs 2": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "R8-C1 '(x+1)^2' vs x^2+2*x+1": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "R8-C2 'x*x^(-1)' vs 1": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "R8-C3 'x^(-2)' vs 1/(x^2)": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "R8-C4 'x+y+z' vs 'z+y+x' (orden)": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "R8-C5 '0.5*x' vs x/2 (fracción/decimal)": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "R8-C6 '(x-1)*(x+1)' vs x^2-1": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "R8-C7 'x^3-x' vs 'x*(x-1)*(x+1)'": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "R8-C8 '1/(x*x)' vs x^(-2)": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "NEW-T1 'sqrt(4*x)' vs 2*sqrt(x) (4>0)": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-T2 'log(4*x)' vs log(4)+log(x) (4>0)": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-T3 'log(sqrt(x))' vs log(x)/2": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-T4 'sqrt(9*x)' vs 3*sqrt(x)": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-T5 'exp(log(x))' vs x con x sustituida (log(exp(0))=0)": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "NEW-A1 'log(x+y)' vs 'log(y+x)'": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-A2 'log(2*x)' vs 'log(x*2)'": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-A3 'sin(x+y)' vs 'sin(y+x)'": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-A4 'log(x/2)' vs 'log(x*0.5)'": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-A5 'log(x*(y+z))' vs 'log((y+z)*x)'": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-A6 'sin(2*x)' vs 'sin(x*2)'": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-A7 'exp(x+y)' vs 'exp(y+x)'": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-A8 'sqrt(x+y)' vs 'sqrt(y+x)'": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-A9 'abs(x*y)' vs 'abs(y*x)'": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-A10 'log(0.1*x)' vs 'log(x/10)' (10>0)": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-F1 'min(x,y)' vs 'min(y,x)'": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-F2 'max(x,y,z)' vs 'max(z,y,x)'": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-F3 '5!' vs 120 (expr)": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "NEW-F4 'x!' vs 'fact(x)'": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-F5 'min(2,3)' vs 2": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-P1 'x^(3/2)' vs 'x*sqrt(x)'": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "NEW-P2 'x^(2/3)' vs '(x^(1/3))^2'": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "NEW-P3 'x^(-1/2)' vs '1/sqrt(x)'": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "NEW-P4 'x^(0.5)' vs 'sqrt(x)'": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "NEW-P5 '(sqrt(x))^4' vs 'x^2'": {
+   "acepta": 0,
+   "n": 100,
+   "falsoNegativo": true
+  },
+  "NEW-P6 'x^(4/2)' vs 'x^2'": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "NEW-I1 'x*j' vs 'x*i' (alias)": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "NEW-I2 'x*I' vs 'x*i' (alias)": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "NEW-I3 'i*2' vs '2*i'": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "NEW-I4 'ii' vs '-1' (i*i)": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  },
+  "NEW-I5 'e' vs 'exp(1)'": {
+   "acepta": 100,
+   "n": 100,
+   "falsoNegativo": false
+  }
+ }
+}

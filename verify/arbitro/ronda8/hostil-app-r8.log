@@ -1,0 +1,32 @@
+== (a) localStorage 'curso-algebra-progreso-v1' corrupto
+  ✔ L1  '{{{' JSON inválido: tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"]
+  ✔ L2  'null' (el N1 de la R2): tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"]
+  ✔ L3  '"x"' string: tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"]
+  ✔ L4  '[1,2,3]' array: tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"]
+  ✔ L5  '123' número: tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"]
+  ✔ L6  'true' booleano: tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"]
+  ✔ L7  'undefined' literal: tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"]
+  ✔ L8  cadena vacía: tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"]
+  ✔ L9  '__proto__' pollution: tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"]
+  ✔ L10 valor anidado {a:{...}}: tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"]
+  ✔ L11 valor booleano por id: tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"]
+  ✔ L12 sano: 1 solved: tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["1 / 15 · 7%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"] (esperado incl. 1 / 15 · 7%)
+  ✔ L13 string de 300KB: tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"]
+  ✔ L14 3000 claves basura: tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"]
+  ✔ L15 claves ajenas + solved: tema-1 15 drills · 779 fórmulas · errores JS 0 · labels ["1 / 15 · 7%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%","0 / 15 · 0%"] (esperado incl. 1 / 15 · 7%)
+  ✔ auto-sanación: LS '{{{' → corregir T1-N4 → {"T1-N4":"solved"} (T1-N4=solved, 1 clave)
+
+== (b) sessionStorage 'curso-algebra-examen-examen-1' corrupto
+  ✔ S1  'abc' no numérico: timer=01:59:58 · bloqueado=false · drills=12 · errores JS 0
+  ✔ S2  'NaN': timer=01:59:58 · bloqueado=false · drills=12 · errores JS 0
+  ✔ S3  'Infinity': timer=01:59:58 · bloqueado=false · drills=12 · errores JS 0
+  ✔ S4  '' vacío: timer=01:59:57 · bloqueado=false · drills=12 · errores JS 0
+  ✔ S5  '0' falsy: timer=01:59:58 · bloqueado=false · drills=12 · errores JS 0
+  ✔ S6  '999999999999999999999' (clampeo R5): timer=01:59:58 · bloqueado=false · drills=12 · errores JS 0
+  ✔ S7  '-1' pasado: timer=00:00:00 · bloqueado=true · drills=12 · errores JS 0
+  ✔ S8  '1e21' (parseInt=1 → pasado): timer=00:00:00 · bloqueado=true · drills=12 · errores JS 0
+
+== (c) examen con LS corrupto: Corregir examen operativo
+  ✔ Corregir examen con LS corrupto: 1ª tarjeta=wrong · nota=0 · errores JS 0
+
+HOSTIL-APP R8: 0 fallos

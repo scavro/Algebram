@@ -1,0 +1,10 @@
+
+== http://temas/tema-2.html
+  errEvents: []
+  track: {"src":"ii_transformacion.vtt","cues":3,"firstCue":"Una matriz es una aplicación lineal."}
+  track: {"src":"ii_gram_schmidt.vtt","cues":3,"firstCue":"Gram–Schmidt: restar la proyección produ"}
+
+== http://temas/tema-5.html
+  errEvents: []
+  track: {"src":"v_espectral.vtt","cues":3,"firstCue":"Teorema espectral: las direcciones propi"}
+  track: {"src":"v_svd.vtt","cues":4,"firstCue":"Descomposición SVD: rotar, estirar y rot"}

@@ -1,0 +1,110 @@
+{
+ "N": 300,
+ "casos": {
+  "M0 naive '5+log(u)+log(v)-log(u*v)' vs 5 (controles R6)": {
+   "acepta": 0,
+   "n": 300,
+   "tasa": "0.0%",
+   "falsoPositivo": false,
+   "testigo": "0/0"
+  },
+  "M0b naive 'log(x)+log(y)' vs log(x*y)": {
+   "acepta": 0,
+   "n": 300,
+   "tasa": "0.0%",
+   "falsoPositivo": false,
+   "testigo": "0/0"
+  },
+  "M1 c=3.5 '5+2log(x+3.5)-log((x+3.5)^2)' vs 5": {
+   "acepta": 44,
+   "n": 300,
+   "tasa": "14.7%",
+   "falsoPositivo": true,
+   "testigo": "1/1"
+  },
+  "M2 c=3.5 T4-N3 '4-s-t+2log(s+3.5)-log((s+3.5)^2)'": {
+   "acepta": 35,
+   "n": 300,
+   "tasa": "11.7%",
+   "falsoPositivo": true,
+   "testigo": "2/2"
+  },
+  "M3 c=3.1 '5+2log(x+3.1)-log((x+3.1)^2)' vs 5": {
+   "acepta": 12,
+   "n": 300,
+   "tasa": "4.0%",
+   "falsoPositivo": true,
+   "testigo": "3/3"
+  },
+  "M4 c=4.5 '5+2log(x+4.5)-log((x+4.5)^2)' vs 5": {
+   "acepta": 260,
+   "n": 300,
+   "tasa": "86.7%",
+   "falsoPositivo": true,
+   "testigo": "4/4"
+  },
+  "M5 c=5 '5+log(x+5)+log(y+5)-log((x+5)*(y+5))' vs 5": {
+   "acepta": 300,
+   "n": 300,
+   "tasa": "100.0%",
+   "falsoPositivo": true,
+   "testigo": "5/5"
+  },
+  "M6 c=5 '5+2log(x+5)-log((x+5)^2)' vs 5": {
+   "acepta": 300,
+   "n": 300,
+   "tasa": "100.0%",
+   "falsoPositivo": true,
+   "testigo": "6/6"
+  },
+  "M7 c=5 sqrt '5+sqrt((x+5)*(y+5))-sqrt(x+5)*sqrt(y+5)' vs 5": {
+   "acepta": 300,
+   "n": 300,
+   "tasa": "100.0%",
+   "falsoPositivo": true,
+   "testigo": "7/7"
+  },
+  "M8 c=5 arg '5+arg((x+5)*(y+5))-arg(x+5)-arg(y+5)' vs 5": {
+   "acepta": 300,
+   "n": 300,
+   "tasa": "100.0%",
+   "falsoPositivo": true,
+   "testigo": "8/8"
+  },
+  "M9 c=5 T4-N3 universal '4-s-t+log(s+5)+log(t+5)-log((s+5)*(t+5))'": {
+   "acepta": 300,
+   "n": 300,
+   "tasa": "100.0%",
+   "falsoPositivo": true,
+   "testigo": "9/9"
+  },
+  "M10 c=5 T4-M5 exprset 'i+log(s+5)+log(t+5)-log(...);-i'": {
+   "acepta": 300,
+   "n": 300,
+   "tasa": "100.0%",
+   "falsoPositivo": true,
+   "testigo": "10/10"
+  },
+  "M11 c=5 matriz T5-N5 celda + exploit log-product": {
+   "acepta": 300,
+   "n": 300,
+   "tasa": "100.0%",
+   "falsoPositivo": true,
+   "testigo": "11/11"
+  },
+  "M12 escala '5+log(exp((x+5)/20))-(x+5)/20' vs 5": {
+   "acepta": 300,
+   "n": 300,
+   "tasa": "100.0%",
+   "falsoPositivo": true,
+   "testigo": "12/12"
+  },
+  "M13 naive '5+log(exp(v))-v' vs 5 (control R6)": {
+   "acepta": 0,
+   "n": 300,
+   "tasa": "0.0%",
+   "falsoPositivo": false,
+   "testigo": "12/12"
+  }
+ }
+}

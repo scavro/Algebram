@@ -1,0 +1,160 @@
+{
+ "C2": {
+  "before": {
+   "opacity": "0",
+   "isin": false
+  },
+  "last": {
+   "opacity": "0",
+   "isin": false
+  },
+  "first": {
+   "opacity": "1",
+   "isin": true
+  },
+  "trasScrollCompleto": {
+   "total": 15,
+   "viewport": {
+    "w": 780,
+    "h": 437
+   },
+   "sinRevelar": [
+    {
+     "id": "T1-E1",
+     "h": 322,
+     "w": 718,
+     "opacity": "0.971781",
+     "isin": true
+    },
+    {
+     "id": "T1-E2",
+     "h": 572,
+     "w": 718,
+     "opacity": "0.956645",
+     "isin": true
+    },
+    {
+     "id": "T1-E3",
+     "h": 322,
+     "w": 718,
+     "opacity": "0.902881",
+     "isin": true
+    },
+    {
+     "id": "T1-E4",
+     "h": 335,
+     "w": 718,
+     "opacity": "0.8366",
+     "isin": true
+    }
+   ],
+   "alturas": [
+    "T1-N1:295",
+    "T1-N2:322",
+    "T1-N3:578",
+    "T1-N4:295",
+    "T1-N5:322",
+    "T1-N6:295",
+    "T1-M1:305",
+    "T1-M2:433",
+    "T1-M3:295",
+    "T1-M4:322",
+    "T1-M5:369",
+    "T1-E1:322",
+    "T1-E2:572",
+    "T1-E3:322",
+    "T1-E4:335"
+   ]
+  }
+ },
+ "C3": {
+  "perCardOK": "12/12",
+  "perCardFails": [],
+  "notaTrasComprobar": "—",
+  "trasCorregirExamen": "12/12 nota=10",
+  "contradicciones": []
+ },
+ "C3b": {
+  "id": "X1-8",
+  "tarjeta": "drill__feedback ok is-visible | ✓ Correcto. Revisa la solución detallada",
+  "global": "drill reveal is-correct | nota=0.83 | fb=✓ Correcto."
+ },
+ "M1": {
+  "sinProgreso": [
+   "tema-1=0 / 15 · 0%",
+   "tema-2=0 / 15 · 0%",
+   "tema-3=0 / 15 · 0%",
+   "tema-4=0 / 15 · 0%",
+   "tema-5=0 / 15 · 0%"
+  ],
+  "conProgreso5de15": {
+   "labels": [
+    "tema-1=5 / 15 · 33%",
+    "tema-2=5 / 15 · 33%",
+    "tema-3=5 / 15 · 33%",
+    "tema-4=5 / 15 · 33%",
+    "tema-5=5 / 15 · 33%"
+   ],
+   "widths": [
+    "tema-1=33%",
+    "tema-2=33%",
+    "tema-3=33%",
+    "tema-4=33%",
+    "tema-5=33%"
+   ]
+  }
+ },
+ "M7_F5": {
+  "t1": "01:59:48",
+  "t2": "01:59:46",
+  "trasF5": "01:59:44",
+  "deadlineMisma": true,
+  "noReseteado": true,
+  "conserva": true
+ },
+ "M7_cero": {
+  "timer": "00:00:00",
+  "inputs": 38,
+  "deshabilitados": 38,
+  "btnCorregirDeshabilitado": true,
+  "nota": "0",
+  "correctos": "0"
+ },
+ "M7_reset": {
+  "timer": "01:59:58",
+  "deadline": "1791956722477",
+  "inputsDeshabilitados": 0
+ },
+ "m1_estados": {
+  "found": true,
+  "id": "X1-3",
+  "type": "bool",
+  "trasElegir": [
+   "choice is-selected",
+   "choice"
+  ],
+  "trasCorregir": [
+   "choice is-selected is-wrong",
+   "choice is-right"
+  ]
+ },
+ "M5": {
+  "feedback": {
+   "role": "status",
+   "live": "polite"
+  },
+  "grade": {
+   "live": "polite"
+  },
+  "correct": {
+   "live": "polite"
+  },
+  "total": {
+   "live": null
+  },
+  "timer": {
+   "live": null,
+   "role": null
+  }
+ }
+}

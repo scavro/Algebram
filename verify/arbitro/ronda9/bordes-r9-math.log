@@ -1,0 +1,9 @@
+FN!! |    0/200 | min(2,3)+0,5 vs 3.5 — N13 desactiva coma decimal con min/max (¿parsea?)
+OK  |  200/200 | min(2,3)+1/2 vs 2.5 — forma fraccionaria sí parsea
+FN!! |   20/200 | (x+y)^1024 vs ((x+y)^512)^2 — VERDADERA gigante (N14 residual)
+FN!! |    0/200 | x^100000 vs x^99999*x — VERDADERA gigante
+OK  |  200/200 | x^65 vs x^63*x^2 — VERDADERA (65>64, numérica)
+OK  |    0/200 | 'x!' vs 'fact(x)' — control notación (fact no escribible)
+FP!! |  166/200 | 5+x^(-65) vs 5 en matriz 1x1
+FP!! |  176/200 | x^(-300) vs 0 con variable y (dos vars)
+OK  |  200/200 | 5+0*x^(-300) vs 5 — VERDADERA (0·x^k = 0)

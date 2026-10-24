@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tema V · Procesos de diagonalización · Fundamentos Algebraicos para la IA · Archivo</title>
+  <meta name="description" content="Similitud, LDU, Cholesky, teorema espectral, inercia, Jordan, SVD y pseudoinversa: explicación, resumen, mapa mental y ejercicios interactivos del Tema V." />
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/css/fonts.css" />
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+</head>
+<body data-theme="tema-5">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="progress-bar" aria-hidden="true"><div class="progress-bar__fill"></div></div>
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="wrap nav__inner">
+      <a class="nav__brand" href="../index.html"><span class="nav__brand-mark">Archivo</span><span>Álgebra · IA</span></a>
+      <button class="nav__toggle" aria-expanded="false" aria-label="Abrir menú">Menú</button>
+      <ul class="nav__links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../temas/tema-1.html">Temas</a></li>
+        <li><a href="../examenes/examen-1.html">Exámenes</a></li>
+        <li><a href="../planificacion.html">Planificación</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <header class="theme-head">
+    <div class="theme-head__bg" aria-hidden="true"></div>
+    <div class="theme-head__ghost ghost-num" aria-hidden="true">05</div>
+    <div class="theme-head__inner">
+      <p class="kicker">Tema V · Fundamentos algebraicos para la IA</p>
+      <h1>Procesos de diagonalización</h1>
+      <div class="theme-head__row">
+        <span class="chip chip--gold">7–20 dic · 11–17 ene</span>
+        <span class="chip" data-count="tema-5" data-count-suffix=" ejercicios interactivos">21 ejercicios interactivos</span>
+        <span class="chip">Resumen + mapa mental</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrap toc" aria-label="Sumario del tema">
+    <a href="#s1"><span class="meta">§ 5.1</span><strong>Similitud y congruencia</strong></a>
+    <a href="#s2"><span class="meta">§ 5.2</span><strong>Factorización LDU</strong></a>
+    <a href="#s3"><span class="meta">§ 5.3</span><strong>Cholesky</strong></a>
+    <a href="#s4"><span class="meta">§ 5.4</span><strong>Teorema espectral</strong></a>
+    <a href="#s5"><span class="meta">§ 5.5</span><strong>Inercia de Sylvester</strong></a>
+    <a href="#s6"><span class="meta">§ 5.6</span><strong>Definitud</strong></a>
+    <a href="#s7"><span class="meta">§ 5.7</span><strong>Diagonalizables</strong></a>
+    <a href="#s8"><span class="meta">§ 5.8</span><strong>Forma de Jordan</strong></a>
+    <a href="#s9"><span class="meta">§ 5.9</span><strong>Valores singulares</strong></a>
+    <a href="#s10"><span class="meta">§ 5.10</span><strong>Pseudoinversa</strong></a>
+    <a href="#resumen"><span class="meta">Ficha</span><strong>Resumen</strong></a>
+    <a href="#mapa"><span class="meta">Visual</span><strong>Mapa mental</strong></a>
+    <a href="#ejercicios"><span class="meta">Práctica</span><strong>Ejercicios</strong></a>
+  </nav>
+
+  <main id="contenido">
+
+    <!-- ================= TEORÍA ================= -->
+    <section class="wrap section theory-section" id="s1">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 5.1</div>
+        <div>
+          <h2>Similitud, congruencia y diagonalización</h2>
+          <p>Las dos maneras de comparar matrices y el concepto amplio de diagonalización que ordena todo el tema.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>En el Tema IV descomponíamos matrices en factores triangulares u ortogonales para calcular mejor. Ahora queremos <em>comprender</em> cómo actúa una aplicación lineal a lo largo de sus direcciones fundamentales. La idea general es escribir</p>
+        \[ A = W\,\Lambda\,V, \]
+        <p>donde \(\Lambda\) es diagonal-rectangular, del mismo formato que \(A\), y \(W, V\) son matrices cuadradas invertibles que se leen como cambios de base. Según cómo se relacionen \(W\) y \(V\) nacen los distintos procesos de diagonalización.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 5.1</span>
+          <p>Sean \(A, B \in K^{n\times n}\). Decimos que \(A\) y \(B\) son <strong>similares</strong> (o semejantes) si existe \(W \in K^{n\times n}\) invertible tal que \(A = W B W^{-1}\). En ese caso \(A\) y \(B\) representan la misma aplicación lineal respecto de dos bases distintas.</p>
+        </div>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 5.2</span>
+          <p>Decimos que \(A\) y \(B\) son <strong>congruentes</strong> si existe \(W\) invertible tal que \(A = W B W^{*}\) (con \(W^{*}=\overline{W}^{\top}\); en matrices reales, \(A = W B W^{\top}\)). En ese caso \(A\) y \(B\) representan la misma forma bilineal o hermítica respecto de dos bases.</p>
+        </div>
+
+        <p><strong>Nota de equivalencia notacional con el texto base.</strong> En este curso escribimos \(A^{\top}\) para la transpuesta ordinaria, \(A^{*} = \overline{A}^{\top}\) para la transpuesta conjugada (adjunta hermítica) y \(A = U\Sigma V^{*}\) para la SVD. En el libro de J. Perán Mazón se emplea \(A^{T}\) para la transpuesta ordinaria, \(A^{\top} = \overline{A}^{T}\) para la transpuesta conjugada y \(A = W\Sigma V^{\top}\) (con \(W\) y \(W_{r}\) en lugar de \(U\) y \(U_{r}\)) para la SVD. Sobre \(\mathbb{R}\) ambos convenios coinciden (\(A^{*} = A^{\top} = A^{T}\)).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 5.3</span>
+          <p>Una <strong>diagonalización</strong> de \(A \in K^{n\times m}\) es una factorización \(A = W\Lambda V\) con \(\Lambda\) diagonal-rectangular del formato de \(A\) y \(W, V\) invertibles. Los casos más relevantes son:</p>
+          <ul>
+            <li>\(V = W^{-1}\): diagonalización <em>por similitud</em> (§ 5.7 y § 5.8).</li>
+            <li>\(V = W^{*}\): diagonalización <em>por congruencia</em> (§ 5.2, § 5.5 y § 5.6).</li>
+            <li>\(W = Q\) y \(V = W^{*} = Q^{*}\) con \(Q\) ortogonal (o unitaria): <em>diagonalización ortogonal</em>, que es a la vez por similitud y por congruencia (§ 5.4).</li>
+            <li>\(W\) y \(V\) ortogonales sin más: la descomposición en valores singulares (§ 5.9).</li>
+          </ul>
+        </div>
+
+        <p>La tabla siguiente resume el mapa completo. Fíjate en que los factores triangulares (Cholesky y \(LDU\) cuando \(A = A^{*}\) es hermítica, de modo que \(U = L^{*}\)) son diagonalizaciones por congruencia, y que la SVD es el único caso con factores ortogonales que funciona para <em>toda</em> matriz, incluso rectangular.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Proceso</th><th>Factores</th><th>Relación</th><th>Ámbito</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>LDU / \(LDL^{*}\)</td><td>\(L, U\) triangulares, \(D\) diagonal</td><td>Congruencia si \(A = A^{*}\) (\(U = L^{*}\))</td><td>Sin menores principales nulos (cuadrada o rectangular)</td></tr>
+              <tr><td>Cholesky</td><td>\(L\) triangular</td><td>\(A = LL^{*}\)</td><td>Hermítica (semi)definida positiva</td></tr>
+              <tr><td>Ortogonal (espectral)</td><td>\(Q\) ortogonal / unitaria</td><td>Similitud y congruencia</td><td>Matrices normales</td></tr>
+              <tr><td>Similitud / Jordan</td><td>\(W\) invertible</td><td>Por similitud</td><td>Toda matriz cuadrada</td></tr>
+              <tr><td>SVD</td><td>\(U, V\) ortogonales / unitarias</td><td>Ninguna de las anteriores</td><td>Toda matriz</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="plaque">
+          <span class="plaque__label">Ejemplo 5.1</span>
+          <p>Diagonalicemos por similitud la matriz \(A = \begin{pmatrix} 4 & -1 \\ 2 & 1 \end{pmatrix}\), que no es normal.</p>
+          <p>Sus autovalores son \(\lambda = 2\) y \(\lambda = 3\), con autovectores \(\mathbf{v}_{1} = (1,2)\) y \(\mathbf{v}_{2} = (1,1)\). Tomando \(P = [\mathbf{v}_{1}\ \mathbf{v}_{2}]\):</p>
+          \[ A = PDP^{-1} = \begin{pmatrix} 1 & 1 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix} \begin{pmatrix} -1 & 1 \\ 2 & -1 \end{pmatrix}. \]
+          <p>Es una diagonalización por similitud. Sin embargo \(AA^{\top} = \begin{pmatrix} 17 & 7 \\ 7 & 5 \end{pmatrix} \neq \begin{pmatrix} 20 & -2 \\ -2 & 2 \end{pmatrix} = A^{\top}A\): \(A\) no es normal y no admite diagonalización ortogonal.</p>
+        </div>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Confundir similitud con congruencia. En \(A = WBW^{-1}\) se conserva la aplicación lineal (\(A\) y \(B\) tienen el mismo polinomio característico); en \(A = WBW^{*}\) se conserva la forma asociada, y solo se conserva la <em>signatura</em> (§ 5.5). Que una matriz sea simétrica no hace equivalentes ambos conceptos.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Cuando los datos viven en una base «mala» (variables correlacionadas, píxeles, palabras), diagonalizar equivale a cambiar a las direcciones donde la transformación solo escala. Esa es la idea detrás de PCA y de los espacios de embedding: encontrar la base en la que la estructura de los datos es diagonal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s2">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 5.2</div>
+        <div>
+          <h2>Factorización LDU</h2>
+          <p>La eliminación gaussiana, vista como diagonalización por congruencia con factores triangulares.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Si \(A \in K^{n\times m}\) tiene todos sus menores principales no nulos, la factorización \(LU\) del Tema IV da \(A = L V\), con \(L\) unitriangular inferior y \(V\) trapezoidal superior de diagonal sin ceros. Sacando la diagonal de \(V\) se obtiene la factorización \(LDU\).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 5.4</span>
+          <p>La <strong>factorización LDU</strong> de \(A\) es \(A = LDU\), donde \(L \in K^{n\times n}\) es unitriangular inferior, \(D = \operatorname{diag}(d_{11},\dots,d_{nn})\) es diagonal y \(U \in K^{n\times m}\) es trapezoidal superior con unos en la diagonal principal. Si \(A\) es cuadrada, \(U\) es unitriangular superior.</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 5.5</span>
+          <p>Si \(A \in K^{n\times n}\) no tiene menores principales nulos, su factorización \(LDU\) existe y es única. Además, si \(A\) es simétrica (\(A = A^{\top}\)), entonces \(U = L^{\top}\) y \(A = LDL^{\top}\) (donde \(D\) puede tener entradas complejas si \(K = \mathbb{C}\)); mientras que si \(A\) es hermítica (\(A = A^{*}\)), entonces \(U = L^{*}\), \(D\) es real y \(A = LDL^{*}\).</p>
+          <p><em>Demostración.</em> Supongamos \(LDU = L'D'U'\) con \(L, L'\) unitriangulares inferiores, \(U, U'\) unitriangulares superiores y \(D, D'\) diagonales. Entonces \(L'^{-1}LD = D'U'U^{-1}\). El miembro izquierdo es triangular inferior y el derecho triangular superior: ambos son diagonales. Como \(L'^{-1}L\) es unitriangular y diagonal, \(L'^{-1}L = I\); análogamente \(UU'^{-1} = I\), y por tanto \(L = L'\), \(U = U'\), \(D = D'\). Si \(A = A^{\top}\), de \(LDU = U^{\top}D^{\top}L^{\top} = U^{\top}DL^{\top}\) y la unicidad se sigue \(U = L^{\top}\) (observa que toda matriz diagonal verifica \(D^{\top} = D\), aunque tenga entradas complejas, como ocurre en el Ejemplo 152 del texto base). En cambio, si \(A = A^{*}\), de \(LDU = U^{*}D^{*}L^{*}\) y la unicidad se sigue \(U = L^{*}\) y \(D = D^{*} = \overline{D}\), por lo que \(D\) es necesariamente real. \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque">
+          <span class="plaque__label">Ejemplo 5.2</span>
+          <p>Diagonalicemos por congruencia la matriz simétrica \(A = \begin{pmatrix} 2 & 4 \\ 4 & 10 \end{pmatrix}\) mediante \(LDU\).</p>
+          <p>Eliminamos la entrada \((2,1)\) con multiplicador \(2\):</p>
+          \[ L = \begin{pmatrix} 1 & 0 \\ 2 & 1 \end{pmatrix}, \qquad \begin{pmatrix} 2 & 4 \\ 4 & 10 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} 2 & 4 \\ 0 & 2 \end{pmatrix}. \]
+          <p>Sacando la diagonal \(D = \operatorname{diag}(2,2)\):</p>
+          \[ A = LDU = \begin{pmatrix} 1 & 0 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix} \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix} = LDL^{\top}. \]
+          <p>Comprueba multiplicando: efectivamente \(U = L^{\top}\), como garantiza la Proposición 5.5.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s3">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 5.3</div>
+        <div>
+          <h2>Factorización de Cholesky</h2>
+          <p>De \(LDL^{*}\) a \(A = LL^{*}\): el caso definido positivo, el más útil en computación.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Si \(A\) es hermítica y semidefinida positiva, los \(d_{ii}\) de su factorización \(LDL^{*}\) son números reales no negativos, y se les puede extraer la raíz cuadrada. Absorbiéndola en \(L\) aparece la factorización de Cholesky.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 5.6 (Cholesky)</span>
+          <p>Una matriz \(A \in K^{n\times n}\) es hermítica semidefinida positiva si y solo si admite una factorización \(A = LL^{*}\) con \(L\) triangular inferior. Si \(A\) es definida positiva, existe una única tal factorización con diagonal estrictamente positiva (y real).</p>
+          <p><em>Demostración.</em> Si \(A = LL^{*}\), entonces \(\mathbf{x}^{*}A\mathbf{x} = \|L^{*}\mathbf{x}\|^{2} \ge 0\), y si \(L\) es invertible la desigualdad es estricta para \(\mathbf{x}\neq 0\). Recíprocamente, consideremos primero el caso definido positivo: entonces todos los menores principales son positivos (criterio de Sylvester, § 5.6) y existe la factorización \(A = LDL^{*}\) (§ 5.2), con \(D = \operatorname{diag}(d_{11},\dots,d_{nn})\) real y \(d_{ii} \gt  0\). En el caso semidefinida positiva (posiblemente singular) el mismo argumento se aplica a \(A + \varepsilon I\) y se pasa al límite cuando \(\varepsilon \to 0^{+}\). En todo caso, \(d_{ii} \ge 0\) por ser \(A\) semidefinida positiva. Sea \(D^{1/2} = \operatorname{diag}(\sqrt{d_{11}},\dots,\sqrt{d_{nn}})\) y \(L_{0} = L D^{1/2}\); entonces \(A = L_{0}L_{0}^{*}\). Si \(A\) es definida positiva, todos los \(d_{ii} \gt  0\), \(L_{0}\) es invertible, y la condición de diagonal positiva fija los signos: la factorización es única. \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque">
+          <span class="plaque__label">Ejemplo 5.3</span>
+          <p>Calculemos la factorización de Cholesky de \(A = \begin{pmatrix} 9 & 6 \\ 6 & 5 \end{pmatrix}\).</p>
+          <p>Buscamos \(L = \begin{pmatrix} a & 0 \\ b & c \end{pmatrix}\) con \(a, c \gt  0\). De \(LL^{\top} = A\): \(a^{2} = 9 \Rightarrow a = 3\); \(ab = 6 \Rightarrow b = 2\); \(b^{2}+c^{2} = 5 \Rightarrow c^{2} = 1 \Rightarrow c = 1\). Por tanto</p>
+          \[ L = \begin{pmatrix} 3 & 0 \\ 2 & 1 \end{pmatrix}, \qquad LL^{\top} = \begin{pmatrix} 9 & 6 \\ 6 & 5 \end{pmatrix} = A. \]
+          <p>Comprueba que los menores principales de \(A\) son \(9 \gt  0\) y \(45-36 = 9 \gt  0\): \(A\) es definida positiva, como era de esperar.</p>
+        </div>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Aplicar Cholesky estándar sin distinguir entre radicandos negativos y pivotes nulos. Por ejemplo, con \(A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}\) el algoritmo da \(a = 1\), \(b = 2\) y \(c^{2} = 1 - 4 = -3 \lt 0\): no hay \(L\) real porque la matriz es indefinida (autovalores \(3\) y \(-1\)). Si aparece un radicando estrictamente negativo, \(A\) no es semidefinida positiva. En cambio, si aparece un pivote nulo (\(l_{ii} = 0\)), el algoritmo estándar no puede dividir por \(l_{ii}\) al calcular \(l_{ji} = (a_{ji} - \sum_{k\lt i} l_{jk}\overline{l_{ik}})/l_{ii}\), lo cual significa que \(A\) deja de ser <strong>definida positiva</strong>; sin embargo, \(A\) todavía es <strong>semidefinida positiva</strong> si y solo si todas las demás entradas de esa columna residual también se anulan (en cuyo caso se toma \(l_{ji} = 0\), como en el Ejemplo 153 del libro; p. ej. \(\begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 2 & 0 \end{pmatrix}\begin{pmatrix} 1 & 2 \\ 0 & 0 \end{pmatrix}\)).</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Cholesky es la factorización preferida en optimización y probabilidad. Para muestrear una gaussiana \(\mathcal{N}(\mu, \Sigma)\) basta tomar \(\mathbf{x} = \mu + L\mathbf{z}\), con \(LL^{\top} = \Sigma\) y \(\mathbf{z}\) de componentes normales estándar. Los métodos de Newton y de Gauss–Newton resuelven sus sistemas con Cholesky, porque la matriz de coeficientes es simétrica definida positiva cerca de un mínimo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s4">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 5.4</div>
+        <div>
+          <h2>Teorema espectral</h2>
+          <p>La diagonalización ortogonal de las matrices normales y, en particular, de las simétricas y hermíticas.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>La circunstancia más favorable de \(A = W\Lambda V\) es \(W = Q\) y \(V = W^{*} = Q^{*}\) con \(Q\) ortogonal (o unitaria): la factorización es a la vez una diagonalización por similitud y por congruencia, y sus factores conservan las longitudes. ¿Qué matrices admiten \(A = Q\Lambda Q^{*}\)?</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 5.7</span>
+          <p>Una matriz \(A \in K^{n\times n}\) es <strong>normal</strong> si conmuta con su adjunta: \(A^{*}A = AA^{*}\). Son normales las matrices hermíticas (\(A^{*}=A\)), en particular las reales simétricas, y las unitarias u ortogonales.</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 5.8 (Espectral para matrices normales)</span>
+          <p>Una matriz \(A \in \mathbb{C}^{n\times n}\) admite una diagonalización ortogonal \(A = Q\Lambda Q^{*}\), con \(Q\) unitaria y \(\Lambda\) diagonal, si y solo si \(A\) es normal. Sobre \(\mathbb{R}\) la equivalencia vale para las matrices normales cuyo espectro es todo real (en particular, para las simétricas): una matriz normal de espectro no real, como la rotación \(\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\), no admite \(A = Q\Lambda Q^{*}\) con \(Q\) ortogonal real. Cada columna \(\mathbf{q}_{i}\) de \(Q\) es un autovector de \(A\) de autovalor \(\lambda_{i}\), el \(i\)-ésimo elemento de la diagonal de \(\Lambda\).</p>
+          <p><em>Demostración.</em> Si \(A = Q\Lambda Q^{*}\), entonces \(AA^{*} = Q\Lambda\Lambda^{*}Q^{*} = Q\Lambda^{*}\Lambda Q^{*} = A^{*}A\). Recíprocamente, sea \(A = QUQ^{*}\) una triangulación de Schur (Tema IV), con \(U\) triangular y \(Q\) unitaria —ortogonal, con \(Q\) real, si todos los autovalores de \(A\) son reales—. Como \(A\) es normal, \(UU^{*} = U^{*}U\); una matriz triangular normal es diagonal (Tema IV, Proposición 4.3), luego \(U = \Lambda\) y \(A = Q\Lambda Q^{*}\). \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 5.9 (Espectral para matrices hermíticas)</span>
+          <p>Si \(A \in K^{n\times n}\) es hermítica (\(A^{*} = A\)), todos sus autovalores son reales y existe \(Q\) unitaria (ortogonal si \(A\) es real) con \(A = Q\Lambda Q^{*}\) y \(\Lambda\) real. Si \(A \in \mathbb{R}^{n\times n}\) es simétrica, puede tomarse \(Q\) real.</p>
+          <p><em>Demostración.</em> Una hermítica es normal, y por el Teorema 5.8 existe \(A = Q\Lambda Q^{*}\). Entonces \(\Lambda = Q^{*}AQ = Q^{*}A^{*}Q = (Q^{*}AQ)^{*} = \Lambda^{*}\), de modo que \(\Lambda\) es real. Si \(A\) es real, los autoespacios de autovalores reales se generan por vectores reales, y puede escogerse \(Q\) real por Gram–Schmidt. \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Corolario 5.9 bis (Raíz cuadrada de una matriz semidefinida positiva)</span>
+          <p>Si \(A \in K^{n\times n}\) es hermítica semidefinida positiva con diagonalización ortogonal \(A = Q\Lambda Q^{*}\) (\(\Lambda = \operatorname{diag}(\lambda_{1},\dots,\lambda_{n})\), \(\lambda_{i} \ge 0\)), entonces la matriz</p>
+          \[ A^{1/2} = Q\Lambda^{1/2}Q^{*} = Q\operatorname{diag}(\sqrt{\lambda_{1}},\dots,\sqrt{\lambda_{n}})Q^{*} \]
+          <p>es la única matriz hermítica semidefinida positiva tal que \((A^{1/2})^{2} = A\).</p>
+          <p><em>Demostración.</em> Es inmediato que \(A^{1/2}\) es hermítica, semidefinida positiva (sus autovalores son \(\sqrt{\lambda_{i}} \ge 0\)) y cumple \((A^{1/2})^{2} = Q\Lambda^{1/2}Q^{*}Q\Lambda^{1/2}Q^{*} = Q\Lambda Q^{*} = A\). Para la unicidad, si \(B\) es otra matriz hermítica semidefinida positiva con \(B^{2} = A\) y diagonalización \(B = U D U^{*}\) (\(d_{i} \ge 0\)), entonces \(A = U D^{2} U^{*}\), por lo que cada autoespacio de \(B\) de autovalor \(d \ge 0\) coincide con el autoespacio de \(A\) de autovalor \(d^{2}\), lo que fuerza \(B = A^{1/2}\). \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque">
+          <span class="plaque__label">Ejemplo 5.4</span>
+          <p>Diagonalicemos ortogonalmente la matriz simétrica \(A = \begin{pmatrix} 2 & 1 & 1 \\ 1 & 2 & 1 \\ 1 & 1 & 2 \end{pmatrix}\).</p>
+          <p>El polinomio característico es \((\lambda-4)(\lambda-1)^{2}\): autovalores \(\lambda_{1} = 4\) y \(\lambda = 1\) con multiplicidad \(2\). Los autoespacios son \(E_{4} = \langle (1,1,1)\rangle\) y \(E_{1} = \{(x,y,z) : x+y+z = 0\}\), ortogonales entre sí.</p>
+          <p>Normalizando y completando con Gram–Schmidt dentro de \(E_{1}\):</p>
+          \[ \mathbf{q}_{1} = \tfrac{1}{\sqrt{3}}(1,1,1), \quad \mathbf{q}_{2} = \tfrac{1}{\sqrt{2}}(1,-1,0), \quad \mathbf{q}_{3} = \tfrac{1}{\sqrt{6}}(1,1,-2). \]
+          <p>Formando \(Q = [\mathbf{q}_{1}\ \mathbf{q}_{2}\ \mathbf{q}_{3}]\) (que verifica \(Q^{\top}Q = I\)) y \(\Lambda = \operatorname{diag}(4,1,1)\):</p>
+          \[ A = Q\Lambda Q^{\top}. \]
+          <p>Fíjate en que el autovalor \(\lambda = 1\) es doble y, aun así, \(A\) es diagonalizable: la simetría garantiza que \(\dim E_{1} = 2\). Compara con el Ejemplo 5.6, donde un autovalor doble tiene autoespacio de dimensión \(1\) y no hay diagonalización posible.</p>
+        </div>
+
+        <div class="plaque">
+          <span class="plaque__label">Ejemplo 5.4 bis (Raíz cuadrada de una matriz definida positiva)</span>
+          <p>Calculemos la raíz cuadrada simétrica definida positiva \(A^{1/2}\) de \(A = \begin{pmatrix} 5 & 4 \\ 4 & 5 \end{pmatrix}\).</p>
+          <p>Sus autovalores son \(\lambda_{1} = 9\) y \(\lambda_{2} = 1\), con autovectores ortonormales \(\mathbf{q}_{1} = \tfrac{1}{\sqrt{2}}(1,1)^{\top}\) y \(\mathbf{q}_{2} = \tfrac{1}{\sqrt{2}}(1,-1)^{\top}\). Aplicando \(A^{1/2} = Q\Lambda^{1/2}Q^{\top}\):</p>
+          \[ A^{1/2} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} \sqrt{9} & 0 \\ 0 & \sqrt{1} \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} = \frac{1}{2}\begin{pmatrix} 3 & 1 \\ 3 & -1 \end{pmatrix}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}. \]
+          <p>Comprobación: \((A^{1/2})^{2} = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}^{2} = \begin{pmatrix} 5 & 4 \\ 4 & 5 \end{pmatrix} = A\), y \(A^{1/2}\) es simétrica definida positiva (autovalores \(3\) y \(1\)).</p>
+        </div>
+      </div>
+    
+      <figure class="film reveal">
+        <video controls preload="metadata" playsinline src="../assets/animaciones/v_espectral.mp4"><track kind="captions" src="data:text/vtt;charset=utf-8;base64,V0VCVlRUCgowMDowMC4wMDAgLS0+IDAwOjA0LjAwMApUZW9yZW1hIGVzcGVjdHJhbDogbGFzIGRpcmVjY2lvbmVzIHByb3BpYXMgc29sbyBzZSBlc2NhbGFuLgoKMDA6MDQuMDAwIC0tPiAwMDowOC41MDAKdjEgeSB2MiBzb24gZGlyZWNjaW9uZXMgcHJvcGlhczsgdSBubyBsbyBlcy4KCjAwOjA4LjUwMCAtLT4gMDA6MTEuMjAwCkJham8gbGEgdHJhbnNmb3JtYWNpw7NuLCB2MSB5IHYyIGNvbnNlcnZhbiBzdSBkaXJlY2Npw7NuLgo=" srclang="es" label="Español" default data-vtt="v_espectral.vtt"></video>
+        <figcaption>Animación · Teorema espectral: las direcciones propias solo se escalan</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap section theory-section" id="s5">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 5.5</div>
+        <div>
+          <h2>Ley de inercia de Sylvester</h2>
+          <p>Lo que la congruencia conserva no son los valores, sino los signos.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Una matriz hermítica puede diagonalizarse por congruencia de infinitas maneras \(A = M\Lambda M^{*}\) con \(M\) simplemente invertible. Las diagonales \(\Lambda\) que aparecen son distintas entre sí, pero comparten algo: el recuento de signos.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 5.10</span>
+          <p>La <strong>signatura</strong> o <strong>inercia</strong> de una matriz hermítica \(A \in K^{n\times n}\) es la terna \((\pi, \nu, \zeta)\), donde \(\pi, \nu, \zeta\) son el número de autovalores positivos, negativos y nulos de \(A\), contados con multiplicidad. Decimos que dos matrices hermíticas \(A\) y \(B\) <strong>del mismo formato</strong> tienen la misma signatura si coinciden \(\pi\) y \(\nu\) (y por tanto también \(\zeta = n - \pi - \nu\)).</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 5.11 (Ley de inercia de Sylvester)</span>
+          <p>Dos matrices hermíticas \(A, B \in K^{n\times n}\) son congruentes si y solo si tienen la misma signatura. En particular, si \(A = M\Lambda M^{*} = M'\Lambda' M'^{*}\) son dos diagonalizaciones por congruencia de la misma matriz hermítica, las diagonales \(\Lambda\) y \(\Lambda'\) tienen el mismo número de entradas positivas y el mismo número de negativas.</p>
+          <p><em>Demostración.</em> Si \(A = M\Lambda M^{*} = M'\Lambda'(M')^{*}\) tuviese \(\pi \gt \pi'\) entradas positivas en \(\Lambda\) frente a \(\Lambda'\), sea \(V_{+} \subset K^{n}\) el subespacio de dimensión \(\pi\) donde \(\Lambda\) es estrictamente positiva (generado por los vectores canónicos \(\mathbf{e}_{i}\) con \(\lambda_{i} \gt 0\)) y sea \(W_{\le 0} \subset K^{n}\) el subespacio de dimensión \(n - \pi'\) donde \(\Lambda'\) es \(\le 0\) (generado por los \(\mathbf{e}_{j}\) con \(\lambda'_{j} \le 0\)). Entonces \(U_{+} = (M^{*})^{-1}(V_{+})\) tiene dimensión \(\pi\) y en todo vector no nulo \(\mathbf{x} \in U_{+}\) se cumple \(\mathbf{x}^{*}A\mathbf{x} = (M^{*}\mathbf{x})^{*}\Lambda(M^{*}\mathbf{x}) \gt 0\), mientras que en \(U_{\le 0} = ((M')^{*})^{-1}(W_{\le 0})\) (de dimensión \(n - \pi'\)) se cumple \(\mathbf{x}^{*}A\mathbf{x} = ((M')^{*}\mathbf{x})^{*}\Lambda'((M')^{*}\mathbf{x}) \le 0\). Como \(\pi + (n - \pi') \gt n\), ambos subespacios se cortan en un vector \(\mathbf{x} \neq \mathbf{0}\), contradicción. Por simetría, \(\pi = \pi'\), y aplicando el mismo argumento a \(-A\) se obtiene \(\nu = \nu'\). Recíprocamente, toda diagonal \(\Lambda\) con signatura \((\pi,\nu,\zeta)\) es congruente a \(\operatorname{diag}(I_{\pi}, -I_{\nu}, 0_{\zeta})\) escalando por \(|\lambda_{i}|^{-1/2}\) las entradas no nulas, luego dos hermíticas del mismo formato con igual signatura son congruentes entre sí. \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque">
+          <span class="plaque__label">Ejemplo 5.5</span>
+          <p>Comparemos dos diagonalizaciones por congruencia de \(A = \begin{pmatrix} 2 & 1 & 0 \\ 1 & 2 & 0 \\ 0 & 0 & -3 \end{pmatrix}\).</p>
+          <p>Por eliminación, \(A = LDL^{\top}\) con</p>
+          \[ L = \begin{pmatrix} 1 & 0 & 0 \\ 1/2 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}, \qquad D = \operatorname{diag}\left(2,\ \tfrac{3}{2},\ -3\right). \]
+          <p>Ortogonalmente, los autovalores son \(3, 1, -3\) y \(A = Q\operatorname{diag}(3,1,-3)Q^{\top}\). Las diagonales \(D\) y \(\operatorname{diag}(3,1,-3)\) son distintas, pero ambas tienen firma \((2+,1-)\): dos entradas positivas y una negativa. Eso es exactamente lo que garantiza la ley de inercia.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s6">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 5.6</div>
+        <div>
+          <h2>Definitud de las formas cuadráticas</h2>
+          <p>Autovalores, menores principales y factorización: tres criterios para clasificar una forma cuadrática.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Una forma cuadrática sobre \(K^{n}\) es una función \(\mathbf{x} \mapsto \mathbf{x}^{*}A\mathbf{x}\) con \(A\) hermítica. Clasificar su definitud (positiva, negativa, indefinida) es el problema central de la optimización, y el teorema espectral lo resuelve de un golpe.</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 5.12</span>
+          <p>Una matriz hermítica \(A\) es <strong>definida positiva</strong> si \(\mathbf{x}^{*}A\mathbf{x} \gt  0\) para todo \(\mathbf{x}\neq 0\); <strong>semidefinida positiva</strong> si \(\mathbf{x}^{*}A\mathbf{x} \ge 0\) para todo \(\mathbf{x}\); <strong>indefinida</strong> si la forma toma valores positivos y negativos. Análogamente para definitud negativa.</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 5.13 (Definitud por autovalores)</span>
+          <p>Una matriz hermítica \(A\) es definida positiva si y solo si todos sus autovalores son positivos, y semidefinida positiva si y solo si todos sus autovalores son no negativos.</p>
+          <p><em>Demostración.</em> Sea \(A = Q\Lambda Q^{*}\) su diagonalización ortogonal y \(\mathbf{x} = Q\mathbf{u}\). Entonces \(\mathbf{x}^{*}A\mathbf{x} = \mathbf{u}^{*}\Lambda\mathbf{u} = \sum_{i} \lambda_{i} |u_{i}|^{2}\), que es \(\gt  0\) para todo \(\mathbf{u}\neq 0\) si y solo si todos los \(\lambda_{i} \gt  0\), y \(\ge 0\) si y solo si todos los \(\lambda_{i} \ge 0\). \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 5.14 (Criterio de Sylvester)</span>
+          <p>Una matriz hermítica \(A \in K^{n\times n}\) es definida positiva si y solo si todos sus menores principales líderes son estrictamente positivos: \(\Delta_{k} = \det(a_{ij})_{1\le i,j\le k} \gt  0\) para \(k = 1,\dots,n\). (Aplicado a \(-A\), \(A\) es definida negativa si y solo si \((-1)^{k}\Delta_{k} \gt 0\) para \(k = 1,\dots,n\), es decir, los menores alternan de signo empezando por \(\Delta_{1} \lt 0\)).</p>
+          <p><em>Demostración (esbozo).</em> Por inducción sobre \(n\). Si \(A\) es definida positiva, toda submatriz principal también lo es (restringiendo \(\mathbf{x}\) al subespacio correspondiente), y \(\det A = \prod \lambda_{i} \gt  0\). Recíprocamente, si todos los \(\Delta_{k} \gt  0\), la submatriz \(C\) de orden \(n-1\) es definida positiva por hipótesis de inducción, y el cambio de base \(\mathbf{x} = R\mathbf{u}\) con \(R = \begin{pmatrix} I & -C^{-1}\mathbf{w} \\ 0 & 1 \end{pmatrix}\) transforma \(A = \begin{pmatrix} C & \mathbf{w} \\ \mathbf{w}^{*} & a \end{pmatrix}\) en la forma \(\operatorname{diag}(C,\ a - \mathbf{w}^{*}C^{-1}\mathbf{w})\), cuya última entrada vale \(\det(A)/\det(C) \gt  0\). \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 5.14 bis (Definitud por factorización)</span>
+          <p>Una matriz \(A \in K^{n\times n}\) es hermítica semidefinida positiva si y solo si existe \(B \in K^{n\times n}\) tal que \(A = B^{*}B\) (en cuyo caso \(\ker A = \ker B\) y \(\operatorname{rng}A = \operatorname{rng}B\)); y es hermítica definida positiva si y solo si existe \(B \in K^{n\times n}\) invertible tal que \(A = B^{*}B\).</p>
+          <p><em>Demostración.</em> Si \(A = B^{*}B\), entonces \(A^{*} = (B^{*}B)^{*} = B^{*}B = A\) y \(\mathbf{x}^{*}A\mathbf{x} = (B\mathbf{x})^{*}(B\mathbf{x}) = \|B\mathbf{x}\|_{2}^{2} \ge 0\) para todo \(\mathbf{x} \in K^{n}\), con igualdad si y solo si \(B\mathbf{x} = \mathbf{0}\) (luego \(\ker A = \ker B\) y \(\operatorname{rng}A = \operatorname{rng}B\)); en particular, \(\mathbf{x}^{*}A\mathbf{x} \gt 0\) para todo \(\mathbf{x} \neq \mathbf{0}\) equivale a \(\ker B = \{\mathbf{0}\}\), esto es, \(B\) invertible. Recíprocamente, si \(A\) es hermítica semidefinida positiva, basta tomar \(B = A^{1/2}\) (Corolario 5.9 bis) o \(B = L^{*}\) de Cholesky (Teorema 5.6). \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque">
+          <span class="plaque__label">Ejemplo 5.5 bis (Criterio de Sylvester en \(3\times 3\))</span>
+          <p>Clasifiquemos la matriz simétrica \(A = \begin{pmatrix} 2 & -1 & 0 \\ -1 & 2 & 3 \\ 0 & 3 & 7 \end{pmatrix}\) mediante el criterio de Sylvester.</p>
+          <p>Calculamos en orden sus tres menores principales líderes:</p>
+          \[ \Delta_{1} = 2 \gt 0, \qquad \Delta_{2} = \det\begin{pmatrix} 2 & -1 \\ -1 & 2 \end{pmatrix} = 4 - 1 = 3 \gt 0, \qquad \Delta_{3} = \det A = 2(14 - 9) - (-1)(-7) = 10 - 7 = 3 \gt 0. \]
+          <p>Como \(\Delta_{1}, \Delta_{2}, \Delta_{3} \gt 0\), el Teorema 5.14 garantiza que \(A\) es <strong>definida positiva</strong> sin necesidad de resolver la ecuación cúbica de sus autovalores.</p>
+        </div>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Creer que el criterio de Sylvester se extiende a la semidefinitud cambiando \(\gt  0\) por \(\ge 0\). Es falso: para \(A = \begin{pmatrix} 0 & 0 & -1 \\ 0 & -1 & 0 \\ -1 & 0 & 0 \end{pmatrix}\) los menores principales son \(0, 0, 1\) (todos \(\ge 0\)), pero los autovalores son \(-1, -1, 1\): la matriz es indefinida. La semidefinitud positiva se detecta con los autovalores (o con la existencia de \(B\) tal que \(A = B^{*}B\)).</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Al minimizar una función de pérdida, la Hessiana \(H\) en un punto crítico clasifica el óptimo: \(H\) definida positiva indica mínimo local, definida negativa máximo local, e indefinida un punto de silla. Los métodos de segundo orden (Newton, L-BFGS con curvatura) explotan esta definitud, y su estabilidad numérica se garantiza forzando \(H \succeq 0\) o descomponiéndola por Cholesky.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s7">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 5.7</div>
+        <div>
+          <h2>Matrices diagonalizables por similitud</h2>
+          <p>¿Cuándo existe \(A = PDP^{-1}\)? Exactamente cuando hay base de autovectores.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Escribir \(A = W\Lambda W^{-1}\) equivale a \(AW = W\Lambda\): las columnas de \(W\) deben ser autovectores linealmente independientes de \(A\), con sus autovalores en la diagonal de \(\Lambda\). La cuestión es cuándo se puede completar una base con autovectores.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 5.15 (Criterio de diagonalizabilidad)</span>
+          <p>Una matriz \(A \in K^{n\times n}\) es diagonalizable en \(K\) si y solo si sus autovectores generan \(K^{n}\), lo que ocurre si y solo si para cada autovalor \(\lambda_{i}\) se cumple \(\dim\ker(\lambda_{i}I - A) =\) multiplicidad algebraica de \(\lambda_{i}\). En una diagonalización \(A = W\Lambda W^{-1}\), la \(i\)-ésima columna de \(W\) es un autovector de autovalor \(\lambda_{i}\).</p>
+          <p><em>Demostración.</em> Si existe \(A = W\Lambda W^{-1}\), las columnas de \(W\) son \(n\) autovectores independientes, luego generan \(K^{n}\) y, para cada \(\lambda\), el autoespacio aporta tantos vectores independientes como veces que \(\lambda\) se repite en \(\Lambda\). Recíprocamente, si \(\dim\ker(\lambda_{i}I-A)\) iguala la multiplicidad algebraica para cada \(\lambda_{i}\), en cada autoespacio se pueden escoger tantos autovectores independientes como indique esa multiplicidad; como \(\sum_{i} \text{mult}(\lambda_{i}) = n\) (Teorema Fundamental del Álgebra), se obtiene una base de \(K^{n}\) formada por autovectores, que son las columnas de \(W\). \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque">
+          <span class="plaque__label">Ejemplo 5.6</span>
+          <p>La matriz \(A = \begin{pmatrix} 3 & 1 \\ 0 & 3 \end{pmatrix}\) tiene polinomio característico \((\lambda-3)^{2}\): el autovalor \(\lambda = 3\) tiene multiplicidad algebraica \(2\). Pero</p>
+          \[ A - 3I = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \ \Longrightarrow\ \ker(A-3I) = \langle (1,0) \rangle, \]
+          <p>de dimensión \(1 \lt  2\). No existen dos autovectores independientes: \(A\) <em>no es diagonalizable</em>. En cambio, la matriz \(B = \begin{pmatrix} 4 & -1 \\ 2 & 1 \end{pmatrix}\) del Ejemplo 5.1, con autovalores distintos \(2\) y \(3\), sí lo es. Una advertencia final: el Teorema Fundamental del Álgebra se cumple en \(\mathbb{C}\), no en \(\mathbb{R}\); por eso \(C = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\) es diagonalizable en \(\mathbb{C}\) (autovalores \(\pm i\)), pero no en \(\mathbb{R}\).</p>
+        </div>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Intentar diagonalizar por similitud una matriz no diagonalizable, buscando a toda costa una matriz \(P\). Si un autovalor \(\lambda\) de multiplicidad \(k\) satisface \(\dim\ker(\lambda I - A) \lt  k\), no hay \(P\): lo que hay es una forma canónica de Jordan (§ 5.8) con bloques de tamaño mayor que \(1\).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s8">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 5.8</div>
+        <div>
+          <h2>Forma canónica de Jordan</h2>
+          <p>La cuasidiagonalización definitiva: toda matriz compleja se reduce a bloques casi diagonales.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Cuando faltan autovectores, se recurre a los autovectores generalizados (Tema III). Una <strong>cadena</strong> asociada a \(\lambda\) es una sucesión \(\mathbf{u}_{1}, \dots, \mathbf{u}_{k}\) con \(\mathbf{u}_{1}\) autovector de autovalor \(\lambda\) y \((A - \lambda I)\mathbf{u}_{j} = \mathbf{u}_{j-1}\) para \(j \gt  1\).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 5.16</span>
+          <p>El <strong>bloque de Jordan</strong> de tamaño \(k\) asociado a \(\lambda\) es</p>
+          \[ J_{k}(\lambda) = \begin{pmatrix} \lambda & 1 & & \\ & \lambda & \ddots & \\ & & \ddots & 1 \\ & & & \lambda \end{pmatrix} \in \mathbb{C}^{k\times k}, \]
+          <p>con \(\lambda\) en la diagonal y unos en la superdiagonal.</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 5.17 (Forma canónica de Jordan)</span>
+          <p>Toda matriz \(A \in \mathbb{C}^{n\times n}\) es semejante a una matriz diagonal por bloques \(J = \operatorname{diag}(J_{k_{1}}(\lambda_{1}),\dots,J_{k_{q}}(\lambda_{q}))\), con \(k_{1}+\cdots+k_{q} = n\): existe \(W\) invertible tal que \(A = WJW^{-1}\). La matriz \(J\) es única salvo el orden de los bloques (pudiendo corresponder varios bloques al mismo autovalor \(\lambda\), tantos como \(\dim\ker(\lambda I - A)\)). La diagonalización ordinaria es el caso \(q = n\), con todos los bloques de tamaño \(1\).</p>
+          <p><em>Demostración (esbozo).</em> En cada subespacio de autovectores generalizados \(\ker_{\infty}(\lambda I - A)\) se escoge una base de autovectores \(\mathbf{u}_{1}^{(1)},\dots,\mathbf{u}_{1}^{(q)}\) procedente de los extremos de las cadenas y se completa cada \(\mathbf{u}_{1}^{(r)}\) con su cadena de autovectores generalizados \(\mathbf{u}_{1}^{(r)},\dots,\mathbf{u}_{k_{r}}^{(r)}\) de longitud \(k_{r}\). Colocando estas cadenas en orden como columnas de \(W\), se obtiene una base de \(\mathbb{C}^{n}\) tal que \(A\mathbf{u}_{1}^{(r)} = \lambda_{r}\mathbf{u}_{1}^{(r)}\) y \(A\mathbf{u}_{j}^{(r)} = \lambda_{r}\mathbf{u}_{j}^{(r)} + \mathbf{u}_{j-1}^{(r)}\) para \(2 \le j \le k_{r}\), lo que equivale a \(AW = WJ\), es decir, \(A = WJW^{-1}\). La unicidad se demuestra estudiando las dimensiones de \(\ker(A-\lambda I)^{j}\). \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque">
+          <span class="plaque__label">Ejemplo 5.7</span>
+          <p>Calculemos la forma de Jordan de \(A = \begin{pmatrix} 5 & 1 \\ -1 & 3 \end{pmatrix}\).</p>
+          <p>El polinomio característico es \(\lambda^{2} - 8\lambda + 16 = (\lambda-4)^{2}\): autovalor \(\lambda = 4\) con multiplicidad \(2\). El autoespacio \(E_{4} = \ker(A-4I) = \langle (1,-1)^{\top} \rangle\) tiene dimensión \(1\): falta un autovector.</p>
+          <p>Buscamos \(\mathbf{u}_{2}\) con \((A-4I)\mathbf{u}_{2} = \mathbf{u}_{1} = (1,-1)^{\top}\): basta \(\mathbf{u}_{2} = (1,0)^{\top}\), porque \((A-4I)(1,0)^{\top} = (1,-1)^{\top}\). Ordenando las columnas como \(W = [\mathbf{u}_{1}\ \mathbf{u}_{2}]\) resulta</p>
+          \[ W = \begin{pmatrix} 1 & 1 \\ -1 & 0 \end{pmatrix}, \qquad J = \begin{pmatrix} 4 & 1 \\ 0 & 4 \end{pmatrix}, \qquad A = WJW^{-1}. \]
+          <p>Comprueba multiplicando: \(WJW^{-1} = \begin{pmatrix} 5 & 1 \\ -1 & 3 \end{pmatrix}\). El bloque \(J_{2}(4)\) sustituye a la diagonalización imposible.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>La forma de Jordan es una herramienta teórica: numéricamente es inestable frente a pequeñas perturbaciones. En la práctica computacional se usan la SVD y la triangulación de Schur, estables y bien condicionadas, para los mismos fines. Su valor está en explicar por qué ciertos sistemas (modelos lineales con dinámica, ecuaciones diferenciales discretas) presentan términos de tipo \(k\lambda^{k}\) en sus soluciones.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section theory-section" id="s9">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 5.9</div>
+        <div>
+          <h2>Descomposición en valores singulares (SVD)</h2>
+          <p>La factorización que existe siempre, para toda matriz, y mueve la IA moderna.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Renunciamos a que \(V = W^{-1}\) y pedimos solo que \(W\) y \(V\) sean ortogonales. El precio lo pagamos con una matriz más (\(U \neq V\) en general) y a cambio la factorización existe para toda matriz, sea o no cuadrada.</p>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Teorema 5.18 (SVD)</span>
+          <p>Sea \(A \in K^{n\times m}\) de rango \(r\). Entonces existen \(U \in K^{n\times n}\) y \(V \in K^{m\times m}\) ortogonales si \(K = \mathbb{R}\) (unitarias si \(K = \mathbb{C}\)) y \(\Sigma \in K^{n\times m}\) diagonal-rectangular, \(\Sigma = \begin{pmatrix} \Sigma_{r} & 0 \\ 0 & 0 \end{pmatrix}\) con \(\Sigma_{r} = \operatorname{diag}(\sigma_{1},\dots,\sigma_{r})\), \(\sigma_{1} \ge \cdots \ge \sigma_{r} \gt  0\), tales que</p>
+          \[ A = U\Sigma V^{*} \quad (\text{SVD completa}), \qquad A = U_{r}\Sigma_{r}V_{r}^{*} \quad (\text{SVD compacta}). \]
+          <p>Los \(\sigma_{i}\) son los <strong>valores singulares</strong> de \(A\) (raíces cuadradas de los autovalores positivos de \(A^{*}A\)); las columnas de \(U_{r}\) son los vectores singulares por la izquierda y las de \(V_{r}\) los vectores singulares por la derecha.</p>
+          <p><em>Demostración.</em> La matriz \(B = A^{*}A \in K^{m\times m}\) es hermítica semidefinida positiva y de rango \(r\); diagonalícemosla ortogonalmente: \(B = V\Lambda V^{*}\), con \(\Lambda = \operatorname{diag}(\lambda_{1},\dots,\lambda_{r},0,\dots,0)\), \(\lambda_{i} \gt  0\). Sea \(\Sigma_{r} = \operatorname{diag}(\sqrt{\lambda_{1}},\dots,\sqrt{\lambda_{r}})\) y \(V = [V_{r}\ V_{m-r}]\). Las columnas de \(U_{r} = AV_{r}\Sigma_{r}^{-1}\) son ortonormales (\(U_{r}^{*}U_{r} = \Sigma_{r}^{-1}V_{r}^{*}A^{*}AV_{r}\Sigma_{r}^{-1} = \Sigma_{r}^{-1}\Lambda_{r}\Sigma_{r}^{-1} = I\)), y pueden completarse hasta una ortogonal \(U = [U_{r}\ U_{n-r}]\). Como las columnas de \(V_{m-r}\) generan \(\ker A\) (autovalor nulo de \(A^{*}A\)), se tiene \(AV_{r}V_{r}^{*} = A\) y, por tanto, \(U\Sigma V^{*} = U_{r}\Sigma_{r}V_{r}^{*} = AV_{r}V_{r}^{*} = A\). \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 5.19 (Propiedades de la SVD)</span>
+          <p>Con las notaciones anteriores: (i) \(\sigma_{i} = \sqrt{\lambda_{i}(A^{*}A)}\); (ii) \(\|A\|_{2} = \sigma_{1}\); (iii) \(\Sigma\) es única si se ordenan los valores singulares de forma decreciente; \(U\) y \(V\) no lo son.</p>
+          <p><em>Demostración.</em> (i) ya apareció en la construcción. Para (ii), sea \(\mathbf{x}\) unitario; \(\|A\mathbf{x}\|^{2} = \mathbf{x}^{*}A^{*}A\mathbf{x} \le \lambda_{1}(A^{*}A) = \sigma_{1}^{2}\), con igualdad para \(\mathbf{x} = \mathbf{v}_{1}\), de modo que \(\max_{\|\mathbf{x}\|=1} \|A\mathbf{x}\| = \sigma_{1}\). (iii) se deduce de que los \(\sigma_{i}\) son las raíces cuadradas de los autovalores positivos de \(A^{*}A\) (equivalentemente, los autovalores positivos de \((A^{*}A)^{1/2}\), Corolario 5.9 bis), únicos salvo orden. \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque">
+          <span class="plaque__label">Ejemplo 5.8</span>
+          <p><strong>(a) Matriz cuadrada \(2\times 2\):</strong> Calculemos la SVD de \(A = \begin{pmatrix} 0 & 3 \\ 2 & 0 \end{pmatrix}\). Primero, \(A^{\top}A = \begin{pmatrix} 4 & 0 \\ 0 & 9 \end{pmatrix}\), con autovalores \(4\) y \(9\). En orden decreciente, \(\sigma_{1} = 3\) (con \(\mathbf{v}_{1} = (0,1)^{\top}\)) y \(\sigma_{2} = 2\) (con \(\mathbf{v}_{2} = (1,0)^{\top}\)). Por tanto</p>
+          \[ V = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \qquad \Sigma = \begin{pmatrix} 3 & 0 \\ 0 & 2 \end{pmatrix}, \qquad U = AV\Sigma^{-1} = \begin{pmatrix} 0 & 3 \\ 2 & 0 \end{pmatrix}\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} 1/3 & 0 \\ 0 & 1/2 \end{pmatrix} = I_{2}. \]
+          <p>Así \(A = U\Sigma V^{\top} = \begin{pmatrix} 3 & 0 \\ 0 & 2 \end{pmatrix}\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}\) y \(\|A\|_{2} = \sigma_{1} = 3\).</p>
+          <p><strong>(b) Matriz rectangular \(3\times 2\):</strong> Para \(B = \begin{pmatrix} 2 & 2 \\ 4 & 1 \\ 4 & -2 \end{pmatrix} \in \mathbb{R}^{3\times 2}\), se tiene \(B^{\top}B = \begin{pmatrix} 36 & 0 \\ 0 & 9 \end{pmatrix}\), de modo que \(\sigma_{1} = 6\), \(\sigma_{2} = 3\) y \(V = V_{2} = I_{2}\). Las columnas de \(U_{2} = BV_{2}\Sigma_{2}^{-1}\) son \(\mathbf{u}_{1} = \tfrac{1}{3}(1,2,2)^{\top}\) y \(\mathbf{u}_{2} = \tfrac{1}{3}(2,1,-2)^{\top}\), que dan la SVD compacta \(B = U_{2}\Sigma_{2}V_{2}^{\top}\). Completando con \(\mathbf{u}_{3} = \mathbf{u}_{1}\times\mathbf{u}_{2} = \tfrac{1}{3}(-2,2,-1)^{\top}\) se obtiene la SVD completa \(B = U\Sigma V^{\top}\) con</p>
+          \[ U = \frac{1}{3}\begin{pmatrix} 1 & 2 & -2 \\ 2 & 1 & 2 \\ 2 & -2 & -1 \end{pmatrix}, \qquad \Sigma = \begin{pmatrix} 6 & 0 \\ 0 & 3 \\ 0 & 0 \end{pmatrix}, \qquad V = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}. \]
+        </div>
+
+        <div class="plaque plaque--warn">
+          <span class="plaque__label">Error frecuente</span>
+          <p>Creer que en \(A = U\Sigma V^{*}\) puede tomarse \(U = V\). Eso solo ocurre cuando \(A\) es simétrica (hermítica) semidefinida positiva: en ese caso \(A = Q\Sigma Q^{*}\) con \(\Sigma\) de valores singulares iguales a los autovalores. Si \(A\) es simétrica indefinida, aparecen signos y \(U \neq V\); si \(A\) no es normal, \(U\) y \(V\) ni siquiera son próximas. La SVD no es una diagonalización por similitud.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>Si \(X \in \mathbb{R}^{n\times d}\) es la matriz de datos centrados (con las \(n\) muestras por filas y las \(d\) variables por columnas, convenio estándar en <em>machine learning</em>) y \(X = U\Sigma V^{\top}\), la matriz de covarianzas muestral es \(S = \tfrac{1}{n-1}X^{\top}X = V\bigl(\tfrac{\Sigma^{\top}\Sigma}{n-1}\bigr)V^{\top}\): las <strong>direcciones principales</strong> (ejes de PCA) son las columnas de \(V\), las proyecciones (<em>scores</em>) de los datos sobre ellas son \(XV = U\Sigma\), y las varianzas muestrales explicadas son \(\sigma_{i}^{2}/(n-1)\). Comprimir o reducir dimensionalidad consiste en truncar \(\Sigma\) y quedarse con los \(k\) mayores valores singulares (mejor aproximación de rango \(k\) en norma espectral y de Frobenius), principio que sostiene LSA y los espacios de embeddings.</p>
+        </div>
+      </div>
+    
+      <figure class="film reveal">
+        <video controls preload="metadata" playsinline src="../assets/animaciones/v_svd.mp4"><track kind="captions" src="data:text/vtt;charset=utf-8;base64,V0VCVlRUCgowMDowMC4wMDAgLS0+IDAwOjA0LjAwMApEZXNjb21wb3NpY2nDs24gU1ZEOiByb3RhciwgZXN0aXJhciB5IHJvdGFyLgoKMDA6MDQuNTAwIC0tPiAwMDowNy4yMDAKUHJpbWVybyByb3RhIFYgdHJhbnNwdWVzdGEuCgowMDowNy4yMDAgLS0+IDAwOjA5LjYwMApEZXNwdcOpcyBTaWdtYSBlc3RpcmEgbG9zIGVqZXMuCgowMDowOS42MDAgLS0+IDAwOjE0LjEwMApQb3Igw7psdGltbyByb3RhIFU6IEEgZXMgaWd1YWwgYSBVIFNpZ21hIFYgdHJhbnNwdWVzdGEuCg==" srclang="es" label="Español" default data-vtt="v_svd.vtt"></video>
+        <figcaption>Animación · SVD: rotar (Vᵀ), estirar (Σ) y rotar (U)</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap section theory-section" id="s10">
+      <div class="theory-section__head reveal">
+        <div class="theory-section__num">§ 5.10</div>
+        <div>
+          <h2>Pseudoinversa de Moore–Penrose</h2>
+          <p>La «inversa» que siempre existe y resuelve mínimos cuadrados con criterio.</p>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Si \(A\) no es invertible, ni siquiera cuadrada, la SVD proporciona un sustituto canónico. Con la SVD compacta \(A = U_{r}\Sigma_{r}V_{r}^{*}\), definimos \(A^{\dagger} = V_{r}\Sigma_{r}^{-1}U_{r}^{*} \in K^{m\times n}\).</p>
+
+        <div class="plaque plaque--def">
+          <span class="plaque__label">Definición 5.20</span>
+          <p>La <strong>pseudoinversa de Moore–Penrose</strong> de \(A \in K^{n\times m}\) es \(A^{\dagger} = V\Sigma^{\dagger}U^{*}\), donde \(\Sigma^{\dagger}\) resulta de transponer \(\Sigma\) e invertir los valores singulares no nulos. Si \(A\) es invertible, \(A^{\dagger} = A^{-1}\); si \(\operatorname{rng}A = m\), \(A^{\dagger} = (A^{*}A)^{-1}A^{*}\); si \(\operatorname{rng}A = n\), \(A^{\dagger} = A^{*}(AA^{*})^{-1}\).</p>
+        </div>
+
+        <div class="plaque plaque--thm">
+          <span class="plaque__label">Proposición 5.21 (Ecuaciones de Penrose y mínimos cuadrados)</span>
+          <p>La pseudoinversa verifica las cuatro ecuaciones de Penrose: \(AA^{\dagger}A = A\), \(A^{\dagger}AA^{\dagger} = A^{\dagger}\), \((AA^{\dagger})^{*} = AA^{\dagger}\) y \((A^{\dagger}A)^{*} = A^{\dagger}A\). Además, \(P = AA^{\dagger}\) es la proyección ortogonal sobre \(\operatorname{col}A\), y \(\mathbf{x} = A^{\dagger}\mathbf{b}\) satisface las ecuaciones normales \(A^{*}A\mathbf{x} = A^{*}\mathbf{b}\): es la única solución de \(A\mathbf{x} = \mathbf{b}\) si el sistema es compatible determinado, la solución <strong>de mínima norma euclídea \(\|\mathbf{x}\|_{2}\)</strong> si es compatible indeterminado, y el ajuste por mínimos cuadrados <strong>de mínima norma euclídea \(\|\mathbf{x}\|_{2}\)</strong> si es incompatible.</p>
+          <p><em>Demostración.</em> Sustituyendo \(A = U_{r}\Sigma_{r}V_{r}^{*}\) y \(A^{\dagger} = V_{r}\Sigma_{r}^{-1}U_{r}^{*}\): \(AA^{\dagger}A = U_{r}\Sigma_{r}V_{r}^{*}V_{r}\Sigma_{r}^{-1}U_{r}^{*}U_{r}\Sigma_{r}V_{r}^{*} = U_{r}\Sigma_{r}V_{r}^{*} = A\); análogamente \(A^{\dagger}AA^{\dagger} = A^{\dagger}\). Las otras dos ecuaciones son inmediatas de \(P = U_{r}U_{r}^{*}\) y \(A^{\dagger}A = V_{r}V_{r}^{*}\), hermíticas e idempotentes. Finalmente \(A^{*}AA^{\dagger} = A^{*}P = (PA)^{*} = A^{*}\), luego \(\mathbf{x}_{0} = A^{\dagger}\mathbf{b} \in \operatorname{col}(V_{r}) = (\ker A)^{\perp}\) resuelve las ecuaciones normales, y cualquier otra solución \(\mathbf{x} = \mathbf{x}_{0} + \mathbf{z}\) con \(\mathbf{z} \in \ker A\) verifica \(\|\mathbf{x}\|_{2}^{2} = \|\mathbf{x}_{0}\|_{2}^{2} + \|\mathbf{z}\|_{2}^{2} \gt \|\mathbf{x}_{0}\|_{2}^{2}\) si \(\mathbf{z} \neq \mathbf{0}\). \(\blacksquare\)</p>
+        </div>
+
+        <div class="plaque">
+          <span class="plaque__label">Ejemplo 5.9</span>
+          <p>Calculemos la pseudoinversa de la matriz de rango \(1\), \(A = \begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix}\).</p>
+          <p>Escribiendo \(A = \mathbf{u}\mathbf{u}^{\top}\) con \(\mathbf{u} = (1,2)\), \(\|\mathbf{u}\|^{2} = 5\), se obtiene \(A^{\dagger} = \dfrac{\mathbf{u}\mathbf{u}^{\top}}{\|\mathbf{u}\|^{4}} = \dfrac{1}{25}\begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix}\). Comprobación con Penrose:</p>
+          \[ AA^{\dagger}A = \tfrac{1}{25} A \cdot A \cdot A = \tfrac{1}{25} \cdot 25\, A = A, \qquad A^{\dagger}AA^{\dagger} = A^{\dagger}. \]
+          <p>(Se ha usado \(A^{2} = 5A\), típico de las matrices de rango \(1\) simétricas.) Observa que \(AA^{\dagger} = \tfrac{1}{5}A \neq I\): la pseudoinversa no es una inversa clásica, pero es la elección canónica.</p>
+        </div>
+
+        <div class="plaque plaque--ia">
+          <span class="plaque__label">En IA</span>
+          <p>En regresión con datos deficientes de rango (variables colineales, más parámetros que muestras), las ecuaciones normales no tienen inversa y \(A^{\top}A\) es singular. La pseudoinversa, calculada de forma estable mediante SVD, devuelve el ajuste de mínimos cuadrados de norma mínima, sin amplificar el ruido. Es la base de los solvers de mínimos cuadrados robustos y de los métodos de regularización (ridge se entiende como pseudoinversa de un sistema perturbado).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESUMEN ================= -->
+    <section class="wrap section section--tint" id="resumen">
+      <p class="kicker reveal">Ficha de repaso</p>
+      <h2 class="reveal">Lo esencial del tema</h2>
+      <div class="summary reveal" data-summary></div>
+    </section>
+
+    <!-- ================= MAPA MENTAL ================= -->
+    <section class="wrap section" id="mapa">
+      <p class="kicker reveal">Vista global</p>
+      <h2 class="reveal">Mapa mental</h2>
+      <p class="prose reveal">Pulsa cualquier nodo para ver el detalle.</p>
+      <div class="mindmap" data-mindmap></div>
+    </section>
+
+    <!-- ================= EJERCICIOS ================= -->
+    <section class="wrap section section--tint" id="ejercicios">
+      <p class="kicker reveal">Práctica</p>
+      <h2 class="reveal">Ejercicios interactivos</h2>
+      <p class="prose reveal">Escribe tu respuesta y pulsa <strong>Comprobar</strong>. Al acertar se despliega la solución completa.</p>
+      <div data-drills></div>
+    </section>
+
+    <div class="wrap">
+      <nav class="pager" aria-label="Navegación entre temas">
+        <a class="prev" href="tema-4.html"><span class="meta">Anterior</span><strong>Tema IV · Triangulación</strong></a>
+        <a class="next" href="../examenes/examen-3.html"><span class="meta">Siguiente</span><strong>Examen 3 · V + global</strong></a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div>
+        <h4>Archivo</h4>
+        <ul>
+          <li><a href="../index.html">Índice del curso</a></li>
+          <li><a href="../planificacion.html">Planificación y evaluación</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Evaluación</h4>
+        <ul>
+          <li><a href="../examenes/examen-1.html">Examen 1 · Temas I–II</a></li>
+          <li><a href="../examenes/examen-2.html">Examen 2 · Temas III–IV</a></li>
+          <li><a href="../examenes/examen-3.html">Examen 3 · Tema V + global</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fuentes</h4>
+        <ul>
+          <li>J. Perán Mazón, <em>Fundamentos algebraicos para la IA</em>, UNED, 2026</li>
+          <li>Álgebra para Ingenieros (libro de apoyo)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer__colophon">
+      <span>Material de estudio personal · uso no comercial</span>
+      <span>Verificado con SymPy · errores → revisar con el árbitro</span>
+    </div>
+  </footer>
+
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/auto-render.min.js"></script>
+  <script defer src="../assets/js/grader.js"></script>
+  <script defer src="../assets/data/tema-5.js"></script>
+  <script defer src="../assets/js/app.js"></script>
+</body>
+</html>

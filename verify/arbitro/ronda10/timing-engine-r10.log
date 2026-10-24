@@ -1,0 +1,24 @@
+✔    1366.6 ms · ok=false · M2-a (x+y+z)^64 vs 0
+✔    1438.4 ms · ok=true · M2-b (x+y+z)^64 vs (x+y+z)^63*(x+y+z)
+✔    1404.3 ms · ok=false · M2-c (x+y+z)^65 vs 0
+✔    1433.6 ms · ok=false · M2-d (x+y+z)^100 vs 0
+✔       0.3 ms · ok=true · M2-e (x+y+z)^64 idéntica (atajo na===nb)
+✘   >cap 30000 · ok=null · DOS-a (Σx^k k≤2000)^2 vs 0
+✘   10428.4 ms · ok=false · DOS-b (Σ1000)^4 vs 0
+✘    4267.9 ms · ok=false · DOS-c (Σ500)^8 vs 0
+✘   >cap 30000 · ok=null · DOS-d (Σ2000)·(Σ2000) vs 0 (con paréntesis)
+✘   >cap 30000 · ok=null · DOS-e (Σ2000)^2 vs (x+y+z)^64
+✔     397.1 ms · ok=false · EXP-a (x+y)^(-4096) vs 0
+✔     390.7 ms · ok=false · EXP-b 1/(x+y)^4096 vs 0
+✔       1.6 ms · ok=false · EXP-c 4/11+x^(-65) (veneno R1)
+✔       1.8 ms · ok=false · EXP-d x^999999999 vs 0
+✔       1.4 ms · ok=false · EXP-e 9^9^9^9 vs 0
+✔       6.9 ms · ok=false · NIDO-a 2000 paréntesis anidados
+✔       9.5 ms · ok=false · NIDO-b sin anidado ×500
+✔       1.2 ms · ok=true · OK-a 4/11 ≡ 8/22
+✔       1.5 ms · ok=true · OK-b 4-s-t ≡ -t-s+4
+✔       1.9 ms · ok=false · OK-c 4/11+Δ·x^0.5 (veneno M1-R8)
+✔         2 ms · ok=false · OK-d (x-x)/(x-x) (veneno C1-R8)
+✔       1.2 ms · ok=false · OK-e 0^x (veneno R1)
+
+TIMING-ENGINE R10: 5 casos por encima del presupuesto de 2 s (de 22)

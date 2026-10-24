@@ -1,0 +1,493 @@
+{
+ "N": 250,
+ "N_FLAKY": 3000,
+ "casos": {
+  "H_LOGEXP :: E1 '5+log(exp(x))-x' vs 5": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: E1b '5+3*(log(exp(x))-x)' vs 5": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: E8 'log(exp(x))-x' vs 0": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: E9 '0+log(exp(x))-x' vs 0 (lista R6)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: E10 'log(exp(x))' vs x": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: E11 '5+(log(exp(x))-x)^2' vs 5": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: E12 'log(exp(x))-x-2*pi*i*n' vs 0": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: E3 T4-N3 '4-s-t+log(exp(s))-s'": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: F1 T4-N3 '4-s-t+log(exp(v))-v' (lista R6)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: F2 T4-N3 '4-s-t+log(exp(v))-v+log(exp(w))-w'": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: F3 T5-N5 celdas +log(exp(v))-v (matriz)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: F4 T4-M5 'i+log(exp(v))-v;-i' (exprset)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: F5 spec expr 5: '5+log(exp(v))-v'": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: F6 multi T1-M2 campo mod +log(exp(v))-v": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: E4 celda matriz 'log(exp(x))-x' vs 0": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: E5 exprset T4-M5 'i+log(exp(x))-x'": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: E6 'log(exp(x))' vs x": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_LOGEXP :: G1 'log(exp(log(exp(x))))' vs x": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: O1 polinomio anulador 8-ptos vs 5 (lista R6)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: O2 polinomio anulador 8-ptos vs 0 (lista R6)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: O3 alias wrap-around 9 vars vs 4-s-t (lista R6)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: O4 celda matriz + anulador vs 0 (lista R6)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: O5 exprset T4-M5 'i+anulador' (lista R6)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: A1 'x-y' vs 0 (x-y≡0, lista R6)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: A10 celda matriz 'x-y' vs 0": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: O3b wrap 20 vars 'v0-v8' vs 0": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: A4 '4-2*t' vs 4-s-t (T4-N3)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: A5 '4-s-t+(s-t)' vs 4-s-t": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: A6 '1/(x-x)' vs 5 (lista R6)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: A8 '1/(x-y)' vs 2/(x-y)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: A9 'y^2' vs x^2": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: J8 'x*inf' vs x": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: J9 '1/(x-x)+5' vs 5": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: J10 '5+0*(x-x)/(x-x)' vs 5": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_FIJO :: P30 anulador a ciegas prod(x-k) vs 0": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_BRANCH :: L1 'log(exp(4-s-t))' vs 4-s-t (lista R6)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_BRANCH :: L2 'sqrt(x^2)' vs x": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_BRANCH :: L3 'log(x^2)' vs 2*log(x)": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_BRANCH :: L4 'log(x)+log(y)' vs log(x*y)": {
+   "acepta": 1,
+   "n": 250,
+   "veredicto": "FALLO-FP-OCASIONAL (1/250 acepta)"
+  },
+  "H_BRANCH :: L5 'log(exp(2*x))/2' vs x": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_BRANCH :: L6 'acos(cos(x))' vs x": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_BRANCH :: L7 'sqrt(x*y)' vs sqrt(x)*sqrt(y)": {
+   "acepta": 2,
+   "n": 250,
+   "veredicto": "FALLO-FP-OCASIONAL (2/250 acepta)"
+  },
+  "H_BRANCH :: L8 'arg(x*y)' vs arg(x)+arg(y)": {
+   "acepta": 3,
+   "n": 250,
+   "veredicto": "FALLO-FP-OCASIONAL (3/250 acepta)"
+  },
+  "H_BRANCH :: L9 T4-N3 grind 'E+log(u)+log(v)-log(u*v)'": {
+   "acepta": 6,
+   "n": 250,
+   "veredicto": "FALLO-FP-OCASIONAL (6/250 acepta)"
+  },
+  "H_BRANCH :: L10 T5-N5 grind sqrt en celdas": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "H_BRANCH :: L11 T4-M5 grind log-product exprset": {
+   "acepta": 5,
+   "n": 250,
+   "veredicto": "FALLO-FP-OCASIONAL (5/250 acepta)"
+  },
+  "H_BRANCH :: L12 spec 5 grind '5+log(u)+log(v)-log(u*v)'": {
+   "acepta": 0,
+   "n": 250,
+   "veredicto": "OK (0/250 acepta)"
+  },
+  "EQUIV :: B1 '1/2' vs 0.5": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: B2 '2i' vs 2*i": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: B3 '0,5' vs 1/2": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: B4 '(2+11i)/5' vs 2/5+11/5*i": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: B5 'sqrt(3)/2' vs 3^0.5/2": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: B6 'π/3' vs pi/3": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: B8 matriz '1/2' vs 0.5": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: B10 exprset orden '-2;4' vs ['4','-2']": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: B11 '1e3' vs 1000": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: B12 '5!' vs 120": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: B13 '-2^2' vs -4": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: B14 '2sqrt(3)' vs 2*sqrt(3)": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: B17 '3,14' vs 3.14": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: D1 'sqrt(2)/2' vs 1/sqrt(2)": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: D3 'i^2' vs -1": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: D4 '(1+i)^2' vs 2i": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: D5 '5*pi/6' vs pi*5/6": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: N2 T4-N3 '4-t-s' reordenado": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: N2b T4-N3 '4-(s+t)'": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: N3 T4-N3 correcto literal": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V1 'exp(log(x))' vs x (identidad en C\\{0})": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V2 '(x^2-1)/(x-1)' vs x+1": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V3 'conj(x*y)' vs conj(x)*conj(y)": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V4 '(x+y)^2' vs x^2+2*x*y+y^2": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V5 '1/(1/x)' vs x": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V6 'sqrt(x)^2' vs x": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V7 '(-x)^2' vs x^2": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V8 'cos(x)^2+sen(x)^2' vs 1": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V9 'cosh(x)^2-sinh(x)^2' vs 1": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V10 '2*(x+y)' vs 2*x+2*y": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V11 'sen(pi/6)' vs 1/2 (alias)": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V12 'tg(pi/4)' vs 1 (alias)": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V13 matriz 'sqrt(4)' vs 2": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V14 T5-E3 celda '3/10' exacta": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V15 T1-M2 mod correcto (multi)": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V16 T1-N5 '2.34' redondeo": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V17 'senx' vs sin(x) (N5r)": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V18 'log2' vs log(2) (N5r)": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  },
+  "EQUIV :: V19 'sqrt4' vs 2 (N5r)": {
+   "acepta": 250,
+   "n": 250,
+   "veredicto": "OK (250/250 acepta)"
+  }
+ },
+ "flaky": {
+  "L1 'log(exp(4-s-t))' vs 4-s-t": {
+   "acepta": 0,
+   "n": 3000,
+   "rate": "0.000%/llamada"
+  },
+  "L2 'sqrt(x^2)' vs x": {
+   "acepta": 0,
+   "n": 3000,
+   "rate": "0.000%/llamada"
+  },
+  "L3 'log(x^2)' vs 2*log(x)": {
+   "acepta": 0,
+   "n": 3000,
+   "rate": "0.000%/llamada"
+  },
+  "L4 'log(x)+log(y)' vs log(x*y)": {
+   "acepta": 26,
+   "n": 3000,
+   "rate": "0.867%/llamada"
+  },
+  "L7 'sqrt(x*y)' vs sqrt(x)*sqrt(y)": {
+   "acepta": 38,
+   "n": 3000,
+   "rate": "1.267%/llamada"
+  },
+  "L8 'arg(x*y)' vs arg(x)+arg(y)": {
+   "acepta": 34,
+   "n": 3000,
+   "rate": "1.133%/llamada"
+  },
+  "L9 T4-N3 grind log-product": {
+   "acepta": 35,
+   "n": 3000,
+   "rate": "1.167%/llamada"
+  },
+  "L12 spec 5 grind log-product": {
+   "acepta": 28,
+   "n": 3000,
+   "rate": "0.933%/llamada"
+  },
+  "E9 '0+log(exp(x))-x' vs 0": {
+   "acepta": 0,
+   "n": 3000,
+   "rate": "0.000%/llamada"
+  },
+  "F1 T4-N3 '4-s-t+log(exp(v))-v'": {
+   "acepta": 0,
+   "n": 3000,
+   "rate": "0.000%/llamada"
+  },
+  "L5 'log(exp(2*x))/2' vs x": {
+   "acepta": 0,
+   "n": 3000,
+   "rate": "0.000%/llamada"
+  }
+ }
+}

@@ -1,0 +1,61 @@
+== lista explícita protocolo R6.3 (N5r) ==
+OK    | senx ≡ sin(x) → true
+OK    | sen x ≡ sin(x) → true
+OK    | log2 ≡ log(2) → true
+OK    | tg(1) ≡ tan(1) → true
+OK    | sqrt4 ≡ 2 → true
+
+== aplicación implícita general ==
+OK    | sinx ≡ sin(x) → true
+OK    | cosx ≡ cos(x) → true
+OK    | logx ≡ log(x) → true
+OK    | expx ≡ exp(x) → true
+OK    | sqrtx ≡ sqrt(x) → true
+OK    | absx ≡ abs(x) → true
+OK    | conjx ≡ conj(x) → true
+OK    | tg1 ≡ tan(1) → true
+OK    | senx^2 ≡ sin(x)^2 → true
+OK    | log2x ≡ log(2)*x → true
+
+== alias claim del equipo: sen / tg / arcsen ==
+OK    | sen(x) ≡ sin(x) → true
+OK    | tg(x) ≡ tan(x) → true
+FALLO | arcsen(1) ≡ pi/2 → false (esperado true)
+FALLO | arcsen(0.5) ≡ pi/6 → false (esperado true)
+
+== resto de familia inversa (KNOWN_NAMES sin FUNCS) ==
+FALLO | arcsin(1) ≡ pi/2 → false (esperado true)
+FALLO | asin(1) ≡ pi/2 → false (esperado true)
+FALLO | acos(0) ≡ pi/2 → false (esperado true)
+FALLO | atan(1) ≡ pi/4 → false (esperado true)
+FALLO | arctan(1) ≡ pi/4 → false (esperado true)
+FALLO | arccos(0) ≡ pi/2 → false (esperado true)
+
+== evaluación directa (diagnóstico) ==
+  senx        → ERR:Variable sin asignar: x
+  log2        → {"re":0.6931471805599453,"im":0}
+  sqrt4       → {"re":2,"im":0}
+  arcsen(1)   → ERR:Función desconocida: arcsen
+  asin(1)     → ERR:Función desconocida: asin
+  atan(1)     → ERR:Función desconocida: atan
+
+== contraste hostil: la aplicación implícita NO debe crear falsos positivos ==
+OK    | senx ≢ sin(y) → false
+OK    | log2 ≢ log(3) → false
+OK    | sqrt4 ≢ -2 → false
+OK    | tg1 ≢ tan(2) → false
+OK    | senx ≢ x → false
+OK    | log2x ≢ log(2x) → false
+OK    | arcsen(1) ≢ 1 → false
+
+== regresión sintáctica (no debe haberse roto) ==
+OK    | 2x ≡ 2*x → true
+FALLO | pix ≡ pi*x → false (esperado true)
+OK    | xy ≡ x*y → true
+OK    | 2sqrt(3) ≡ 2*sqrt(3) → true
+OK    | 5! ≡ 120 → true
+OK    | 3,14 ≡ 3.14 → true
+OK    | ln(x) ≡ log(x) → true
+
+30 OK, 9 FALLOS
+Fallos: ["arcsen(1) ≡ pi/2","arcsen(0.5) ≡ pi/6","arcsin(1) ≡ pi/2","asin(1) ≡ pi/2","acos(0) ≡ pi/2","atan(1) ≡ pi/4","arctan(1) ≡ pi/4","arccos(0) ≡ pi/2","pix ≡ pi*x"]

@@ -1,0 +1,44 @@
+[OK ] T1-N4 0,36̄ = 4/11
+[OK ] T1-N4 expected
+[OK ] T1-M1 (2+i)/(1-i) = 1/2+3/2 i
+[OK ] T1-M1 expected
+[OK ] T1-M4 todas verifican z^3=8
+[OK ] T1-M4 las 3 raíces
+[OK ] T2-N1 w = (4,-11,13)
+[OK ] T2-N1 expected
+[OK ] T2-M2 A*A^{-1}=I
+[OK ] T2-M2 expected
+[OK ] T2-E2 proy = (1,0,1)
+[OK ] T2-E2 perp = (1,1,-1)
+[OK ] T2-E2 perp ⊥ V
+[OK ] T2-E2 expected proj
+[OK ] T2-E2 expected perp
+[OK ] T3-N5 autovalores 4, -2
+[OK ] T3-N5 expected
+[OK ] T3-M5 f = x^T A x
+[OK ] T3-M5 A simétrica
+[OK ] T3-M5 expected
+[OK ] T4-N4 proj = (2,2)
+[OK ] T4-N4 expected
+[OK ] T4-M3 m = 2, n = 1/2
+[OK ] T4-M3 residual ⊥ columnas
+[OK ] T4-M3 expected m
+[OK ] T4-M3 expected n
+[OK ] T4-M4 y(5) = 21/2
+[OK ] T4-M4 expected
+[OK ] T5-M3 σ = 4, 2
+[OK ] T5-M3 expected
+[OK ] T5-M4 AA†A = A
+[OK ] T5-M4 A†AA† = A†
+[OK ] T5-M4 (AA†)^T = AA†
+[OK ] T5-M4 (A†A)^T = A†A
+[OK ] T5-M4 expected
+[OK ] X3-7 pol.car. = (λ-2)²
+[OK ] X3-7 defecto geométrico 1 ⇒ bloque Jordan 2×2
+[OK ] X3-7 expected
+[OK ] X3-10 det(A²) = 256
+[OK ] X3-10 tr(A⁻¹) = Σ 1/λ = 1/4
+[OK ] X3-10 expected det2
+[OK ] X3-10 expected trinv
+
+42 OK, 0 FALLOS

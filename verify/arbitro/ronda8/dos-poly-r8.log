@@ -1,0 +1,18 @@
+expresión                    resultado    tiempo
+(x+y)^200                    RECHAZA      50ms
+(x+y)^2000                   RECHAZA      669ms
+(x+y)^20000                  RECHAZA      394ms
+(x+y+z)^20                   RECHAZA      45ms
+(x+y+z)^50                   RECHAZA      593ms
+(x+y+z)^100                  RECHAZA      8577ms
+(x+y+z)^150                  FREEZE       > 20s (proceso matado por timeout)
+(x+y+z)^300                  FREEZE       > 20s (proceso matado por timeout)
+(a+b+c+d)^10                 RECHAZA      52ms
+(a+b+c+d)^20                 RECHAZA      1605ms
+(a+b+c+d)^30                 RECHAZA      2439ms
+(a+b+c+d)^40                 FREEZE       > 20s (proceso matado por timeout)
+(a+b+c+d+e+f+g+h)^10         FREEZE       > 15s (proceso matado por timeout)
+x^1000000                    RECHAZA      0ms
+(x*y*z)^5000                 RECHAZA      1ms
+
+DOS-POLY R8: 4/15 casos congelan el proceso (timeout)

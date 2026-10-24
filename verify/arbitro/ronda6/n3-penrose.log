@@ -1,0 +1,70 @@
+[OK ] §5.10 usa A = U_r Σ_r V_r^*
+[OK ] §5.10 usa A† = V_r Σ_r^{-1} U_r^*
+[OK ] demo Prop 5.21 sustituye con V_r^*, U_r^*
+[OK ] demo: cadena V_r^*V_r y U_r^*U_r (válida en ℂ)
+[OK ] sin restos V^⊤ / U^⊤ con Σ_r en tema-5.html
+[OK ] schema.md §5: A=UΣV^* con nota V^*=V^⊤ real
+[OK ] schema.md sin V^⊤ en SVD
+[OK ] conclusión demo: P=U_rU_r^* y A†A=V_rV_r^*
+
+-- casos complejos aleatorios (5 matrices 3×4, 4×2, 2×3 de rango completo/defectuoso) --
+[OK ] [3×4 r=3] (1) cadena AA†A = A
+[OK ] [3×4 r=3] (1b) AA†A = U_r Σ_r (V_r^*V_r) Σ_r^-1 (U_r^*U_r) Σ_r V_r^*
+[OK ] [3×4 r=3] (2) A†AA† = A†
+[OK ] [3×4 r=3] (3) (AA†)^*=AA† y (A†A)^*=A†A
+[OK ] [3×4 r=3] (4) P=U_rU_r^* hermítica e idempotente
+[OK ] [3×4 r=3] (4b) A†A=V_rV_r^* hermítica e idempotente
+[OK ] [3×4 r=3] (5) A*AA† = A* (normales)
+[OK ] [3×4 r=3] (6) CONTRASTE U_r^⊤ FALLA Penrose
+[OK ] [3×4 r=3] (7) U_rU_r^⊤ no hermítica
+[OK ] [4×2 r=2] (1) cadena AA†A = A
+[OK ] [4×2 r=2] (1b) AA†A = U_r Σ_r (V_r^*V_r) Σ_r^-1 (U_r^*U_r) Σ_r V_r^*
+[OK ] [4×2 r=2] (2) A†AA† = A†
+[OK ] [4×2 r=2] (3) (AA†)^*=AA† y (A†A)^*=A†A
+[OK ] [4×2 r=2] (4) P=U_rU_r^* hermítica e idempotente
+[OK ] [4×2 r=2] (4b) A†A=V_rV_r^* hermítica e idempotente
+[OK ] [4×2 r=2] (5) A*AA† = A* (normales)
+[OK ] [4×2 r=2] (6) CONTRASTE U_r^⊤ FALLA Penrose
+[OK ] [4×2 r=2] (7) U_rU_r^⊤ no hermítica
+[OK ] [2×3 r=2] (1) cadena AA†A = A
+[OK ] [2×3 r=2] (1b) AA†A = U_r Σ_r (V_r^*V_r) Σ_r^-1 (U_r^*U_r) Σ_r V_r^*
+[OK ] [2×3 r=2] (2) A†AA† = A†
+[OK ] [2×3 r=2] (3) (AA†)^*=AA† y (A†A)^*=A†A
+[OK ] [2×3 r=2] (4) P=U_rU_r^* hermítica e idempotente
+[OK ] [2×3 r=2] (4b) A†A=V_rV_r^* hermítica e idempotente
+[OK ] [2×3 r=2] (5) A*AA† = A* (normales)
+[OK ] [2×3 r=2] (6) CONTRASTE U_r^⊤ FALLA Penrose
+[OK ] [2×3 r=2] (7) U_rU_r^⊤ no hermítica
+[OK ] [3×3 r=2] (1) cadena AA†A = A
+[OK ] [3×3 r=2] (1b) AA†A = U_r Σ_r (V_r^*V_r) Σ_r^-1 (U_r^*U_r) Σ_r V_r^*
+[OK ] [3×3 r=2] (2) A†AA† = A†
+[OK ] [3×3 r=2] (3) (AA†)^*=AA† y (A†A)^*=A†A
+[OK ] [3×3 r=2] (4) P=U_rU_r^* hermítica e idempotente
+[OK ] [3×3 r=2] (4b) A†A=V_rV_r^* hermítica e idempotente
+[OK ] [3×3 r=2] (5) A*AA† = A* (normales)
+[OK ] [3×3 r=2] (6) CONTRASTE U_r^⊤ FALLA Penrose
+[OK ] [3×3 r=2] (7) U_rU_r^⊤ no hermítica
+[OK ] [5×2 r=2] (1) cadena AA†A = A
+[OK ] [5×2 r=2] (1b) AA†A = U_r Σ_r (V_r^*V_r) Σ_r^-1 (U_r^*U_r) Σ_r V_r^*
+[OK ] [5×2 r=2] (2) A†AA† = A†
+[OK ] [5×2 r=2] (3) (AA†)^*=AA† y (A†A)^*=A†A
+[OK ] [5×2 r=2] (4) P=U_rU_r^* hermítica e idempotente
+[OK ] [5×2 r=2] (4b) A†A=V_rV_r^* hermítica e idempotente
+[OK ] [5×2 r=2] (5) A*AA† = A* (normales)
+[OK ] [5×2 r=2] (6) CONTRASTE U_r^⊤ FALLA Penrose
+[OK ] [5×2 r=2] (7) U_rU_r^⊤ no hermítica
+
+-- caso exacto sympy: cadena de la demo Prop 5.21 --
+  λ(A^*A) = [2, 3]
+[OK ] (1) sympy A = U_r Σ_r V_r^*
+[OK ] (1b) sympy V_r^*V_r = I
+[OK ] (1c) sympy U_r^*U_r = I
+[OK ] (2) sympy AA†A = A
+[OK ] (2b) sympy A†AA† = A†
+[OK ] (3) sympy (AA†)^* = AA†
+[OK ] (3b) sympy (A†A)^* = A†A
+[OK ] (6) sympy V_rΣ_r^-1U_r^⊤ FALLA Penrose
+[OK ] (5) sympy A*AA† = A*
+[OK ] (8) σ_i = sqrt(λ_i(A^*A)) = {3, 2}
+
+63 OK, 0 FALLOS

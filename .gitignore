@@ -1,0 +1,13 @@
+# Dependencias y archivos locales de Cloudflare
+node_modules/
+.wrangler/
+.dev.vars*
+
+# Cachés y archivos del sistema
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Fuentes y notas personales que no deben publicarse
+materiales/
+Archivo de texto.txt

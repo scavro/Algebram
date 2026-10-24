@@ -1,0 +1,107 @@
+== index.html: 117 runs medidos
+== planificacion.html: 134 runs medidos
+== temas/tema-1.html: 1331 runs medidos
+== temas/tema-2.html: 1256 runs medidos
+== temas/tema-3.html: 1295 runs medidos
+== temas/tema-4.html: 1093 runs medidos
+== temas/tema-5.html: 1274 runs medidos
+== examenes/examen-1.html: 330 runs medidos
+== examenes/examen-2.html: 426 runs medidos
+== examenes/examen-3.html: 439 runs medidos
+
+===== CLAIMS R5 (las 2 instancias reclamadas) =====
+
+[claim A: .theme-card--night .meta] 4 instancias
+  OK   14.79:1 (peor px 14.79 · estilo 14.79 · umbral 4.5) index.html span.meta 11.52px fg=rgb(236, 228, 207) bg=rgb(20, 18, 9) :: "Octubre 2026 → Enero 2027"
+  OK   14.79:1 (peor px 14.79 · estilo 14.79 · umbral 4.5) index.html span.meta 11.52px fg=rgb(236, 228, 207) bg=rgb(20, 18, 9) :: "120 minutos sugeridos"
+  OK   14.79:1 (peor px 14.79 · estilo 14.79 · umbral 4.5) index.html span.meta 11.52px fg=rgb(236, 228, 207) bg=rgb(20, 18, 9) :: "120 minutos sugeridos"
+  OK   14.79:1 (peor px 14.79 · estilo 14.79 · umbral 4.5) index.html span.meta 11.52px fg=rgb(236, 228, 207) bg=rgb(20, 18, 9) :: "120 minutos sugeridos"
+  → 4/4 ≥ umbral
+
+[claim B: .nav__brand-mark] 10 instancias
+  OK    7.69:1 (peor px 7.69 · estilo 7.75 · umbral 4.5) index.html span.nav__brand-mark 11.52px fg=rgb(201, 162, 39) bg=rgb(21, 19, 9) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) planificacion.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) temas/tema-1.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) temas/tema-2.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) temas/tema-3.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) temas/tema-4.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) temas/tema-5.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) examenes/examen-1.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) examenes/examen-2.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  OK    6.12:1 (peor px 6.07 · estilo 6.18 · umbral 4.5) examenes/examen-3.html span.nav__brand-mark 11.52px fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+  → 10/10 ≥ umbral
+
+===== TABLA DEL PROTOCOLO (familias exigidas) =====
+
+[kicker] 28 instancias · bajo umbral: 0
+  OK    7.49:1 ×1 (peor px 7.49 · umbral 4.5) fg=rgb(201, 162, 39) bg=rgb(24, 22, 12) :: "UNED · Grado en Ingeniería en Inteligencia"
+  OK    5.54:1 ×11 (peor px 5.49 · umbral 4.5) fg=rgb(109, 85, 24) bg=rgb(234, 227, 209) :: "Programa"
+  OK    7.75:1 ×10 (peor px 7.75 · umbral 4.5) fg=rgb(201, 162, 39) bg=rgb(20, 18, 9) :: "Autoevaluación"
+  OK    6.12:1 ×6 (peor px 6.07 · umbral 4.5) fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Método"
+
+[meta] 112 instancias · bajo umbral: 0
+  OK    5.23:1 ×21 (peor px 5.19 · umbral 4.5) fg=rgb(107, 98, 72) bg=rgb(243, 238, 226) :: "0 / 15 · 0%"
+  OK   14.79:1 ×4 (peor px 14.79 · umbral 4.5) fg=rgb(236, 228, 207) bg=rgb(20, 18, 9) :: "Octubre 2026 → Enero 2027"
+  OK    6.12:1 ×67 (peor px 6.07 · umbral 4.5) fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Fechas"
+  OK    4.73:1 ×17 (peor px 4.69 · umbral 4.5) fg=rgb(107, 98, 72) bg=rgb(234, 227, 209) :: "Volver"
+  OK    9.68:1 ×3 (peor px 9.68 · umbral 4.5) fg=rgb(236, 228, 207) @0.8 bg=rgb(20, 18, 9) :: "Tiempo restante"
+
+[chip] 27 instancias · bajo umbral: 0
+  OK    7.75:1 ×9 (peor px 7.75 · umbral 4.5) fg=rgb(201, 162, 39) bg=rgb(20, 18, 9) :: "Octubre 2026 → Enero 2027"
+  OK   14.79:1 ×18 (peor px 14.79 · umbral 4.5) fg=rgb(236, 228, 207) bg=rgb(20, 18, 9) :: "6–8 h semanales"
+
+[plaque__label] 191 instancias · bajo umbral: 0
+  OK    5.62:1 ×33 (peor px 5.57 · umbral 4.5) fg=rgb(65, 107, 64) bg=rgb(247, 244, 236) :: "Por qué importa en IA"
+  OK    6.45:1 ×93 (peor px 6.39 · umbral 4.5) fg=rgb(109, 85, 24) bg=rgb(247, 244, 236) :: "Cómo funciona"
+  OK    5.28:1 ×1 (peor px 5.23 · umbral 4.5) fg=rgb(109, 85, 24) bg=rgb(231, 222, 195) :: "Regla de calificación"
+  OK    5.28:1 ×1 (peor px 5.23 · umbral 4.5) fg=rgb(65, 107, 64) bg=rgb(241, 237, 226) :: "Lectura práctica"
+  OK    6.06:1 ×4 (peor px 6 · umbral 4.5) fg=rgb(109, 85, 24) bg=rgb(241, 237, 226) :: "Justifica"
+  OK    5.79:1 ×59 (peor px 5.68 · umbral 4.5) fg=rgb(109, 85, 24) bg=rgb(239, 232, 211) :: "Proposición 1.2"
+
+[field label] 150 instancias · bajo umbral: 0
+  OK    5.23:1 ×148 (peor px 5.19 · umbral 4.5) fg=rgb(107, 98, 72) bg=rgb(243, 238, 226) :: "Tu respuesta"
+  OK     5.9:1 ×2 (peor px 5.85 · umbral 4.5) fg=rgb(107, 98, 72) bg=rgb(254, 252, 245) :: "Verdadero"
+
+[th] 14 instancias · bajo umbral: 0
+  OK    4.73:1 ×14 (peor px 4.69 · umbral 4.5) fg=rgb(107, 98, 72) bg=rgb(234, 227, 209) :: "Bloque"
+
+[drill__id] 111 instancias · bajo umbral: 0
+  OK    4.73:1 ×111 (peor px 4.69 · umbral 4.5) fg=rgb(107, 98, 72) bg=rgb(234, 227, 209) :: "T1-N1"
+
+[footer__colophon] 20 instancias · bajo umbral: 0
+  OK    6.21:1 ×20 (peor px 6.21 · umbral 4.5) fg=rgb(236, 228, 207) @0.62 bg=rgb(20, 18, 9) :: "Material de estudio personal · uso no come"
+
+[exam-score span] 9 instancias · bajo umbral: 0
+  OK   14.79:1 ×9 (peor px 14.79 · umbral 4.5) fg=rgb(236, 228, 207) bg=rgb(20, 18, 9) :: "Acertadas"
+
+[btn--ghost] 225 instancias · bajo umbral: 0
+  OK    8.25:1 ×222 (peor px 8.17 · umbral 4.5) fg=rgb(76, 69, 47) bg=rgb(243, 238, 226) :: "Pista"
+  OK    8.01:1 ×3 (peor px 8.01 · umbral 4.5) fg=rgb(236, 228, 207) @0.72 bg=rgb(20, 18, 9) :: "Reiniciar"
+
+===== EXTRA (familias M3 históricas / residuales) =====
+
+[drill__level] 111 instancias · bajo umbral: 0
+  OK    4.82:1 ×42 (peor px 4.78 · umbral 4.5) fg=rgb(65, 107, 64) bg=rgb(234, 227, 209) :: "Normal"
+  OK    4.57:1 ×37 (peor px 4.48 · umbral 4.5) fg=rgb(125, 97, 20) bg=rgb(234, 227, 209) :: "Medio"
+  OK    4.81:1 ×32 (peor px 4.77 · umbral 4.5) fg=rgb(158, 72, 38) bg=rgb(234, 227, 209) :: "Examen de grado"
+
+[nav__brand-mark] 10 instancias · bajo umbral: 0
+  OK    7.69:1 ×1 (peor px 7.69 · umbral 4.5) fg=rgb(201, 162, 39) bg=rgb(21, 19, 9) :: "Archivo"
+  OK    6.12:1 ×9 (peor px 6.07 · umbral 4.5) fg=rgb(109, 85, 24) bg=rgb(243, 238, 226) :: "Archivo"
+
+[exam-toolbar__timer] 3 instancias · bajo umbral: 0
+  OK    7.75:1 ×3 (peor px 7.75 · umbral 4.5) fg=rgb(201, 162, 39) bg=rgb(20, 18, 9) :: "01:59:56"
+
+[hero__stat span] 4 instancias · bajo umbral: 0
+  OK     5.8:1 ×1 (peor px 5.79 · umbral 4.5) fg=rgb(236, 228, 207) @0.62 bg=rgb(35, 31, 16) :: "Temas"
+  OK    5.83:1 ×1 (peor px 5.8 · umbral 4.5) fg=rgb(236, 228, 207) @0.62 bg=rgb(35, 30, 15) :: "Ejercicios"
+  OK    5.84:1 ×1 (peor px 5.8 · umbral 4.5) fg=rgb(236, 228, 207) @0.62 bg=rgb(34, 30, 17) :: "Exámenes"
+  OK    5.95:1 ×1 (peor px 5.88 · umbral 4.5) fg=rgb(236, 228, 207) @0.62 bg=rgb(30, 27, 16) :: "Verificado con SymPy"
+
+[hero__scroll] 1 instancias · bajo umbral: 0
+  OK       6:1 ×1 (peor px 5.99 · umbral 4.5) fg=rgb(236, 228, 207) @0.62 bg=rgb(28, 26, 15) :: "Descender"
+
+===== BARRIDO COMPLETO (resto de texto) =====
+runs sweep: 6679 · bajo umbral: 0
+
+RESUMEN: 7695 runs en 10 páginas · familia exigida/extra bajo umbral: 0 · sweep bajo umbral: 0

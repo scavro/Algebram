@@ -1,0 +1,51 @@
+--- control: la familia R7 sin veneno (el fix SÍ la cierra) ---
+✔ B0  E+Δ (M5 naive): 0/20 acepta (debía 0/20)
+✔ B0b 4-s-t+Δ (M9 naive): 0/20 acepta (debía 0/20)
+
+--- bypass por potencia no entera bajo «+» (debería rechazar; ACEPTA = hallazgo) ---
+✔ B1  E+Δ·x^0.5: 0/20 acepta (debía 0/20)
+✔ B2  E+Δ·x^(1/2): 0/20 acepta (debía 0/20)
+✔ B3  E+Δ·x^0.3333: 0/20 acepta (debía 0/20)
+✔ B4  E+Δ·x^y (exponente variable): 0/20 acepta (debía 0/20)
+✔ B5  E+Δ·2^x: 0/20 acepta (debía 0/20)
+✔ B6  E+Δ/(x^0.5+1): 0/20 acepta (debía 0/20)
+✔ B7  E+Δ·(x+y)^(-1): 0/20 acepta (debía 0/20)
+✔ B8  E+Δ·x^0.5 en exprset (M10): 0/20 acepta (debía 0/20)
+✔ B9  E+Δ·x^0.5 en matriz (M11): 0/20 acepta (debía 0/20)
+✔ B10 E+Δ·x^0.5 en multi: 0/20 acepta (debía 0/20)
+✔ B11 E+Δ·abs(x)^0.5: 0/20 acepta (debía 0/20)
+✔ B12 E+Δ·sqrt(x)^0.3333: 0/20 acepta (debía 0/20)
+
+--- veneno NO funciona (controles: el fix sigue cerrando otras rutas) ---
+✔ B13 E+Δ·sqrt(x) (fn, sin ^ rara): 0/20 acepta (debía 0/20)
+✔ B14 E+Δ·sin(x): 0/20 acepta (debía 0/20)
+✔ B15 E+Δ·x (racional): 0/20 acepta (debía 0/20)
+
+--- exponente negativo entre paréntesis (misma raíz: cae a vía numérica) ---
+✘ B16 '(x+y)^(-300)' vs 0 (esperado 0): 37/50 acepta (debía 0/50)
+✘ B17 '(x+y)^-300' vs 0: 38/50 acepta (debía 0/50)
+✘ B18 '(x^2+y^2+2)^(-200)' vs 0: 47/50 acepta (debía 0/50)
+✘ B19 '1/(x+y)^300' vs 0 (forma racional: sí debe rechazar): 16/20 acepta (debía 0/20)
+
+--- SET-U · respuesta universal 0/0 (toRationalPoly: {n:0,d:0} ≡ todo) ---
+✔ U1  U vs 5: 0/50 acepta (debía 0/50)
+✔ U2  U vs 4/11 (drill real): 0/50 acepta (debía 0/50)
+✔ U3  U vs log(x*y): 0/50 acepta (debía 0/50)
+✔ U4  U vs x+y: 0/50 acepta (debía 0/50)
+✔ U5  0/(x-x) vs 5: 0/50 acepta (debía 0/50)
+✔ U6  (x-x)^2/(x-x) vs 5: 0/50 acepta (debía 0/50)
+✔ U7  1*(x-x)/(x-x) vs pi: 0/50 acepta (debía 0/50)
+✔ U8  5+0*(x-x)/(x-x) vs 5 (J10 histórico R2): 0/50 acepta (debía 0/50)
+✔ U9  U en las 4 celdas de T5-N5 (matriz): 0/50 acepta (debía 0/50)
+✔ U10 U duplicado en exprset: 0/50 acepta (debía 0/50)
+✔ U11 U en multi (campo expr): 0/50 acepta (debía 0/50)
+✔ U12 1/(x-x) vs 5 (A6 histórico: DEBE rechazar): 0/20 acepta (debía 0/20)
+✔ U13 x/(x-x) vs 5 (numerador no nulo: DEBE rechazar): 0/20 acepta (debía 0/20)
+
+--- testigos de no-equivalencia (R7 §7: x=y=-6 → Δ=2πi) ---
+  testigo x=y=-6: E+Δ·x^0.5 = (-10.3906, 0.0000) vs E = (5, 0) · |Δ| = 15.3906
+✔ testigo OK: las expresiones NO son equivalentes (aceptarlas = falso positivo)
+  testigo (x+y)^(-300) en x=y=-6: (NaN, 0) ≠ 0 · |·| = NaN
+
+Resumen BYPASS R9: 4 desajustes de 36 casos
+(B1-B12, B16-B18 y U1-U11 marcados ✘ = falsos positivos confirmados: rechazo esperado, aceptación real)

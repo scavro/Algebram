@@ -1,0 +1,171 @@
+--- R1-A. falsos positivos (debe RECHAZAR) ---
+✔ A1 'x-y' vs 0: grader=RECHAZA (debía rechazar)
+✔ A2 'x^2-y^2' vs 0: grader=RECHAZA (debía rechazar)
+✔ A3 'sin(x)-sin(y)' vs 0: grader=RECHAZA (debía rechazar)
+✔ A4 '4-2*t' vs '4-s-t': grader=RECHAZA (debía rechazar)
+✔ A5 '4-s-t+(s-t)' vs '4-s-t': grader=RECHAZA (debía rechazar)
+✔ A6 '1/(x-x)' vs 5: grader=RECHAZA (debía rechazar)
+✔ A7 'log(x-x)' vs 3: grader=RECHAZA (debía rechazar)
+✔ A8 '1/(x-y)' vs '2/(x-y)': grader=RECHAZA (debía rechazar)
+✔ A9 'y^2' vs 'x^2': grader=RECHAZA (debía rechazar)
+✔ A10 matriz celda 'x-y' vs '0': grader=RECHAZA (debía rechazar)
+✘ A11 '1e-7' vs 0 (matrix) — tolerancia 1e-6 del motor, diseño: grader=RECHAZA (debía aceptar)
+✔ A12 '0.0001' vs number 0: grader=RECHAZA (debía rechazar)
+✔ A13 choice '1abc' == 1: grader=RECHAZA (debía rechazar) [Selecciona una opción]
+✔ A14 choice '2.9' == 2: grader=RECHAZA (debía rechazar) [Selecciona una opción]
+✔ A15 bool '1' -> true: grader=ACEPTA (debía aceptar)
+--- R1-B. falsos negativos (debe ACEPTAR) ---
+✔ B1 '1/2' vs '0.5': grader=ACEPTA (debía aceptar)
+✔ B2 '2i' vs '2*i': grader=ACEPTA (debía aceptar)
+✔ B3 '0,5' vs '1/2': grader=ACEPTA (debía aceptar)
+✔ B4 '(2+11i)/5' vs '2/5+11/5*i': grader=ACEPTA (debía aceptar)
+✔ B5 'sqrt(3)/2' vs '3^0.5/2': grader=ACEPTA (debía aceptar)
+✔ B6 'π/3' vs 'pi/3': grader=ACEPTA (debía aceptar)
+✔ B7 '−2' vs '-2' exact: grader=ACEPTA (debía aceptar)
+✔ B8 matriz '1/2' vs '0.5': grader=ACEPTA (debía aceptar)
+✔ B9 matriz 'sqrt(4)' vs '2': grader=ACEPTA (debía aceptar)
+✔ B10 exprset '2;-2' vs ['4','-2']: grader=ACEPTA (debía aceptar)
+✔ B11 '1e3' vs 1000 exact: grader=ACEPTA (debía aceptar)
+✔ B12 '5!' vs 120 exact: grader=ACEPTA (debía aceptar)
+✔ B13 '-2^2' vs '-4': grader=ACEPTA (debía aceptar)
+✔ B14 '2sqrt(3)' vs '2*sqrt(3)': grader=ACEPTA (debía aceptar)
+✔ B15 bool 'Sí' -> true: grader=ACEPTA (debía aceptar)
+✔ B16 bool 'falso' -> false: grader=ACEPTA (debía aceptar)
+✔ B17 '3,14' vs '3.14': grader=ACEPTA (debía aceptar)
+✔ B18 multi correcto: grader=ACEPTA (debía aceptar)
+✔ B19 'sqrt(2)/2' vs '1/sqrt(2)': grader=ACEPTA (debía aceptar)
+✔ B20 'i^2' vs '-1': grader=ACEPTA (debía aceptar)
+✔ B21 '(1+i)^2' vs '2i': grader=ACEPTA (debía aceptar)
+✔ B22 'sqrt(3)/2' vs decimal (tol): grader=ACEPTA (debía aceptar)
+--- R1-C. signo/dimensión (debe RECHAZAR) ---
+✔ C1 '11' vs 10: grader=RECHAZA (debía rechazar)
+✔ C2 '-2i' vs '2i': grader=RECHAZA (debía rechazar)
+✔ C3 vector 2 vs 3: grader=RECHAZA (debía rechazar) [Dimensiones incorrectas (se espera 3×1)]
+✔ C4 matriz transpuesta: grader=RECHAZA (debía rechazar)
+✔ C5 '-1/2' vs '1/2': grader=RECHAZA (debía rechazar)
+✔ C6 exprset cambiado: grader=RECHAZA (debía rechazar)
+✔ C7 bool invertido: grader=RECHAZA (debía rechazar)
+✔ C8 choice equivocado: grader=RECHAZA (debía rechazar)
+✔ C9 '4/2' exact vs 3: grader=RECHAZA (debía rechazar)
+--- D. ataques a C4 (no finitos / no evaluables) ---
+✔ D1 'hacker(3)' vs 1: grader=RECHAZA (debía rechazar)
+✔ D2 '1/(x-y)' vs todo (contrarrespuesta universal): grader=RECHAZA (debía rechazar)
+✔ D3 'log(x-y)' vs 2: grader=RECHAZA (debía rechazar)
+✔ D4 '1/0' vs 5: grader=RECHAZA (debía rechazar)
+✔ D5 'x/0' vs x: grader=RECHAZA (debía rechazar)
+✔ D6 'fact(x)' vs 0 (NaN en todo punto): grader=RECHAZA (debía rechazar)
+✔ D7 'sqrt(-1-x^2-y^2)' vs 0 (rama no finita): grader=RECHAZA (debía rechazar)
+✔ D8 'exp(1000)*x' vs 1 (overflow a Inf): grader=RECHAZA (debía rechazar)
+✔ D9 '9^9^9' vs 0 (overflow): grader=RECHAZA (debía rechazar)
+✔ D10 celda matriz '1/(x-x)' vs '3': grader=RECHAZA (debía rechazar)
+✔ D11 number '1/(x-x)' vs 7: grader=RECHAZA (debía rechazar)
+✔ D12 exprset '1/(x-x);2' vs ['1','2']: grader=RECHAZA (debía rechazar)
+--- E. ataques a C5 (variables en distinto punto) ---
+✔ E1 'x/y' vs 1: grader=RECHAZA (debía rechazar)
+✔ E2 'x-y' vs 0 (ya A1, refuerzo): grader=RECHAZA (debía rechazar)
+✔ E3 'sin(x)-sin(y)' vs 0: grader=RECHAZA (debía rechazar)
+✔ E4 'x^3-y^3' vs 0: grader=RECHAZA (debía rechazar)
+✔ E5 'x1-x2' vs 0: grader=RECHAZA (debía rechazar)
+✔ E6 'x+0*y' vs 'x' (debe aceptar: sí son iguales): grader=ACEPTA (debía aceptar)
+✔ E7 'x-x' vs 0 (debe aceptar: identidad): grader=ACEPTA (debía aceptar)
+✔ E8 '(x+y)-(y+x)' vs 0 (identidad): grader=ACEPTA (debía aceptar)
+✔ E9 'x*y' vs 'y*x' (conmutatividad): grader=ACEPTA (debía aceptar)
+✘ E10 'cos(x)^2+sin(x)^2' vs 1 (identidad trig): grader=RECHAZA (debía aceptar)
+✔ E11 'x^2-y^2' vs '(x-y)(x+y)': grader=ACEPTA (debía aceptar)
+✘ E12 'tan(x)' vs 'sin(x)/cos(x)': grader=RECHAZA (debía aceptar)
+--- F. colisión de muestreo con ≥9 variables (hardening C5) ---
+✔ F1 '(a1-a9)+(a2-a2)+(a3-a3)+(a4-a4)+(a5-a5)+(a6-a6)+(a7-a7)+(a8-a8)' vs 0: grader=RECHAZA (debía rechazar)
+✔ F2 'a1-a2' vs 0 (2 vars, sin colisión): grader=RECHAZA (debía rechazar)
+✔ F3 'a-b+c-d+e-f+g-h+i-i' vs 0 (NO es identidad: debe rechazar): grader=RECHAZA (debía rechazar)
+✔ F4 '(a1-a9)*0' vs 0 (identidad real): grader=ACEPTA (debía aceptar)
+--- G. polinomio que se anula en los puntos de muestreo ---
+✔ G1 polinomio(x)=0 en los 8 puntos vs expected 0: grader=RECHAZA (debía rechazar)
+✔ G2 polinomio+5 vs expected 5: grader=RECHAZA (debía rechazar)
+--- H. multi incompleto / extremos de tipos ---
+✔ H1 multi sin campo b: grader=RECHAZA (debía rechazar) [Respuesta vacía]
+✔ H2 multi con null: grader=RECHAZA (debía rechazar) [Respuesta vacía]
+✔ H3 multi con undefined: grader=RECHAZA (debía rechazar) [Respuesta vacía]
+✔ H4 multi con campos extras (ignorar): grader=ACEPTA (debía aceptar)
+✔ H5 multi respuesta no-objeto: grader=RECHAZA (debía rechazar) [Faltan campos]
+✔ H6 choice null → mensaje: grader=RECHAZA (debía rechazar) [Selecciona una opción]
+✔ H7 bool null → mensaje: grader=RECHAZA (debía rechazar) [Selecciona verdadero o falso]
+✔ H8 bool '' → mensaje: grader=RECHAZA (debía rechazar) [Selecciona verdadero o falso]
+✔ H9 text con espacios extra: grader=ACEPTA (debía aceptar)
+✔ H10 text mayúsculas: grader=RECHAZA (debía rechazar)
+✔ H11 exprset duplicados: grader=RECHAZA (debía rechazar)
+✔ H12 exprset de más: grader=RECHAZA (debía rechazar)
+✔ H13 number expectedOneOf: grader=ACEPTA (debía aceptar)
+✔ H14 expr expectedOneOf: grader=ACEPTA (debía aceptar)
+✔ H15 spec vacío: grader=RECHAZA (debía rechazar) [Falta el tipo de respuesta]
+✔ H16 spec null: grader=RECHAZA (debía rechazar) [Falta el tipo de respuesta]
+✔ H17 tipo inventado: grader=RECHAZA (debía rechazar) [Tipo no soportado: unicornio]
+✘ H18 multi fields null: grader=ACEPTA (debía rechazar)
+--- I. entradas extremas (no crash / no bucle) ---
+✔ I1 10k caracteres: grader=RECHAZA (debía rechazar)
+✔ I2 9999 paréntesis: grader=RECHAZA (debía rechazar)
+✔ I3 '<script>': grader=RECHAZA (debía rechazar)
+✔ I4 objeto: grader=RECHAZA (debía rechazar)
+✔ I5 array: grader=RECHAZA (debía rechazar)
+✔ I6 null: grader=RECHAZA (debía rechazar) [Respuesta vacía]
+✔ I7 undefined: grader=RECHAZA (debía rechazar) [Respuesta vacía]
+✔ I8 '2..3' número inválido: grader=RECHAZA (debía rechazar)
+✔ I9 'x^^2': grader=RECHAZA (debía rechazar)
+✔ I10 '999999!': grader=RECHAZA (debía rechazar)
+✔ I11 matriz '[[1,2],[3]': grader=RECHAZA (debía rechazar) [Matriz no válida]
+✔ I12 matriz '1 2; 3': grader=RECHAZA (debía rechazar) [Filas de distinta longitud]
+✔ I13 matrix desde objeto: grader=RECHAZA (debía rechazar) [Dimensiones incorrectas (se espera 1×1)]
+✔ I14 emoji: grader=RECHAZA (debía rechazar)
+✔ I15 string gigante en text: grader=RECHAZA (debía rechazar)
+--- J. exactitud de números ---
+✔ J1 exact '2.0' vs 2: grader=ACEPTA (debía aceptar)
+✔ J2 exact '2.0000001' vs 2: grader=RECHAZA (debía rechazar)
+✔ J3 exact '4/2' vs 2: grader=ACEPTA (debía aceptar)
+✔ J4 exact '-0' vs 0: grader=ACEPTA (debía aceptar)
+✔ J5 exact '1e3' vs 1000: grader=ACEPTA (debía aceptar)
+
+--- SET-S. entradas basura / explosión polinómica acotada (sin crash) ---
+✔ S1 '(((x)))' vs x: grader=ACEPTA (debía aceptar) 0ms (máx 200ms)
+✔ S2 '(x+y)^2' vs 'x^2+2xy+y^2' (desarrollo): grader=ACEPTA (debía aceptar) 0ms (máx 200ms)
+✔ S3 'sin(x)*sin(x)' vs 'sin(x)^2' (átomos): grader=ACEPTA (debía aceptar) 1ms (máx 200ms)
+✔ S4 'log(x)*log(y)' vs 'log(y)*log(x)': grader=ACEPTA (debía aceptar) 0ms (máx 200ms)
+✔ S5 'sqrt(x)^2' vs x (identidad verdadera): grader=ACEPTA (debía aceptar) 0ms (máx 200ms)
+✔ S6 'x^(1/2)' vs 'sqrt(x)': grader=ACEPTA (debía aceptar) 0ms (máx 200ms)
+✔ S7 'x^(-2)' vs '1/x^2': grader=ACEPTA (debía aceptar) 0ms (máx 200ms)
+✔ S8 '1/(1+1/(1+1/x))' vs forma racional equivalente: grader=ACEPTA (debía aceptar) 0ms (máx 300ms)
+✔ S9 '(x+y+z)^20' vs 1 (expansión 231 monomios): grader=RECHAZA (debía rechazar) 42ms (máx 3000ms)
+✔ S10 '(x+y)^2000' vs 1 (expansión 2001 monomios): grader=RECHAZA (debía rechazar) 675ms (máx 4000ms)
+✘ S11 '(x+y)^(-300)' vs 0 (recíproco): grader=ACEPTA (debía rechazar) 0ms (máx 4000ms)
+✔ S12 multi con valores objeto/array: grader=RECHAZA (debía rechazar) 0ms (máx 200ms) [Campo 'a' incorrecto]
+✔ S13 multi con todos los campos vacíos: grader=RECHAZA (debía rechazar) 0ms (máx 200ms) [Respuesta vacía]
+✔ S14 expr con 5000 términos '1+1+…' vs 5000: grader=ACEPTA (debía aceptar) 3ms (máx 2000ms)
+✔ S15 'x-x' vs 0 tras capa estructural: grader=ACEPTA (debía aceptar) 0ms (máx 200ms)
+✔ S16 matriz celda con '(x+y)^3' vs desarrollo: grader=ACEPTA (debía aceptar) 0ms (máx 300ms)
+✔ S17 exprset con expresiones largas equivalentes: grader=ACEPTA (debía aceptar) 0ms (máx 300ms)
+✔ S18 'NaN' / 'Infinity' literales: grader=RECHAZA (debía rechazar) 0ms (máx 200ms)
+✔ S19 unicode homógrafo 'х' (cirílico) vs 'x': grader=RECHAZA (debía rechazar) 0ms (máx 200ms)
+✔ S20 null bytes y escapes: grader=RECHAZA (debía rechazar) 0ms (máx 200ms)
+
+--- SET-H. multi/specs malformados (N6: debe RECHAZAR salvo H4/B18) ---
+✘ H19 multi fields {} (objeto vacío): grader=ACEPTA (debía rechazar)
+✘ H20 multi fields 0: grader=ACEPTA (debía rechazar)
+✔ H21 multi fields 'basura': grader=RECHAZA (debía rechazar) [Falta el tipo de respuesta]
+✔ H22 multi fields {a:null} con respuesta {}: grader=RECHAZA (debía rechazar) [Falta el tipo de respuesta]
+✘ H23 spec {type:'multi'} sin fields: grader=ACEPTA (debía rechazar)
+
+--- SET-CONSISTENCIA. auto-corrección de los 111 drills + timing ---
+  ✔ auto-consistencia: 111/111 drills aceptan su propia respuesta esperada
+  ✔ timing: drill más lento T1-E2 = 1ms (máx 250ms)
+  · total drills del banco: 111
+  · timing: más lento = T1-E2 1ms
+
+--- SET-R7. exploits de rama (R7 §7): rechazo determinista ×10 runs ---
+✔ M1  E+2log(x+3.5)-log((x+3.5)^2): aceptado en 0/10 runs (debía 0/10)
+✔ M5  E+log(x+5)+log(y+5)-log((x+5)(y+5)): aceptado en 0/10 runs (debía 0/10)
+✔ M7  sqrt((x+5)(y+5)) vs sqrt(x+5)sqrt(y+5): aceptado en 0/10 runs (debía 0/10)
+✔ M9  exploit universal sobre T4-N3: aceptado en 0/10 runs (debía 0/10)
+✔ M10 exploit sobre T4-M5 (exprset): aceptado en 0/10 runs (debía 0/10)
+✔ M11 exploit sobre T5-N5 (matriz): aceptado en 0/10 runs (debía 0/10)
+✔ M12 E+log(exp((x+5)/20))-(x+5)/20: aceptado en 0/10 runs (debía 0/10)
+
+Resumen R8: 8 desajustes de 146 casos (batería R2 + S + H + R7; consistencia 111 aparte)
+SET-R7: 70 runs, 0 casos con falso positivo

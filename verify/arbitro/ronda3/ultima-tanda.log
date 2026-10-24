@@ -1,0 +1,17 @@
+reduced-motion: {"match":true,"formulaAnim":"0.001s / iter=infinite","formulaAnimName":"drift","scrollBehavior":"auto"}
+recursos/tipografía: {
+ "recursos": 0,
+ "fallidos": [],
+ "fonts": {
+  "fraunces": true,
+  "inter": true,
+  "mono": true
+ },
+ "bodyFont": "Inter, system-ui, -apple-system, sans-se",
+ "h1Font": "Fraunces, \"Iowan Old Style\", Georgia, se"
+}
+examen-2: perCard=12/12 global=12/12 nota=10 contradicciones=0
+examen-3: perCard=12/12 global=12/12 nota=10 contradicciones=0
+progreso tras comprobar en tema: {"T1-N1":"failed"}
+
+OK última tanda

@@ -1,0 +1,58 @@
+[
+ {
+  "texto": "Tema I · Escalares",
+  "tieneKatex": false,
+  "fontDiv": "Inter, sans-serif",
+  "fontKatex": null,
+  "aria": "Tema I · Escalares: Los cinco escalares "
+ },
+ {
+  "texto": "Conjuntos y funciones",
+  "tieneKatex": false,
+  "fontDiv": "Inter, sans-serif",
+  "fontKatex": null,
+  "aria": "Conjuntos y funciones: Lógica informal, "
+ },
+ {
+  "texto": "Tuplas y producto cartesiano",
+  "tieneKatex": false,
+  "fontDiv": "Inter, sans-serif",
+  "fontKatex": null,
+  "aria": "Tuplas y producto cartesiano: \\((a,b) = "
+ },
+ {
+  "texto": "Funciones",
+  "tieneKatex": false,
+  "fontDiv": "Inter, sans-serif",
+  "fontKatex": null,
+  "aria": "Funciones: Imagen e imagen recíproca; in"
+ },
+ {
+  "texto": "Familias indexadas",
+  "tieneKatex": false,
+  "fontDiv": "Inter, sans-serif",
+  "fontKatex": null,
+  "aria": "Familias indexadas: \\((u_i)_{i \\in I}\\):"
+ },
+ {
+  "texto": "N\\mathbb{N}N y Z\\mathbb{Z}Z: bases de nu",
+  "tieneKatex": true,
+  "fontDiv": "Inter, sans-serif",
+  "fontKatex": "KaTeX_Main, \"Times New",
+  "aria": "\\(\\mathbb{N}\\) y \\(\\mathbb{Z}\\): bases d"
+ },
+ {
+  "texto": "Sistema posicional",
+  "tieneKatex": false,
+  "fontDiv": "Inter, sans-serif",
+  "fontKatex": null,
+  "aria": "Sistema posicional: Base \\(b\\) y dígitos"
+ },
+ {
+  "texto": "Conversiones",
+  "tieneKatex": false,
+  "fontDiv": "Inter, sans-serif",
+  "fontKatex": null,
+  "aria": "Conversiones: A decimal: valor posiciona"
+ }
+]

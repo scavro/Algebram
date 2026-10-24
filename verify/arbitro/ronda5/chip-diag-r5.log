@@ -1,0 +1,19 @@
+chip Medio: {"rect":{"x":1137.84375,"y":25599.546875,"w":43.765625,"h":15},"color":"rgb(125, 97, 20)","pad":"3.6864px 9.216px","border":"1px solid color(srgb 0.490196 0.380392 0.0784314 / 0.45)","radius":"100px","total":5}
+rect viewport: x=1138 y=443 w=44 h=15
+  oo.oo.oooooooooooooooo.ooo.ooo.o.oooooooo..o   (y=443)
+  o.oooooo.oo..ooo..ooooooooo.oo.oo.ooooo.oooo   (y=444)
+  .ooooo.ooooo.oooooo.ooooo.oooooo.oo.o.ooo.oo   (y=445)
+  ooo.oooooooooooo.o.oooo.oooooo.oooo.oo.ooooo   (y=446)
+  ooooooooooooo.oo.o.oooooo.ooooooooooooooooo.   (y=447)
+  oooooooooo..oooooo.o.oooooo.ooooooooooooo.oo   (y=448)
+  .ooooooo.o.oo.oooooooooooo.oooooooooooooo.oo   (y=449)
+  ooo..ooooooooooooooo.oo.oooooooooooooooooooo   (y=450)
+  ooooooooooo.oooooo.oooooooooo..ooooooo..oo.o   (y=451)
+  ooooooooooooooooooo.oooooooooooooooo.o.oooo.   (y=452)
+  o.oooooooooo.oooooooo.oo.ooo.o.o.o..oooo.oo.   (y=453)
+  ooooo.ooo.o.oo.ooooooooooooooo...ooooooooooo   (y=454)
+  oo.oo.ooooX.oooo.o.o.ooooooooooo.o.ooo.ooooo   (y=455)
+  oooooo.oooo..oo.ooooooooooooooooooooooo.oooo   (y=456)
+  ooo.oo.oo.ooooooooo.oo.oooooooo.oooooooo.ooo   (y=457)
+min global: 4.483:1 · min erosionado (sin borde 1px): 4.483:1
+píxeles <4.5: 1/660 · erosionados <4.5: 1/546

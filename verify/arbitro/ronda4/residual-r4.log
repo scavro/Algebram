@@ -1,0 +1,29 @@
+== N4 — multi anidado con bool (T2-E4)
+  ABIERTO  N4: choice/bool anidados sin is-right/is-wrong tras corregir  [marcados=0/2 fb="✗ Aún no es correcto. Campo 'orth' incorrecto Comp"]
+== N6 — grader multi fields:null
+  ABIERTO  N6: fields:null devuelve ok:true (auto-aprueba)  [{"ok":true} · fields:{}={"ok":true}]
+== N7 — solapes héroe 1440 (muestreo 24 s)
+  ABIERTO  N7: fórmulas decorativas sobre texto del héroe en 1440  [fórmulas=6 muestras=80 solapes=160 ej=[{"t":"kicker","f":"A=UΣV⊤ A = U\\Sigma","ix":108,"iy":13},{"t":"h1","f":"det⁡(A)≠0 \\det(A) ","ix":103,"iy":36},{"t":"kicker","f":"A=UΣV⊤ A = U\\Sigma","ix":108,"iy":12}]]
+== N8 — colofones del pie
+  ABIERTO  N8: colofones distintos entre páginas  [3 variantes en 5 páginas]
+     · index.html: "Material de estudio personal · uso no comercial Cada resultado verificado con SymPy"
+     · temas/tema-1.html: "Material de estudio personal · uso no comercial Verificado con SymPy · errores → revisar con el árbitro"
+     · temas/tema-3.html: "Material de estudio personal · uso no comercial Verificado con SymPy · errores → revisar con el árbitro"
+     · examenes/examen-1.html: "Material de estudio personal · uso no comercial Verificado con SymPy"
+     · planificacion.html: "Material de estudio personal · uso no comercial Verificado con SymPy"
+== N9 — aria-label del nav del index
+  ABIERTO  N9: <nav class="nav"> del index sin aria-label  [[{"cls":"nav nav--night","aria":null}]]
+== N10 — aria-label del mapa mental con TeX crudo
+  ABIERTO  N10: TeX crudo en accesibilidad del mapa  [total=20 ariaMapa="" ej=[{"tag":"g","al":"Tema I · Escalares: Los cinco escalares del curso: de \\(\\mat"},{"tag":"g","al":"Conjuntos y funciones: Lógica informal, conjuntos por extens"},{"tag":"g","al":"Tuplas y producto cartesiano: \\((a,b) = \\{\\{a\\},\\{a,b\\}\\}\\);"}]]
+== m7 — tipografía de nodos del mapa
+  ABIERTO  m7: familias tipográficas mezcladas / KaTeX dentro de nodos Inter  [{"fams":{"Inter":22},"conKatex":4,"total":22}]
+== m4 — estructuras del pager
+  ABIERTO  m4: pager con estructuras distintas  [3 formas en 4 páginas]
+     · temas/tema-1.html: [["prev:Volver","next:Siguiente"]]
+     · temas/tema-3.html: [["prev:Anterior","next:Siguiente"]]
+     · examenes/examen-1.html: [["prev:Anterior","next:Siguiente"]]
+     · planificacion.html: [["prev:Volver","next:Empezar"]]
+== nota R2 — role del temporizador
+  ABIERTO  nota R2: #exam-timer sin role="timer"  [{"role":null,"live":null}]
+
+Residual: 9 hallazgos antiguos aún vivos

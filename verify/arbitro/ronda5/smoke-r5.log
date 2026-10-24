@@ -1,0 +1,84 @@
+
+== index.html
+  ✔ sin errores de JS (0)
+  ✔ KaTeX: 10 fórmulas renderizadas · 0 .katex-error
+  ✔ nav presente (4 links · aria-label=null)
+  · 0 drills (página sin ejercicios)
+  ✔ progreso estático: 5 barras / 5 labels · formato OK
+  ✔ barra de lectura (.progress-bar__fill) presente
+
+== planificacion.html
+  ✔ sin errores de JS (0)
+  ✔ KaTeX: 12 fórmulas renderizadas · 0 .katex-error
+  ✔ nav presente (4 links · aria-label="Navegación principal")
+  · 0 drills (página sin ejercicios)
+  ✔ barra de lectura (.progress-bar__fill) presente
+
+== temas/tema-1.html
+  ✔ sin errores de JS (0)
+  ✔ KaTeX: 779 fórmulas renderizadas · 0 .katex-error
+  ✔ nav presente (4 links · aria-label="Navegación principal")
+  ✔ campos de respuesta: 15 drills · sin campo: 0
+  ✔ barra de lectura (.progress-bar__fill) presente
+
+== temas/tema-2.html
+  ✔ sin errores de JS (0 · recurso: error: track:ii_transformacion.vtt | error: track:ii_gram_schmidt.vtt)
+  ✔ KaTeX: 702 fórmulas renderizadas · 0 .katex-error
+  ✔ nav presente (4 links · aria-label="Navegación principal")
+  ✔ campos de respuesta: 15 drills · sin campo: 0
+  ✔ tracks de vídeo: 2 vídeos · captions OK · .vtt en disco OK · mediaError=0
+  ✔ barra de lectura (.progress-bar__fill) presente
+
+== temas/tema-3.html
+  ✔ sin errores de JS (0)
+  ✔ KaTeX: 818 fórmulas renderizadas · 0 .katex-error
+  ✔ nav presente (4 links · aria-label="Navegación principal")
+  ✔ campos de respuesta: 15 drills · sin campo: 0
+  ✔ barra de lectura (.progress-bar__fill) presente
+
+== temas/tema-4.html
+  ✔ sin errores de JS (0 · recurso: error: track:iv_gauss.vtt | error: track:iv_minimos.vtt)
+  ✔ KaTeX: 623 fórmulas renderizadas · 0 .katex-error
+  ✔ nav presente (4 links · aria-label="Navegación principal")
+  ✔ campos de respuesta: 15 drills · sin campo: 0
+  ✔ tracks de vídeo: 2 vídeos · captions OK · .vtt en disco OK · mediaError=0
+  ✔ barra de lectura (.progress-bar__fill) presente
+
+== temas/tema-5.html
+  ✔ sin errores de JS (0 · recurso: error: track:v_espectral.vtt | error: track:v_svd.vtt)
+  ✔ KaTeX: 768 fórmulas renderizadas · 0 .katex-error
+  ✔ nav presente (4 links · aria-label="Navegación principal")
+  ✔ campos de respuesta: 15 drills · sin campo: 0
+  ✔ tracks de vídeo: 2 vídeos · captions OK · .vtt en disco OK · mediaError=0
+  ✔ barra de lectura (.progress-bar__fill) presente
+
+== examenes/examen-1.html
+  ✔ sin errores de JS (0)
+  ✔ KaTeX: 152 fórmulas renderizadas · 0 .katex-error
+  ✔ nav presente (4 links · aria-label="Navegación principal")
+  ✔ campos de respuesta: 12 drills · sin campo: 0
+  ✔ barra de lectura (.progress-bar__fill) presente
+
+== examenes/examen-2.html
+  ✔ sin errores de JS (0)
+  ✔ KaTeX: 239 fórmulas renderizadas · 0 .katex-error
+  ✔ nav presente (4 links · aria-label="Navegación principal")
+  ✔ campos de respuesta: 12 drills · sin campo: 0
+  ✔ barra de lectura (.progress-bar__fill) presente
+
+== examenes/examen-3.html
+  ✔ sin errores de JS (0)
+  ✔ KaTeX: 252 fórmulas renderizadas · 0 .katex-error
+  ✔ nav presente (4 links · aria-label="Navegación principal")
+  ✔ campos de respuesta: 12 drills · sin campo: 0
+  ✔ barra de lectura (.progress-bar__fill) presente
+
+== progreso funcional (index)
+  ✔ label+barra tras resolver 5/15 de tema-1 → "5 / 15 · 33%" barra=33%
+
+== timer (examen-1): tick y clampeo
+  ✔ tick: 01:59:56 → 01:59:54 (decrece)
+  ✔ deadline 1e21 clampeado → 01:59:57 (esperado ≈01:59:5x)
+  ✔ deadline reescrito finito en sessionStorage (1791971151054)
+
+SMOKE R5: 0 fallos

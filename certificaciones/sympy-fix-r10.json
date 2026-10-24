@@ -1,0 +1,453 @@
+{
+ "resultados": [
+  {
+   "nombre": "K11 sqrt(-4x) = 2*sqrt(-x)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "K12 sqrt(-9x) = 3*sqrt(-x)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "K11b sqrt(-4x) = sqrt(4)*sqrt(-x)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "K11c sqrt(-x) = sqrt(-1)*sqrt(x) FALSO (rama)",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "K13 log(2x)+log(3) = log(6x)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "K14 log(2*(3x)) = log(6x)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "K15 log(4x)/2 = log(2*sqrt(x))",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "K15b log(sqrt(x)) = log(x)/2",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "K15c log(2*sqrt(x)) = log(2)+log(x)/2",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "W8 (x^(2/3))^(3/2) = x",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "W8b (x^(p/q))^(q/p) = x con p/q=1/2",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "W17 x^4097 = x^4096*x",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "W18 x^(-4097) = 1/x^4097",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "W18b x^(-65) = 1/x^65",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "U8 tan(x)+tan(-x) = 0",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "U8b tan(-x) = -tan(x)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "C2 conj(re(x)) = re(x)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "C2b conj(im(x)) = im(x)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "C4 re(x*y) = re(x)re(y)-im(x)im(y)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "C7 im(x*y) = re(x)im(y)+im(x)re(y)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "C8 conj(x)^2 = conj(x^2)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "C8b conj(x*y) = conj(x)conj(y)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "C8c conj(x^2) = conj(x)^2",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "M1 suma reordenada",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "M6 (a+b+c+d+e)^4096 = ^4095*(a+b+c+d+e)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "M6b (x^300)*(x^1) = x^301",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "M6c 1/x^300 = x^(-300)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "T8 abs(x*y) = abs(x)*abs(y)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "T8b abs(x/y) = abs(x)/abs(y)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "P7 x^(2y/y) = x^2 (y≠0)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "P7b x^(y+y)/x^(y) = x^y",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "R-a sqrt(k*u) = sqrt(k)*sqrt(u) k>0",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "R-b log(k*u) = log(k)+log(u) k>0",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "R-c tan(-u) = -tan(u)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "R-d sin(-u) = -sin(u)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "R-e cos(-u) = cos(u)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "R-f (u^(1/2))^2 = u",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "R-g u^(3/2) = u*sqrt(u)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "R-h u^(-1/2) = 1/sqrt(u)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "R-i |u|^2 = u*conj(u)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "R-j re(u) = (u+conj(u))/2",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "R-k im(u) = (u-conj(u))/(2i)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "R-l conj(u+v) = conj(u)+conj(v)",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "R-m min/max conmutan",
+   "espera": "IGUAL",
+   "sympy_simplify_cero": true,
+   "muestreo_numerico_igual": true,
+   "certifica": true
+  },
+  {
+   "nombre": "K1 log(-4x) vs log(4x)+i*pi FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "K2 log(-4x) vs log(4x)-i*pi FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "K3 log(-2x) vs log(2)+log(x)+i*pi FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "K5 log(-x) vs log(x)+i*pi FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "K6 log(-4x) vs log(4x) FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "K7 sqrt(-4x) vs 2*sqrt(x) FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "K8 sqrt(-4x) vs 2i*sqrt(x) FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "K9 sqrt(-9x) vs 3*sqrt(x) FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "K10 log(-4x) vs log(4)+log(x) FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "W3 (x^2)^(1/2) vs x FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "W4 (x^4)^(1/2) vs x^2 FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "W5 (x^2)^(1/3) vs x^(2/3) FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "U4 tan(x) vs sin(x)*cos(x) FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "C6 abs(x+y) vs abs(x)+abs(y) FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "M5b (…)^16 vs ^16+1 FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "N16b 5+x^(-300) vs 5 FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "N16c x^(-65) vs x^(-64) FALSA",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "R-n sqrt(-x) vs i*sqrt(x) FALSO",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "T8c abs(x*y) vs abs(x)*abs(y)*2 FALSO",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  },
+  {
+   "nombre": "P7c x^(2y/y) vs x^3 FALSO",
+   "espera": "DISTINTO",
+   "sympy_simplify_cero": false,
+   "muestreo_numerico_igual": false,
+   "certifica": true
+  }
+ ],
+ "fallos": []
+}

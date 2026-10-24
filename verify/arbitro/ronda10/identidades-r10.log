@@ -1,0 +1,57 @@
+--- venenos de rondas 8–9 (deben seguir cerrados) ---
+✔ C1-R8 (x-x)/(x-x) vs 4/11: 0/50 acepta (debía 0/50)
+✔ C1-R8 5+0*(x-x)/(x-x) vs 5: 0/50 acepta (debía 0/50)
+✔ M1-R8 4/11+Δ·x^0.5: 0/20 acepta (debía 0/20)
+✔ M1-R8 4/11+Δ·x^(1/2): 0/20 acepta (debía 0/20)
+✔ R1 4/11+x^(-65): 0/50 acepta (debía 0/50)
+✔ R1 4/11+x^(-300): 0/50 acepta (debía 0/50)
+✔ R1 4/11+(x+y)^(-300): 0/50 acepta (debía 0/50)
+✔ R1 4/11+1/x^300: 0/50 acepta (debía 0/50)
+✔ R1 (x+y)^(-300) vs 0 (gratuito): 0/50 acepta (debía 0/50)
+✔ R1 0^x vs 1: 0/50 acepta (debía 0/50)
+✔ R1 4/11+0^x: 0/50 acepta (debía 0/50)
+✔ R1 4/11+(x-x)*x^0.5 [identidad verdadera: 0·x^0.5=0]: 50/50 acepta (debía 50/50)
+
+--- frontera residual |exp|>4096 (numérica, sin fail-closed) ---
+✔ R1' 4/11+x^(-4097): 0/50 acepta (debía 0/50)
+✔ R1' 4/11+x^(-5000): 0/50 acepta (debía 0/50)
+✔ R1' 4/11+x^(-10000): 0/50 acepta (debía 0/50)
+✔ R1' (x+y)^(-4097) vs 0: 0/50 acepta (debía 0/50)
+✔ R1' (x+y)^(-5000) vs 0: 0/50 acepta (debía 0/50)
+✔ R1' x^(-5000) vs 0: 0/50 acepta (debía 0/50)
+
+--- identidades FALSAS de rama (la nueva capa no debe abrirlas) ---
+✔ log(x)+log(y) vs log(x*y): 0/20 acepta (debía 0/20)
+✔ sqrt(x)*sqrt(y) vs sqrt(x*y): 0/20 acepta (debía 0/20)
+✔ log(exp(x))-x vs 0: 0/20 acepta (debía 0/20)
+✔ sqrt(x^2) vs x: 0/20 acepta (debía 0/20)
+✔ (x^2)^0.5 vs x: 0/20 acepta (debía 0/20)
+✔ log(x*x) vs 2*log(x): 0/20 acepta (debía 0/20)
+✔ sqrt(x*y*z) vs sqrt(x)sqrt(y)sqrt(z): 0/20 acepta (debía 0/20)
+✔ exp(x)*exp(y) vs exp(x+y) [FN tolerado]: 0/20 acepta (debía 0/20)
+✔ tan(x)·cos(x) vs 0: 0/20 acepta (debía 0/20)
+✔ conj(x)^2 vs x*conj(x): 0/20 acepta (debía 0/20)
+✔ E+Δ·sqrt(x) (M1 sin ^ raro): 0/20 acepta (debía 0/20)
+✔ E+Δ·sin(x): 0/20 acepta (debía 0/20)
+
+--- identidades VERDADERAS nuevas (deben aceptarse; FN = fail-closed) ---
+✔ tan=sin/cos: 20/20 acepta (debía 20/20)
+✔ |x|^2=x·conj(x): 20/20 acepta (debía 20/20)
+✔ x^(3/2)=x·sqrt(x): 20/20 acepta (debía 20/20)
+✔ x^(-1/2)=1/sqrt(x): 20/20 acepta (debía 20/20)
+✔ (sqrt x)^4=x^2: 20/20 acepta (debía 20/20)
+✔ log(sqrt(x))=log(x)/2: 20/20 acepta (debía 20/20)
+✔ x^0.5·x^0.5=x: 20/20 acepta (debía 20/20)
+✔ min(x,y)=min(y,x): 20/20 acepta (debía 20/20)
+✔ re(x)^2+im(x)^2=x·conj(x): 20/20 acepta (debía 20/20)
+✔ cos^2+sin^2=1: 20/20 acepta (debía 20/20)
+✔ (x+y)^300 idéntica: 20/20 acepta (debía 20/20)
+✔ x^(-65) vs x^(-65) idéntica: 20/20 acepta (debía 20/20)
+
+--- matrices/multi con la capa nueva (rechazo de venenos) ---
+✔ matriz U: 0/50 acepta (debía 0/50)
+✔ matriz 1/4+x^(-65): 0/50 acepta (debía 0/50)
+✔ multi E+Δ·x^0.5: 0/50 acepta (debía 0/50)
+✔ exprset U: 0/50 acepta (debía 0/50)
+
+Resumen IDENTIDADES R10: 0 desajustes de 46 casos

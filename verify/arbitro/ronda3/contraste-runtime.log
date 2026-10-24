@@ -1,0 +1,40 @@
+
+== index.html — 3 casos bajo umbral ==
+  3.11:1 (min 4.5) span.nav__brand-mark 11.52px color=rgb(122, 95, 28) :: "Archivo"
+  3.11:1 (min 4.5) p.kicker 11.52px color=rgb(122, 95, 28) :: "UNED · Grado en Ingeniería e"
+  3.09:1 (min 4.5) span.meta 11.52px color=rgb(107, 98, 72) :: "Octubre 2026 → Enero 2027"
+
+== temas/tema-1.html — 5 casos bajo umbral ==
+  1:1 (min 3) div.theme-head__ghost.ghost-num 171.6px color=rgba(0, 0, 0, 0) :: "01"
+  3.11:1 (min 4.5) p.kicker 11.52px color=rgb(122, 95, 28) :: "Tema I · Fundamentos algebra"
+  3.94:1 (min 4.5) span.drill__level 11.52px color=rgb(77, 122, 75) :: "Normal"
+  3.98:1 (min 4.5) span.drill__level 11.52px color=rgb(138, 106, 30) :: "Medio"
+  4.05:1 (min 4.5) span.drill__level 11.52px color=rgb(176, 82, 44) :: "Examen de grado"
+
+== temas/tema-3.html — 5 casos bajo umbral ==
+  1:1 (min 3) div.theme-head__ghost.ghost-num 171.6px color=rgba(0, 0, 0, 0) :: "03"
+  3.11:1 (min 4.5) p.kicker 11.52px color=rgb(122, 95, 28) :: "Tema III · Fundamentos algeb"
+  3.94:1 (min 4.5) span.drill__level 11.52px color=rgb(77, 122, 75) :: "Normal"
+  3.98:1 (min 4.5) span.drill__level 11.52px color=rgb(138, 106, 30) :: "Medio"
+  4.05:1 (min 4.5) span.drill__level 11.52px color=rgb(176, 82, 44) :: "Examen de grado"
+
+== temas/tema-5.html — 5 casos bajo umbral ==
+  1:1 (min 3) div.theme-head__ghost.ghost-num 171.6px color=rgba(0, 0, 0, 0) :: "05"
+  3.11:1 (min 4.5) p.kicker 11.52px color=rgb(122, 95, 28) :: "Tema V · Fundamentos algebra"
+  3.94:1 (min 4.5) span.drill__level 11.52px color=rgb(77, 122, 75) :: "Normal"
+  3.98:1 (min 4.5) span.drill__level 11.52px color=rgb(138, 106, 30) :: "Medio"
+  4.05:1 (min 4.5) span.drill__level 11.52px color=rgb(176, 82, 44) :: "Examen de grado"
+
+== examenes/examen-1.html — 5 casos bajo umbral ==
+  1:1 (min 3) div.theme-head__ghost.ghost-num 171.6px color=rgba(0, 0, 0, 0) :: "01"
+  3.11:1 (min 4.5) p.kicker 11.52px color=rgb(122, 95, 28) :: "Examen 1 · Temas I–II"
+  3.94:1 (min 4.5) span.drill__level 11.52px color=rgb(77, 122, 75) :: "Normal"
+  3.98:1 (min 4.5) span.drill__level 11.52px color=rgb(138, 106, 30) :: "Medio"
+  4.05:1 (min 4.5) span.drill__level 11.52px color=rgb(176, 82, 44) :: "Examen de grado"
+
+== planificacion.html — 3 casos bajo umbral ==
+  1:1 (min 3) div.theme-head__ghost.ghost-num 171.6px color=rgba(0, 0, 0, 0) :: "📅"
+  3.11:1 (min 4.5) p.kicker 11.52px color=rgb(122, 95, 28) :: "Curso 2026–2027 · Cuatrimest"
+  4.32:1 (min 4.5) span.plaque__label 11.52px color=rgb(77, 122, 75) :: "Lectura práctica"
+
+TOTAL runtime bajo umbral AA: 26

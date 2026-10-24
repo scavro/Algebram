@@ -1,0 +1,27 @@
+⚠ 375x812 index.html             overflowDoc=0 desbordes=1 solapesHero=0 formulas=2
+   desbordes: [{"sel":"a.skip-link","left":-999,"right":-818,"w":181}]
+⚠ 375x812 temas/tema-1.html      overflowDoc=0 desbordes=1212 solapesHero=0 formulas=-
+   desbordes: [{"sel":"a.skip-link","left":-999,"right":-818,"w":181},{"sel":"math","left":201,"right":405,"w":203},{"sel":"semantics","left":201,"right":405,"w":203},{"sel":"mrow","left":201,"right":405,"w":203},{"sel":"mo","left":364,"right":380,"w":16},{"sel":"mi","left":385,"right":396,"w":11}]
+⚠ 375x812 temas/tema-5.html      overflowDoc=0 desbordes=941 solapesHero=0 formulas=-
+   desbordes: [{"sel":"a.skip-link","left":-999,"right":-818,"w":181},{"sel":"semantics","left":189,"right":491,"w":302},{"sel":"mrow","left":189,"right":491,"w":302},{"sel":"mrow","left":349,"right":408,"w":58},{"sel":"mtable","left":355,"right":402,"w":47},{"sel":"mtr","left":355,"right":402,"w":47}]
+⚠ 375x812 examenes/examen-1.html overflowDoc=0 desbordes=5 solapesHero=0 formulas=-
+   desbordes: [{"sel":"a.skip-link","left":-999,"right":-818,"w":181},{"sel":"input","left":331,"right":414,"w":83},{"sel":"input","left":331,"right":414,"w":83},{"sel":"input","left":331,"right":414,"w":83},{"sel":"input","left":331,"right":414,"w":83}]
+⚠ 768x1024 index.html             overflowDoc=0 desbordes=1 solapesHero=0 formulas=2
+   desbordes: [{"sel":"a.skip-link","left":-999,"right":-806,"w":193}]
+⚠ 768x1024 temas/tema-1.html      overflowDoc=0 desbordes=280 solapesHero=0 formulas=-
+   desbordes: [{"sel":"a.skip-link","left":-999,"right":-806,"w":193},{"sel":"semantics","left":384,"right":1127,"w":743},{"sel":"mrow","left":384,"right":1127,"w":743},{"sel":"mn","left":763,"right":773,"w":10},{"sel":"mo","left":773,"right":777,"w":5},{"sel":"mn","left":781,"right":790,"w":10}]
+⚠ 768x1024 temas/tema-5.html      overflowDoc=0 desbordes=200 solapesHero=0 formulas=-
+   desbordes: [{"sel":"a.skip-link","left":-999,"right":-806,"w":193},{"sel":"math","left":490,"right":789,"w":299},{"sel":"semantics","left":490,"right":789,"w":299},{"sel":"mrow","left":490,"right":789,"w":299},{"sel":"msup","left":750,"right":777,"w":27},{"sel":"mi","left":762,"right":774,"w":12}]
+⚠ 768x1024 examenes/examen-1.html overflowDoc=0 desbordes=1 solapesHero=0 formulas=-
+   desbordes: [{"sel":"a.skip-link","left":-999,"right":-806,"w":193}]
+⚠ 1440x900 index.html             overflowDoc=0 desbordes=1 solapesHero=2 formulas=6
+   desbordes: [{"sel":"a.skip-link","left":-999,"right":-806,"w":193}]
+   solapes: [{"formula":3,"texto":"p.kicker","ix":108,"iy":14,"txt":"UNED · Grado en Ingenier","formulaTxt":"A=UΣV⊤ A = U\\Sigma V^{\\t"},{"formula":5,"texto":"h1.hero__title","ix":103,"iy":36,"txt":"Fundamentos Algebraicos ","formulaTxt":"det⁡(A)≠0 \\det(A) \\neq 0"}]
+⚠ 1440x900 temas/tema-1.html      overflowDoc=0 desbordes=1 solapesHero=0 formulas=-
+   desbordes: [{"sel":"a.skip-link","left":-999,"right":-806,"w":193}]
+⚠ 1440x900 temas/tema-5.html      overflowDoc=0 desbordes=1 solapesHero=0 formulas=-
+   desbordes: [{"sel":"a.skip-link","left":-999,"right":-806,"w":193}]
+⚠ 1440x900 examenes/examen-1.html overflowDoc=0 desbordes=1 solapesHero=0 formulas=-
+   desbordes: [{"sel":"a.skip-link","left":-999,"right":-806,"w":193}]
+
+OK viewports.json + capturas/

@@ -1,0 +1,1341 @@
+{
+ "index.html": {
+  "drills": 0,
+  "sinCampo": [],
+  "camposPorDrill": {},
+  "katexErrors": 0,
+  "nav": true,
+  "ariaLive": 0,
+  "multiLabels": [],
+  "exprInputs": 0,
+  "exprSinLabel": 0,
+  "exprSinAria": 0,
+  "feedback": 0,
+  "feedbackSinLive": 0,
+  "mindmap": null,
+  "videos": [],
+  "typeNumber": 0,
+  "footerTargets": [
+   {
+    "t": "Índice del curso",
+    "w": 111,
+    "h": 35
+   },
+   {
+    "t": "Planificación y ev",
+    "w": 180,
+    "h": 35
+   },
+   {
+    "t": "I · Escalares",
+    "w": 83,
+    "h": 35
+   },
+   {
+    "t": "II · Tensores y ma",
+    "w": 161,
+    "h": 35
+   },
+   {
+    "t": "III · Aplicaciones",
+    "w": 170,
+    "h": 35
+   },
+   {
+    "t": "IV · Triangulación",
+    "w": 121,
+    "h": 35
+   },
+   {
+    "t": "V · Diagonalizació",
+    "w": 133,
+    "h": 35
+   },
+   {
+    "t": "Examen 1 · I–II",
+    "w": 97,
+    "h": 35
+   },
+   {
+    "t": "Examen 2 · III–IV",
+    "w": 114,
+    "h": 35
+   },
+   {
+    "t": "Examen 3 · V + glo",
+    "w": 152,
+    "h": 35
+   }
+  ],
+  "footerUnder24": 0,
+  "examTimer": false,
+  "examScore": false,
+  "examGradeLive": null,
+  "revealIn": 0,
+  "revealTotal": 23,
+  "navLinks": [
+   "index.html",
+   "tema-1.html",
+   "examen-1.html",
+   "planificacion.html"
+  ],
+  "pager": 0
+ },
+ "planificacion.html": {
+  "drills": 0,
+  "sinCampo": [],
+  "camposPorDrill": {},
+  "katexErrors": 0,
+  "nav": true,
+  "ariaLive": 0,
+  "multiLabels": [],
+  "exprInputs": 0,
+  "exprSinLabel": 0,
+  "exprSinAria": 0,
+  "feedback": 0,
+  "feedbackSinLive": 0,
+  "mindmap": null,
+  "videos": [],
+  "typeNumber": 0,
+  "footerTargets": [
+   {
+    "t": "Índice del curso",
+    "w": 111,
+    "h": 35
+   },
+   {
+    "t": "Planificación y ev",
+    "w": 180,
+    "h": 35
+   },
+   {
+    "t": "Examen 1 · Temas I",
+    "w": 147,
+    "h": 35
+   },
+   {
+    "t": "Examen 2 · Temas I",
+    "w": 164,
+    "h": 35
+   },
+   {
+    "t": "Examen 3 · Tema V ",
+    "w": 194,
+    "h": 35
+   }
+  ],
+  "footerUnder24": 0,
+  "examTimer": false,
+  "examScore": false,
+  "examGradeLive": null,
+  "revealIn": 0,
+  "revealTotal": 13,
+  "navLinks": [
+   "index.html",
+   "tema-1.html",
+   "examen-1.html",
+   "planificacion.html"
+  ],
+  "pager": 1
+ },
+ "temas/tema-1.html": {
+  "drills": 15,
+  "sinCampo": [],
+  "camposPorDrill": {
+   "T1-N1": 1,
+   "T1-N2": 1,
+   "T1-N3": 4,
+   "T1-N4": 1,
+   "T1-N5": 1,
+   "T1-N6": 1,
+   "T1-M1": 1,
+   "T1-M2": 2,
+   "T1-M3": 1,
+   "T1-M4": 1,
+   "T1-M5": 2,
+   "T1-E1": 1,
+   "T1-E2": 3,
+   "T1-E3": 1,
+   "T1-E4": 1
+  },
+  "katexErrors": 0,
+  "nav": true,
+  "ariaLive": 15,
+  "multiLabels": [
+   {
+    "for": "in-9-08q5",
+    "forResolves": true
+   },
+   {
+    "for": "in-9-08q5",
+    "forResolves": true
+   },
+   {
+    "for": "in-11-6zwd",
+    "forResolves": true
+   },
+   {
+    "for": "in-11-6zwd",
+    "forResolves": true
+   },
+   {
+    "for": "in-17-eyhz",
+    "forResolves": true
+   },
+   {
+    "for": "in-17-eyhz",
+    "forResolves": true
+   },
+   {
+    "for": "in-19-z0zv",
+    "forResolves": true
+   },
+   {
+    "for": "in-19-z0zv",
+    "forResolves": true
+   },
+   {
+    "for": "in-21-ykdw",
+    "forResolves": true
+   },
+   {
+    "for": "in-21-ykdw",
+    "forResolves": true
+   }
+  ],
+  "exprInputs": 11,
+  "exprSinLabel": 0,
+  "exprSinAria": 0,
+  "feedback": 15,
+  "feedbackSinLive": 0,
+  "mindmap": {
+   "role": "group",
+   "nodos": 22,
+   "nodosRole": [
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button"
+   ],
+   "nodosAria": true,
+   "tabindex": 22
+  },
+  "videos": [],
+  "typeNumber": 0,
+  "footerTargets": [
+   {
+    "t": "Índice del curso",
+    "w": 111,
+    "h": 35
+   },
+   {
+    "t": "Planificación y ev",
+    "w": 180,
+    "h": 35
+   },
+   {
+    "t": "Examen 1 · Temas I",
+    "w": 147,
+    "h": 35
+   },
+   {
+    "t": "Examen 2 · Temas I",
+    "w": 164,
+    "h": 35
+   },
+   {
+    "t": "Examen 3 · Tema V ",
+    "w": 194,
+    "h": 35
+   }
+  ],
+  "footerUnder24": 0,
+  "examTimer": false,
+  "examScore": false,
+  "examGradeLive": null,
+  "revealIn": 0,
+  "revealTotal": 44,
+  "navLinks": [
+   "index.html",
+   "tema-1.html",
+   "examen-1.html",
+   "planificacion.html"
+  ],
+  "pager": 1
+ },
+ "temas/tema-2.html": {
+  "drills": 15,
+  "sinCampo": [],
+  "camposPorDrill": {
+   "T2-N1": 3,
+   "T2-N2": 4,
+   "T2-N3": 5,
+   "T2-N4": 2,
+   "T2-N5": 2,
+   "T2-N6": 4,
+   "T2-M1": 6,
+   "T2-M2": 9,
+   "T2-M3": 3,
+   "T2-M4": 3,
+   "T2-M5": 3,
+   "T2-E1": 9,
+   "T2-E2": 6,
+   "T2-E3": 4,
+   "T2-E4": 11
+  },
+  "katexErrors": 0,
+  "nav": true,
+  "ariaLive": 15,
+  "multiLabels": [
+   {
+    "for": "in-1-uamv",
+    "forResolves": true
+   },
+   {
+    "for": "in-3-l0x9",
+    "forResolves": true
+   },
+   {
+    "for": "in-3-l0x9",
+    "forResolves": true
+   },
+   {
+    "for": "in-5-bm3a",
+    "forResolves": true
+   },
+   {
+    "for": "in-5-bm3a",
+    "forResolves": true
+   },
+   {
+    "for": "in-7-85k6",
+    "forResolves": true
+   },
+   {
+    "for": "in-7-85k6",
+    "forResolves": true
+   },
+   {
+    "for": "in-9-cybr",
+    "forResolves": true
+   },
+   {
+    "for": "in-10-kl0c",
+    "forResolves": true
+   },
+   {
+    "for": null,
+    "forResolves": false
+   },
+   {
+    "for": "in-14-ye7z",
+    "forResolves": true
+   }
+  ],
+  "exprInputs": 0,
+  "exprSinLabel": 0,
+  "exprSinAria": 0,
+  "feedback": 15,
+  "feedbackSinLive": 0,
+  "mindmap": {
+   "role": "group",
+   "nodos": 13,
+   "nodosRole": [
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button"
+   ],
+   "nodosAria": true,
+   "tabindex": 13
+  },
+  "videos": [
+   {
+    "src": "ii_transformacion.mp4",
+    "tracks": 1,
+    "trackSrc": [
+     "ii_transformacion.vtt"
+    ]
+   },
+   {
+    "src": "ii_gram_schmidt.mp4",
+    "tracks": 1,
+    "trackSrc": [
+     "ii_gram_schmidt.vtt"
+    ]
+   }
+  ],
+  "typeNumber": 0,
+  "footerTargets": [
+   {
+    "t": "Índice del curso",
+    "w": 111,
+    "h": 35
+   },
+   {
+    "t": "Planificación y ev",
+    "w": 180,
+    "h": 35
+   },
+   {
+    "t": "Examen 1 · Temas I",
+    "w": 147,
+    "h": 35
+   },
+   {
+    "t": "Examen 2 · Temas I",
+    "w": 164,
+    "h": 35
+   },
+   {
+    "t": "Examen 3 · Tema V ",
+    "w": 194,
+    "h": 35
+   }
+  ],
+  "footerUnder24": 0,
+  "examTimer": false,
+  "examScore": false,
+  "examGradeLive": null,
+  "revealIn": 0,
+  "revealTotal": 46,
+  "navLinks": [
+   "index.html",
+   "tema-1.html",
+   "examen-1.html",
+   "planificacion.html"
+  ],
+  "pager": 1
+ },
+ "temas/tema-3.html": {
+  "drills": 15,
+  "sinCampo": [],
+  "camposPorDrill": {
+   "T3-N1": 1,
+   "T3-N2": 1,
+   "T3-N3": 2,
+   "T3-N4": 1,
+   "T3-N5": 1,
+   "T3-N6": 1,
+   "T3-M1": 3,
+   "T3-M2": 4,
+   "T3-M3": 2,
+   "T3-M4": 2,
+   "T3-M5": 9,
+   "T3-E1": 1,
+   "T3-E2": 4,
+   "T3-E3": 4,
+   "T3-E4": 4
+  },
+  "katexErrors": 0,
+  "nav": true,
+  "ariaLive": 15,
+  "multiLabels": [
+   {
+    "for": "in-4-p24b",
+    "forResolves": true
+   },
+   {
+    "for": "in-4-p24b",
+    "forResolves": true
+   },
+   {
+    "for": "in-6-e1xe",
+    "forResolves": true
+   },
+   {
+    "for": "in-6-e1xe",
+    "forResolves": true
+   },
+   {
+    "for": "in-11-c29b",
+    "forResolves": true
+   },
+   {
+    "for": "in-11-c29b",
+    "forResolves": true
+   },
+   {
+    "for": "in-13-05sr",
+    "forResolves": true
+   },
+   {
+    "for": "in-13-05sr",
+    "forResolves": true
+   },
+   {
+    "for": "in-15-bwyo",
+    "forResolves": true
+   },
+   {
+    "for": "in-15-bwyo",
+    "forResolves": true
+   },
+   {
+    "for": "in-17-6rp9",
+    "forResolves": true
+   },
+   {
+    "for": "in-17-6rp9",
+    "forResolves": true
+   },
+   {
+    "for": "in-19-b2zk",
+    "forResolves": true
+   },
+   {
+    "for": "in-19-b2zk",
+    "forResolves": true
+   },
+   {
+    "for": "in-21-i32i",
+    "forResolves": true
+   },
+   {
+    "for": "in-21-i32i",
+    "forResolves": true
+   },
+   {
+    "for": "in-25-mz98",
+    "forResolves": true
+   },
+   {
+    "for": "in-25-mz98",
+    "forResolves": true
+   },
+   {
+    "for": "in-26-usxh",
+    "forResolves": true
+   },
+   {
+    "for": "in-28-857x",
+    "forResolves": true
+   },
+   {
+    "for": "in-28-857x",
+    "forResolves": true
+   },
+   {
+    "for": "in-30-jv6g",
+    "forResolves": true
+   },
+   {
+    "for": "in-30-jv6g",
+    "forResolves": true
+   },
+   {
+    "for": "in-32-k09g",
+    "forResolves": true
+   },
+   {
+    "for": "in-32-k09g",
+    "forResolves": true
+   },
+   {
+    "for": "in-34-wdrw",
+    "forResolves": true
+   },
+   {
+    "for": "in-34-wdrw",
+    "forResolves": true
+   }
+  ],
+  "exprInputs": 6,
+  "exprSinLabel": 0,
+  "exprSinAria": 0,
+  "feedback": 15,
+  "feedbackSinLive": 0,
+  "mindmap": {
+   "role": "group",
+   "nodos": 12,
+   "nodosRole": [
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button"
+   ],
+   "nodosAria": true,
+   "tabindex": 12
+  },
+  "videos": [],
+  "typeNumber": 0,
+  "footerTargets": [
+   {
+    "t": "Índice del curso",
+    "w": 111,
+    "h": 35
+   },
+   {
+    "t": "Planificación y ev",
+    "w": 180,
+    "h": 35
+   },
+   {
+    "t": "Examen 1 · Temas I",
+    "w": 147,
+    "h": 35
+   },
+   {
+    "t": "Examen 2 · Temas I",
+    "w": 164,
+    "h": 35
+   },
+   {
+    "t": "Examen 3 · Tema V ",
+    "w": 194,
+    "h": 35
+   }
+  ],
+  "footerUnder24": 0,
+  "examTimer": false,
+  "examScore": false,
+  "examGradeLive": null,
+  "revealIn": 0,
+  "revealTotal": 44,
+  "navLinks": [
+   "index.html",
+   "tema-1.html",
+   "examen-1.html",
+   "planificacion.html"
+  ],
+  "pager": 1
+ },
+ "temas/tema-4.html": {
+  "drills": 15,
+  "sinCampo": [],
+  "camposPorDrill": {
+   "T4-N1": 3,
+   "T4-N2": 3,
+   "T4-N3": 1,
+   "T4-N4": 2,
+   "T4-N5": 2,
+   "T4-N6": 4,
+   "T4-M1": 5,
+   "T4-M2": 10,
+   "T4-M3": 2,
+   "T4-M4": 1,
+   "T4-M5": 1,
+   "T4-E1": 3,
+   "T4-E2": 2,
+   "T4-E3": 18,
+   "T4-E4": 3
+  },
+  "katexErrors": 0,
+  "nav": true,
+  "ariaLive": 15,
+  "multiLabels": [
+   {
+    "for": "in-5-g5l0",
+    "forResolves": true
+   },
+   {
+    "for": "in-5-g5l0",
+    "forResolves": true
+   },
+   {
+    "for": "in-6-nyrj",
+    "forResolves": true
+   },
+   {
+    "for": "in-7-466s",
+    "forResolves": true
+   },
+   {
+    "for": "in-8-qbmv",
+    "forResolves": true
+   },
+   {
+    "for": "in-10-jzbn",
+    "forResolves": true
+   },
+   {
+    "for": "in-10-jzbn",
+    "forResolves": true
+   },
+   {
+    "for": "in-12-jc9a",
+    "forResolves": true
+   },
+   {
+    "for": "in-12-jc9a",
+    "forResolves": true
+   },
+   {
+    "for": "in-16-exn0",
+    "forResolves": true
+   },
+   {
+    "for": "in-16-exn0",
+    "forResolves": true
+   },
+   {
+    "for": "in-18-kuic",
+    "forResolves": true
+   },
+   {
+    "for": "in-18-kuic",
+    "forResolves": true
+   },
+   {
+    "for": "in-19-5crw",
+    "forResolves": true
+   },
+   {
+    "for": "in-20-62hp",
+    "forResolves": true
+   },
+   {
+    "for": "in-22-ct4s",
+    "forResolves": true
+   },
+   {
+    "for": "in-22-ct4s",
+    "forResolves": true
+   },
+   {
+    "for": "in-24-khw1",
+    "forResolves": true
+   },
+   {
+    "for": "in-24-khw1",
+    "forResolves": true
+   },
+   {
+    "for": "in-26-hsis",
+    "forResolves": true
+   },
+   {
+    "for": "in-26-hsis",
+    "forResolves": true
+   }
+  ],
+  "exprInputs": 3,
+  "exprSinLabel": 0,
+  "exprSinAria": 0,
+  "feedback": 15,
+  "feedbackSinLive": 0,
+  "mindmap": {
+   "role": "group",
+   "nodos": 20,
+   "nodosRole": [
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button"
+   ],
+   "nodosAria": true,
+   "tabindex": 20
+  },
+  "videos": [
+   {
+    "src": "iv_gauss.mp4",
+    "tracks": 1,
+    "trackSrc": [
+     "iv_gauss.vtt"
+    ]
+   },
+   {
+    "src": "iv_minimos.mp4",
+    "tracks": 1,
+    "trackSrc": [
+     "iv_minimos.vtt"
+    ]
+   }
+  ],
+  "typeNumber": 0,
+  "footerTargets": [
+   {
+    "t": "Índice del curso",
+    "w": 111,
+    "h": 35
+   },
+   {
+    "t": "Planificación y ev",
+    "w": 180,
+    "h": 35
+   },
+   {
+    "t": "Examen 1 · Temas I",
+    "w": 147,
+    "h": 35
+   },
+   {
+    "t": "Examen 2 · Temas I",
+    "w": 164,
+    "h": 35
+   },
+   {
+    "t": "Examen 3 · Tema V ",
+    "w": 194,
+    "h": 35
+   }
+  ],
+  "footerUnder24": 0,
+  "examTimer": false,
+  "examScore": false,
+  "examGradeLive": null,
+  "revealIn": 0,
+  "revealTotal": 42,
+  "navLinks": [
+   "index.html",
+   "tema-1.html",
+   "examen-1.html",
+   "planificacion.html"
+  ],
+  "pager": 1
+ },
+ "temas/tema-5.html": {
+  "drills": 15,
+  "sinCampo": [],
+  "camposPorDrill": {
+   "T5-N1": 1,
+   "T5-N2": 2,
+   "T5-N3": 4,
+   "T5-N4": 4,
+   "T5-N5": 4,
+   "T5-N6": 1,
+   "T5-M1": 8,
+   "T5-M2": 8,
+   "T5-M3": 1,
+   "T5-M4": 4,
+   "T5-M5": 8,
+   "T5-E1": 18,
+   "T5-E2": 9,
+   "T5-E3": 4,
+   "T5-E4": 2
+  },
+  "katexErrors": 0,
+  "nav": true,
+  "ariaLive": 15,
+  "multiLabels": [
+   {
+    "for": "in-5-59k3",
+    "forResolves": true
+   },
+   {
+    "for": "in-6-h0tv",
+    "forResolves": true
+   },
+   {
+    "for": "in-7-ke8e",
+    "forResolves": true
+   },
+   {
+    "for": "in-8-yg59",
+    "forResolves": true
+   },
+   {
+    "for": "in-10-kib2",
+    "forResolves": true
+   },
+   {
+    "for": "in-11-ooti",
+    "forResolves": true
+   },
+   {
+    "for": "in-12-9xtm",
+    "forResolves": true
+   },
+   {
+    "for": "in-13-ydks",
+    "forResolves": true
+   },
+   {
+    "for": "in-15-1vdq",
+    "forResolves": true
+   },
+   {
+    "for": "in-15-1vdq",
+    "forResolves": true
+   },
+   {
+    "for": "in-17-yn7s",
+    "forResolves": true
+   },
+   {
+    "for": "in-17-yn7s",
+    "forResolves": true
+   }
+  ],
+  "exprInputs": 3,
+  "exprSinLabel": 0,
+  "exprSinAria": 0,
+  "feedback": 15,
+  "feedbackSinLive": 0,
+  "mindmap": {
+   "role": "group",
+   "nodos": 18,
+   "nodosRole": [
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button",
+    "button"
+   ],
+   "nodosAria": true,
+   "tabindex": 18
+  },
+  "videos": [
+   {
+    "src": "v_espectral.mp4",
+    "tracks": 1,
+    "trackSrc": [
+     "v_espectral.vtt"
+    ]
+   },
+   {
+    "src": "v_svd.mp4",
+    "tracks": 1,
+    "trackSrc": [
+     "v_svd.vtt"
+    ]
+   }
+  ],
+  "typeNumber": 0,
+  "footerTargets": [
+   {
+    "t": "Índice del curso",
+    "w": 111,
+    "h": 35
+   },
+   {
+    "t": "Planificación y ev",
+    "w": 180,
+    "h": 35
+   },
+   {
+    "t": "Examen 1 · Temas I",
+    "w": 147,
+    "h": 35
+   },
+   {
+    "t": "Examen 2 · Temas I",
+    "w": 164,
+    "h": 35
+   },
+   {
+    "t": "Examen 3 · Tema V ",
+    "w": 194,
+    "h": 35
+   }
+  ],
+  "footerUnder24": 0,
+  "examTimer": false,
+  "examScore": false,
+  "examGradeLive": null,
+  "revealIn": 0,
+  "revealTotal": 46,
+  "navLinks": [
+   "index.html",
+   "tema-1.html",
+   "examen-1.html",
+   "planificacion.html"
+  ],
+  "pager": 1
+ },
+ "examenes/examen-1.html": {
+  "drills": 12,
+  "sinCampo": [],
+  "camposPorDrill": {
+   "X1-1": 1,
+   "X1-2": 1,
+   "X1-3": 2,
+   "X1-4": 1,
+   "X1-5": 1,
+   "X1-6": 1,
+   "X1-7": 1,
+   "X1-8": 6,
+   "X1-9": 1,
+   "X1-10": 3,
+   "X1-11": 4,
+   "X1-12": 16
+  },
+  "katexErrors": 0,
+  "nav": true,
+  "ariaLive": 14,
+  "multiLabels": [
+   {
+    "for": "in-8-5bfa",
+    "forResolves": true
+   },
+   {
+    "for": "in-9-440v",
+    "forResolves": true
+   }
+  ],
+  "exprInputs": 7,
+  "exprSinLabel": 0,
+  "exprSinAria": 0,
+  "feedback": 12,
+  "feedbackSinLive": 0,
+  "mindmap": null,
+  "videos": [],
+  "typeNumber": 0,
+  "footerTargets": [
+   {
+    "t": "Índice del curso",
+    "w": 111,
+    "h": 35
+   },
+   {
+    "t": "Planificación y ev",
+    "w": 180,
+    "h": 35
+   },
+   {
+    "t": "Examen 1 · Temas I",
+    "w": 147,
+    "h": 35
+   },
+   {
+    "t": "Examen 2 · Temas I",
+    "w": 164,
+    "h": 35
+   },
+   {
+    "t": "Examen 3 · Tema V ",
+    "w": 194,
+    "h": 35
+   }
+  ],
+  "footerUnder24": 0,
+  "examTimer": true,
+  "examScore": true,
+  "examGradeLive": "polite",
+  "revealIn": 0,
+  "revealTotal": 13,
+  "navLinks": [
+   "index.html",
+   "tema-1.html",
+   "examen-1.html",
+   "planificacion.html"
+  ],
+  "pager": 1
+ },
+ "examenes/examen-2.html": {
+  "drills": 12,
+  "sinCampo": [],
+  "camposPorDrill": {
+   "X2-1": 1,
+   "X2-2": 1,
+   "X2-3": 2,
+   "X2-4": 3,
+   "X2-5": 2,
+   "X2-6": 1,
+   "X2-7": 3,
+   "X2-8": 1,
+   "X2-9": 4,
+   "X2-10": 2,
+   "X2-11": 1,
+   "X2-12": 10
+  },
+  "katexErrors": 0,
+  "nav": true,
+  "ariaLive": 14,
+  "multiLabels": [
+   {
+    "for": "in-4-bi2y",
+    "forResolves": true
+   },
+   {
+    "for": "in-4-bi2y",
+    "forResolves": true
+   },
+   {
+    "for": "in-6-ksji",
+    "forResolves": true
+   },
+   {
+    "for": "in-6-ksji",
+    "forResolves": true
+   },
+   {
+    "for": "in-10-hucp",
+    "forResolves": true
+   },
+   {
+    "for": "in-10-hucp",
+    "forResolves": true
+   },
+   {
+    "for": "in-12-kjrl",
+    "forResolves": true
+   },
+   {
+    "for": "in-12-kjrl",
+    "forResolves": true
+   },
+   {
+    "for": "in-14-g41s",
+    "forResolves": true
+   },
+   {
+    "for": "in-14-g41s",
+    "forResolves": true
+   },
+   {
+    "for": "in-18-2e04",
+    "forResolves": true
+   },
+   {
+    "for": "in-18-2e04",
+    "forResolves": true
+   },
+   {
+    "for": "in-20-75w5",
+    "forResolves": true
+   },
+   {
+    "for": "in-20-75w5",
+    "forResolves": true
+   },
+   {
+    "for": "in-22-pzxf",
+    "forResolves": true
+   },
+   {
+    "for": "in-23-5ha3",
+    "forResolves": true
+   }
+  ],
+  "exprInputs": 5,
+  "exprSinLabel": 0,
+  "exprSinAria": 0,
+  "feedback": 12,
+  "feedbackSinLive": 0,
+  "mindmap": null,
+  "videos": [],
+  "typeNumber": 0,
+  "footerTargets": [
+   {
+    "t": "Índice del curso",
+    "w": 111,
+    "h": 35
+   },
+   {
+    "t": "Planificación y ev",
+    "w": 180,
+    "h": 35
+   },
+   {
+    "t": "Examen 1 · Temas I",
+    "w": 147,
+    "h": 35
+   },
+   {
+    "t": "Examen 2 · Temas I",
+    "w": 164,
+    "h": 35
+   },
+   {
+    "t": "Examen 3 · Tema V ",
+    "w": 194,
+    "h": 35
+   }
+  ],
+  "footerUnder24": 0,
+  "examTimer": true,
+  "examScore": true,
+  "examGradeLive": "polite",
+  "revealIn": 0,
+  "revealTotal": 13,
+  "navLinks": [
+   "index.html",
+   "tema-1.html",
+   "examen-1.html",
+   "planificacion.html"
+  ],
+  "pager": 1
+ },
+ "examenes/examen-3.html": {
+  "drills": 12,
+  "sinCampo": [],
+  "camposPorDrill": {
+   "X3-1": 4,
+   "X3-2": 1,
+   "X3-3": 2,
+   "X3-4": 1,
+   "X3-5": 18,
+   "X3-6": 2,
+   "X3-7": 4,
+   "X3-8": 1,
+   "X3-9": 8,
+   "X3-10": 2,
+   "X3-11": 4,
+   "X3-12": 6
+  },
+  "katexErrors": 0,
+  "nav": true,
+  "ariaLive": 14,
+  "multiLabels": [
+   {
+    "for": "in-4-itmw",
+    "forResolves": true
+   },
+   {
+    "for": "in-5-v2wv",
+    "forResolves": true
+   },
+   {
+    "for": "in-7-w9jo",
+    "forResolves": true
+   },
+   {
+    "for": "in-7-w9jo",
+    "forResolves": true
+   },
+   {
+    "for": "in-9-txts",
+    "forResolves": true
+   },
+   {
+    "for": "in-9-txts",
+    "forResolves": true
+   },
+   {
+    "for": "in-11-uwca",
+    "forResolves": true
+   },
+   {
+    "for": "in-12-kb7r",
+    "forResolves": true
+   },
+   {
+    "for": "in-14-t8ux",
+    "forResolves": true
+   },
+   {
+    "for": "in-14-t8ux",
+    "forResolves": true
+   },
+   {
+    "for": "in-16-6unb",
+    "forResolves": true
+   },
+   {
+    "for": "in-16-6unb",
+    "forResolves": true
+   },
+   {
+    "for": "in-18-e207",
+    "forResolves": true
+   },
+   {
+    "for": "in-19-3ntj",
+    "forResolves": true
+   }
+  ],
+  "exprInputs": 3,
+  "exprSinLabel": 0,
+  "exprSinAria": 0,
+  "feedback": 12,
+  "feedbackSinLive": 0,
+  "mindmap": null,
+  "videos": [],
+  "typeNumber": 0,
+  "footerTargets": [
+   {
+    "t": "Índice del curso",
+    "w": 111,
+    "h": 35
+   },
+   {
+    "t": "Planificación y ev",
+    "w": 180,
+    "h": 35
+   },
+   {
+    "t": "Examen 1 · Temas I",
+    "w": 147,
+    "h": 35
+   },
+   {
+    "t": "Examen 2 · Temas I",
+    "w": 164,
+    "h": 35
+   },
+   {
+    "t": "Examen 3 · Tema V ",
+    "w": 194,
+    "h": 35
+   }
+  ],
+  "footerUnder24": 0,
+  "examTimer": true,
+  "examScore": true,
+  "examGradeLive": "polite",
+  "revealIn": 0,
+  "revealTotal": 13,
+  "navLinks": [
+   "index.html",
+   "tema-1.html",
+   "examen-1.html",
+   "planificacion.html"
+  ],
+  "pager": 1
+ }
+}

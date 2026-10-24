@@ -1,0 +1,25 @@
+== tema-1: flujo de corrección
+  ✔ T1-N4 incorrecta ("1/2"-vía-basura) → ✗ sin solución  [wrong · "✗ Aún no es correcto. Co"]
+  ✔ T1-N4 correcta ("4/11") → ✓ CON SOLUCIÓN visible  [correct · "✓ Correcto. Revisa la so"]
+  ✔ progreso T1-N4 = 'solved' en localStorage
+  ✔ T1-N4 variante equivalente "8/22" ≡ 4/11 → ✓ (capa estructural vía UI)
+  ✔ T1-N4 decimal a doble precisión de 4/11 → ✓
+  ✔ T1-M2 multi correcta (2 · 5π/6) → ✓ con solución
+  ✔ T1-M2 multi parcialmente mala (arg π/6) → ✗  [wrong · "✗ Aún no es correcto. Ca"]
+  ✔ T1-M4 exprset reordenado → ✓
+  ✔ T1-M4 exprset malo ("2;2;2") → ✗
+  ✔ T1-E4 decimal "0.8660254" (7 decimales de √3/2) → ✓
+  ✔ T1-E4 forma trigonométrica constante "sin(pi/3)" → ✓
+  ✔ botón «Ver solución» revela la solución (visible)
+
+== examen-1: Corregir examen vs Comprobar
+  ✔ examen-1 tiene 12 preguntas (12)
+  ✔ paso 1 (Comprobar×12): 6 ✓ / 6 ✗  (6 correctas)
+  ✔ «Corregir examen» ≡ «Comprobar» en 12/12 tarjetas
+  ✔ marcador tras Corregir examen: 6/12 · nota 5 (esperado 6/12 · 5)
+  ✔ soluciones reveladas tras Corregir examen: 12/12
+  ✔ feedback ✓/✗ coherente con la clase de cada tarjeta
+  · marcas de opciones en 1ª tarjeta: []
+  ✔ «Reiniciar» → 0 marcadas, marcador 0/12, timer reiniciado (01:59:58)
+
+FLUJO R8: 0 fallos

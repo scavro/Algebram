@@ -1,0 +1,82 @@
+--- D_NULL (20 casos × 200 runs) ---
+OK   |    0/200 | N1 '1/((x-x)*(x-x))' vs 5 — denominador (x-x)² nulo
+OK   |    0/200 | N2 '1/(0*(x-x))' vs 5 — denominador 0·(x-x)
+OK   |    0/200 | N3 '1/(0*x)' vs 5 — denominador 0·x
+OK   |    0/200 | N4 '(x+1)/((x-x)*(x-x))' vs 5
+OK   |    0/200 | N5 '1/((x-x)*(y-y))' vs 5 — dos factores nulos
+OK   |    0/200 | N6 '1/((x-x)*(x+1))' vs 5 — un factor nulo
+OK   |    0/200 | N7 '(x-x)/((x-x)*(x-x))' vs 5 — 0/0 elaborado
+OK   |    0/200 | N8 '1/((x+y)-(x+y))' vs 5 — denominador suma-cancelada
+OK   |    0/200 | N9 '1/(x^2-x*x)' vs 5 — denominador x²−x·x
+OK   |    0/200 | N10 '1/((x+1)^2-(x+1)^2)' vs 5
+OK   |  200/200 | N11 '1/(x-x)^0' vs 1 — control: (x-x)^0=1, sí es 1
+OK   |    0/200 | N12 '2/(x-x)' vs '1/(x-x)' — fracciones cruzadas ambas nulas
+OK   |    0/200 | N13 '(x-x)/(2*(x-x))' vs 5 — 0/0 con escala
+OK   |    0/200 | N14 '1/(x-x)+1/(y-y)' vs 5 — dos nulos sumados
+OK   |    0/200 | N15 '((x-x)*log(x))/((x-x)*exp(x))' vs 5 — 0/0 con átomos
+OK   |    0/200 | N16 '1/(-(x-x))' vs 5 — denominador −(x−x)
+OK   |    0/200 | N17 '1/((x-x)+(x-x))' vs 5
+OK   |    0/200 | N18 '(x-x)/(x-x)' vs 5 en celda matriz
+OK   |    0/200 | N19 '1/((x-x)*(x-x));1/((x-x)*(x-x))' exprset T4-M5
+OK   |    0/200 | N20 '5+1/((x-x)*(x-x))' vs 5 (intenta quedarse con el término bueno)
+--- D_SKEL (14 casos × 200 runs) ---
+OK   |    0/200 | S1 'log(x*x)' vs '2*log(x)' — rama falsa, debe rechazar
+OK   |    0/200 | S2 '2*log(x)' vs 'log(x*x)' — inverso
+OK   |    0/200 | S3 'log(x^2)' vs '2*log(x)' — rama falsa clásica
+OK   |    0/200 | S4 'log(x)+log(y)' vs 'log(x*y)' — rama falsa
+OK   |    0/200 | S5 'sqrt(x*x)' vs 'x' — rama falsa (√(x²)=|x|-ish)
+OK   |    0/200 | S6 'sqrt(x^2)' vs 'x' — rama falsa
+OK   |    0/200 | S7 'log(x*x)+x^(3/2)-x^(3/2)' vs '2*log(x)' — rama falsa + forzado de fallback
+OK   |    0/200 | S8 'log(x)+log(y)+x^z-x^z' vs 'log(x*y)' — forzado simbólico
+OK   |    0/200 | S9 '5+log(x*x)-2*log(x)+x^(3/2)-x^(3/2)' vs 5 — exploit rama+forzado
+OK   |    0/200 | S10 'log(x)*log(y)' vs 'log(x)+log(y)' — MISMOS átomos, estructura distinta (falsa)
+OK   |    0/200 | S11 'sin(x)/sin(y)' vs 'sin(x)-sin(y)' — mismos átomos, falsa
+OK   |    0/200 | S12 'asin(sin(x))' vs 'x' — rama falsa
+OK   |    0/200 | S13 'sqrt(x^2*y)' vs 'x*sqrt(y)' — falsa
+OK   |    0/200 | S14 'log(x*x)' vs 'log(x)+log(x)' — falsa (2log x ≠ log x² en C)
+--- D_TRUE (11 casos × 200 runs) ---
+FN!! |    0/200 | T1 'tan(x)' vs 'sin(x)/cos(x)' — VERDADERA (cTan = cSin/cCos en el propio motor)
+FN!! |    0/200 | T2 'sen(x)/cos(x)' vs 'tg(x)' — VERDADERA (inverso)
+FN!! |    0/200 | T3 'abs(x)^2' vs 'x*conj(x)' — VERDADERA en C
+FN!! |    0/200 | T4 'x*conj(x)' vs 'abs(x)^2' — inverso
+FN!! |    0/200 | T5 'conj(x-y)' vs 'conj(x)-conj(y)' — VERDADERA (resta)
+FN!! |    0/200 | T6 'conj(-x)' vs '-conj(x)' — VERDADERA
+FN!! |    0/200 | T7 'conj(x)+x' vs '2*re(x)' — VERDADERA (2Re z = z+conj z)
+FN!! |    0/200 | T8 'abs(x*y)' vs 'abs(x)*abs(y)' — VERDADERA en C
+FN!! |    0/200 | T9 'conj(x^2)' vs 'conj(x)^2' — VERDADERA
+FN!! |    0/200 | T10 'im(x)' vs '(x-conj(x))/(2*i)' — VERDADERA
+OK   |    0/200 | T11 'log(x^2)' vs '2*log(x)' con x>0 no aplica en C — control FALSA
+--- D_POW (12 casos × 200 runs) ---
+OK   |  200/200 | L1 'x^64' vs 'x^64' idénticas — fast-path
+OK   |  200/200 | L2 'x^65' vs 'x^65' idénticas — fast-path
+OK   |  200/200 | L3 'x^65' vs 'x^64*x' — VERDADERA (65>64, vía numérica)
+OK   |  200/200 | L4 'x^(-64)' vs '1/(x^64)' — VERDADERA (estructural)
+OK   |  200/200 | L5 'x^(-65)' vs '1/(x^65)' — VERDADERA (numérica)
+OK   |    0/200 | L6 'x^(-64)' vs 'x^64' — FALSA (signo)
+OK   |    0/200 | L7 'x^65' vs 'x^66' — FALSA
+FP!! |  158/200 | L8 'x^(-65)' vs 'x^(-64)' — FALSA
+OK   |  200/200 | L9 '(x+y)^64' vs '(x+y)^64' idénticas
+OK   |  200/200 | L10 '(x+y)^65' vs '(x+y)^64*(x+y)' — VERDADERA (numérica)
+OK   |    0/200 | L11 'x^65' vs '5' — FALSA (control)
+OK   |  200/200 | L12 '(x*y)^64' vs 'x^64*y^64' — VERDADERA (entero)
+--- D_N16R (12 casos × 200 runs) ---
+FP!! |  159/200 | R1 'x^(-65)' vs 0 — residual N16 (65>64 → fallback numérico)
+FP!! |  175/200 | R2 'x^(-300)' vs 0 — residual N16
+FP!! |  173/200 | R3 '5+x^(-300)' vs 5 — residual N16 sobre E conocido
+FP!! |  162/200 | R4 '5+x^(-65)' vs 5
+FP!! |  170/200 | R5 '4-s-t+x^(-300)' vs T4-N3 real
+FP!! |  156/200 | R6 '(x+y)^(-300)' vs 0
+OK   |    0/200 | R7 '5+x^(-2000)' vs 5
+FP!! |  168/200 | R8 exprset T4-M5 'i+x^(-300);-i'
+FP!! |  117/200 | R9 matriz T5-N5 celdas +x^(-300)
+OK   |    0/200 | R10 'x^(-20)' vs 0 — control estructural (20≤64)
+OK   |    0/200 | R11 '5+x^(-20)' vs 5 — control estructural
+OK   |    0/200 | R12 'x^(-300)' vs 5 — control: NO universal
+--- D_COMA (5 casos × 200 runs) ---
+OK   |  200/200 | C1 'min(2,3)' vs 2 — VERDADERA (N13 fijado)
+OK   |    0/200 | C2 'min(2,3)' vs 2.3 — FALSA (FP R8 cerrado)
+OK   |    0/200 | C3 'max(1,2)' vs 1.2 — FALSA (FP R8 cerrado)
+OK   |    0/200 | C4 'min(2,3)' vs 3 — FALSA
+FN!! |    0/200 | C5 'min(x,y)' vs 'min(y,x)' — VERDADERA
+
+RESUMEN: FP=9 FN=11 de 74 (N=200 runs/caso).

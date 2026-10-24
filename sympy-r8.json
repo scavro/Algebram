@@ -1,0 +1,66 @@
+{
+ "ok": 12,
+ "fail": 0,
+ "detalle": {
+  "T1-N6": {
+   "obtenido": "10 + 5*I",
+   "esperado": "10 + 5*I",
+   "ok": true
+  },
+  "T1-M1": {
+   "obtenido": "1/2 + 3*I/2",
+   "esperado": "1/2 + 3*I/2",
+   "ok": true
+  },
+  "T1-M2-mod": {
+   "obtenido": "2",
+   "esperado": "2",
+   "ok": true
+  },
+  "T1-M2-arg": {
+   "obtenido": "5*pi/6",
+   "esperado": "5*pi/6",
+   "ok": true
+  },
+  "T1-M3": {
+   "obtenido": "16",
+   "esperado": "16",
+   "ok": true
+  },
+  "T1-M4": {
+   "obtenido": "[2, -1 - sqrt(3)*I, -1 + sqrt(3)*I]",
+   "esperado": "[2, -1 + sqrt(3)*I, -1 - sqrt(3)*I]",
+   "ok": true
+  },
+  "T2-N2": {
+   "obtenido": "[[2, 7], [8, 8]]",
+   "esperado": "[[2, 7], [8, 8]]",
+   "ok": true
+  },
+  "T2-M2": {
+   "obtenido": "[[-24, 18, 5], [20, -15, -4], [-5, 4, 1]]",
+   "esperado": "[[-24, 18, 5], [20, -15, -4], [-5, 4, 1]]",
+   "ok": true
+  },
+  "T4-N3": {
+   "obtenido": "-s - t + 4",
+   "esperado": "-s - t + 4",
+   "ok": true
+  },
+  "T5-E3": {
+   "obtenido": "[[3/10, -1/10], [1/10, 3/10]]",
+   "esperado": "[[3/10, -1/10], [1/10, 3/10]]",
+   "ok": true
+  },
+  "X3-10": {
+   "obtenido": "det2=256, trinv=1/4",
+   "esperado": "det2=256, trinv=1/4",
+   "ok": true
+  },
+  "T1-E4": {
+   "obtenido": "sqrt(3)/2",
+   "esperado": "sqrt(3)/2",
+   "ok": true
+  }
+ }
+}

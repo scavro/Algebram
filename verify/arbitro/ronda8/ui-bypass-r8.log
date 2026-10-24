@@ -1,0 +1,13 @@
+  · T1-N4 «4/11+Δ» (M5 naive)        → RECHAZA
+  · T1-N4 «4/11+Δ·x^0.5» (bypass)    → ACEPTA
+  · T1-N4 «1/2+Δ·x^0.5» (E erróneo)  → RECHAZA
+  · T1-N4 «(x+y)^(-300)» (basura)    → RECHAZA
+  · T1-N4 «(x-x)/(x-x)» (universal)  → ACEPTA
+  ✔ el exploit naive M5 se rechaza en la UI (fix operativo)
+  ✘ el exploit con veneno ·x^0.5 se RECHAZA en la UI (esperado por seguridad; ACEPTA = bypass de producto: ACEPTA)
+  ✔ respuesta matemáticamente incorrecta «1/2+Δ·x^0.5» RECHAZA en la UI
+  ✔ entrada basura «(x+y)^(-300)» se rechaza en la UI
+  ✘ respuesta universal «(x-x)/(x-x)» ACEPTA en la UI (ACEPTA = cualquier pregunta se aprueba con 0/0)
+  ✘ progreso tras la sonda: {"T1-N4":"solved"}
+
+UI-BYPASS R8: 3 fallos
